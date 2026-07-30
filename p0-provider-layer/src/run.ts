@@ -1,5 +1,6 @@
 import { CANDIDATES, keyFor, type Candidate } from "./providers.js";
 import { CHECKS, type CheckResult } from "./checks.js";
+import { loadOpenRouterCapabilities, summarize } from "./capabilities.js";
 
 const PAUSE_MS = Number(process.env.PAUSE_MS ?? 7000);
 
@@ -64,6 +65,55 @@ function printTable(rows: Row[]) {
   }
 }
 
+async function compareDeclaredVsMeasured(rows: Row[]) {
+  const apiKey = process.env.OPENROUTER_API_KEY;
+  if (!apiKey) return;
+
+  let caps;
+  try {
+    caps = await loadOpenRouterCapabilities(apiKey);
+  } catch (error) {
+    console.log(`\nCapability catalogue unavailable: ${(error as Error).message}`);
+    return;
+  }
+
+  const stats = summarize(caps);
+  console.log(
+    `\n\nDeclared capabilities, straight from OpenRouter's own catalogue: ${stats.total} models, ${stats.withTools} declare tool use, ${stats.withStructured} declare structured output.`,
+  );
+  console.log("Does the catalogue predict what actually happened?\n");
+
+  let agree = 0;
+  let checked = 0;
+  for (const row of rows) {
+    const modelId = row.candidate.modelId;
+    if (!modelId) continue;
+    const declared = caps.get(modelId);
+    if (!declared) continue;
+
+    for (const [capability, name] of [
+      ["tools", "tool call"],
+      ["structured", "structured JSON"],
+    ] as const) {
+      const measured = row.results.find((r) => r.name === name);
+      if (!measured || measured.outcome === "blocked") continue;
+      const says = declared[capability];
+      const did = measured.outcome === "pass";
+      checked += 1;
+      if (says === did) agree += 1;
+      const verdict = says === did ? "matches" : "MISMATCH";
+      console.log(
+        `  ${verdict.padEnd(9)} ${modelId} ${name}: declared ${says}, measured ${did}`,
+      );
+    }
+  }
+  if (checked > 0) {
+    console.log(
+      `\n  ${agree}/${checked} predictions correct. A capability registry can be READ from the gateway instead of hand-maintained.`,
+    );
+  }
+}
+
 async function main() {
   const rows: Row[] = [];
   for (const candidate of CANDIDATES) {
@@ -74,8 +124,12 @@ async function main() {
       console.log(`\n${candidate.label}\n  SKIPPED  ${message}`);
     }
   }
-  if (rows.length > 1) printTable(rows);
-  else console.log("\nNeed at least two providers to compare. Set both keys in .env");
+  if (rows.length > 1) {
+    printTable(rows);
+    await compareDeclaredVsMeasured(rows);
+  } else {
+    console.log("\nNeed at least two providers to compare. Set both keys in .env");
+  }
 }
 
 main();

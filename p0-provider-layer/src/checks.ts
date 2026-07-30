@@ -13,6 +13,17 @@ export type CheckResult = {
 
 const QUOTA_MARKERS = ["quota", "rate limit", "429", "too many requests", "overloaded"];
 
+const CALL_TIMEOUT_MS = Number(process.env.CALL_TIMEOUT_MS ?? 45000);
+
+function deadline() {
+  return AbortSignal.timeout(CALL_TIMEOUT_MS);
+}
+
+function isTimeout(message: string): boolean {
+  const lower = message.toLowerCase();
+  return lower.includes("abort") || lower.includes("timeout") || lower.includes("timed out");
+}
+
 function isQuota(message: string): boolean {
   const lower = message.toLowerCase();
   return QUOTA_MARKERS.some((marker) => lower.includes(marker));
@@ -30,10 +41,12 @@ async function timed(fn: () => Promise<{ ok: boolean; detail: string }>) {
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     return {
-      outcome: (isQuota(message) ? "blocked" : "fail") as Outcome,
+      outcome: (isQuota(message) || isTimeout(message) ? "blocked" : "fail") as Outcome,
       detail: isQuota(message)
         ? "free-tier quota hit, capability NOT measured"
-        : message.slice(0, 160),
+        : isTimeout(message)
+          ? `no response in ${CALL_TIMEOUT_MS / 1000}s, capability NOT measured`
+          : message.slice(0, 160),
       ms: Date.now() - started,
     };
   }
@@ -43,6 +56,7 @@ export async function checkText(model: LanguageModel): Promise<CheckResult> {
   const outcome = await timed(async () => {
     const { text } = await generateText({
       model,
+      abortSignal: deadline(),
       prompt: "Reply with exactly one word: OK",
     });
     const normalized = text.trim().toUpperCase();
@@ -61,6 +75,7 @@ export async function checkToolCall(model: LanguageModel): Promise<CheckResult> 
 
     const { text, steps } = await generateText({
       model,
+      abortSignal: deadline(),
       stopWhen: stepCountIs(4),
       tools: {
         get_meal_calories: tool({
@@ -100,6 +115,7 @@ export async function checkStructured(model: LanguageModel): Promise<CheckResult
   const outcome = await timed(async () => {
     const { object } = await generateObject({
       model,
+      abortSignal: deadline(),
       schema: z.object({
         protein_g: z.number(),
         fat_g: z.number(),

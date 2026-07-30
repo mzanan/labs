@@ -37,9 +37,47 @@ The keys are read once at startup and then **passed explicitly into each provide
 
 For each provider, each of the three capabilities gets a pass or fail plus the failure reason, and the run prints a comparison table. A capability that fails on one provider and passes on the other is the interesting result: that is the abstraction leaking.
 
-## Result
+## Result, round 2 (2026-07-30 15:3x ICT): OpenRouter added
 
-Run 2026-07-30 14:5x ICT, `ai` 7.0.42, `@ai-sdk/groq` 4.0.16, `@ai-sdk/google` 4.0.28, `zod` 4.4.3, Node 22.22.2.
+Same three checks, now including OpenRouter as a gateway via `@openrouter/ai-sdk-provider` 3.0.0.
+
+| provider | wire format | plain text | tool call | structured JSON |
+|---|---|---|---|---|
+| Groq `llama-3.3-70b-versatile` | OpenAI-compatible | PASS | PASS | **FAIL** |
+| Groq `openai/gpt-oss-120b` | OpenAI-compatible | PASS | PASS | PASS |
+| OpenRouter to `openai/gpt-oss-120b` | gateway | PASS | PASS | PASS |
+| OpenRouter to `nemotron-3-super:free` | gateway | PASS | BLOCKED | PASS |
+| OpenRouter to `ling-3.0-flash:free` | gateway | PASS | PASS | **FAIL** |
+| Gemini 2.5 Flash | Google native | BLOCKED | BLOCKED | BLOCKED |
+
+BLOCKED means not measured: free-tier quota or no response inside the call timeout. Gemini's daily free quota was exhausted by repeated runs, which is a measurement artifact and not a capability result. Its round-1 numbers (all three PASS) stand.
+
+### The finding that matters: the capability registry can be read, not maintained
+
+OpenRouter publishes `supported_parameters` per model on `GET /v1/models`. The lab now pulls that catalogue and checks it against what actually happened:
+
+```
+367 models, 301 declare tool use, 292 declare structured output.
+
+  matches   openai/gpt-oss-120b tool call: declared true, measured true
+  matches   openai/gpt-oss-120b structured JSON: declared true, measured true
+  matches   nvidia/nemotron-3-super-120b-a12b:free structured JSON: declared true, measured true
+  matches   inclusionai/ling-3.0-flash:free tool call: declared true, measured true
+  matches   inclusionai/ling-3.0-flash:free structured JSON: declared false, measured false
+
+  5/5 predictions correct.
+```
+
+`ling-3.0-flash:free` is the decisive row: the catalogue said it does tools but not structured output, and that is exactly what happened. **A per-model capability registry does not have to be hand-maintained if the gateway declares it.** That was the single strongest argument for integrating providers directly, and it is now weaker.
+
+### Other things this round measured
+
+- **A model going through the gateway kept every capability it has direct.** `openai/gpt-oss-120b` passed all three both ways. The gateway did not degrade it.
+- **Free model slugs rot.** `deepseek/deepseek-chat-v3-0324:free` returned `This model is unavailable for free. The paid version is available now`. Of 367 models, only 14 are free right now and only 4 of those declare both tools and structured output. Anything built on a specific free slug will break without warning.
+- **Free tiers hang, not just fail.** `nemotron-3-super:free` passed all three checks in one run and then stopped responding entirely on the tool call in the next. Without a timeout the runner blocked for 20 minutes on a single call. Calls now carry `abortSignal: AbortSignal.timeout(...)` and a hang is reported as BLOCKED rather than FAIL, because a model that does not answer has not demonstrated an incapability.
+- **Cost of the paid model through the gateway**: total OpenRouter usage across every run was **$0.000105507**, roughly a hundredth of a cent.
+
+## Result, round 1 (2026-07-30 14:5x ICT), `ai` 7.0.42, `@ai-sdk/groq` 4.0.16, `@ai-sdk/google` 4.0.28, `zod` 4.4.3, Node 22.22.2.
 
 | provider | wire format | plain text | tool call | structured JSON |
 |---|---|---|---|---|
@@ -64,3 +102,5 @@ Failure message from Groq, verbatim: `This model does not support response forma
 **What this does NOT establish**, unchanged from the scope limit above: Anthropic was never tested. Its shape is the most divergent of the three and it remains the real stress test for point 1.
 
 **Consequence for the provider decision:** the SDK is viable for the P0 layer and removes the argument for adopting a gateway just to get BYOK. It does not remove the need for a per-model capability registry, which points 3 and 4 make concrete rather than theoretical.
+
+**Superseded in part by round 2 (2026-07-30 15:3x ICT):** the registry still has to exist, but it does not have to be hand-maintained. OpenRouter declares per-model capabilities and the declaration matched reality 5/5. See round 2 above.

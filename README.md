@@ -18,4 +18,4 @@ Method: [`personal-brain/02-Areas/Architecture-first-methodology.md`](../persona
 
 | Lab | Question | Date | Verdict |
 |---|---|---|---|
-| [`p0-provider-layer`](./p0-provider-layer) | Does the Vercel AI SDK actually unify two genuinely different LLM API shapes, with the key passed per request? | 2026-07-30 | **Yes.** The abstraction holds and takes a per-request key; the only failure was a per-model capability gap (JSON schema), not a format or provider one. Anthropic untested. |
+| [`p0-provider-layer`](./p0-provider-layer) | Does the Vercel AI SDK unify genuinely different LLM API shapes with a per-request key, and can a gateway supply the per-model capability data? | 2026-07-30 | **Yes to both.** The abstraction holds across direct providers and a gateway, and takes a per-request key. OpenRouter's published per-model capabilities predicted real behaviour 5/5, so the capability registry can be read rather than hand-maintained. Anthropic untested. |
