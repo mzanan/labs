@@ -1,0 +1,11 @@
+{
+  "name": "labs",
+  "private": true,
+  "type": "module",
+  "workspaces": ["p0-provider-layer"],
+  "devDependencies": {
+    "@eslint/js": "^9",
+    "eslint": "^9",
+    "typescript-eslint": "^8"
+  }
+}
