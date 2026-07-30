@@ -3,64 +3,91 @@ import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 import type { LanguageModel } from "ai";
 
-export type Candidate = {
-  id: string;
-  label: string;
+export type ProviderId = "groq" | "google" | "openrouter";
+
+export type ProviderSpec = {
+  id: ProviderId;
   wireFormat: string;
-  modelId?: string;
-  build: (apiKey: string) => LanguageModel;
+  envVar: string;
+  create: (apiKey: string, model: string, routeOnly?: string[]) => LanguageModel;
+  declaresCapabilities: boolean;
 };
 
-export const CANDIDATES: Candidate[] = [
-  {
+export const PROVIDERS: Record<ProviderId, ProviderSpec> = {
+  groq: {
     id: "groq",
-    label: "Groq llama-3.3-70b-versatile",
     wireFormat: "OpenAI-compatible",
-    build: (apiKey) => createGroq({ apiKey })("llama-3.3-70b-versatile"),
+    envVar: "GROQ_API_KEY",
+    create: (apiKey, model) => createGroq({ apiKey })(model),
+    declaresCapabilities: false,
   },
-  {
-    id: "groq-oss",
-    label: "Groq openai/gpt-oss-120b",
-    wireFormat: "OpenAI-compatible",
-    build: (apiKey) => createGroq({ apiKey })("openai/gpt-oss-120b"),
-  },
-  {
-    id: "openrouter-same-model",
-    label: "OpenRouter -> openai/gpt-oss-120b",
-    wireFormat: "OpenRouter gateway",
-    modelId: "openai/gpt-oss-120b",
-    build: (apiKey) => createOpenRouter({ apiKey })("openai/gpt-oss-120b"),
-  },
-  {
-    id: "openrouter-free-capable",
-    label: "OpenRouter -> nemotron-3-super:free",
-    wireFormat: "OpenRouter gateway",
-    modelId: "nvidia/nemotron-3-super-120b-a12b:free",
-    build: (apiKey) =>
-      createOpenRouter({ apiKey })("nvidia/nemotron-3-super-120b-a12b:free"),
-  },
-  {
-    id: "openrouter-free-limited",
-    label: "OpenRouter -> ling-3.0-flash:free",
-    wireFormat: "OpenRouter gateway",
-    modelId: "inclusionai/ling-3.0-flash:free",
-    build: (apiKey) => createOpenRouter({ apiKey })("inclusionai/ling-3.0-flash:free"),
-  },
-  {
+  google: {
     id: "google",
-    label: "Gemini 2.5 Flash (native API)",
     wireFormat: "Google native",
-    build: (apiKey) => createGoogleGenerativeAI({ apiKey })("gemini-2.5-flash"),
+    envVar: "GOOGLE_API_KEY",
+    create: (apiKey, model) => createGoogleGenerativeAI({ apiKey })(model),
+    declaresCapabilities: false,
   },
-];
+  openrouter: {
+    id: "openrouter",
+    wireFormat: "OpenRouter gateway",
+    envVar: "OPENROUTER_API_KEY",
+    create: (apiKey, model, routeOnly) =>
+      createOpenRouter({ apiKey })(model, routeOnly ? { provider: { only: routeOnly } } : {}),
+    declaresCapabilities: true,
+  },
+};
 
-export function keyFor(candidate: Candidate): string {
-  const envVar = candidate.id.startsWith("groq")
-    ? "GROQ_API_KEY"
-    : candidate.id.startsWith("openrouter")
-      ? "OPENROUTER_API_KEY"
-      : "GOOGLE_API_KEY";
-  const value = process.env[envVar];
-  if (!value) throw new Error(`missing ${envVar}`);
-  return value;
+export type ModelRef = {
+  provider: ProviderId;
+  model: string;
+  label?: string;
+  routeOnly?: string[];
+};
+
+export type ResolvedModel = {
+  ref: ModelRef;
+  spec: ProviderSpec;
+  label: string;
+  languageModel: LanguageModel;
+};
+
+export type KeyLookup = (envVar: string) => string | undefined;
+
+const fromEnv: KeyLookup = (envVar) => process.env[envVar];
+
+export function isProviderId(value: string): value is ProviderId {
+  return value in PROVIDERS;
+}
+
+export function resolveModel(ref: ModelRef, lookup: KeyLookup = fromEnv): ResolvedModel {
+  const spec = PROVIDERS[ref.provider];
+  if (!spec) throw new Error(`unknown provider "${ref.provider}"`);
+
+  const apiKey = lookup(spec.envVar);
+  if (!apiKey) throw new Error(`missing ${spec.envVar}`);
+
+  return {
+    ref,
+    spec,
+    label: ref.label ?? `${ref.provider} ${ref.model}`,
+    languageModel: spec.create(apiKey, ref.model, ref.routeOnly),
+  };
+}
+
+export function resolveAll(
+  refs: ModelRef[],
+  lookup: KeyLookup = fromEnv,
+): { resolved: ResolvedModel[]; skipped: { ref: ModelRef; reason: string }[] } {
+  const resolved: ResolvedModel[] = [];
+  const skipped: { ref: ModelRef; reason: string }[] = [];
+
+  for (const ref of refs) {
+    try {
+      resolved.push(resolveModel(ref, lookup));
+    } catch (error) {
+      skipped.push({ ref, reason: (error as Error).message });
+    }
+  }
+  return { resolved, skipped };
 }

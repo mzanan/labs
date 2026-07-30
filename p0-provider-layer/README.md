@@ -37,6 +37,28 @@ The keys are read once at startup and then **passed explicitly into each provide
 
 For each provider, each of the three capabilities gets a pass or fail plus the failure reason, and the run prints a comparison table. A capability that fails on one provider and passes on the other is the interesting result: that is the abstraction leaking.
 
+## Result, round 3 (2026-07-30 16:4x ICT): the gateway routes one model across many providers
+
+Round 2 concluded that OpenRouter's per-model capability declaration predicted reality 5/5. Round 3 found the case where that is not enough, and it is the most important finding in this lab.
+
+**`openai/gpt-oss-120b` passed the tool-call check in one run and failed it repeatedly in the next, with identical code.** Six consecutive attempts reported `tool never invoked`. Then, isolating it:
+
+| routing | tool invoked | used the result |
+|---|---|---|
+| default (OpenRouter picks) | yes | **no** |
+| `provider.only: ["groq"]` | yes | yes |
+| `provider.only: ["cerebras"]` | error | error |
+
+The cause, from `GET /v1/models/openai/gpt-oss-120b/endpoints`: **19 different providers serve that one model through OpenRouter, and 5 of them do not support tools at all** (SiliconFlow, DigitalOcean, Google, and two Amazon Bedrock endpoints). Several others support tools but not structured output. OpenRouter picks one per request.
+
+So the model-level catalogue says `tools: true` because *some* provider supports it. **The provider you actually get on any given request may not.** That is the real source of the intermittency, not free-tier flakiness.
+
+**Consequence: on a gateway, pin the routing.** `provider: { only: [...] }` turns non-deterministic capability into deterministic capability. Without it, an agent that calls tools works most of the time and silently degrades the rest, which is the worst possible failure shape for a production feature.
+
+With routing pinned and retries in place, the catalogue predicted measured behaviour **8/8**.
+
+**Also added this round, because the lab is a module and not a script** (Matias, 2026-07-30): candidates moved out of the code into `candidates.json`, providers became a registry keyed by id with per-provider key lookup, and failed checks retry (`ATTEMPTS`, default 3) before being recorded, since one measurement against a shared free tier is not evidence.
+
 ## Result, round 2 (2026-07-30 15:3x ICT): OpenRouter added
 
 Same three checks, now including OpenRouter as a gateway via `@openrouter/ai-sdk-provider` 3.0.0.

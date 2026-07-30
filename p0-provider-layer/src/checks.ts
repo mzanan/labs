@@ -14,6 +14,8 @@ export type CheckResult = {
 const QUOTA_MARKERS = ["quota", "rate limit", "429", "too many requests", "overloaded"];
 
 const CALL_TIMEOUT_MS = Number(process.env.CALL_TIMEOUT_MS ?? 45000);
+const ATTEMPTS = Number(process.env.ATTEMPTS ?? 3);
+const RETRY_PAUSE_MS = Number(process.env.RETRY_PAUSE_MS ?? 2000);
 
 function deadline() {
   return AbortSignal.timeout(CALL_TIMEOUT_MS);
@@ -29,27 +31,43 @@ function isQuota(message: string): boolean {
   return QUOTA_MARKERS.some((marker) => lower.includes(marker));
 }
 
-async function timed(fn: () => Promise<{ ok: boolean; detail: string }>) {
-  const started = Date.now();
+async function attempt(fn: () => Promise<{ ok: boolean; detail: string }>) {
   try {
     const result = await fn();
-    return {
-      outcome: (result.ok ? "pass" : "fail") as Outcome,
-      detail: result.detail,
-      ms: Date.now() - started,
-    };
+    return { outcome: (result.ok ? "pass" : "fail") as Outcome, detail: result.detail };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    return {
-      outcome: (isQuota(message) || isTimeout(message) ? "blocked" : "fail") as Outcome,
-      detail: isQuota(message)
-        ? "free-tier quota hit, capability NOT measured"
-        : isTimeout(message)
-          ? `no response in ${CALL_TIMEOUT_MS / 1000}s, capability NOT measured`
-          : message.slice(0, 160),
-      ms: Date.now() - started,
-    };
+    if (isQuota(message)) {
+      return {
+        outcome: "blocked" as Outcome,
+        detail: "provider quota hit, capability NOT measured",
+      };
+    }
+    if (isTimeout(message)) {
+      return {
+        outcome: "blocked" as Outcome,
+        detail: `no response in ${CALL_TIMEOUT_MS / 1000}s, capability NOT measured`,
+      };
+    }
+    return { outcome: "fail" as Outcome, detail: message.slice(0, 160) };
   }
+}
+
+async function timed(fn: () => Promise<{ ok: boolean; detail: string }>) {
+  const started = Date.now();
+  let last = await attempt(fn);
+  let tries = 1;
+
+  while (last.outcome !== "pass" && tries < ATTEMPTS) {
+    await new Promise((resolve) => setTimeout(resolve, RETRY_PAUSE_MS));
+    const retry = await attempt(fn);
+    tries += 1;
+    last = retry;
+    if (retry.outcome === "pass") break;
+  }
+
+  const suffix = tries > 1 ? ` (${tries} attempts)` : "";
+  return { outcome: last.outcome, detail: last.detail + suffix, ms: Date.now() - started };
 }
 
 export async function checkText(model: LanguageModel): Promise<CheckResult> {

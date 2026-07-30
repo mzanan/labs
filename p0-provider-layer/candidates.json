@@ -1,0 +1,40 @@
+[
+  {
+    "provider": "groq",
+    "model": "llama-3.3-70b-versatile",
+    "label": "Groq llama-3.3-70b-versatile"
+  },
+  {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "label": "Groq openai/gpt-oss-120b"
+  },
+  {
+    "provider": "openrouter",
+    "model": "openai/gpt-oss-120b",
+    "label": "OpenRouter to openai/gpt-oss-120b"
+  },
+  {
+    "provider": "openrouter",
+    "model": "openai/gpt-oss-120b",
+    "routeOnly": [
+      "groq"
+    ],
+    "label": "OpenRouter to gpt-oss-120b (routed to Groq)"
+  },
+  {
+    "provider": "openrouter",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "label": "OpenRouter to nemotron-3-super:free"
+  },
+  {
+    "provider": "openrouter",
+    "model": "inclusionai/ling-3.0-flash:free",
+    "label": "OpenRouter to ling-3.0-flash:free"
+  },
+  {
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "label": "Gemini 2.5 Flash (native)"
+  }
+]
