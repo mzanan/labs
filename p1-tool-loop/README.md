@@ -12,7 +12,9 @@ npm install
 npm start
 ```
 
-Config via env: `PAUSE_MS` (default 8000, free tier is 20 req/min), `TIMEOUT_MS` (90s per call), `MAX_STEPS` (6), `CANDIDATES_FILE`. Models and routing pins live in `candidates.json`; tools and fixture data in `src/tools.ts` / `src/fixtures.ts`; scenarios with expected tool sequences and exact-argument checks in `src/scenarios.ts`.
+Config via env: `PAUSE_MS` (default 8000, OpenRouter free tier is 20 req/min), `TIMEOUT_MS` (90s per call), `MAX_STEPS` (6), `CANDIDATES_FILE`. Models and routing pins live in `candidates.json`; providers (groq / google / openrouter, key per env var) in `src/providers.ts`; tools and fixture data in `src/tools.ts` / `src/fixtures.ts`; scenarios with expected tool sequences and exact-argument checks in `src/scenarios.ts`.
+
+**Default candidates run on Groq + Gemini so labs never burn the app's OpenRouter daily quota** (standing rule since 2026-08-01). The original OpenRouter set lives in `candidates-openrouter.json`: `CANDIDATES_FILE=candidates-openrouter.json npm start`.
 
 ## What was measured
 
@@ -31,3 +33,15 @@ Config via env: `PAUSE_MS` (default 8000, free tier is 20 req/min), `TIMEOUT_MS`
 **The real ceiling is operational, not capability: the $0 account's free-models-per-day cap (~50) died mid-run-2.** A tool loop spends 2-3 requests per user question, so quota exhaustion is the failure mode an in-app P1 must surface honestly (it arrives as a 429 with "Add 10 credits" in the message). gemma-4-26b (fit-coach's current pick) was the most reliable candidate measured: 10/10.
 
 Not measured: models without native tool support (ReAct territory, ruled out by research), `toolApproval` flows, deeper chains (4+ steps).
+
+## Round 2, 2026-08-01: multi-provider port
+
+Provider layer ported from `p0-provider-layer` (groq/google/openrouter, swappable via `candidates.json`) after the OpenRouter quota exhaustion, so labs run on Groq/Gemini quotas instead of the app's key. Verified same day:
+
+| Model | Result |
+|---|---|
+| Groq openai/gpt-oss-20b | 5/5, fastest overall (0.9-12s per scenario) |
+| Groq llama-3.3-70b-versatile | 4/5: real model failure on the search-then-log chain ("Failed to call a function"), llama's known weakness, same class p0 measured on its structured-output side |
+| Gemini 2.5 Flash | 3/5: both failures were Gemini's own daily quota (the key is shared with fit-coach vision/embeddings), not capability |
+
+The loop abstraction held identically across all three wire formats: same runner, same tools, same scenarios.

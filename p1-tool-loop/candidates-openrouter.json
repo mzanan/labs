@@ -1,0 +1,18 @@
+[
+  {
+    "provider": "openrouter",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "routeOnly": ["darkbloom"],
+    "label": "gemma-4-26b:free (darkbloom)"
+  },
+  {
+    "provider": "openrouter",
+    "model": "openai/gpt-oss-20b:free",
+    "label": "gpt-oss-20b:free"
+  },
+  {
+    "provider": "openrouter",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "label": "nemotron-3-super:free"
+  }
+]

@@ -1,15 +1,17 @@
 [
   {
-    "model": "google/gemma-4-26b-a4b-it:free",
-    "routeOnly": ["darkbloom"],
-    "label": "gemma-4-26b:free (darkbloom)"
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "label": "Groq gpt-oss-20b"
   },
   {
-    "model": "openai/gpt-oss-20b:free",
-    "label": "gpt-oss-20b:free"
+    "provider": "groq",
+    "model": "llama-3.3-70b-versatile",
+    "label": "Groq llama-3.3-70b"
   },
   {
-    "model": "nvidia/nemotron-3-super-120b-a12b:free",
-    "label": "nemotron-3-super:free"
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "label": "Gemini 2.5 Flash"
   }
 ]
