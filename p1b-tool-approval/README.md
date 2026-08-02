@@ -2,7 +2,7 @@
 
 **Question:** does the Vercel AI SDK's native `toolApproval` (human in the loop before a write) actually work on the free small models fit-coach runs, and what does the app have to handle itself?
 
-**Date:** 2026-08-01
+**Date:** 2026-08-02
 
 ## How to run
 
