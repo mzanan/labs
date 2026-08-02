@@ -22,6 +22,8 @@ Four cases per model: **pauses** (the loop stops and nothing is written), **appr
 |---|---|---|---|---|
 | Groq `openai/gpt-oss-120b` | PASS | PASS, wrote `Pollo Avo` as lunch with the catalog's 45g protein | PASS, nothing written | FAIL |
 | Groq `openai/gpt-oss-20b` | PASS on two runs, then emitted `log_meal<|channel|>commentary` as the tool name and the call was rejected | PASS when it got that far | PASS | not reached |
+| OpenRouter `openai/gpt-oss-20b:free` | PASS | PASS, same write | PASS | FAIL, same error |
+| OpenRouter `google/gemma-4-26b-a4b-it:free` (darkbloom) | **FAIL: never called the write tool at all**, so there was nothing to approve | not reached | not reached | not reached |
 
 ## Verdict
 
@@ -33,4 +35,6 @@ Three things the app must own, all measured rather than assumed:
 - **Never replay a denied history in a closing call.** The denied tool call has no result, so a plain `generateText` over those messages throws `Tool result is missing for tool call`. The tool-less rescue call that fit-coach uses for empty answers is safe today (no approvals in production yet) but must be skipped on the denial path.
 - **Small models can emit a malformed tool name.** `gpt-oss-20b` produced `log_meal<|channel|>commentary`, a raw channel token leaking into the name, and the provider rejected the call. Intermittent: the same model passed the same case on an earlier run. A write path needs a retry and a clean user-facing error rather than trusting the first attempt.
 
-Not measured: OpenRouter models (the free daily quota was spent), approval on a model without native tool support, and multiple pending approvals in one turn.
+- **The mechanism is gateway-independent, the models are not.** `gpt-oss-20b` behaved identically direct on Groq and through OpenRouter, so approval is not something the gateway breaks. But `gemma-4-26b:free`, the model fit-coach had configured on OpenRouter, never called the write tool at all on the same prompt that made both gpt-oss models call it, so there was nothing to approve. **Declaring tool support is not the same as using a write tool when asked**, and a logging feature has to state which models it actually works on rather than assume the capability flag covers it.
+
+Not measured: approval on a model without native tool support, and multiple pending approvals in one turn.
