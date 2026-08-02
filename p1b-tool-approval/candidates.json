@@ -1,0 +1,12 @@
+[
+  {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "label": "Groq gpt-oss-120b"
+  },
+  {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "label": "Groq gpt-oss-20b"
+  }
+]
