@@ -8,28 +8,23 @@ import {
   type ModelRef,
   type ResolvedModel,
 } from "./providers.js";
+import {
+  INSTRUCTIONS,
+  MAX_STEPS,
+  PAUSE_MS,
+  PROMPT,
+  TIMEOUT_MS,
+  type CaseResult,
+} from "./scenario.js";
 import { buildTools, type WriteLog } from "./tools.js";
 
-const PAUSE_MS = Number(process.env.PAUSE_MS ?? 3000);
-const TIMEOUT_MS = Number(process.env.TIMEOUT_MS ?? 90_000);
-const MAX_STEPS = Number(process.env.MAX_STEPS ?? 6);
 const CANDIDATES_FILE = process.env.CANDIDATES_FILE ?? "candidates.json";
-
-const INSTRUCTIONS = `You are a nutrition coach inside a tracking app. Use the tools to read the user's data and to log meals when they ask. Never invent macros: take them from the catalog or from the user's message. Answer in the user's language, briefly.`;
-
-const PROMPT = "logueame el Pollo Avo como almuerzo";
 
 type Approval = {
   approvalId: string;
   toolName: string;
   input: unknown;
 };
-
-interface CaseResult {
-  name: string;
-  outcome: "pass" | "fail" | "error";
-  detail: string;
-}
 
 function loadCandidates(path: string): ModelRef[] {
   const parsed: unknown = JSON.parse(readFileSync(path, "utf8"));

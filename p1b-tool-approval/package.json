@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "node --env-file=.env node_modules/.bin/tsx src/run.ts",
+    "stream": "node --env-file=.env node_modules/.bin/tsx src/runStream.ts",
     "typecheck": "tsc"
   },
   "dependencies": {
