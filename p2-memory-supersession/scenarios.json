@@ -1,0 +1,45 @@
+{
+  "distancePairs": [
+    {
+      "name": "quinoa-correction",
+      "original": { "content": "The user enjoys quinoa and it appears often in meal suggestions.", "category": "preference" },
+      "correction": { "content": "The user does not want quinoa suggested anymore, they dislike it.", "category": "correction" },
+      "expect": "supersede"
+    },
+    {
+      "name": "training-time-correction",
+      "original": { "content": "The user trains in the morning before work.", "category": "routine" },
+      "correction": { "content": "The user switched to training in the evening now, mornings no longer work for them.", "category": "correction" },
+      "expect": "supersede"
+    },
+    {
+      "name": "morning-training-vs-morning-breakfast",
+      "original": { "content": "The user trains in the morning before work.", "category": "routine" },
+      "correction": { "content": "The user prefers eating breakfast early in the morning.", "category": "routine" },
+      "expect": "distinct"
+    },
+    {
+      "name": "quinoa-vs-shellfish-allergy",
+      "original": { "content": "The user enjoys quinoa and it appears often in meal suggestions.", "category": "preference" },
+      "correction": { "content": "The user is allergic to shellfish.", "category": "constraint" },
+      "expect": "distinct"
+    },
+    {
+      "name": "training-time-same-slot-no-correction-label",
+      "original": { "content": "The user prefers training in the morning.", "category": "preference" },
+      "correction": { "content": "The user now prefers training in the evening instead of the morning.", "category": "preference" },
+      "expect": "supersede"
+    }
+  ],
+  "timeline": {
+    "userId": "lab-user-1",
+    "events": [
+      { "content": "The user enjoys quinoa and it appears often in meal suggestions.", "category": "preference", "source": "coach-suggestion", "atMinute": 0 },
+      { "content": "The user is allergic to shellfish.", "category": "constraint", "source": "onboarding", "atMinute": 1 },
+      { "content": "The user does not want quinoa suggested anymore, they dislike it.", "category": "correction", "source": "chat-correction", "atMinute": 2 },
+      { "content": "The user prefers training in the morning.", "category": "preference", "source": "chat", "atMinute": 3 },
+      { "content": "The user now prefers training in the evening instead of the morning.", "category": "preference", "source": "chat", "atMinute": 4 }
+    ],
+    "query": "what does the user like to eat and when do they train"
+  }
+}

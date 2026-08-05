@@ -1,0 +1,17 @@
+{
+  "name": "p2-memory-supersession",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env node_modules/.bin/tsx src/run.ts",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.17.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "tsx": "^4",
+    "typescript": "^5"
+  }
+}
