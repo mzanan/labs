@@ -1,0 +1,6 @@
+{
+  "crons": [
+    { "path": "/api/cron-direct", "schedule": "0 0 * * *" },
+    { "path": "/api/cron-workflow-trigger", "schedule": "5 0 * * *" }
+  ]
+}

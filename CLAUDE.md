@@ -32,6 +32,8 @@ Per lab, from inside its directory:
 
 Do not add a dev server, a build step or a test runner. A lab prints its measurement to stdout and exits.
 
+**Exception: platform-primitive labs.** A lab whose question is about a deployment platform primitive (cron firing, durable workflow triggers, webhook delivery) cannot be answered by a local script, the primitive only exists once deployed. That lab may ship a deployable app (e.g. a minimal Next.js scaffold) and a throwaway hosting project instead of a `src/run.ts`, as long as its README still states the question, how to reproduce the deploy, what was measured, and the verdict, same as every other lab. This does not relax anything else: still no committed keys, still a self-contained directory, still never deleted. First case: `p3-background-jobs`.
+
 ## Writing a lab
 
 - **A module, not a script.** Models, providers, thresholds, prompts and scenarios are configuration read from a JSON file or env, never literals buried in the run file. The goal is a shelf of pieces a real project can pull in, not a one-off answer.
