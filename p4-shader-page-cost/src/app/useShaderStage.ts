@@ -88,7 +88,7 @@ export function useShaderStage(shader: StageShader, dprCap: number) {
 
       const spans = timestampQuery ? timer(gpu) : undefined;
       const gpuSamples: number[] = [];
-      spans?.onResults((results) => {
+      const unsubscribe = spans?.onResults((results) => {
         const value = results[shader.id];
         if (typeof value === "number") push(gpuSamples, value);
       });
@@ -127,6 +127,8 @@ export function useShaderStage(shader: StageShader, dprCap: number) {
 
       teardown = () => {
         loop.stop();
+        unsubscribe?.();
+        spans?.dispose();
         gpu.dispose();
       };
     })();
