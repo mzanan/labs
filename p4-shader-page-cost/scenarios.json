@@ -1,0 +1,135 @@
+{
+  "budget": {
+    "heroGzipBytes": 51200,
+    "frameBudgetMs": 16.67
+  },
+  "shaders": [
+    {
+      "id": "gradient",
+      "note": "Two trig ops per pixel, animated. Floor: what an animated gradient costs.",
+      "source": [
+        "struct Params { time: f32, aspect: f32 }",
+        "@group(0) @binding(0) var<uniform> params: Params;",
+        "",
+        "@fragment",
+        "fn main(@location(0) uv: vec2f) -> @location(0) vec4f {",
+        "  let p = vec2f(uv.x * params.aspect, uv.y);",
+        "  let a = sin(p.x * 6.0 + params.time) * 0.5 + 0.5;",
+        "  let b = cos(p.y * 6.0 + params.time * 0.7) * 0.5 + 0.5;",
+        "  return vec4f(a * 0.4, b * 0.3, 0.6 - a * b * 0.3, 1.0);",
+        "}"
+      ]
+    },
+    {
+      "id": "fbm",
+      "note": "Six octaves of value noise plus an animated domain warp. What a landing hero background actually runs.",
+      "source": [
+        "struct Params { time: f32, aspect: f32 }",
+        "@group(0) @binding(0) var<uniform> params: Params;",
+        "",
+        "fn hash2(p: vec2f) -> f32 {",
+        "  let h = dot(p, vec2f(127.1, 311.7));",
+        "  return fract(sin(h) * 43758.5453123);",
+        "}",
+        "fn noise2(p: vec2f) -> f32 {",
+        "  let i = floor(p);",
+        "  let f = fract(p);",
+        "  let u = f * f * (3.0 - 2.0 * f);",
+        "  let a = hash2(i);",
+        "  let b = hash2(i + vec2f(1.0, 0.0));",
+        "  let c = hash2(i + vec2f(0.0, 1.0));",
+        "  let d = hash2(i + vec2f(1.0, 1.0));",
+        "  return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);",
+        "}",
+        "fn fbm(p: vec2f) -> f32 {",
+        "  var value = 0.0;",
+        "  var amplitude = 0.5;",
+        "  var q = p;",
+        "  for (var i = 0; i < 6; i = i + 1) {",
+        "    value = value + amplitude * noise2(q);",
+        "    q = q * 2.02;",
+        "    amplitude = amplitude * 0.5;",
+        "  }",
+        "  return value;",
+        "}",
+        "@fragment",
+        "fn main(@location(0) uv: vec2f) -> @location(0) vec4f {",
+        "  let p = vec2f(uv.x * params.aspect, uv.y);",
+        "  let t = params.time * 0.08;",
+        "  let warp = vec2f(fbm(p * 3.0 + t), fbm(p * 3.0 + vec2f(5.2, 1.3) - t));",
+        "  let n = fbm(p * 4.0 + warp * 2.0);",
+        "  let tint = mix(vec3f(0.05, 0.07, 0.16), vec3f(0.42, 0.30, 0.85), n);",
+        "  return vec4f(tint, 1.0);",
+        "}"
+      ]
+    }
+  ],
+  "bundleCandidates": [
+    {
+      "id": "vgpu",
+      "note": "vgpu 0.4.0 browser entry: init + surface + effect + frameLoop + clock.",
+      "entry": [
+        "import { clock, effect, frameLoop, init, surface } from 'vgpu';",
+        "export async function mount(canvas) {",
+        "  const gpu = await init();",
+        "  const view = surface(gpu, canvas, { dpr: [1, 2] });",
+        "  const pass = effect(gpu, SHADER);",
+        "  const time = clock(gpu);",
+        "  frameLoop(gpu, (f) => {",
+        "    pass.set({ time: time.time });",
+        "    f.pass(view, pass);",
+        "  });",
+        "}"
+      ]
+    },
+    {
+      "id": "three-webgpu",
+      "note": "three 0.181 WebGPURenderer + TSL wgslFn. The apples-to-apples backend: same WGSL, same WebGPU.",
+      "entry": [
+        "import { Mesh, NodeMaterial, OrthographicCamera, PlaneGeometry, Scene, WebGPURenderer } from 'three/webgpu';",
+        "import { wgslFn } from 'three/tsl';",
+        "export async function mount(canvas) {",
+        "  const renderer = new WebGPURenderer({ canvas });",
+        "  await renderer.init();",
+        "  const scene = new Scene();",
+        "  const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);",
+        "  const material = new NodeMaterial();",
+        "  material.fragmentNode = wgslFn(SHADER)();",
+        "  scene.add(new Mesh(new PlaneGeometry(2, 2), material));",
+        "  renderer.setAnimationLoop(() => renderer.render(scene, camera));",
+        "}"
+      ]
+    },
+    {
+      "id": "three-webgl",
+      "note": "three 0.181 WebGLRenderer + ShaderMaterial. The cheapest three can be, on the older backend.",
+      "entry": [
+        "import { Mesh, OrthographicCamera, PlaneGeometry, Scene, ShaderMaterial, WebGLRenderer } from 'three';",
+        "export function mount(canvas) {",
+        "  const renderer = new WebGLRenderer({ canvas });",
+        "  const scene = new Scene();",
+        "  const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);",
+        "  const material = new ShaderMaterial({ fragmentShader: SHADER });",
+        "  scene.add(new Mesh(new PlaneGeometry(2, 2), material));",
+        "  renderer.setAnimationLoop(() => renderer.render(scene, camera));",
+        "}"
+      ]
+    }
+  ],
+  "render": {
+    "resolutions": [
+      {
+        "id": "1080p dpr1",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "id": "1080p dpr2",
+        "width": 3840,
+        "height": 2160
+      }
+    ],
+    "warmupFrames": 60,
+    "measuredFrames": 300
+  }
+}
