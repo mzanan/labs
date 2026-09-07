@@ -36,5 +36,47 @@
     "provider": "google",
     "model": "gemini-2.5-flash",
     "label": "Gemini 2.5 Flash (native)"
+  },
+  {
+    "provider": "gateway",
+    "model": "openai/gpt-oss-120b",
+    "label": "Gateway to gpt-oss-120b (unpinned, run 1)"
+  },
+  {
+    "provider": "gateway",
+    "model": "openai/gpt-oss-120b",
+    "label": "Gateway to gpt-oss-120b (unpinned, run 2)"
+  },
+  {
+    "provider": "gateway",
+    "model": "openai/gpt-oss-120b",
+    "label": "Gateway to gpt-oss-120b (unpinned, run 3)"
+  },
+  {
+    "provider": "gateway",
+    "model": "openai/gpt-oss-120b",
+    "routeOnly": ["groq"],
+    "label": "Gateway to gpt-oss-120b (pinned groq)"
+  },
+  {
+    "provider": "gateway",
+    "model": "openai/gpt-oss-120b",
+    "routeOnly": ["cerebras"],
+    "label": "Gateway to gpt-oss-120b (pinned cerebras)"
+  },
+  {
+    "provider": "gateway",
+    "model": "anthropic/claude-haiku-4.5",
+    "label": "Gateway to anthropic/claude-haiku-4.5 (Anthropic, first time tested)"
+  },
+  {
+    "provider": "gateway",
+    "model": "inclusionai/ling-3.0-flash-fin-free",
+    "label": "Gateway to ling-3.0-flash-fin-free (free)"
+  },
+  {
+    "provider": "gateway",
+    "model": "poolside/laguna-s-2.1-free",
+    "label": "Gateway to laguna-s-2.1-free (free)"
   }
 ]
