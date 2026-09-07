@@ -1,9 +1,11 @@
 import { createGroq } from "@ai-sdk/groq";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
+import { createGateway } from "ai";
 import type { LanguageModel } from "ai";
+import type { ProviderOptions } from "@ai-sdk/provider-utils";
 
-export type ProviderId = "groq" | "google" | "openrouter";
+export type ProviderId = "groq" | "google" | "openrouter" | "gateway";
 
 export type ProviderSpec = {
   id: ProviderId;
@@ -11,6 +13,7 @@ export type ProviderSpec = {
   envVar: string;
   create: (apiKey: string, model: string, routeOnly?: string[]) => LanguageModel;
   declaresCapabilities: boolean;
+  callOptions?: (routeOnly?: string[]) => ProviderOptions | undefined;
 };
 
 export const PROVIDERS: Record<ProviderId, ProviderSpec> = {
@@ -36,6 +39,15 @@ export const PROVIDERS: Record<ProviderId, ProviderSpec> = {
       createOpenRouter({ apiKey })(model, routeOnly ? { provider: { only: routeOnly } } : {}),
     declaresCapabilities: true,
   },
+  gateway: {
+    id: "gateway",
+    wireFormat: "Vercel AI Gateway",
+    envVar: "AI_GATEWAY_API_KEY",
+    create: (apiKey, model) => createGateway({ apiKey })(model),
+    declaresCapabilities: true,
+    callOptions: (routeOnly) =>
+      routeOnly ? { gateway: { only: routeOnly } } : undefined,
+  },
 };
 
 export type ModelRef = {
@@ -50,6 +62,7 @@ export type ResolvedModel = {
   spec: ProviderSpec;
   label: string;
   languageModel: LanguageModel;
+  providerOptions?: ProviderOptions;
 };
 
 export type KeyLookup = (envVar: string) => string | undefined;
@@ -72,6 +85,7 @@ export function resolveModel(ref: ModelRef, lookup: KeyLookup = fromEnv): Resolv
     spec,
     label: ref.label ?? `${ref.provider} ${ref.model}`,
     languageModel: spec.create(apiKey, ref.model, ref.routeOnly),
+    providerOptions: spec.callOptions?.(ref.routeOnly),
   };
 }
 

@@ -8,7 +8,7 @@
 
 **Why it matters.** [`fit-coach`](../../fit-coach) needs a provider layer where each end user brings their own key and picks their own model. The decision is between adopting this SDK, extending the hand-rolled OpenAI-compatible client already in that repo, or putting an external gateway in front. This lab only answers whether the SDK's abstraction holds; the decision is made elsewhere.
 
-**Date run.** 2026-07-30.
+**Date run.** 2026-07-30 (rounds 1 to 3), 2026-09-07 (rounds 4 and 5, Vercel AI Gateway).
 
 ## Scope limit, stated up front
 
@@ -22,20 +22,169 @@ Closing that gap later costs roughly $0.04 for 100 tool-use calls on Claude 3 Ha
 
 ```
 cp .env.example .env
-# fill in GROQ_API_KEY and GOOGLE_API_KEY
+# fill in the keys for the providers you want measured, rows without a key are SKIPPED
 npm install
 npm start
 ```
 
-Both keys have free tiers that do not require a card:
-- Groq: https://console.groq.com/keys
-- Google AI Studio: https://aistudio.google.com/apikey
+Keys, all read from `.env`:
+- Groq: https://console.groq.com/keys (free tier, no card)
+- Google AI Studio: https://aistudio.google.com/apikey (free tier, no card)
+- OpenRouter: https://openrouter.ai/settings/keys (rounds 2+, paid models need credits)
+- Vercel AI Gateway: Vercel dashboard > AI Gateway > API keys (rounds 4+, needs a payment method on file; the free tier is rate-limited per model, see round 5)
+
+Pacing knobs, all env: `PAUSE_MS` between checks (default 20000 since round 5, the Gateway free tier needs it), `ATTEMPTS` per check (default 3), `CALL_TIMEOUT_MS` (default 45000), `CANDIDATES_FILE` (default `candidates.json`).
 
 The keys are read once at startup and then **passed explicitly into each provider factory**, which is the point: this mirrors how a real app would pass a key belonging to whoever is making the request, instead of relying on a process-wide environment variable.
 
 ## What is measured
 
 For each provider, each of the three capabilities gets a pass or fail plus the failure reason, and the run prints a comparison table. A capability that fails on one provider and passes on the other is the interesting result: that is the abstraction leaking.
+
+## Result, round 5 (2026-09-07 18:02 ICT): payment method added, Gateway calls complete, free-tier rate limit is the real ceiling
+
+Two things round 4 got wrong, corrected by Fable before this round:
+
+- **A run attempted at 16:48 ICT failed on every single row, Gateway and non-Gateway alike, with `Cannot connect to API`.** Cause: the VPN. Groq returns a `403` through it. Not evidence about the Gateway; that run's output was discarded, no code changed because of it.
+- **The Gateway's free tier is itself rate-limited per model** (`GatewayRateLimitError: Free tier requests on this model are rate-limited. Upgrade to paid credits`), independent of the round-4 payment-method gate. A payment method on file does not remove this: it only unlocks the free tier from returning the harder `credit card` error. This is a much lower ceiling (a handful of calls/minute per model) than round 4's all-or-nothing block.
+
+Code fixes applied before this run: `checks.ts` now passes `maxRetries: 0` to `generateText`/`generateObject` (the SDK's internal retry defaulted to 2, silently burning 3x the rate-limit budget per check even under this lab's own `ATTEMPTS`); `QUOTA_MARKERS` gained `"rate-limited"` and `"free tier"` so this classifies BLOCKED, not FAIL; `PAUSE_MS` default raised 7000 to 20000, applied globally (simpler than a gateway-only branch); the endpoint-matching bug flagged in round 4 is fixed, both providers now compare lowercase, and OpenRouter matches on the endpoint's `tag` field split at `/` (`"baseten/fp4"` to `"baseten"`) instead of the capitalized `provider_name` (`"BaseTen"`), which is what actually carries the routing slug; the side-by-side block's `cost this run` row had `gateway`'s cost mislabeled under the `openrouter:` column, fixed to show both sides explicitly.
+
+### Summary
+
+| model | wire format | plain text | tool call | structured JSON | served by |
+|---|---|---|---|---|---|
+| Groq llama-3.3-70b-versatile | OpenAI-compatible | FAIL | FAIL | FAIL | |
+| Groq openai/gpt-oss-120b | OpenAI-compatible | PASS | PASS | PASS | |
+| OpenRouter to openai/gpt-oss-120b | OpenRouter gateway | PASS | PASS | PASS | |
+| OpenRouter to gpt-oss-120b (routed to Groq) | OpenRouter gateway | FAIL | FAIL | FAIL | |
+| OpenRouter to nemotron-3-super:free | OpenRouter gateway | PASS | PASS | PASS | |
+| OpenRouter to ling-3.0-flash:free | OpenRouter gateway | FAIL | FAIL | FAIL | |
+| Gemini 2.5 Flash (native) | Google native | PASS | PASS | PASS | |
+| Gateway to gpt-oss-120b (unpinned, run 1) | Vercel AI Gateway | PASS | PASS | PASS | baseten, fireworks |
+| Gateway to gpt-oss-120b (unpinned, run 2) | Vercel AI Gateway | PASS | BLOCKED | BLOCKED | baseten |
+| Gateway to gpt-oss-120b (unpinned, run 3) | Vercel AI Gateway | BLOCKED | BLOCKED | BLOCKED | |
+| Gateway to gpt-oss-120b (pinned groq) | Vercel AI Gateway | BLOCKED | BLOCKED | BLOCKED | |
+| Gateway to gpt-oss-120b (pinned cerebras) | Vercel AI Gateway | PASS | PASS | PASS | cerebras |
+| Gateway to anthropic/claude-haiku-4.5 (first time tested) | Vercel AI Gateway | BLOCKED | BLOCKED | BLOCKED | |
+| Gateway to ling-3.0-flash-fin-free (free) | Vercel AI Gateway | BLOCKED | BLOCKED | BLOCKED | |
+| Gateway to laguna-s-2.1-free (free) | Vercel AI Gateway | BLOCKED | BLOCKED | BLOCKED | |
+
+The two `:free`-slug OpenRouter FAILs and the stale Groq slug are unchanged environmental noise from rounds 2-4, not a Gateway finding.
+
+### Declared vs measured
+
+**OpenRouter**: 430 models, 363 declare tool use, 344 declare structured output. `4/6 predictions correct` (same shape as round 4: `openai/gpt-oss-120b` and `nemotron-3-super` match on both checks; the routed-to-Groq row is a MISMATCH pair, but not a capability gap: it ran out of OpenRouter credits, and this round's fixed endpoint lookup confirms it, `declared by endpoint groq: tools true, measured false`).
+
+**Vercel AI Gateway**: 371 models, 235 declare `tool-use`, 0 declare structured output. `2/2 predictions correct`, but on a small sample: most Gateway rows were BLOCKED by the free-tier rate limit before a comparison was possible, so this is 2 data points, not a real test of the catalogue.
+
+**Endpoint-level check for the pinned rows**: `pinned cerebras` matched, `declared by endpoint cerebras: tools true, measured true`. `pinned groq` never produced a comparison, the row was BLOCKED on every attempt (rate-limited before the tool-call check could complete).
+
+### The three unpinned runs
+
+**Run 1 passed 3/3, but landed on two different providers within the same row**: `baseten` served plain text and structured JSON, `fireworks` served the tool call. That alone is the round-3 finding again, on the Gateway: one label, multiple backends, mid-row. **Run 2 passed its first check (plain text, `baseten`) then hit the free-tier rate limit on the next two.** **Run 3 was rate-limited from the first check.** Of three unpinned samples, one came back clean, and even that one was not served by a single consistent provider. This is not the same failure mode round 3 found (a provider silently not supporting tools); it is the Gateway's own throttle interrupting mid-sequence, which still proves the same practical point: **an unpinned call sequence to this model is not reliably repeatable within a session.**
+
+### Cost
+
+**Gateway cost this run: $0.00051915** (7/24 calls reported cost; every call that was not BLOCKED or FAIL reported one, no gaps). Well under the $0.05 expected and the $0.20 stop threshold Fable set; the run was not halted.
+
+### Side by side: OpenRouter vs Vercel AI Gateway
+
+| property | OpenRouter | Vercel AI Gateway |
+|---|---|---|
+| per-request key | yes (BYOK, no gateway env var) | yes (`createGateway({ apiKey })`, live calls completed this round) |
+| catalogue declares tools | yes (`supported_parameters`) | yes (`tags` includes `tool-use`) |
+| catalogue declares structured output | yes (`structured_outputs`) | no (no model-level field) |
+| per-model endpoints listing | yes | yes |
+| routing pin API | model-creation: `provider.only` | call-time: `providerOptions.gateway.only` |
+| served-by exposed | no | **yes, confirmed live**: `providerMetadata.gateway.routing.finalProvider` populated on every successful call (`baseten`, `fireworks`, `cerebras` all observed) |
+| providers serving gpt-oss-120b | 19 (round 3) | 8 (this run) |
+| cost this run | not re-measured (round 2's $0.000105507 stands) | $0.00051915 |
+| markup | 5.5% on credit purchase (vendor page) | 0% on provider price (vendor page) |
+
+### Anthropic
+
+`anthropic/claude-haiku-4.5` (Fable's correction to round 4's pick: the current-generation Haiku, not the legacy `claude-3-haiku`) was queued but BLOCKED by the free-tier rate limit on every attempt. **Still untested.** The scope-limit paragraph above stays as written, since Anthropic was not measured this round either.
+
+### Verdict, round 5
+
+1. **Per-request key: confirmed, fully, this time.** Live calls completed end to end through `createGateway({ apiKey })`, same mechanism and same result shape as OpenRouter's BYOK.
+2. **Catalogue predicts measured capability: 2/2, too small a sample to call it settled.** The free-tier rate limit blocked most of the rows that would have tested this; round 4 already confirmed the catalogue's *shape* (0 models declare structured output) live, without needing a successful chat call.
+3. **Unpinned non-determinism vs pinned determinism: real, but confounded by the rate limit.** The one clean unpinned run already shows two different serving providers inside a single row. Pinned `cerebras` was clean and consistent 3/3. Pinned `groq` could not be tested at all, rate-limited before the model ever ran, so this round cannot say pinning fixes the intermittency the way round 3 showed on OpenRouter, only that the Gateway is capable of a determinism at least as good (`cerebras`'s 3/3 same-provider result).
+4. **Served-by exposed: confirmed.** `providerMetadata.gateway.routing.finalProvider` came back correctly on every successful call.
+5. **Side-by-side table: fully populated with live values on both sides**, cost included.
+
+**The real ceiling this round was not billing, it was Vercel's own free-tier per-model rate limit**, a few requests per minute per model, hit even by a single test call on both never-before-tried free models (`ling-3.0-flash-fin-free`, `laguna-s-2.1-free`). To get a clean, uncontaminated pinned-vs-unpinned comparison (the one thing this round could not fully settle), purchase paid AI Gateway Credits, which raises the rate limit per Vercel's docs, or run fewer Gateway rows per invocation with more spacing.
+
+## Result, round 4 (2026-09-07 16:17 ICT): Vercel AI Gateway side by side with OpenRouter
+
+Versions: `ai` 7.0.42, `@ai-sdk/gateway` 4.0.32 (transitive, resolved by `ai` 7; the spec's fact-check cited 4.0.75 from 2026-09-04, the installed resolution is older), Node v22.22.2.
+
+**Every Vercel AI Gateway call this round was BLOCKED: `AI Gateway requires a valid credit card on file to service requests.`** The API key (`AI_GATEWAY_API_KEY`, created and pasted mid-session) authenticates fine, the block is account-level billing, not the key. The prerequisite in this spec ("add a payment method") was not done before the run. `QUOTA_MARKERS` in `checks.ts` gained a `"credit card"` marker so this reports as BLOCKED, not FAIL, matching the run procedure's contingency.
+
+### Summary
+
+| model | wire format | plain text | tool call | structured JSON | served by |
+|---|---|---|---|---|---|
+| Groq llama-3.3-70b-versatile | OpenAI-compatible | FAIL | FAIL | FAIL | |
+| Groq openai/gpt-oss-120b | OpenAI-compatible | PASS | PASS | PASS | |
+| OpenRouter to openai/gpt-oss-120b | OpenRouter gateway | PASS | PASS | PASS | |
+| OpenRouter to gpt-oss-120b (routed to Groq) | OpenRouter gateway | FAIL | FAIL | FAIL | |
+| OpenRouter to nemotron-3-super:free | OpenRouter gateway | PASS | PASS | PASS | |
+| OpenRouter to ling-3.0-flash:free | OpenRouter gateway | FAIL | FAIL | FAIL | |
+| Gemini 2.5 Flash (native) | Google native | PASS | PASS | PASS | |
+| Gateway to gpt-oss-120b (unpinned, run 1) | Vercel AI Gateway | BLOCKED | BLOCKED | BLOCKED | |
+| Gateway to gpt-oss-120b (unpinned, run 2) | Vercel AI Gateway | BLOCKED | BLOCKED | BLOCKED | |
+| Gateway to gpt-oss-120b (unpinned, run 3) | Vercel AI Gateway | BLOCKED | BLOCKED | BLOCKED | |
+| Gateway to gpt-oss-120b (pinned groq) | Vercel AI Gateway | BLOCKED | BLOCKED | BLOCKED | |
+| Gateway to gpt-oss-120b (pinned cerebras) | Vercel AI Gateway | BLOCKED | BLOCKED | BLOCKED | |
+| Gateway to anthropic/claude-3-haiku (Anthropic, first time tested) | Vercel AI Gateway | BLOCKED | BLOCKED | BLOCKED | |
+
+The two non-Gateway FAIL rows (Groq stale slug, OpenRouter routed-to-Groq out of credits) and the free-slug FAIL on OpenRouter (`ling-3.0-flash:free`) are unrelated to the Gateway, unchanged environmental noise carried over from rounds 2-3.
+
+### Declared vs measured
+
+**OpenRouter** (its own catalogue, re-fetched live): 430 models, 363 declare tool use, 344 declare structured output. `4/6 predictions correct` this run (`openai/gpt-oss-120b` matches on both checks, `nvidia/nemotron-3-super-120b-a12b:free` matches on both; the routed-to-Groq row is a MISMATCH pair because it was out of OpenRouter credits, not a capability gap).
+
+**Vercel AI Gateway**: catalogue fetched live, no auth: 371 models, 235 declare `tool-use`, **0 declare structured output** (confirms the spec fact: no model-level structured-output field exists in this catalogue). No declared-vs-measured comparison could run: every Gateway check was BLOCKED, and `compareDeclaredVsMeasured` correctly skips BLOCKED rows rather than counting them.
+
+**Endpoint-level check for the pinned rows (groq, cerebras)**: not run, for the same reason (rows are BLOCKED). Code path is in place (`loadEndpoints("gateway", ...)`) but never exercised.
+
+**Bug found while wiring the OpenRouter endpoint check**: OpenRouter's `provider.only` routing slug is lowercase (`"groq"`) but its own `/endpoints` response names the same provider `provider_name: "Groq"` (capitalized). The lookup in this lab does an exact string match, so `OpenRouter to gpt-oss-120b (routed to Groq)` printed `no endpoint found for provider "groq"` both runs. Not fixed (case-insensitive match was not in the spec's scope for this round), flagging it here because it silently no-ops instead of failing loud.
+
+### The three unpinned runs
+
+All three (`run 1`, `run 2`, `run 3`) came back BLOCKED, identical error, identical 3 attempts each. **Which provider each would have landed on, and whether tools would have worked, is unmeasured.** Three BLOCKED samples prove nothing about routing determinism either way; they only prove the billing gate is consistent, not intermittent.
+
+### Side by side: OpenRouter vs Vercel AI Gateway
+
+| property | OpenRouter | Vercel AI Gateway |
+|---|---|---|
+| per-request key | yes (BYOK, no gateway env var) | yes, key authenticates (`createGateway({ apiKey })`); every downstream call still failed on billing |
+| catalogue declares tools | yes (`supported_parameters`) | yes (`tags` includes `tool-use`) |
+| catalogue declares structured output | yes (`structured_outputs`) | no (no model-level field) |
+| per-model endpoints listing | yes | yes |
+| routing pin API | model-creation: `provider.only` | call-time: `providerOptions.gateway.only` |
+| served-by exposed | no | not observed this run (every call BLOCKED before a response existed) |
+| providers serving gpt-oss-120b | 19 (round 3); 18 unique `provider_name`s on a fresh fetch this round | 8 (fetched live this round: baseten, bedrock, cerebras, fireworks, groq, nebius, parasail, togetherai, all 8 declare `tools` in `supported_parameters`) |
+| cost this run | not re-measured (round 2's $0.000105507 stands) | $0.00000000 (0/18 calls reported cost; nothing executed) |
+| markup | 5.5% on credit purchase (vendor page, per spec) | 0% on provider price (vendor page, per spec) |
+
+### Anthropic
+
+`anthropic/claude-3-haiku` (id confirmed live via `GET /v1/models`, filtered `owned_by: anthropic`, lowest `pricing.input` among ids containing "haiku": `claude-3-haiku` at `$0.00000025`/input token, cheaper than `claude-haiku-4.5` at `$0.000001`) was queued but BLOCKED like every other Gateway row. **The "Anthropic never tested" gap from rounds 1-3 is still open**; this round did not close it, it only prepared the row.
+
+### Verdict, round 4
+
+**This round did not answer its own question. The billing prerequisite was not met, so none of the five questions got a real measurement.**
+
+1. **Per-request key: partially confirmed, not fully.** The key authenticates (the Gateway recognizes the account and returns an account-specific billing error rather than a generic 401), which is consistent with `createGateway({ apiKey })` working the way OpenRouter's BYOK does. But no call ever completed, so "does the same code produce the same result" is unanswered for the Gateway side.
+2. **Catalogue predicts measured capability: unmeasured.** Cannot be answered this round.
+3. **Unpinned non-determinism vs pinned determinism: unmeasured.** Three identical BLOCKED runs are not three identical successful runs; this proves nothing about routing.
+4. **Served-by exposed: unmeasured.** The field (`providerMetadata.gateway.routing.finalProvider`) is wired into `checks.ts` and `run.ts` but never populated because no call ever returned.
+5. **Side-by-side table: built, but half its Gateway-side cells are structural facts (catalogue schema, routing API) from the live catalogue/endpoints fetches, not from a live chat completion.** Those two fetches (`/v1/models`, `/v1/models/{id}/endpoints`) work with no auth and no billing gate, which is why the Gateway's endpoint count (8) and catalogue stats are real measurements while everything downstream of a `generateText`/`generateObject` call is not.
+
+**Consequence:** add the payment method in the Vercel dashboard (AI Gateway > Settings), then re-run `npm start` from this same `candidates.json`; every code path this round wired (routing pin, served-by extraction, cost summation, per-provider declared-vs-measured, endpoint cross-check) is ready and only needs a working billing account to produce round 5's numbers.
 
 ## Result, round 3 (2026-07-30 16:4x ICT): the gateway routes one model across many providers
 
