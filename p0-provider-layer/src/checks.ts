@@ -43,6 +43,7 @@ const QUOTA_MARKERS = [
   "too many requests",
   "overloaded",
   "credit card",
+  "more credits",
 ];
 
 const CALL_TIMEOUT_MS = Number(process.env.CALL_TIMEOUT_MS ?? 45000);
