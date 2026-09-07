@@ -32,7 +32,7 @@ Per lab, from inside its directory:
 
 Do not add a dev server, a build step or a test runner. A lab prints its measurement to stdout and exits.
 
-**Exception: platform-primitive labs.** A lab whose question is about a deployment platform primitive (cron firing, durable workflow triggers, webhook delivery) cannot be answered by a local script, the primitive only exists once deployed. That lab may ship a deployable app (e.g. a minimal Next.js scaffold) and a throwaway hosting project instead of a `src/run.ts`, as long as its README still states the question, how to reproduce the deploy, what was measured, and the verdict, same as every other lab. This does not relax anything else: still no committed keys, still a self-contained directory, still never deleted. First case: `p3-background-jobs`.
+**Exception: platform-primitive labs.** A lab whose question is about a deployment platform primitive (cron firing, durable workflow triggers, webhook delivery) cannot be answered by a local script, the primitive only exists once deployed. That lab may ship a deployable app (e.g. a minimal Next.js scaffold) and a throwaway hosting project instead of a `src/run.ts`, as long as its README still states the question, how to reproduce the deploy, what was measured, and the verdict, same as every other lab. This does not relax anything else: still no committed keys, still a self-contained directory, still never deleted. First case: `p3-background-jobs`. Same exception for a browser primitive (a real canvas, rAF timing, presented frames) that a headless run cannot reproduce: the lab keeps its `src/run.ts` for the headless half and adds a minimal page for the browser half. Second case: `p4-shader-page-cost`.
 
 ## Writing a lab
 
