@@ -1,0 +1,124 @@
+[
+  {
+    "id": "direct-happy",
+    "kind": "direct",
+    "sources": ["log.md"],
+    "fault": null,
+    "dryRun": false,
+    "disconnectAfterMs": null,
+    "repeat": 1,
+    "expect": "baseline inline route completes with 3 chunks, no faults, wall time recorded"
+  },
+  {
+    "id": "workflow-happy",
+    "kind": "extract",
+    "sources": ["log.md"],
+    "fault": null,
+    "dryRun": false,
+    "disconnectAfterMs": null,
+    "repeat": 1,
+    "expect": "workflow completes with 3 chunks, wall time and invocation count recorded for comparison against direct-happy"
+  },
+  {
+    "id": "direct-disconnect",
+    "kind": "direct",
+    "sources": ["log.md"],
+    "fault": null,
+    "dryRun": false,
+    "disconnectAfterMs": 3000,
+    "repeat": 1,
+    "expect": "client abort stops the loop server side, nothing is fetchable later, today's fit-coach behavior"
+  },
+  {
+    "id": "workflow-disconnect",
+    "kind": "extract",
+    "sources": ["log.md"],
+    "fault": null,
+    "dryRun": false,
+    "disconnectAfterMs": 3000,
+    "repeat": 1,
+    "expect": "run keeps executing after the stream client disconnects, returnValue has 3 chunks when polled later"
+  },
+  {
+    "id": "workflow-retryable",
+    "kind": "extract",
+    "sources": ["log.md"],
+    "fault": { "chunk": 2, "kind": "retryable" },
+    "dryRun": false,
+    "disconnectAfterMs": null,
+    "repeat": 1,
+    "expect": "chunk 1 and 3 logged once, chunk 2 logged twice, run completes"
+  },
+  {
+    "id": "workflow-schema",
+    "kind": "extract",
+    "sources": ["log.md"],
+    "fault": { "chunk": 2, "kind": "schema" },
+    "dryRun": false,
+    "disconnectAfterMs": null,
+    "repeat": 1,
+    "expect": "chunk 2 logged once, result carries the Part 2 could not be parsed warning, run completes"
+  },
+  {
+    "id": "workflow-reconnect",
+    "kind": "extract",
+    "sources": ["log.md"],
+    "fault": null,
+    "dryRun": false,
+    "disconnectAfterMs": null,
+    "repeat": 1,
+    "expect": "a stream read from startIndex 0 after completion returns 3 progress events plus 1 done event"
+  },
+  {
+    "id": "workflow-cancel",
+    "kind": "extract",
+    "sources": ["log.md"],
+    "fault": null,
+    "dryRun": false,
+    "disconnectAfterMs": null,
+    "repeat": 1,
+    "cancelAfterMs": 2000,
+    "expect": "status ends cancelled, chunk 3 never logged"
+  },
+  {
+    "id": "workflow-sleep",
+    "kind": "sleep",
+    "sources": [],
+    "fault": null,
+    "dryRun": false,
+    "disconnectAfterMs": null,
+    "repeat": 1,
+    "sleepMinutes": 6,
+    "expect": "two log lines 6 minutes apart, status completed, longer than any single Hobby invocation"
+  },
+  {
+    "id": "workflow-large",
+    "kind": "extract",
+    "sources": ["log.md"],
+    "fault": null,
+    "dryRun": true,
+    "disconnectAfterMs": null,
+    "repeat": 41,
+    "expect": "start() accepts a payload of about 300 KB, status completes, chunk count is about 75"
+  },
+  {
+    "id": "proxy-fitcoach-matcher",
+    "kind": "extract",
+    "sources": ["log.md"],
+    "fault": null,
+    "dryRun": false,
+    "disconnectAfterMs": null,
+    "repeat": 1,
+    "expect": "workflow-happy rerun while proxy.ts uses fit-coach's real matcher, measures whether the unauthenticated internal SDK route gets redirected to login"
+  },
+  {
+    "id": "proxy-docs-matcher",
+    "kind": "extract",
+    "sources": ["log.md"],
+    "fault": null,
+    "dryRun": false,
+    "disconnectAfterMs": null,
+    "repeat": 1,
+    "expect": "workflow-happy rerun while proxy.ts uses the docs' well-known/workflow exclusion, expected to complete cleanly"
+  }
+]
