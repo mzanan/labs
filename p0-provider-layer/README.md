@@ -8,7 +8,7 @@
 
 **Why it matters.** [`fit-coach`](../../fit-coach) needs a provider layer where each end user brings their own key and picks their own model. The decision is between adopting this SDK, extending the hand-rolled OpenAI-compatible client already in that repo, or putting an external gateway in front. This lab only answers whether the SDK's abstraction holds; the decision is made elsewhere.
 
-**Date run.** 2026-07-30 (rounds 1 to 3), 2026-09-07 (rounds 4 and 5, Vercel AI Gateway).
+**Date run.** 2026-07-30 (rounds 1 to 3), 2026-09-07 (rounds 4 and 5, Vercel AI Gateway), 2026-09-08 (round 6).
 
 ## Scope limit, stated up front
 
@@ -33,13 +33,59 @@ Keys, all read from `.env`:
 - OpenRouter: https://openrouter.ai/settings/keys (rounds 2+, paid models need credits)
 - Vercel AI Gateway: Vercel dashboard > AI Gateway > API keys (rounds 4+, needs a payment method on file; the free tier is rate-limited per model, see round 5)
 
-Pacing knobs, all env: `PAUSE_MS` between checks (default 20000 since round 5, the Gateway free tier needs it), `ATTEMPTS` per check (default 3), `CALL_TIMEOUT_MS` (default 45000), `CANDIDATES_FILE` (default `candidates.json`).
+Pacing knobs, all env: `PAUSE_MS` between checks (default 20000 since round 5, the Gateway free tier needs it), `ATTEMPTS` per check (default 3), `RETRY_PAUSE_MS` between attempts of one check (default 2000), `CALL_TIMEOUT_MS` (default 45000), `CANDIDATES_FILE` (default `candidates.json`, round 6 used `candidates-round6.json`).
 
 The keys are read once at startup and then **passed explicitly into each provider factory**, which is the point: this mirrors how a real app would pass a key belonging to whoever is making the request, instead of relying on a process-wide environment variable.
 
 ## What is measured
 
 For each provider, each of the three capabilities gets a pass or fail plus the failure reason, and the run prints a comparison table. A capability that fails on one provider and passes on the other is the interesting result: that is the abstraction leaking.
+
+## Result, round 6 (2026-09-08 11:23 ICT): the 3 rate-limited rows rerun with 60 s spacing
+
+Versions: `ai` 7.0.42, `@ai-sdk/gateway` 4.0.32 (transitive, resolved by `ai` 7), Node v22.22.2. Candidates file scoped to only the 3 rows round 5 left BLOCKED by the Gateway's free-tier per-model rate limit, run with wider pacing.
+
+Command:
+
+```
+CANDIDATES_FILE=candidates-round6.json PAUSE_MS=60000 RETRY_PAUSE_MS=60000 node --env-file=.env node_modules/.bin/tsx src/run.ts
+```
+
+### Summary
+
+| model | wire format | plain text | tool call | structured JSON | served by |
+|---|---|---|---|---|---|
+| Gateway to gpt-oss-120b (unpinned, run 1) | Vercel AI Gateway | PASS | PASS | PASS | baseten |
+| Gateway to gpt-oss-120b (pinned groq) | Vercel AI Gateway | PASS | PASS | PASS | groq |
+| Gateway to anthropic/claude-haiku-4.5 (Anthropic, first time tested) | Vercel AI Gateway | BLOCKED | BLOCKED | BLOCKED | |
+
+Run's own verdict lines: "No divergence: every capability behaved the same everywhere it was measured." and "NOT MEASURED everywhere (quota or timeout): plain text, tool call, structured JSON. Re-run before trusting those rows." (the unmeasured rows being all three checks on the Anthropic row).
+
+### Declared vs measured
+
+`[gateway] Declared capabilities from the provider's own catalogue: 371 models, 235 declare tool use, 0 declare structured output.`
+
+```
+matches   openai/gpt-oss-120b tool call: declared true, measured true
+not declared  openai/gpt-oss-120b structured JSON: catalogue has no structured field
+matches   openai/gpt-oss-120b tool call: declared true, measured true
+not declared  openai/gpt-oss-120b structured JSON: catalogue has no structured field
+
+[gateway] 2/2 predictions correct.
+endpoint check  Gateway to gpt-oss-120b (pinned groq)  declared by endpoint groq: tools true, measured true
+```
+
+### Cost
+
+`Gateway cost this run: $0.00037455 (6/9 calls reported cost)`. Under the $0.20 stop threshold; the run was not halted.
+
+### Verdict, round 6
+
+1. **Pinned groq now behaves like pinned cerebras did in round 5.** PASS 3/3, single consistent `served by groq` on every check, matching cerebras's clean 3/3 in round 5. The only rough edge: the tool call took 64042ms and needed 2 attempts (one retry), while plain text and structured JSON each passed on the first attempt in ~1-1.5s. So pinning plus 60s spacing produced the same determinism round 5 could not get out of `pinned groq` (it never got a comparison at all, rate-limited before the tool-call check could complete).
+2. **The "Anthropic never tested" caveat is still open, not closed.** All three checks on `anthropic/claude-haiku-4.5` came back BLOCKED, error class `provider quota hit, capability NOT measured` (3 attempts each, ~123-126s per check). 60s spacing was not enough to clear this model's free-tier rate limit; the Scope limit paragraph above stands unchanged since no Anthropic capability call actually completed this round either.
+3. **Unpinned run 1 stayed on one provider this time** (baseten on all three checks), where round 5's unpinned row switched provider mid-row (baseten then fireworks). One sample each way: unpinned routing is not deterministic across runs, which is the round-3 finding again, not a contradiction of it.
+
+**Decision 2026-09-08 11:43 ICT (Matias, on Fable's advice): stop chasing the Anthropic row.** Every question this lab exists for is measured; an Anthropic model is not measurable on the Gateway free tier even at 60 s spacing, and fit-coach does not offer Claude as a model today. If it ever does, measure it then with paid Gateway credits. The caveat stays worded as "not measurable on the free tier", not "never tested by omission".
 
 ## Result, round 5 (2026-09-07 18:02 ICT): payment method added, Gateway calls complete, free-tier rate limit is the real ceiling
 
