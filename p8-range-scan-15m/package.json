@@ -1,0 +1,14 @@
+{
+  "name": "p8-range-scan-15m",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/run.ts",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "tsx": "^4",
+    "typescript": "^5"
+  }
+}

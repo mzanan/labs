@@ -1,0 +1,75 @@
+{
+  "market": {
+    "baseUrl": "https://api.bybit.com",
+    "category": "linear",
+    "quoteAsset": "USDT",
+    "minQuoteVolume24h": 20000000,
+    "maxSymbolsScanned": 120,
+    "requestConcurrency": 6,
+    "excludedBaseAssets": [
+      "USDC",
+      "USDE",
+      "FDUSD",
+      "TUSD",
+      "DAI",
+      "EUR",
+      "BUSD",
+      "USDP"
+    ],
+    "excludedSymbolTypes": [
+      "stock",
+      "commodity",
+      "index",
+      "forex"
+    ]
+  },
+  "structure": {
+    "interval": "15",
+    "lookbackCandles": 8000
+  },
+  "range": {
+    "pivotStrength": 6,
+    "clusterTolerancePct": 1.5,
+    "minTouchesPerLevel": 2,
+    "maxCandlesSinceTouch": 2880
+  },
+  "indicators": {
+    "adxPeriod": 14,
+    "adxCandles": 96
+  },
+  "filters": {
+    "minRotations": 3,
+    "minRangeWidthPct": 5,
+    "maxRangeWidthPct": 40,
+    "maxOutsidePct": 40,
+    "minPositionInRangePct": 0,
+    "maxPositionInRangePct": 100,
+    "maxCandlesSinceLastTouch": 192,
+    "minScore": 50,
+    "topN": 15
+  },
+  "score": {
+    "maxUsefulTouchesPerLevel": 4,
+    "maxUsefulRotations": 6,
+    "maxUsefulBars": 2880,
+    "weights": {
+      "touches": 3,
+      "rotation": 3,
+      "containment": 2,
+      "freshness": 2,
+      "maturity": 1
+    }
+  },
+  "impulse": {
+    "lookbackCandles": 1440,
+    "minRatio": 0.8
+  },
+  "report": {
+    "outputPath": "out/report.html",
+    "chartHeight": 320,
+    "maxCandlesPerChart": 4000,
+    "autoOpen": false,
+    "contextCandles": 480,
+    "profileBins": 28
+  }
+}
