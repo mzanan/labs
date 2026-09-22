@@ -1,0 +1,16 @@
+{
+  "name": "p6-rain-nowcast-skill",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/run.ts",
+    "collect": "tsx src/run.ts collect",
+    "score": "tsx src/run.ts score",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "tsx": "^4",
+    "typescript": "^5"
+  }
+}

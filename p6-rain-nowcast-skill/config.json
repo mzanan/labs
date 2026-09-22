@@ -1,0 +1,40 @@
+{
+  "sites": {
+    "danang": {
+      "label": "Da Nang (VVDN airport reference point)",
+      "latitude": 16.044,
+      "longitude": 108.199,
+      "timezone": "Asia/Bangkok",
+      "station": "VVDN",
+      "stationDistanceKm": 0
+    },
+    "danang-city": {
+      "label": "Da Nang city centre (An Hai, ~5 km from VVDN)",
+      "latitude": 16.0678,
+      "longitude": 108.2208,
+      "timezone": "Asia/Bangkok",
+      "station": "VVDN",
+      "stationDistanceKm": 5
+    }
+  },
+  "forecast": {
+    "provider": "open-meteo",
+    "endpoint": "https://api.open-meteo.com/v1/forecast",
+    "steps": 12
+  },
+  "observation": {
+    "provider": "aviationweather-metar",
+    "endpoint": "https://aviationweather.gov/api/data/metar",
+    "lookbackHours": 3
+  },
+  "horizons": [
+    { "label": "t+30", "leadMinutes": 30, "windowMinutes": 30 },
+    { "label": "t+60", "leadMinutes": 60, "windowMinutes": 30 },
+    { "label": "t+120", "leadMinutes": 120, "windowMinutes": 30 }
+  ],
+  "thresholds": {
+    "forecastRainMm": 0.2,
+    "forecastProbabilityPct": 60,
+    "rule": "mm"
+  }
+}
