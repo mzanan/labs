@@ -1,0 +1,4 @@
+upstream/
+db/noir.sqlite
+.venv/
+__pycache__/

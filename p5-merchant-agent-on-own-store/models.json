@@ -1,0 +1,12 @@
+{
+  "gateway_base_url": "https://ai-gateway.vercel.sh",
+  "try_in_order": [
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "meta/llama-3.3-70b"
+  ],
+  "dropped": {
+    "google/gemini-2.0-flash": "measured 2026-09-08: /v1/messages returns 404 model_not_found for this id on the Gateway, not a rate limit. Left out of try_in_order."
+  },
+  "note": "Free-tier models with tool-use tag, per /ai-gateway/models?freeTier=true (checked 2026-09-08). openai/gpt-oss-120b first, p1/p1b measured its tool loop as reliable. Anthropic model ids are out of scope (Matias decision). Measured 2026-09-08: openai/gpt-oss-120b passed Phase 0 (tool_use=True, tool_result_accepted=True) on the first call of the session; every call after that within the same short window returned 429 rate_limit_exceeded, so the free tier's per-model budget is very small (see p0-provider-layer for the same finding)."
+}

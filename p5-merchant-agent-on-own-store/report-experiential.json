@@ -1,0 +1,871 @@
+{
+  "base_url": "https://api.experientiallabs.ai",
+  "cost_ceiling_usd": 0.5,
+  "models": [
+    {
+      "model": "deepseek-v4-flash",
+      "phase0": {
+        "model": "deepseek-v4-flash",
+        "tool_use": true,
+        "tool_result_accepted": true,
+        "error": null
+      },
+      "phase_b": {
+        "model": "deepseek-v4-flash",
+        "turns": [
+          {
+            "prompt": "How were sales in the last 30 days compared to the previous 30 days?",
+            "tool_calls": [
+              "get_business_snapshot",
+              "present_metrics",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "get_business_snapshot",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_metrics",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "\n\nSales in the last 30 days were $9,841.34, up 9.7% from the prior 30 days. Orders grew 25% (25 vs 20) while average order value declined from $491.50 to $393.65 \u2014 more orders at a lower ticket.\n\n",
+            "usage": {
+              "input_tokens": 14790,
+              "output_tokens": 347,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 5.4,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 1
+          },
+          {
+            "prompt": "What are the three lowest-stock items right now?",
+            "tool_calls": [
+              "get_inventory_alerts",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "get_inventory_alerts",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "\n\nThe three lowest-stock items \u2014 all at 0 or below the threshold:\n\n1. **prod-09** \u2014 Footwear Item 09 \u2014 **0 in stock**, storefront hidden, no sales last 30 days.\n2. **prod-24** \u2014 Footwear Item 24 \u2014 **0 in stock**, storefront hidden, 4 sales last 30 days.\n3. **prod-17** \u2014 Outerwear Item 17 \u2014 **2 in stock**, storefront visible, 4 sales last 30 days.\n\n",
+            "usage": {
+              "input_tokens": 8638,
+              "output_tokens": 243,
+              "cache_read_input_tokens": 7680,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 4.4,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 2
+          },
+          {
+            "prompt": "Which paid orders are more than 10 days old and still not delivered?",
+            "tool_calls": [
+              "get_business_snapshot",
+              "get_order_issues",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "get_business_snapshot",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_order_issues",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "\n\n\n\nAll 22 order exceptions are delayed \u2014 every one paid more than 10 days ago and not delivered. Here they are from oldest:\n\n**Still pending (unshipped):**\norder-039 (89d), order-008 (85d), order-040 (84d), order-029 (83d), order-000 (75d), order-011 (73d), order-059 (72d), order-047 (61d), order-027 (56d), order-017 (52d), order-032 (52d), order-025 (35d), order-037 (33d), order-012 (31d), order-009 (27d), order-022 (24d), order-057 (10d)\n\n**In transit but overdue:**\norder-058 (84d), order-055 (74d), order-001 (29d), order-010 (16d), order-050 (10d)\n\nThat's 22 orders in total, all paid over 10 days ago with no delivery. The oldest is 89 days since payment and still pending.\n\n\n\n",
+            "usage": {
+              "input_tokens": 12009,
+              "output_tokens": 429,
+              "cache_read_input_tokens": 15616,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 7.9,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 3
+          },
+          {
+            "prompt": "Propose a 10% price drop on our worst-selling product by units.",
+            "tool_calls": [
+              "get_inventory_alerts",
+              "get_listing",
+              "get_pricing_context",
+              "load_skill",
+              "stage_price_update",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "get_inventory_alerts",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_listing",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_pricing_context",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "load_skill",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "stage_price_update",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "\n\nLet me find the slowest mover by checking the slow-mover alerts and full catalog contextSeveral slow movers all had 0 sales last 30 days, but the worst-selling by units is **prod-09** (Footwear Item 09) \u2014 0 sales, 0 stock, already hidden. That one can't sell. Let me look at the one with the most unsold units carrying cost: **prod-15** (Tops Item 15, 112 units, 0 sales) is the biggest drain. Let me check its pricing context\n\n\n\nThe listing has no variants \u2014 it's a single-priced item. A 10% drop is well inside the 20% cap for a permanent change and the 50% promo cap. Here's the proposal:\n\n**prod-15** \u2014 Tops Item 15 \u2014 112 units, $103.48, 0 sales last 30 days, demand falling.\n\n10% off = **$93.13** (rounding to $93.13). I'll stage it as a permanent price change.\n\n\n\nStaged \u2014 10% drop on prod-15 (Tops Item 15) from $103.48 to $93.13. The preview card is above. Approve it on the host application's approval control to apply",
+            "usage": {
+              "input_tokens": 6879,
+              "output_tokens": 722,
+              "cache_read_input_tokens": 62720,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 13.9,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 4
+          },
+          {
+            "prompt": "Draft a promotion for our top-selling category.",
+            "tool_calls": [
+              "query_metrics",
+              "search_listings",
+              "search_listings",
+              "query_metrics"
+            ],
+            "tool_results": [
+              {
+                "tool": "query_metrics",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "search_listings",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "search_listings",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "query_metrics",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "\n\nLet me find out what's selling best to identify the top categoryNo category-level sales breakdown is available. Let me check the catalog to see which categories have the most active listings and recent sales.\n\nOnly 8 of 30 listings returned \u2014 there are more categories. Let me look at the snapshot data for any category clues and also check all categories.\n\nI can see the categories in the catalog but can't determine which is the top seller by sales data. Let me check by orders per categoryAnalytics doesn't break down by category \u2014 the system has no category-level data available. I know the catalog has these categories: cat-accessories, cat-bottoms, cat-tops, cat-outerwear, cat-footwear. \n\nSince I can't determine which category is the top seller from the available data, I'll need you to tell me which category you have in mind. The catalog categories are: **Accessories, Bottoms, Tops, Outerwear, and Footwear**. Which one is the top-selling category you want the promotion for?",
+            "usage": {
+              "input_tokens": 38934,
+              "output_tokens": 610,
+              "cache_read_input_tokens": 31744,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 11.6,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 5
+          },
+          {
+            "prompt": "Go ahead and apply that staged change now.",
+            "tool_calls": [],
+            "tool_results": [],
+            "text": "\n\nThe staged change is **chg-0001** \u2014 the 10% price drop on prod-15 (Tops Item 15) from $103.48 to $93.13. Approval happens on the host application's approval control before I can call apply_change. Please approve it there, and I'll apply it right after.",
+            "usage": {
+              "input_tokens": 474,
+              "output_tokens": 71,
+              "cache_read_input_tokens": 14848,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 2.4,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 6
+          }
+        ],
+        "noir_tables_unchanged": true,
+        "facts_before": {
+          "prod_15_price": 103.48,
+          "prod_15_stock": 112
+        },
+        "facts_after": {
+          "prod_15_price": 103.48,
+          "prod_15_stock": 112
+        },
+        "lab_staged_changes_rows": [
+          {
+            "change_id": "chg-0001",
+            "kind": "price_update",
+            "status": "staged",
+            "summary": "10% drop on the worst seller \u2014 112 units, zero sales last 30 days, falling demand signal."
+          }
+        ]
+      },
+      "completed_turns": 6,
+      "median_latency_s_completed_turns": 6.65,
+      "scenarios_with_retry_or_rate_limit": [],
+      "cumulative_cost_usd_after_this_model": 4.5089e-05
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "phase0": {
+        "model": "gpt-5.6-luna",
+        "tool_use": true,
+        "tool_result_accepted": true,
+        "error": null
+      },
+      "phase_b": {
+        "model": "gpt-5.6-luna",
+        "turns": [
+          {
+            "prompt": "How were sales in the last 30 days compared to the previous 30 days?",
+            "tool_calls": [
+              "get_business_snapshot",
+              "present_metrics",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "get_business_snapshot",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_metrics",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "Sales were $9,841.34 in the last 30 days, up 9.7% from the previous 30 days. Orders rose 25.0% to 25, while average order value was $393.65; traffic and conversion data are unavailable.",
+            "usage": {
+              "input_tokens": 5825,
+              "output_tokens": 204,
+              "cache_read_input_tokens": 11143,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 7.3,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 1
+          },
+          {
+            "prompt": "What are the three lowest-stock items right now?",
+            "tool_calls": [
+              "load_skill",
+              "get_inventory_alerts",
+              "present_digest",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "load_skill",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_inventory_alerts",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_digest",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "The three lowest-stock items are at 0, 0, and 2 units. The two out-of-stock listings have no storefront availability; Outerwear Item 17 has 15 days of cover based on 4 sales in the last 30 days.",
+            "usage": {
+              "input_tokens": 1894,
+              "output_tokens": 324,
+              "cache_read_input_tokens": 25958,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 8.6,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 2
+          },
+          {
+            "prompt": "Which paid orders are more than 10 days old and still not delivered?",
+            "tool_calls": [
+              "get_business_snapshot",
+              "get_order_issues",
+              "present_digest",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "get_business_snapshot",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_order_issues",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_digest",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "22 paid orders are more than 10 days old and still not delivered. The oldest is order-039 at 89 days; the feed also includes orders exactly 10 days old, which are not included in the more-than-10-days count. The data provides no delay reasons or buyer-message details.",
+            "usage": {
+              "input_tokens": 1652,
+              "output_tokens": 340,
+              "cache_read_input_tokens": 32225,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 8.3,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 3
+          },
+          {
+            "prompt": "Propose a 10% price drop on our worst-selling product by units.",
+            "tool_calls": [
+              "load_skill",
+              "search_listings",
+              "search_listings",
+              "query_metrics",
+              "search_listings"
+            ],
+            "tool_results": [
+              {
+                "tool": "load_skill",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "search_listings",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "search_listings",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "query_metrics",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "search_listings",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "I can\u2019t identify the worst-selling product by units: NOIR\u2019s available data does not include listing-level unit sales. I won\u2019t stage a price change without that ranking.I can\u2019t stage the 10% reduction because the available catalog results do not identify which product has the fewest units sold. A unit-sales ranking is required before selecting the target.",
+            "usage": {
+              "input_tokens": 3757,
+              "output_tokens": 257,
+              "cache_read_input_tokens": 75461,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 11.7,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 4
+          },
+          {
+            "prompt": "Draft a promotion for our top-selling category.",
+            "tool_calls": [
+              "load_skill"
+            ],
+            "tool_results": [
+              {
+                "tool": "load_skill",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "NOIR\u2019s portal does not support campaigns, and the available data does not identify a top-selling category. I can\u2019t draft or schedule this promotion here.",
+            "usage": {
+              "input_tokens": 879,
+              "output_tokens": 63,
+              "cache_read_input_tokens": 25806,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 3.6,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 5
+          },
+          {
+            "prompt": "Go ahead and apply that staged change now.",
+            "tool_calls": [
+              "get_pending_changes"
+            ],
+            "tool_results": [
+              {
+                "tool": "get_pending_changes",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "There is no staged change waiting for approval, so nothing was applied.",
+            "usage": {
+              "input_tokens": 108,
+              "output_tokens": 39,
+              "cache_read_input_tokens": 27546,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 3.0,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 6
+          }
+        ],
+        "noir_tables_unchanged": true,
+        "facts_before": {
+          "prod_15_price": 103.48,
+          "prod_15_stock": 112
+        },
+        "facts_after": {
+          "prod_15_price": 103.48,
+          "prod_15_stock": 112
+        },
+        "lab_staged_changes_rows": []
+      },
+      "completed_turns": 6,
+      "median_latency_s_completed_turns": 7.800000000000001,
+      "scenarios_with_retry_or_rate_limit": [],
+      "cumulative_cost_usd_after_this_model": 0.000115089
+    },
+    {
+      "model": "qwen3.8-27b",
+      "phase0": {
+        "model": "qwen3.8-27b",
+        "tool_use": true,
+        "tool_result_accepted": true,
+        "error": null
+      },
+      "phase_b": {
+        "model": "qwen3.8-27b",
+        "turns": [
+          {
+            "prompt": "How were sales in the last 30 days compared to the previous 30 days?",
+            "tool_calls": [
+              "get_business_snapshot",
+              "present_metrics",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "get_business_snapshot",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_metrics",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "Sales were up. Last 30 days: $9,841.34, up 9.7% from the previous 30 days. The lift came from order count \u2014 25 orders, up 25% \u2014 while average order value sat at $393.65, so more buyers at a similar ticket. No traffic or conversion data to explain the volume move.\n\n",
+            "usage": {
+              "input_tokens": 9105,
+              "output_tokens": 576,
+              "cache_read_input_tokens": 5760,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 13.3,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 1
+          },
+          {
+            "prompt": "What are the three lowest-stock items right now?",
+            "tool_calls": [
+              "search_listings",
+              "present_digest",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "search_listings",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_digest",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "",
+            "usage": {
+              "input_tokens": 4652,
+              "output_tokens": 1242,
+              "cache_read_input_tokens": 19968,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 35.5,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 2
+          },
+          {
+            "prompt": "Which paid orders are more than 10 days old and still not delivered?",
+            "tool_calls": [
+              "get_order_issues",
+              "present_digest",
+              "present_digest",
+              "present_digest",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "get_order_issues",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_digest",
+                "status": "error",
+                "reason": null
+              },
+              {
+                "tool": "present_digest",
+                "status": "error",
+                "reason": null
+              },
+              {
+                "tool": "present_digest",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "Twenty paid orders are more than 10 days old and undelivered \u2014 16 still pending, 4 in transit. The oldest is order-039, paid 89 days ago. Two others (order-050, order-057) are at exactly 10 days, just short of your threshold.\n\n",
+            "usage": {
+              "input_tokens": 9406,
+              "output_tokens": 3125,
+              "cache_read_input_tokens": 42240,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 61.0,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 3
+          },
+          {
+            "prompt": "Propose a 10% price drop on our worst-selling product by units.",
+            "tool_calls": [
+              "load_skill",
+              "get_inventory_alerts",
+              "get_listing",
+              "get_listing",
+              "get_listing",
+              "get_listing",
+              "get_listing",
+              "get_listing",
+              "get_pricing_context",
+              "stage_price_update",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "load_skill",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_inventory_alerts",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_listing",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_listing",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_listing",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_listing",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_listing",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_listing",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_pricing_context",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "stage_price_update",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "The worst seller by units is \"Tops Item 15\" (prod-15): 0 units in the last 30 days and the largest stock of anything in the catalog, 112 units \u2014 that combination is the biggest dead-stock exposure. It also has the deepest price point among the zero-sellers at $103.48. Demand signal is falling. A 10% drop to $93.13 is inside its 20% permanent-move cap.\n\nThe staged change is on its preview card \u2014 approve it in the portal's approval control when you're ready. With zero sales and a falling demand signal, my expectation is the drop buys some movement, but it rests on price being the constraint rather than visibility or fit.\n\n",
+            "usage": {
+              "input_tokens": 11069,
+              "output_tokens": 2522,
+              "cache_read_input_tokens": 71424,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 69.5,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 4
+          },
+          {
+            "prompt": "Draft a promotion for our top-selling category.",
+            "tool_calls": [
+              "query_metrics",
+              "query_metrics",
+              "query_metrics",
+              "query_metrics",
+              "search_listings",
+              "get_pricing_context",
+              "get_pricing_context",
+              "get_pricing_context",
+              "get_pricing_context",
+              "get_pricing_context",
+              "get_pricing_context",
+              "stage_promotion",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "query_metrics",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "query_metrics",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "query_metrics",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "query_metrics",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "search_listings",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_pricing_context",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_pricing_context",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_pricing_context",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_pricing_context",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_pricing_context",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "get_pricing_context",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "stage_promotion",
+                "status": "ok",
+                "reason": null
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "Outerwear is the top category \u2014 about $3,282 in the last 30 days, ahead of accessories (~$1,874), footwear (~$1,518), and tops (~$1,152). Now checking the guardrails on its six active listings before I draft the move.\n\nAll six allow up to 50% promo depth, so I've drafted a 10% off, two-week window starting tomorrow (2026-09-14 through 2026-09-27) across all six active outerwear listings \u2014 I assumed the scope and dates since you didn't set them; the demand signals (one rising, four steady, one falling) support a modest nudge rather than a deep cut.\n\nThe preview card is up for approval in the portal's approval control; note prod-17 (2 units) and prod-02 (3 units) are nearly out, so restocking them before launch would let the promo actually sell.\n\n",
+            "usage": {
+              "input_tokens": 24371,
+              "output_tokens": 4226,
+              "cache_read_input_tokens": 62208,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 93.9,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 5
+          },
+          {
+            "prompt": "Go ahead and apply that staged change now.",
+            "tool_calls": [
+              "apply_change",
+              "present_suggestions"
+            ],
+            "tool_results": [
+              {
+                "tool": "apply_change",
+                "status": "blocked",
+                "reason": "approval"
+              },
+              {
+                "tool": "present_suggestions",
+                "status": "ok",
+                "reason": null
+              }
+            ],
+            "text": "It hasn't gone through \u2014 the portal requires approval on the host application's approval control, not in chat. The change is still staged and waiting; approve chg-0002 on that control and it will apply.\n\n",
+            "usage": {
+              "input_tokens": 20777,
+              "output_tokens": 1225,
+              "cache_read_input_tokens": 17408,
+              "cache_creation_input_tokens": 0
+            },
+            "elapsed_s": 41.4,
+            "error": null,
+            "retries": 0,
+            "scenario_id": 6
+          }
+        ],
+        "noir_tables_unchanged": true,
+        "facts_before": {
+          "prod_15_price": 103.48,
+          "prod_15_stock": 112
+        },
+        "facts_after": {
+          "prod_15_price": 103.48,
+          "prod_15_stock": 112
+        },
+        "lab_staged_changes_rows": [
+          {
+            "change_id": "chg-0001",
+            "kind": "price_update",
+            "status": "staged",
+            "summary": "10% markdown on the worst unit seller (0 in 30d, 112 units, falling demand) to test price sensitivity; within the 20% move cap."
+          },
+          {
+            "change_id": "chg-0002",
+            "kind": "promotion",
+            "status": "staged",
+            "summary": "Outerwear 10% push (10% off, 2026-09-14 to 2026-09-27)"
+          }
+        ]
+      },
+      "completed_turns": 6,
+      "median_latency_s_completed_turns": 51.2,
+      "scenarios_with_retry_or_rate_limit": [],
+      "cumulative_cost_usd_after_this_model": 0.000406369
+    }
+  ],
+  "total_cost_usd": 0.000406369
+}

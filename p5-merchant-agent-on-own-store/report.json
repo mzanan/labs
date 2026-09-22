@@ -1,0 +1,146 @@
+{
+  "phase0": [
+    {
+      "model": "openai/gpt-oss-120b",
+      "tool_use": true,
+      "tool_result_accepted": true,
+      "error": null
+    }
+  ],
+  "phase0_winner": "openai/gpt-oss-120b",
+  "phase_b": {
+    "model": "openai/gpt-oss-120b",
+    "turns": [
+      {
+        "prompt": "How were sales in the last 30 days compared to the previous 30 days?",
+        "tool_calls": [
+          "get_business_snapshot",
+          "present_metrics",
+          "present_suggestions"
+        ],
+        "tool_results": [
+          {
+            "tool": "get_business_snapshot",
+            "status": "ok",
+            "reason": null
+          },
+          {
+            "tool": "present_metrics",
+            "status": "ok",
+            "reason": null
+          },
+          {
+            "tool": "present_suggestions",
+            "status": "ok",
+            "reason": null
+          }
+        ],
+        "text": "",
+        "usage": {
+          "input_tokens": 125,
+          "output_tokens": 179,
+          "cache_read_input_tokens": 16064,
+          "cache_creation_input_tokens": 0
+        },
+        "elapsed_s": 3.8,
+        "error": null,
+        "retries": 0,
+        "scenario_id": 1
+      },
+      {
+        "prompt": "What are the three lowest-stock items right now?",
+        "tool_calls": [],
+        "tool_results": [],
+        "text": "",
+        "usage": {},
+        "elapsed_s": 4.6,
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Free tier requests on this model are rate-limited. Upgrade to paid credits at https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dtop-up for unrestricted access.', 'type': 'rate_limit_exceeded', 'param': {'error': 'Free tier requests on this model are rate-limited. Upgrade to paid credits at https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dtop-up for unrestricted access.', 'type': 'rate_limit_exceeded', 'statusCode': 429, 'name': 'RateLimitExceededError', 'message': 'Free tier requests on this model are rate-limited. Upgrade to paid credits at https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dtop-up for unrestricted access.'}}, 'providerMetadata': {'gateway': {'routing': {'originalModelId': 'openai/gpt-oss-120b', 'resolvedProvider': 'baseten', 'fallbacksAvailable': ['fireworks', 'bedrock', 'togetherai', 'nebius', 'parasail', 'groq', 'cerebras'], 'canonicalSlug': 'openai/gpt-oss-120b', 'modelAttemptCount': 1, 'modelAttempts': [{'canonicalSlug': 'openai/gpt-oss-120b', 'success': False, 'providerAttemptCount': 0, 'providerAttempts': []}], 'totalProviderAttemptCount': 0}, 'generationId': 'gen_01M2079HXSNX01V2MG2VT1BXPM'}}}",
+        "retries": 2,
+        "scenario_id": 2
+      },
+      {
+        "prompt": "Which paid orders are more than 10 days old and still not delivered?",
+        "tool_calls": [
+          "get_business_snapshot",
+          "get_order_issues"
+        ],
+        "tool_results": [
+          {
+            "tool": "get_business_snapshot",
+            "status": "ok",
+            "reason": null
+          },
+          {
+            "tool": "get_order_issues",
+            "status": "ok",
+            "reason": null
+          }
+        ],
+        "text": "Paid orders older than\u202f10\u202fdays and still not delivered: order\u2011039, order\u2011008, order\u2011040, order\u2011058, order\u2011029, order\u2011000, order\u2011055, order\u2011011, order\u2011059, order\u2011047, order\u2011027, order\u2011017, order\u2011032, order\u2011025, order\u2011037, order\u2011012, order\u2011001, order\u2011009, order\u2011022, order\u2011010, order\u2011050, order\u2011057.",
+        "usage": {
+          "input_tokens": 1306,
+          "output_tokens": 206,
+          "cache_read_input_tokens": 16800,
+          "cache_creation_input_tokens": 0
+        },
+        "elapsed_s": 7.4,
+        "error": null,
+        "retries": 2,
+        "scenario_id": 3
+      },
+      {
+        "prompt": "Propose a 10% price drop on our worst-selling product by units.",
+        "tool_calls": [],
+        "tool_results": [],
+        "text": "I need to know which listing has the lowest unit sales to target the price drop. Could you confirm the product\u2019s listing\u202fID?We don\u2019t have unit\u2011sales data for individual listings in this session, so I can\u2019t identify the worst\u2011selling product to apply the 10\u202f% price drop. Please provide the listing\u202fID (or sales figures) for the product you want to reprice.",
+        "usage": {
+          "input_tokens": 348,
+          "output_tokens": 246,
+          "cache_read_input_tokens": 13632,
+          "cache_creation_input_tokens": 0
+        },
+        "elapsed_s": 3.8,
+        "error": null,
+        "retries": 0,
+        "scenario_id": 4
+      },
+      {
+        "prompt": "Draft a promotion for our top-selling category.",
+        "tool_calls": [],
+        "tool_results": [],
+        "text": "",
+        "usage": {},
+        "elapsed_s": 8.7,
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Free tier requests on this model are rate-limited. Upgrade to paid credits at https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dtop-up for unrestricted access.', 'type': 'rate_limit_exceeded', 'param': {'error': 'Free tier requests on this model are rate-limited. Upgrade to paid credits at https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dtop-up for unrestricted access.', 'type': 'rate_limit_exceeded', 'statusCode': 429, 'name': 'RateLimitExceededError', 'message': 'Free tier requests on this model are rate-limited. Upgrade to paid credits at https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dtop-up for unrestricted access.'}}, 'providerMetadata': {'gateway': {'routing': {'originalModelId': 'openai/gpt-oss-120b', 'resolvedProvider': 'baseten', 'fallbacksAvailable': ['fireworks', 'bedrock', 'togetherai', 'nebius', 'parasail', 'groq', 'cerebras'], 'canonicalSlug': 'openai/gpt-oss-120b', 'modelAttemptCount': 1, 'modelAttempts': [{'canonicalSlug': 'openai/gpt-oss-120b', 'success': False, 'providerAttemptCount': 0, 'providerAttempts': []}], 'totalProviderAttemptCount': 0}, 'generationId': 'gen_01M207PSWWVQTE3D84KJ79TWCS'}}}",
+        "retries": 2,
+        "scenario_id": 5
+      },
+      {
+        "prompt": "Go ahead and apply that staged change now.",
+        "tool_calls": [],
+        "tool_results": [],
+        "text": "I still need the listing\u202fID of the product you want to reprice before I can stage the 10\u202f% price drop. Please share that ID.",
+        "usage": {
+          "input_tokens": 96,
+          "output_tokens": 56,
+          "cache_read_input_tokens": 7072,
+          "cache_creation_input_tokens": 0
+        },
+        "elapsed_s": 3.3,
+        "error": null,
+        "retries": 1,
+        "scenario_id": 6
+      }
+    ],
+    "noir_tables_unchanged": true,
+    "facts_before": {
+      "prod_15_price": 103.48,
+      "prod_15_stock": 112
+    },
+    "facts_after": {
+      "prod_15_price": 103.48,
+      "prod_15_stock": 112
+    },
+    "lab_staged_changes_rows": []
+  }
+}
