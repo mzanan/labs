@@ -1,0 +1,10 @@
+{
+  "provider_base_url": "https://api.experientiallabs.ai",
+  "try_all": [
+    "deepseek-v4-flash",
+    "deepseek-v4.1-flash",
+    "gpt-5.6-luna",
+    "qwen3.8-27b"
+  ],
+  "note": "The 3 models spec-shopping-agent-on-ecommerce-2026-09-13.md allows, plus deepseek-v4.1-flash added by Matias's 2026-09-13 mid-run amendment (run alongside deepseek-v4-flash, both graded side by side). Phase 0 of run_lab.py is the actual gate for each; see report.json for the real outcome. Every -free id on this gateway is locked behind a credit purchase and is out of scope. No Anthropic model ids, per Matias's decision."
+}

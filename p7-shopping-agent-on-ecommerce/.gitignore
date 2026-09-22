@@ -1,0 +1,5 @@
+upstream/
+db/ecommerce_mirror.sqlite
+.venv/
+__pycache__/
+.env

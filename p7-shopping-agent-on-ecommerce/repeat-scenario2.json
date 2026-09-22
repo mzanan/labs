@@ -1,0 +1,897 @@
+{
+  "scenario_id": 2,
+  "runs_per_model": 3,
+  "models": [
+    "deepseek-v4-flash",
+    "gpt-5.6-luna",
+    "qwen3.8-27b"
+  ],
+  "runs": [
+    {
+      "model": "deepseek-v4-flash",
+      "run_index": 1,
+      "tool_calls": [
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "outerwear-item-07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "outerwear-item-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 07",
+            "limit": 4
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 12",
+            "limit": 4
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_comparison",
+          "input": {
+            "title": "Outerwear Item 07 vs Outerwear Item 12",
+            "entries": [
+              {
+                "product_id": "prod-07",
+                "pros": [
+                  "Solid mid-range price at $84.22"
+                ],
+                "cons": [
+                  "Only available in S and XL"
+                ],
+                "best_for": "Shoppers who need size S or XL and want a balanced price point"
+              },
+              {
+                "product_id": "prod-12",
+                "pros": [
+                  "Very affordable at $30.30",
+                  "Wide size range: XS, M, L, XXL"
+                ],
+                "cons": [
+                  "No size S available"
+                ],
+                "best_for": "Budget-conscious shoppers looking for a variety of size options"
+              }
+            ]
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_suggestions",
+          "input": {
+            "suggestions": [
+              "Add Item 12 to cart",
+              "Add Item 07 to cart",
+              "Show me more outerwear"
+            ]
+          }
+        }
+      ],
+      "all_tool_calls_ok": false,
+      "final_assistant_text": "\n\nLet me look up both productsLet me search for those items in the catalog.\n\nLet me get the full details on\n\nI'd recommend **Outerwear Item 12** \u2014 it's a strong value at $30.30 and comes in four sizes (XS, M, L, XXL), so it fits more people. Item 07 is $84.22 but only comes in S and XL, so size availability is a real trade-off.\n\nThat said, if you specifically need size S, Item 07 is your only option",
+      "grader_passed": true,
+      "grader_reason": "both products' real prices (84.22, 30.3) appear in the answer",
+      "contradicts_own_tool_result": false,
+      "cost_usd": 0.002851
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "run_index": 2,
+      "tool_calls": [
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 07",
+            "limit": 1
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 12",
+            "limit": 1
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_comparison",
+          "input": {
+            "title": "Outerwear Item 07 vs. Outerwear Item 12",
+            "entries": [
+              {
+                "product_id": "prod-07",
+                "pros": [
+                  "More premium price point",
+                  "Available in S and XL"
+                ],
+                "cons": [
+                  "Higher price at $84.22",
+                  "Limited size run (only 2 sizes)"
+                ],
+                "best_for": "Someone who wants a premium outerwear piece and wears S or XL"
+              },
+              {
+                "product_id": "prod-12",
+                "pros": [
+                  "Very affordable at $30.30",
+                  "Wide size range (XS, M, L, XXL)"
+                ],
+                "cons": [
+                  "Lower price point may mean simpler construction"
+                ],
+                "best_for": "Budget-conscious shoppers and a wider fit range"
+              }
+            ],
+            "dimensions": [
+              "Price",
+              "Size availability",
+              "Value"
+            ],
+            "recommended_product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_suggestions",
+          "input": {
+            "suggestions": [
+              "Add Item 12 to cart",
+              "Add Item 07 to cart",
+              "Show me more outerwear",
+              "What's my cart total?"
+            ]
+          }
+        }
+      ],
+      "all_tool_calls_ok": true,
+      "final_assistant_text": "\n\nLet me look up the details on both items\n\n\n\nUnless you specifically need a premium piece in S or XL, I'd go with **Outerwear Item 12** \u2014 it covers a much wider size range at a third of the price, making it the more practical pick",
+      "grader_passed": true,
+      "grader_reason": "both products' real prices (84.22, 30.3) appear in the answer",
+      "contradicts_own_tool_result": false,
+      "cost_usd": 0.00079
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "run_index": 3,
+      "tool_calls": [
+        {
+          "turn_index": 0,
+          "tool": "load_skill",
+          "input": {
+            "skill_name": "search-discovery"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_comparison",
+          "input": {
+            "title": "Outerwear Item 07 vs. Item 12",
+            "entries": [
+              {
+                "product_id": "prod-07",
+                "pros": [
+                  "Mid-range price at $84.22",
+                  "Available in S and XL"
+                ],
+                "cons": [
+                  "Limited size run (only 2 sizes)",
+                  "No size options between S and XL"
+                ],
+                "best_for": "Shoppers who need a mid-priced outerwear piece in S or XL"
+              },
+              {
+                "product_id": "prod-12",
+                "pros": [
+                  "Very affordable at $30.30",
+                  "Wide size range: XS, M, L, XXL"
+                ],
+                "cons": [
+                  "Basic spec for a low price point"
+                ],
+                "best_for": "Budget-focused shoppers or those needing XS, M, L, or XXL"
+              }
+            ],
+            "recommended_product_id": "prod-07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_suggestions",
+          "input": {
+            "suggestions": [
+              "I need size S",
+              "I need size M",
+              "I need size L",
+              "I need size XL"
+            ]
+          }
+        }
+      ],
+      "all_tool_calls_ok": true,
+      "final_assistant_text": "I'll load the relevant skill and look up both items for you.\n\nLet me get the full details on both items to compare them properly.\n\nHere's a side-by-side look at both piecesThe two are quite different in price and sizing. **Outerwear Item 07** ($84.22) is the mid-range pick \u2014 I'd recommend it if either S or XL works for you, since it's a step up in quality for the price. **Outerwear Item 12** ($30.30) is the budget-friendly choice with a much wider size selection (XS, M, L, XXL), so it wins on availability.\n\nWhat size are you looking",
+      "grader_passed": true,
+      "grader_reason": "both products' real prices (84.22, 30.3) appear in the answer",
+      "contradicts_own_tool_result": false,
+      "cost_usd": 0.000982
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "run_index": 1,
+      "tool_calls": [
+        {
+          "turn_index": 0,
+          "tool": "load_skill",
+          "input": {
+            "skill_name": "search-discovery"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 07",
+            "limit": 4
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 12",
+            "limit": 4
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_comparison",
+          "input": {
+            "title": "Outerwear Item 07 vs Outerwear Item 12",
+            "dimensions": [
+              "Price",
+              "Available sizes",
+              "Catalog details"
+            ],
+            "entries": [
+              {
+                "product_id": "prod-07",
+                "pros": [
+                  "In stock",
+                  "Available in S and XL"
+                ],
+                "cons": [
+                  "Higher price",
+                  "Fewer listed sizes"
+                ],
+                "best_for": "Someone who needs S or XL"
+              },
+              {
+                "product_id": "prod-12",
+                "pros": [
+                  "Much lower price",
+                  "Broader size availability: XS, M, L, and XXL"
+                ],
+                "cons": [
+                  "No S or XL listed"
+                ],
+                "best_for": "Most shoppers prioritizing value or a broader size range"
+              }
+            ],
+            "recommended_product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_suggestions",
+          "input": {
+            "suggestions": [
+              "Choose Outerwear Item 12",
+              "Choose Outerwear Item 07",
+              "Check available sizes",
+              "Ask about another outerwear piece"
+            ]
+          }
+        }
+      ],
+      "all_tool_calls_ok": true,
+      "final_assistant_text": "",
+      "grader_passed": false,
+      "grader_reason": "price(s) missing from the answer: ['84.22', '30.3']",
+      "contradicts_own_tool_result": false,
+      "cost_usd": 0.00212
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "run_index": 2,
+      "tool_calls": [
+        {
+          "turn_index": 0,
+          "tool": "load_skill",
+          "input": {
+            "skill_name": "search-discovery"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 07",
+            "limit": 1
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 12",
+            "limit": 1
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_comparison",
+          "input": {
+            "title": "Outerwear Item 07 vs Item 12",
+            "dimensions": [
+              "price",
+              "available sizes"
+            ],
+            "recommended_product_id": "prod-12",
+            "entries": [
+              {
+                "product_id": "prod-07",
+                "pros": [
+                  "In stock"
+                ],
+                "cons": [
+                  "Higher price",
+                  "Only sizes S and XL listed"
+                ],
+                "best_for": "Someone who needs S or XL"
+              },
+              {
+                "product_id": "prod-12",
+                "pros": [
+                  "Lower price",
+                  "More sizes listed: XS, M, L, and XXL"
+                ],
+                "cons": [
+                  "No S or XL listed"
+                ],
+                "best_for": "Best value and broader size coverage"
+              }
+            ]
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_suggestions",
+          "input": {
+            "suggestions": [
+              "Choose Item 12",
+              "Check Item 07",
+              "Find another outerwear piece"
+            ]
+          }
+        }
+      ],
+      "all_tool_calls_ok": true,
+      "final_assistant_text": "",
+      "grader_passed": false,
+      "grader_reason": "price(s) missing from the answer: ['84.22', '30.3']",
+      "contradicts_own_tool_result": false,
+      "cost_usd": 0.001173
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "run_index": 3,
+      "tool_calls": [
+        {
+          "turn_index": 0,
+          "tool": "load_skill",
+          "input": {
+            "skill_name": "search-discovery"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 07",
+            "limit": 1
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 12",
+            "limit": 1
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_comparison",
+          "input": {
+            "title": "Outerwear Item 07 vs Item 12",
+            "dimensions": [
+              "price",
+              "available sizes",
+              "product details"
+            ],
+            "entries": [
+              {
+                "product_id": "prod-07",
+                "pros": [
+                  "Higher-priced option",
+                  "Available in S and XL"
+                ],
+                "cons": [
+                  "Fewer listed sizes",
+                  "Higher cost"
+                ],
+                "best_for": "Someone who needs S or XL"
+              },
+              {
+                "product_id": "prod-12",
+                "pros": [
+                  "Lower price",
+                  "Broader listed size range"
+                ],
+                "cons": [
+                  "No S or XL listed"
+                ],
+                "best_for": "Best value and size flexibility"
+              }
+            ],
+            "recommended_product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_suggestions",
+          "input": {
+            "suggestions": [
+              "Choose Item 12",
+              "Check Item 07 details",
+              "Ask about sizing"
+            ]
+          }
+        }
+      ],
+      "all_tool_calls_ok": true,
+      "final_assistant_text": "I recommend Outerwear Item 12 for its much lower price and broader listed size range. Item 07 is the better fit only if you need S or XL; the catalog provides no further design or performance details to distinguish them.",
+      "grader_passed": false,
+      "grader_reason": "price(s) missing from the answer: ['84.22', '30.3']",
+      "contradicts_own_tool_result": false,
+      "cost_usd": 0.001128
+    },
+    {
+      "model": "qwen3.8-27b",
+      "run_index": 1,
+      "tool_calls": [
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_comparison",
+          "input": {
+            "title": "Outerwear Item 07 vs Item 12",
+            "entries": "\n[{\"product_id\": \"prod-07\", \"pros\": [\"Higher price point, positioned above Item 12\", \"In stock\"], \"cons\": [\"Sizes limited to S and XL\", \"Catalog record lists no materials, features, or review highlights\"], \"best_for\": \"If you know your S or XL fit and want to spend more on this piece\"}, {\"product_id\": \"prod-12\", \"pros\": [\"In stock\", \"Four sizes: XS, S? no - XS, M, L, XXL\", \"Priced well under Item 07\"], \"cons\": [\"Catalog record lists no materials, features, or review highlights\"], \"best_for\": \"Wider size fit and a lighter budget\"}, \"recommended_product_id\": \"prod-12\"}]\n"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_comparison",
+          "input": {
+            "entries": [
+              {
+                "product_id": "prod-07",
+                "pros": [
+                  "Higher price point, positioned above Item 12",
+                  "In stock"
+                ],
+                "cons": [
+                  "Sizes limited to S and XL",
+                  "Catalog record lists no materials, features, or review highlights"
+                ],
+                "best_for": "If you know your S or XL fit and want to spend more on this piece"
+              },
+              {
+                "product_id": "prod-12",
+                "pros": [
+                  "In stock",
+                  "Four sizes: XS, M, L, XXL",
+                  "Priced well under Item 07"
+                ],
+                "cons": [
+                  "Catalog record lists no materials, features, or review highlights"
+                ],
+                "best_for": "Wider size fit and a lighter budget"
+              }
+            ],
+            "dimensions": [
+              "price",
+              "size range",
+              "fit"
+            ],
+            "recommended_product_id": "prod-12",
+            "title": "Outerwear Item 07 vs Item 12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_suggestions",
+          "input": {
+            "suggestions": [
+              "Add Item 12 to cart",
+              "Add Item 07 to cart",
+              "Check sizes and fit for Item 12",
+              "See more outerwear"
+            ]
+          }
+        }
+      ],
+      "all_tool_calls_ok": false,
+      "final_assistant_text": "I'd lean toward Outerwear Item 12: it's in stock at $30.30 with four sizes to choose from, while Item 07 runs $84.22 and only comes in S and XL. One caveat: the catalog records for both are thin, with no materials, features, or review highlights to compare on, so if Item 07 is the pricier piece for a reason you've seen in person or in photos, that's worth weighing against the price gap.\n\n",
+      "grader_passed": true,
+      "grader_reason": "both products' real prices (84.22, 30.3) appear in the answer",
+      "contradicts_own_tool_result": false,
+      "cost_usd": 0.004727
+    },
+    {
+      "model": "qwen3.8-27b",
+      "run_index": 2,
+      "tool_calls": [
+        {
+          "turn_index": 0,
+          "tool": "load_skill",
+          "input": {
+            "skill_name": "search-discovery"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_comparison",
+          "input": {
+            "title": "Outerwear Item 07 vs Item 12",
+            "dimensions": [
+              "Price",
+              "Size availability",
+              "Stock"
+            ],
+            "entries": "\n[{\"product_id\": \"prod-12\", \"best_for\": \"You if you wear XS, M, L, or XXL and want to pay less\", \"pros\": [\"Priced at $30.30, the cheaper of the two\", \"Available in four sizes: XS, M, L, XXL\", \"In stock\"], \"cons\": [\"Not offered in S or XL\"]}, {\"product_id\": \"prod-07\", \"best_for\": \"You if you wear S or XL, since Item 12 isn't made in those sizes\", \"pros\": [\"In stock\", \"Available in S and XL, sizes Item 12 lacks\"], \"cons\": [\"$84.22 \u2014 about $54 more than Item 12\", \"Only two sizes offered\"]}\n",
+            "recommended_product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_suggestions",
+          "input": {
+            "suggestions": [
+              "Add Item 12 to cart",
+              "Check delivery options for Item 07",
+              "Show more outerwear"
+            ]
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_comparison",
+          "input": {
+            "title": "Outerwear Item 07 vs Item 12",
+            "dimensions": [
+              "Price",
+              "Size availability",
+              "Stock"
+            ],
+            "entries": [
+              {
+                "product_id": "prod-12",
+                "best_for": "You if you wear XS, M, L, or XXL and want to pay less",
+                "pros": [
+                  "Priced at $30.30, the cheaper of the two",
+                  "Available in four sizes: XS, M, L, XXL",
+                  "In stock"
+                ],
+                "cons": [
+                  "Not offered in S or XL"
+                ]
+              },
+              {
+                "product_id": "prod-07",
+                "best_for": "You if you wear S or XL, since Item 12 isn't made in those sizes",
+                "pros": [
+                  "In stock",
+                  "Available in S and XL, sizes Item 12 lacks"
+                ],
+                "cons": [
+                  "$84.22, about $54 more than Item 12",
+                  "Only two sizes offered"
+                ]
+              }
+            ],
+            "recommended_product_id": "prod-12"
+          }
+        }
+      ],
+      "all_tool_calls_ok": false,
+      "final_assistant_text": "Found both items \u2014 pulling their full details before comparing.\n\nMy recommendation is Item 12 \u2014 same job at $30.30 versus $84.22, and more size options. The one case where I'd flip it: if you wear S or XL, Item 12 isn't made in those sizes, so Item 07 would be your only fit here.",
+      "grader_passed": true,
+      "grader_reason": "both products' real prices (84.22, 30.3) appear in the answer",
+      "contradicts_own_tool_result": false,
+      "cost_usd": 0.005444
+    },
+    {
+      "model": "qwen3.8-27b",
+      "run_index": 3,
+      "tool_calls": [
+        {
+          "turn_index": 0,
+          "tool": "load_skill",
+          "input": {
+            "skill_name": "search-discovery"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "search_products",
+          "input": {
+            "query": "Outerwear Item 12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-07"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "get_product_details",
+          "input": {
+            "product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_comparison",
+          "input": {
+            "title": "Outerwear Item 07 vs. Item 12",
+            "dimensions": [
+              "Price",
+              "Size range",
+              "Availability"
+            ],
+            "entries": [
+              {
+                "product_id": "prod-07",
+                "pros": [
+                  "In stock",
+                  "Only a couple of sizes, so it's a deliberate, tighter fit"
+                ],
+                "cons": [
+                  "About $54 more than Item 12",
+                  "Only comes in S and XL"
+                ],
+                "best_for": "Shoppers who are between those two sizes and want the higher-priced piece"
+              },
+              {
+                "product_id": "prod-12",
+                "pros": [
+                  "Lowest price of the two at $30.30",
+                  "Widest size range: XS, S... L, M, XXL",
+                  "In stock"
+                ],
+                "cons": [
+                  "Less of a premium tier than Item 07"
+                ],
+                "best_for": "Value-first shoppers or anyone outside the S/XL range"
+              }
+            ],
+            "recommended_product_id": "prod-12"
+          }
+        },
+        {
+          "turn_index": 0,
+          "tool": "present_suggestions",
+          "input": {
+            "suggestions": [
+              "Add Item 12 to cart",
+              "Show me more outerwear",
+              "Check delivery options for Item 12"
+            ]
+          }
+        }
+      ],
+      "all_tool_calls_ok": true,
+      "final_assistant_text": "",
+      "grader_passed": false,
+      "grader_reason": "price(s) missing from the answer: ['84.22']",
+      "contradicts_own_tool_result": false,
+      "cost_usd": 0.003251
+    }
+  ],
+  "noir_tables_unchanged": true,
+  "noir_tables_checksum_before": "8284a09c6b1ec9cb9c13061f4f3c3c67eeb5d25d0a5661c55451ec8372157408",
+  "noir_tables_checksum_after": "8284a09c6b1ec9cb9c13061f4f3c3c67eeb5d25d0a5661c55451ec8372157408",
+  "total_cost_usd": 0.022466,
+  "total_api_calls_with_cost_recorded": 37
+}

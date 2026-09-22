@@ -1,0 +1,95 @@
+{
+  "note": "One continuous conversation (one session_id, one user_id=user-018) against the deterministic ecommerce_mirror.sqlite (ANCHOR_DATE 2026-09-08, SEED 42, a local mirror of personal/ecommerce's real schema, never the Neon production database). Scenario 3 is 4 turns of that same conversation; every other scenario is 1 turn. Expected values below are computed once by direct SQL against db/ecommerce_mirror.sqlite, independent of the adapter, so run_lab.py's checks do not just restate the adapter's own logic. Product ids are real UUID v4 strings (uuid.uuid5, deterministic), not slugs, because that is what personal/ecommerce actually stores; customers still name products by title, which is the whole reason the adapter's title-to-id lookup fix matters here.",
+  "session": {"session_id": "lab-session", "user_id": "user-018"},
+  "scenarios": [
+    {
+      "id": 1,
+      "turns": ["Do you have anything in black under $80?"],
+      "checks": {
+        "expects_tool": "search_products",
+        "expected": {
+          "price_ceiling": 80,
+          "under_80_active_product_ids": [
+            "dfad20bd-dedf-5f64-a2f6-da92358c6295",
+            "8d92c870-e377-554d-a8b8-4fe5e3a72b89",
+            "6692bfa8-a911-5482-b9d5-f6593b8b623b",
+            "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+            "110cbe48-5fb7-55a5-9b79-25377574e6ee",
+            "c8881f28-cfc8-5437-b645-1d710689ba39",
+            "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+            "817c156d-39f8-56f3-94fd-446740ac9438",
+            "20446a42-418b-5179-9c6d-daa20f1ca989",
+            "2899f964-3442-5ba3-83d0-96c73f7cfd9b"
+          ],
+          "note": "'black' cannot be graded: personal/ecommerce's products table has no color column and no color word in any description, same gap as the NOIR run (adapter/mapping.md gap 2). PASS requires every product_id the agent's search_products call(s) returned to be in the under-$80 list above (the price constraint is real, SQL-checked: 10 active products qualify); a graceful 'we don't track color' style answer is expected, not a fabricated color match."
+        }
+      }
+    },
+    {
+      "id": 2,
+      "turns": ["Can you compare the Outerwear Item 07 and the Outerwear Item 12, and tell me which one you'd recommend?"],
+      "checks": {
+        "expects_tools": ["search_products_or_get_product_details"],
+        "expected": {
+          "prod_a": {"product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb", "title": "Outerwear Item 07", "price": 84.22, "stock_quantity": 93},
+          "prod_b": {"product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5", "title": "Outerwear Item 12", "price": 30.3, "stock_quantity": 56},
+          "note": "PASS requires the answer to state both prices correctly (or a comparison consistent with them) and land on one clear recommendation, not a non-answer. This is also the scenario that tests the title-to-id fix directly: the only way to reach these two uuid ids is through search_products by title, since nobody, model included, can guess a uuid from 'Outerwear Item 07'."
+        }
+      }
+    },
+    {
+      "id": 3,
+      "turns": [
+        "Add 2 of the Tops Item 00 and 1 of the Outerwear Item 12 to my cart.",
+        "Actually, change the Tops Item 00 to 5.",
+        "Remove the Outerwear Item 12 from my cart.",
+        "What's in my cart right now?"
+      ],
+      "checks": {
+        "expects_tools": ["search_products_or_get_product_details", "add_to_cart", "update_cart_item", "remove_from_cart", "get_cart"],
+        "expected": {
+          "final_cart_items": [{"product_id": "817c156d-39f8-56f3-94fd-446740ac9438", "title": "Tops Item 00", "price": 19.13, "quantity": 5}],
+          "final_subtotal": 95.65,
+          "note": "PASS requires lab_cart_items to hold exactly this one row after turn 4, checked directly against the database, not against the model's stated text. lab_cart_items is entirely lab-local: personal/ecommerce has no cart table at all (see the cart finding in README.md)."
+        }
+      }
+    },
+    {
+      "id": 4,
+      "turns": ["What's the status of my order 69161463-d6c3-5e0c-aef4-1a4521245a47?"],
+      "checks": {
+        "expects_tool": "get_order",
+        "expected": {
+          "order_id": "69161463-d6c3-5e0c-aef4-1a4521245a47",
+          "shipping_status": "pending",
+          "mapped_status": "processing",
+          "total_amount": 248.22,
+          "created_at": "2026-06-11T00:00:00Z"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "turns": ["How many days do I have to return something if I change my mind?"],
+      "checks": {
+        "expects_tool": "search_policies",
+        "expected": {
+          "policy_id": "pol-returns",
+          "must_state_days": 30,
+          "note": "Only search_policies can answer this; nothing in products/orders carries a returns window, and personal/ecommerce itself has no policy text anywhere in its schema or code (grepped, confirmed 0 hits). PASS requires the number 30 (or '30 days') in the answer."
+        }
+      }
+    },
+    {
+      "id": 6,
+      "turns": ["Do you have any neon pink cowboy boots?"],
+      "checks": {
+        "expects_tool": "search_products",
+        "expected": {
+          "matching_products_in_catalog": 0,
+          "note": "SQL-confirmed: 0 rows in products match 'boot' or 'cowboy' in name or description. PASS requires the agent to say this is not carried, not invent a product or silently substitute footwear."
+        }
+      }
+    }
+  ]
+}
