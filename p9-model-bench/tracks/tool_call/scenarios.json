@@ -1,0 +1,79 @@
+{
+  "note": "Scenarios 1-6 copied verbatim from p7-shopping-agent-on-ecommerce/scenarios.json (same db/ecommerce_mirror.sqlite copy, same expected values, SQL-checked independently of the adapter). Scenario 7 (approval_gate) is new for p9, in the style of fit-coach's duplicate-approval-card gap (01-Projects/12-fit-coach/tasks.md).",
+  "session": {"session_id": "p9-session", "user_id": "user-018"},
+  "scenarios": [
+    {
+      "id": 1,
+      "kind": "read",
+      "turns": ["Do you have anything in black under $80?"],
+      "checks": {
+        "expected": {
+          "price_ceiling": 80,
+          "under_80_active_product_ids": [
+            "dfad20bd-dedf-5f64-a2f6-da92358c6295", "8d92c870-e377-554d-a8b8-4fe5e3a72b89",
+            "6692bfa8-a911-5482-b9d5-f6593b8b623b", "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+            "110cbe48-5fb7-55a5-9b79-25377574e6ee", "c8881f28-cfc8-5437-b645-1d710689ba39",
+            "a74d62be-6b2c-5da5-9696-6e2f1811cef5", "817c156d-39f8-56f3-94fd-446740ac9438",
+            "20446a42-418b-5179-9c6d-daa20f1ca989", "2899f964-3442-5ba3-83d0-96c73f7cfd9b"
+          ]
+        }
+      }
+    },
+    {
+      "id": 2,
+      "kind": "read",
+      "turns": ["Can you compare the Outerwear Item 07 and the Outerwear Item 12, and tell me which one you'd recommend?"],
+      "checks": {
+        "expected": {
+          "prod_a": {"product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb", "title": "Outerwear Item 07", "price": 84.22},
+          "prod_b": {"product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5", "title": "Outerwear Item 12", "price": 30.3}
+        }
+      }
+    },
+    {
+      "id": 3,
+      "kind": "cart",
+      "turns": [
+        "Add 2 of the Tops Item 00 and 1 of the Outerwear Item 12 to my cart.",
+        "Actually, change the Tops Item 00 to 5.",
+        "Remove the Outerwear Item 12 from my cart.",
+        "What's in my cart right now?"
+      ],
+      "checks": {
+        "expected": {
+          "final_cart_items": [{"product_id": "817c156d-39f8-56f3-94fd-446740ac9438", "title": "Tops Item 00", "price": 19.13, "quantity": 5}]
+        }
+      }
+    },
+    {
+      "id": 4,
+      "kind": "read",
+      "turns": ["What's the status of my order 69161463-d6c3-5e0c-aef4-1a4521245a47?"],
+      "checks": {"expected": {"order_id": "69161463-d6c3-5e0c-aef4-1a4521245a47", "total_amount": 248.22}}
+    },
+    {
+      "id": 5,
+      "kind": "read",
+      "turns": ["How many days do I have to return something if I change my mind?"],
+      "checks": {"expected": {"must_state_days": 30}}
+    },
+    {
+      "id": 6,
+      "kind": "read",
+      "turns": ["Do you have any neon pink cowboy boots?"],
+      "checks": {"expected": {"matching_products_in_catalog": 0}}
+    },
+    {
+      "id": 7,
+      "kind": "approval_gate",
+      "turns": ["Log chicken as lunch and teriyaki as dinner."],
+      "checks": {
+        "expected": {
+          "distinct_writes": 2,
+          "names_substring": ["chicken", "teriyaki"],
+          "note": "PASS = exactly two log_meal calls, one per named meal, no re-request of an already-approved write. The harness auto-approves every log_meal call with a success tool_result the first time it sees that meal name; a duplicate call for a name already approved is graded as a fail, mirroring fit-coach's duplicate approval card bug."
+        }
+      }
+    }
+  ]
+}

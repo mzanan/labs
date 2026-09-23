@@ -1,0 +1,8 @@
+{
+  "note": "Expected JSON per receipt/invoice image, filled in once Matias supplies fixtures/vision/*.jpg or *.png. Placeholder ids only; edit to match the real images before running.",
+  "images": [
+    {"id": "receipt-1", "file": "receipt-1.jpg", "expected": {"amount": 0.0, "currency": "USD", "date": "2026-01-01", "merchant": ""}},
+    {"id": "receipt-2", "file": "receipt-2.jpg", "expected": {"amount": 0.0, "currency": "USD", "date": "2026-01-01", "merchant": ""}},
+    {"id": "receipt-3", "file": "receipt-3.jpg", "expected": {"amount": 0.0, "currency": "USD", "date": "2026-01-01", "merchant": ""}}
+  ]
+}

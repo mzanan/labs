@@ -1,0 +1,5084 @@
+{
+  "phase0": [
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "model_id": "glm-5.3",
+      "passed": true,
+      "error": null,
+      "cost_usd": 0.00021406
+    }
+  ],
+  "tool_call": [
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 1,
+      "rep": 1,
+      "passed": false,
+      "reason": "no products were presented to the customer",
+      "turns": [
+        {
+          "prompt": "Do you have anything in black under $80?",
+          "tool_calls": [
+            {
+              "tool": "search_products",
+              "input": {
+                "filters": {
+                  "max_price": 80
+                },
+                "limit": 20,
+                "query": "black"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "black"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "filters": {
+                  "max_price": 80,
+                  "sort": "price_asc"
+                },
+                "limit": 20,
+                "query": "black clothing apparel"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "apparel"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "all products"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "shirt"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "sneakers shoes"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "filters": {
+                  "category": "apparel"
+                },
+                "limit": 20,
+                "query": "clothing"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            }
+          ],
+          "text": "Hmm, no hits yet. Let me take a broader look at what the catalog carries.Let me try a few specific product types to see what's in stock.I'm sorry \u2014 I searched the catalog several ways (generic \"black,\" apparel, shirts, shoes, and a few price-filtered variants) and everything came back empty, so I don't have any black items under $80 (or even black items at all) to show right now.\n\nIt's possible the search index or catalog is having an issue. A couple of things that would help me retry:\n\n- **Any specific category or product type** you're shopping for (e.g., \"black hoodie,\" \"black backpack\")? A more targeted query might get different results.\n- **Your budget flexibility** \u2014 if you can go above $80, let me know and I can broaden the search.\n\nWant me to try again with a specific product name?",
+          "cost_usd": 0.010458,
+          "latency_ms": 13316.9,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.010458,
+      "latency_ms": 13316.9,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 1,
+      "rep": 2,
+      "passed": true,
+      "reason": "every presented product_id (['8d92c870-e377-554d-a8b8-4fe5e3a72b89', 'dfad20bd-dedf-5f64-a2f6-da92358c6295', '6692bfa8-a911-5482-b9d5-f6593b8b623b']) is in the under-$80 set",
+      "turns": [
+        {
+          "prompt": "Do you have anything in black under $80?",
+          "tool_calls": [
+            {
+              "tool": "search_products",
+              "input": {
+                "filters": {
+                  "max_price": 80,
+                  "sort": "relevance"
+                },
+                "limit": 10,
+                "query": "black"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "filters": {
+                  "max_price": 80
+                },
+                "limit": 10,
+                "query": "black shirt"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "filters": {
+                  "max_price": 80
+                },
+                "limit": 10,
+                "query": "black dress"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "filters": {
+                  "max_price": 80
+                },
+                "limit": 10,
+                "query": "black accessories"
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "input": {
+                "product_id": "dfad20bd-dedf-5f64-a2f6-da92358c6295"
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "input": {
+                "product_id": "8d92c870-e377-554d-a8b8-4fe5e3a72b89"
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "input": {
+                "product_id": "6692bfa8-a911-5482-b9d5-f6593b8b623b"
+              }
+            },
+            {
+              "tool": "present_products",
+              "input": {
+                "picks": [
+                  {
+                    "product_id": "8d92c870-e377-554d-a8b8-4fe5e3a72b89",
+                    "reason": "Best value at $46.73 \u2014 the most budget-friendly black option, in stock (60 units)."
+                  },
+                  {
+                    "product_id": "dfad20bd-dedf-5f64-a2f6-da92358c6295",
+                    "reason": "Mid-range pick at $60.90, comfortably under your $80 cap with plenty of stock."
+                  },
+                  {
+                    "product_id": "6692bfa8-a911-5482-b9d5-f6593b8b623b",
+                    "reason": "Premium option at $73.62, still under budget, one-size accessory."
+                  }
+                ]
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "dfad20bd-dedf-5f64-a2f6-da92358c6295",
+                    "title": "Accessories Item 08",
+                    "price": 60.9,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 65,
+                    "short_description": "A accessories piece from the demo catalog, item 08.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-08-0.jpg"
+                  },
+                  {
+                    "product_id": "8d92c870-e377-554d-a8b8-4fe5e3a72b89",
+                    "title": "Accessories Item 18",
+                    "price": 46.73,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 60,
+                    "short_description": "A accessories piece from the demo catalog, item 18.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-18-0.jpg"
+                  },
+                  {
+                    "product_id": "6692bfa8-a911-5482-b9d5-f6593b8b623b",
+                    "title": "Accessories Item 23",
+                    "price": 73.62,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 36,
+                    "short_description": "A accessories piece from the demo catalog, item 23.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-23-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "output": {
+                "product_id": "dfad20bd-dedf-5f64-a2f6-da92358c6295",
+                "title": "Accessories Item 08",
+                "price": 60.9,
+                "currency": "USD",
+                "category": "Accessories",
+                "in_stock": true,
+                "stock_quantity": 65,
+                "short_description": "A accessories piece from the demo catalog, item 08.",
+                "sizes": [
+                  "One Size"
+                ],
+                "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-08-0.jpg",
+                "long_description": "A accessories piece from the demo catalog, item 08."
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "output": {
+                "product_id": "8d92c870-e377-554d-a8b8-4fe5e3a72b89",
+                "title": "Accessories Item 18",
+                "price": 46.73,
+                "currency": "USD",
+                "category": "Accessories",
+                "in_stock": true,
+                "stock_quantity": 60,
+                "short_description": "A accessories piece from the demo catalog, item 18.",
+                "sizes": [
+                  "One Size"
+                ],
+                "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-18-0.jpg",
+                "long_description": "A accessories piece from the demo catalog, item 18."
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "output": {
+                "product_id": "6692bfa8-a911-5482-b9d5-f6593b8b623b",
+                "title": "Accessories Item 23",
+                "price": 73.62,
+                "currency": "USD",
+                "category": "Accessories",
+                "in_stock": true,
+                "stock_quantity": 36,
+                "short_description": "A accessories piece from the demo catalog, item 23.",
+                "sizes": [
+                  "One Size"
+                ],
+                "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-23-0.jpg",
+                "long_description": "A accessories piece from the demo catalog, item 23."
+              }
+            },
+            {
+              "tool": "present_products",
+              "output": {
+                "ok": true
+              }
+            }
+          ],
+          "text": "The generic \"black\" search didn't return anything, so let me try a few more specific queries to see what the catalog carries.I found some accessories matches, but let me verify the details (including color) before showing them to you.Here's what I found that matches \"black\" in our catalog, all under $80 \u2014 these came up in the Accessories category:These are all one-size accessories from the demo catalog. Note that the catalog listings don't explicitly specify color in their descriptions, so I'd recommend double-checking the product images before purchasing. \n\nWould you like me to add any of these to your cart, or would you like me to search a different category (e.g., shoes, bags, apparel) in black under $80?",
+          "cost_usd": 0.009871,
+          "latency_ms": 16891.3,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.009871,
+      "latency_ms": 16891.3,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 1,
+      "rep": 3,
+      "passed": false,
+      "reason": "no products were presented to the customer",
+      "turns": [
+        {
+          "prompt": "Do you have anything in black under $80?",
+          "tool_calls": [
+            {
+              "tool": "search_products",
+              "input": {
+                "filters": {
+                  "max_price": 80
+                },
+                "limit": 20,
+                "query": "black"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "black"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "black color"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "clothing"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "apparel"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "shoes"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "all products"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "t-shirt"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "sneakers"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "headphones"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            }
+          ],
+          "text": "I'm having trouble finding results so far \u2014 let me cast a wider net to see what the catalog actually carries.Let me try a few more specific product terms just in case the search needs a precise match.I searched the catalog several ways \u2014 for \"black\" with and without the $80 price cap, and also broader queries like clothing, shoes, and general products \u2014 but nothing came back. It looks like the catalog is either empty or unavailable right now, so I can't honestly show you any black items under $80 at the moment.\n\nA couple of options:\n\n1. **Try again shortly** \u2014 this could be a temporary catalog issue, and I'd be happy to re-run the search.\n2. **Tell me what you're shopping for** (e.g., a jacket, bag, sneakers) \u2014 if you give me a more specific product name, I can try a targeted lookup once items are available.\n\nI'd rather tell you straight than guess at products that may not exist. Just let me know how you'd like to proceed!",
+          "cost_usd": 0.005811,
+          "latency_ms": 17923.5,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.005811,
+      "latency_ms": 17923.5,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 2,
+      "rep": 1,
+      "passed": true,
+      "reason": "both prices (84.22, 30.3) appear in the answer",
+      "turns": [
+        {
+          "prompt": "Can you compare the Outerwear Item 07 and the Outerwear Item 12, and tell me which one you'd recommend?",
+          "tool_calls": [
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "Outerwear Item 07"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "Outerwear Item 12"
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "input": {
+                "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb"
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "input": {
+                "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5"
+              }
+            },
+            {
+              "tool": "present_comparison",
+              "input": {
+                "entries": [
+                  {
+                    "best_for": "Shoppers on a budget, or anyone needing sizes L or M",
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5"
+                  },
+                  {
+                    "best_for": "Anyone needing size S, or if you prefer the higher-priced piece",
+                    "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb"
+                  }
+                ],
+                "recommended_product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb",
+                    "title": "Outerwear Item 07",
+                    "price": 84.22,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 93,
+                    "short_description": "A outerwear piece from the demo catalog, item 07.",
+                    "sizes": [
+                      "S",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-07-0.jpg"
+                  },
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 94,
+                    "short_description": "A tops piece from the demo catalog, item 00.",
+                    "sizes": [
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-00-0.jpg"
+                  },
+                  {
+                    "product_id": "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+                    "title": "Bottoms Item 01",
+                    "price": 51.83,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 48,
+                    "short_description": "A bottoms piece from the demo catalog, item 01.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-01-0.jpg"
+                  },
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "bdce946c-a5f0-57d2-8cd2-758e62dc7a1b",
+                    "title": "Accessories Item 03",
+                    "price": 112.43,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 80,
+                    "short_description": "A accessories piece from the demo catalog, item 03.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-03-0.jpg"
+                  },
+                  {
+                    "product_id": "c8881f28-cfc8-5437-b645-1d710689ba39",
+                    "title": "Footwear Item 04",
+                    "price": 30.46,
+                    "currency": "USD",
+                    "category": "Footwear",
+                    "in_stock": true,
+                    "stock_quantity": 17,
+                    "short_description": "A footwear piece from the demo catalog, item 04.",
+                    "sizes": [
+                      "39",
+                      "41",
+                      "43"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/footwear-item-04-0.jpg"
+                  },
+                  {
+                    "product_id": "b9c359a0-c8e4-5409-8af4-1699b60dd29c",
+                    "title": "Tops Item 05",
+                    "price": 114.33,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 38,
+                    "short_description": "A tops piece from the demo catalog, item 05.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-05-0.jpg"
+                  },
+                  {
+                    "product_id": "c80ac139-ebea-5f08-bb15-adb71fc26d1b",
+                    "title": "Bottoms Item 06",
+                    "price": 133.14,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 81,
+                    "short_description": "A bottoms piece from the demo catalog, item 06.",
+                    "sizes": [
+                      "L",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-06-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 56,
+                    "short_description": "A outerwear piece from the demo catalog, item 12.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-12-0.jpg"
+                  },
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 94,
+                    "short_description": "A tops piece from the demo catalog, item 00.",
+                    "sizes": [
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-00-0.jpg"
+                  },
+                  {
+                    "product_id": "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+                    "title": "Bottoms Item 01",
+                    "price": 51.83,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 48,
+                    "short_description": "A bottoms piece from the demo catalog, item 01.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-01-0.jpg"
+                  },
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "bdce946c-a5f0-57d2-8cd2-758e62dc7a1b",
+                    "title": "Accessories Item 03",
+                    "price": 112.43,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 80,
+                    "short_description": "A accessories piece from the demo catalog, item 03.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-03-0.jpg"
+                  },
+                  {
+                    "product_id": "c8881f28-cfc8-5437-b645-1d710689ba39",
+                    "title": "Footwear Item 04",
+                    "price": 30.46,
+                    "currency": "USD",
+                    "category": "Footwear",
+                    "in_stock": true,
+                    "stock_quantity": 17,
+                    "short_description": "A footwear piece from the demo catalog, item 04.",
+                    "sizes": [
+                      "39",
+                      "41",
+                      "43"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/footwear-item-04-0.jpg"
+                  },
+                  {
+                    "product_id": "b9c359a0-c8e4-5409-8af4-1699b60dd29c",
+                    "title": "Tops Item 05",
+                    "price": 114.33,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 38,
+                    "short_description": "A tops piece from the demo catalog, item 05.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-05-0.jpg"
+                  },
+                  {
+                    "product_id": "c80ac139-ebea-5f08-bb15-adb71fc26d1b",
+                    "title": "Bottoms Item 06",
+                    "price": 133.14,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 81,
+                    "short_description": "A bottoms piece from the demo catalog, item 06.",
+                    "sizes": [
+                      "L",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-06-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "output": {
+                "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb",
+                "title": "Outerwear Item 07",
+                "price": 84.22,
+                "currency": "USD",
+                "category": "Outerwear",
+                "in_stock": true,
+                "stock_quantity": 93,
+                "short_description": "A outerwear piece from the demo catalog, item 07.",
+                "sizes": [
+                  "S",
+                  "XL"
+                ],
+                "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-07-0.jpg",
+                "long_description": "A outerwear piece from the demo catalog, item 07."
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "output": {
+                "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                "title": "Outerwear Item 12",
+                "price": 30.3,
+                "currency": "USD",
+                "category": "Outerwear",
+                "in_stock": true,
+                "stock_quantity": 56,
+                "short_description": "A outerwear piece from the demo catalog, item 12.",
+                "sizes": [
+                  "L",
+                  "M",
+                  "XL"
+                ],
+                "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-12-0.jpg",
+                "long_description": "A outerwear piece from the demo catalog, item 12."
+              }
+            },
+            {
+              "tool": "present_comparison",
+              "output": {
+                "ok": true
+              }
+            }
+          ],
+          "text": "Both items are in the catalog. Let me pull the full details for each so I can give you a proper side-by-side.I've pulled the full details on both. Here's how they stack up:Here's the head-to-head:\n\n| | **Outerwear Item 07** | **Outerwear Item 12** |\n|---|---|---|\n| **Price** | $84.22 | $30.30 |\n| **Sizes** | S, XL | L, M, XL |\n| **Stock** | 93 in stock | 56 in stock |\n| **Availability** | In stock | In stock |\n\n**My recommendation: Outerwear Item 12** \ud83c\udfc6\n\nHere's my reasoning:\n\n- **Price:** Item 12 is less than half the cost of Item 07 ($30.30 vs. $84.22), which is a significant difference for two pieces from the same category.\n- **Size range:** Item 12 offers three sizes (L, M, XL), while Item 07 only comes in S and XL. Unless you specifically need size S, Item 12 gives you more flexibility.\n- **Availability:** Both are comfortably in stock, so there's no urgency issue either way.\n\nThe one scenario where I'd point you to Item 07 instead is if you need a **size S**, since that's the only size it offers that Item 12 doesn't. Otherwise, Item 12 is the better value.\n\nWant me to add Item 12 (or Item 07) to your cart? Just let me know your size and quantity.",
+          "cost_usd": 0.018485,
+          "latency_ms": 14817.9,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.018485,
+      "latency_ms": 14817.9,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 2,
+      "rep": 2,
+      "passed": true,
+      "reason": "both prices (84.22, 30.3) appear in the answer",
+      "turns": [
+        {
+          "prompt": "Can you compare the Outerwear Item 07 and the Outerwear Item 12, and tell me which one you'd recommend?",
+          "tool_calls": [
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "outerwear"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "Outerwear Item 07"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "Outerwear Item 12"
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "input": {
+                "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb"
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "input": {
+                "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5"
+              }
+            },
+            {
+              "tool": "present_comparison",
+              "input": {
+                "entries": [
+                  {
+                    "best_for": "Budget-conscious shoppers and anyone needing a middle size (M or L)",
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5"
+                  },
+                  {
+                    "best_for": "Shoppers who need size S or want the more established catalog piece",
+                    "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb"
+                  }
+                ],
+                "recommended_product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb",
+                    "title": "Outerwear Item 07",
+                    "price": 84.22,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 93,
+                    "short_description": "A outerwear piece from the demo catalog, item 07.",
+                    "sizes": [
+                      "S",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-07-0.jpg"
+                  },
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 56,
+                    "short_description": "A outerwear piece from the demo catalog, item 12.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-12-0.jpg"
+                  },
+                  {
+                    "product_id": "c6254f48-58bd-56ee-aba4-bf236499b348",
+                    "title": "Outerwear Item 17",
+                    "price": 117.06,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": false,
+                    "stock_quantity": 0,
+                    "short_description": "A outerwear piece from the demo catalog, item 17.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-17-0.jpg"
+                  },
+                  {
+                    "product_id": "56d3b423-30cf-5035-95ae-13a1b364ca2e",
+                    "title": "Outerwear Item 22",
+                    "price": 152.63,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 66,
+                    "short_description": "A outerwear piece from the demo catalog, item 22.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-22-0.jpg"
+                  },
+                  {
+                    "product_id": "c3152808-fb98-5a34-b230-16fc7dd45377",
+                    "title": "Outerwear Item 27",
+                    "price": 91.27,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 44,
+                    "short_description": "A outerwear piece from the demo catalog, item 27.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-27-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb",
+                    "title": "Outerwear Item 07",
+                    "price": 84.22,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 93,
+                    "short_description": "A outerwear piece from the demo catalog, item 07.",
+                    "sizes": [
+                      "S",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-07-0.jpg"
+                  },
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 94,
+                    "short_description": "A tops piece from the demo catalog, item 00.",
+                    "sizes": [
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-00-0.jpg"
+                  },
+                  {
+                    "product_id": "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+                    "title": "Bottoms Item 01",
+                    "price": 51.83,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 48,
+                    "short_description": "A bottoms piece from the demo catalog, item 01.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-01-0.jpg"
+                  },
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "bdce946c-a5f0-57d2-8cd2-758e62dc7a1b",
+                    "title": "Accessories Item 03",
+                    "price": 112.43,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 80,
+                    "short_description": "A accessories piece from the demo catalog, item 03.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-03-0.jpg"
+                  },
+                  {
+                    "product_id": "c8881f28-cfc8-5437-b645-1d710689ba39",
+                    "title": "Footwear Item 04",
+                    "price": 30.46,
+                    "currency": "USD",
+                    "category": "Footwear",
+                    "in_stock": true,
+                    "stock_quantity": 17,
+                    "short_description": "A footwear piece from the demo catalog, item 04.",
+                    "sizes": [
+                      "39",
+                      "41",
+                      "43"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/footwear-item-04-0.jpg"
+                  },
+                  {
+                    "product_id": "b9c359a0-c8e4-5409-8af4-1699b60dd29c",
+                    "title": "Tops Item 05",
+                    "price": 114.33,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 38,
+                    "short_description": "A tops piece from the demo catalog, item 05.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-05-0.jpg"
+                  },
+                  {
+                    "product_id": "c80ac139-ebea-5f08-bb15-adb71fc26d1b",
+                    "title": "Bottoms Item 06",
+                    "price": 133.14,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 81,
+                    "short_description": "A bottoms piece from the demo catalog, item 06.",
+                    "sizes": [
+                      "L",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-06-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 56,
+                    "short_description": "A outerwear piece from the demo catalog, item 12.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-12-0.jpg"
+                  },
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 94,
+                    "short_description": "A tops piece from the demo catalog, item 00.",
+                    "sizes": [
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-00-0.jpg"
+                  },
+                  {
+                    "product_id": "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+                    "title": "Bottoms Item 01",
+                    "price": 51.83,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 48,
+                    "short_description": "A bottoms piece from the demo catalog, item 01.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-01-0.jpg"
+                  },
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "bdce946c-a5f0-57d2-8cd2-758e62dc7a1b",
+                    "title": "Accessories Item 03",
+                    "price": 112.43,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 80,
+                    "short_description": "A accessories piece from the demo catalog, item 03.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-03-0.jpg"
+                  },
+                  {
+                    "product_id": "c8881f28-cfc8-5437-b645-1d710689ba39",
+                    "title": "Footwear Item 04",
+                    "price": 30.46,
+                    "currency": "USD",
+                    "category": "Footwear",
+                    "in_stock": true,
+                    "stock_quantity": 17,
+                    "short_description": "A footwear piece from the demo catalog, item 04.",
+                    "sizes": [
+                      "39",
+                      "41",
+                      "43"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/footwear-item-04-0.jpg"
+                  },
+                  {
+                    "product_id": "b9c359a0-c8e4-5409-8af4-1699b60dd29c",
+                    "title": "Tops Item 05",
+                    "price": 114.33,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 38,
+                    "short_description": "A tops piece from the demo catalog, item 05.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-05-0.jpg"
+                  },
+                  {
+                    "product_id": "c80ac139-ebea-5f08-bb15-adb71fc26d1b",
+                    "title": "Bottoms Item 06",
+                    "price": 133.14,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 81,
+                    "short_description": "A bottoms piece from the demo catalog, item 06.",
+                    "sizes": [
+                      "L",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-06-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "output": {
+                "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb",
+                "title": "Outerwear Item 07",
+                "price": 84.22,
+                "currency": "USD",
+                "category": "Outerwear",
+                "in_stock": true,
+                "stock_quantity": 93,
+                "short_description": "A outerwear piece from the demo catalog, item 07.",
+                "sizes": [
+                  "S",
+                  "XL"
+                ],
+                "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-07-0.jpg",
+                "long_description": "A outerwear piece from the demo catalog, item 07."
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "output": {
+                "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                "title": "Outerwear Item 12",
+                "price": 30.3,
+                "currency": "USD",
+                "category": "Outerwear",
+                "in_stock": true,
+                "stock_quantity": 56,
+                "short_description": "A outerwear piece from the demo catalog, item 12.",
+                "sizes": [
+                  "L",
+                  "M",
+                  "XL"
+                ],
+                "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-12-0.jpg",
+                "long_description": "A outerwear piece from the demo catalog, item 12."
+              }
+            },
+            {
+              "tool": "present_comparison",
+              "output": {
+                "ok": true
+              }
+            }
+          ],
+          "text": "I'll look up both outerwear items to compare them for you.Here's a side-by-side comparison of the two outerwear pieces you asked about:**My recommendation: Outerwear Item 12**\n\nHere's how they stack up:\n\n| | Outerwear Item 07 | Outerwear Item 12 |\n|---|---|---|\n| **Price** | $84.22 | $30.30 |\n| **Sizes** | S, XL | L, M, XL |\n| **Stock** | 93 in stock | 56 in stock |\n\n**Why Item 12:** At $30.30, it's roughly **64% cheaper** than Item 07 ($84.22), and it offers more size flexibility with three options (L, M, XL) versus just two (S, XL). Both are in stock, so availability isn't an issue either way.\n\n**When to pick Item 07 instead:** If you wear a **size S**, Item 12 won't work for you since it starts at M \u2014 in that case, Item 07 is your only option of the two.\n\nWould you like me to add one of these to your cart?",
+          "cost_usd": 0.020329,
+          "latency_ms": 12268.3,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.020329,
+      "latency_ms": 12268.3,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 2,
+      "rep": 3,
+      "passed": true,
+      "reason": "both prices (84.22, 30.3) appear in the answer",
+      "turns": [
+        {
+          "prompt": "Can you compare the Outerwear Item 07 and the Outerwear Item 12, and tell me which one you'd recommend?",
+          "tool_calls": [
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "Outerwear Item 07"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "Outerwear Item 12"
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "input": {
+                "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb"
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "input": {
+                "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5"
+              }
+            },
+            {
+              "tool": "present_comparison",
+              "input": {
+                "entries": [
+                  {
+                    "best_for": "Budget shoppers who want more size options (L/M/XL) at a much lower price",
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5"
+                  },
+                  {
+                    "best_for": "Anyone needing size S, or preferring the higher-priced option",
+                    "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb"
+                  }
+                ],
+                "recommended_product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb",
+                    "title": "Outerwear Item 07",
+                    "price": 84.22,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 93,
+                    "short_description": "A outerwear piece from the demo catalog, item 07.",
+                    "sizes": [
+                      "S",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-07-0.jpg"
+                  },
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 94,
+                    "short_description": "A tops piece from the demo catalog, item 00.",
+                    "sizes": [
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-00-0.jpg"
+                  },
+                  {
+                    "product_id": "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+                    "title": "Bottoms Item 01",
+                    "price": 51.83,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 48,
+                    "short_description": "A bottoms piece from the demo catalog, item 01.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-01-0.jpg"
+                  },
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "bdce946c-a5f0-57d2-8cd2-758e62dc7a1b",
+                    "title": "Accessories Item 03",
+                    "price": 112.43,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 80,
+                    "short_description": "A accessories piece from the demo catalog, item 03.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-03-0.jpg"
+                  },
+                  {
+                    "product_id": "c8881f28-cfc8-5437-b645-1d710689ba39",
+                    "title": "Footwear Item 04",
+                    "price": 30.46,
+                    "currency": "USD",
+                    "category": "Footwear",
+                    "in_stock": true,
+                    "stock_quantity": 17,
+                    "short_description": "A footwear piece from the demo catalog, item 04.",
+                    "sizes": [
+                      "39",
+                      "41",
+                      "43"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/footwear-item-04-0.jpg"
+                  },
+                  {
+                    "product_id": "b9c359a0-c8e4-5409-8af4-1699b60dd29c",
+                    "title": "Tops Item 05",
+                    "price": 114.33,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 38,
+                    "short_description": "A tops piece from the demo catalog, item 05.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-05-0.jpg"
+                  },
+                  {
+                    "product_id": "c80ac139-ebea-5f08-bb15-adb71fc26d1b",
+                    "title": "Bottoms Item 06",
+                    "price": 133.14,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 81,
+                    "short_description": "A bottoms piece from the demo catalog, item 06.",
+                    "sizes": [
+                      "L",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-06-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 56,
+                    "short_description": "A outerwear piece from the demo catalog, item 12.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-12-0.jpg"
+                  },
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 94,
+                    "short_description": "A tops piece from the demo catalog, item 00.",
+                    "sizes": [
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-00-0.jpg"
+                  },
+                  {
+                    "product_id": "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+                    "title": "Bottoms Item 01",
+                    "price": 51.83,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 48,
+                    "short_description": "A bottoms piece from the demo catalog, item 01.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-01-0.jpg"
+                  },
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "bdce946c-a5f0-57d2-8cd2-758e62dc7a1b",
+                    "title": "Accessories Item 03",
+                    "price": 112.43,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 80,
+                    "short_description": "A accessories piece from the demo catalog, item 03.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-03-0.jpg"
+                  },
+                  {
+                    "product_id": "c8881f28-cfc8-5437-b645-1d710689ba39",
+                    "title": "Footwear Item 04",
+                    "price": 30.46,
+                    "currency": "USD",
+                    "category": "Footwear",
+                    "in_stock": true,
+                    "stock_quantity": 17,
+                    "short_description": "A footwear piece from the demo catalog, item 04.",
+                    "sizes": [
+                      "39",
+                      "41",
+                      "43"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/footwear-item-04-0.jpg"
+                  },
+                  {
+                    "product_id": "b9c359a0-c8e4-5409-8af4-1699b60dd29c",
+                    "title": "Tops Item 05",
+                    "price": 114.33,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 38,
+                    "short_description": "A tops piece from the demo catalog, item 05.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-05-0.jpg"
+                  },
+                  {
+                    "product_id": "c80ac139-ebea-5f08-bb15-adb71fc26d1b",
+                    "title": "Bottoms Item 06",
+                    "price": 133.14,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 81,
+                    "short_description": "A bottoms piece from the demo catalog, item 06.",
+                    "sizes": [
+                      "L",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-06-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "output": {
+                "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb",
+                "title": "Outerwear Item 07",
+                "price": 84.22,
+                "currency": "USD",
+                "category": "Outerwear",
+                "in_stock": true,
+                "stock_quantity": 93,
+                "short_description": "A outerwear piece from the demo catalog, item 07.",
+                "sizes": [
+                  "S",
+                  "XL"
+                ],
+                "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-07-0.jpg",
+                "long_description": "A outerwear piece from the demo catalog, item 07."
+              }
+            },
+            {
+              "tool": "get_product_details",
+              "output": {
+                "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                "title": "Outerwear Item 12",
+                "price": 30.3,
+                "currency": "USD",
+                "category": "Outerwear",
+                "in_stock": true,
+                "stock_quantity": 56,
+                "short_description": "A outerwear piece from the demo catalog, item 12.",
+                "sizes": [
+                  "L",
+                  "M",
+                  "XL"
+                ],
+                "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-12-0.jpg",
+                "long_description": "A outerwear piece from the demo catalog, item 12."
+              }
+            },
+            {
+              "tool": "present_comparison",
+              "output": {
+                "ok": true
+              }
+            }
+          ],
+          "text": "I'll look up both outerwear items to compare them for you.Both items are in stock. Let me pull the full details for each before comparing.I have all the details. Here's the side-by-side comparison:Here's the comparison:\n\n**Outerwear Item 07** \u2014 $84.22\n- Sizes: S, XL\n- Stock: 93 in stock\n\n**Outerwear Item 12** \u2014 $30.30\n- Sizes: L, M, XL\n- Stock: 56 in stock\n\n**My recommendation: Outerwear Item 12.** It's less than half the price ($30.30 vs. $84.22) and offers three sizes (L, M, XL) versus just two for Item 07. Both are well-stocked and available now.\n\nThe only reason to pick Item 07 would be if you need a size **S**, which Item 12 doesn't offer. Would you like me to add either one to your cart?",
+          "cost_usd": 0.012999,
+          "latency_ms": 11184.8,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.012999,
+      "latency_ms": 11184.8,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 3,
+      "rep": 1,
+      "passed": true,
+      "reason": "lab_cart_items matches expected state exactly: [{'product_id': '817c156d-39f8-56f3-94fd-446740ac9438', 'title': 'Tops Item 00', 'price': 19.13, 'quantity': 5}]",
+      "turns": [
+        {
+          "prompt": "Add 2 of the Tops Item 00 and 1 of the Outerwear Item 12 to my cart.",
+          "tool_calls": [
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "Tops Item 00"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "Outerwear Item 12"
+              }
+            },
+            {
+              "tool": "add_to_cart",
+              "input": {
+                "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                "quantity": 2
+              }
+            },
+            {
+              "tool": "add_to_cart",
+              "input": {
+                "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                "quantity": 1
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 94,
+                    "short_description": "A tops piece from the demo catalog, item 00.",
+                    "sizes": [
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-00-0.jpg"
+                  },
+                  {
+                    "product_id": "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+                    "title": "Bottoms Item 01",
+                    "price": 51.83,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 48,
+                    "short_description": "A bottoms piece from the demo catalog, item 01.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-01-0.jpg"
+                  },
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "bdce946c-a5f0-57d2-8cd2-758e62dc7a1b",
+                    "title": "Accessories Item 03",
+                    "price": 112.43,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 80,
+                    "short_description": "A accessories piece from the demo catalog, item 03.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-03-0.jpg"
+                  },
+                  {
+                    "product_id": "c8881f28-cfc8-5437-b645-1d710689ba39",
+                    "title": "Footwear Item 04",
+                    "price": 30.46,
+                    "currency": "USD",
+                    "category": "Footwear",
+                    "in_stock": true,
+                    "stock_quantity": 17,
+                    "short_description": "A footwear piece from the demo catalog, item 04.",
+                    "sizes": [
+                      "39",
+                      "41",
+                      "43"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/footwear-item-04-0.jpg"
+                  },
+                  {
+                    "product_id": "b9c359a0-c8e4-5409-8af4-1699b60dd29c",
+                    "title": "Tops Item 05",
+                    "price": 114.33,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 38,
+                    "short_description": "A tops piece from the demo catalog, item 05.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-05-0.jpg"
+                  },
+                  {
+                    "product_id": "c80ac139-ebea-5f08-bb15-adb71fc26d1b",
+                    "title": "Bottoms Item 06",
+                    "price": 133.14,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 81,
+                    "short_description": "A bottoms piece from the demo catalog, item 06.",
+                    "sizes": [
+                      "L",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-06-0.jpg"
+                  },
+                  {
+                    "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb",
+                    "title": "Outerwear Item 07",
+                    "price": 84.22,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 93,
+                    "short_description": "A outerwear piece from the demo catalog, item 07.",
+                    "sizes": [
+                      "S",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-07-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 56,
+                    "short_description": "A outerwear piece from the demo catalog, item 12.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-12-0.jpg"
+                  },
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 94,
+                    "short_description": "A tops piece from the demo catalog, item 00.",
+                    "sizes": [
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-00-0.jpg"
+                  },
+                  {
+                    "product_id": "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+                    "title": "Bottoms Item 01",
+                    "price": 51.83,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 48,
+                    "short_description": "A bottoms piece from the demo catalog, item 01.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-01-0.jpg"
+                  },
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "bdce946c-a5f0-57d2-8cd2-758e62dc7a1b",
+                    "title": "Accessories Item 03",
+                    "price": 112.43,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 80,
+                    "short_description": "A accessories piece from the demo catalog, item 03.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-03-0.jpg"
+                  },
+                  {
+                    "product_id": "c8881f28-cfc8-5437-b645-1d710689ba39",
+                    "title": "Footwear Item 04",
+                    "price": 30.46,
+                    "currency": "USD",
+                    "category": "Footwear",
+                    "in_stock": true,
+                    "stock_quantity": 17,
+                    "short_description": "A footwear piece from the demo catalog, item 04.",
+                    "sizes": [
+                      "39",
+                      "41",
+                      "43"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/footwear-item-04-0.jpg"
+                  },
+                  {
+                    "product_id": "b9c359a0-c8e4-5409-8af4-1699b60dd29c",
+                    "title": "Tops Item 05",
+                    "price": 114.33,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 38,
+                    "short_description": "A tops piece from the demo catalog, item 05.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-05-0.jpg"
+                  },
+                  {
+                    "product_id": "c80ac139-ebea-5f08-bb15-adb71fc26d1b",
+                    "title": "Bottoms Item 06",
+                    "price": 133.14,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 81,
+                    "short_description": "A bottoms piece from the demo catalog, item 06.",
+                    "sizes": [
+                      "L",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-06-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "add_to_cart",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 2
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 38.26
+              }
+            },
+            {
+              "tool": "add_to_cart",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 2
+                  },
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "quantity": 1
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 68.56
+              }
+            }
+          ],
+          "text": "I'll find those items in the catalog first.Both items are in stock. Adding them to your cart now.Done! Both items have been added to your cart:\n\n| Item | Quantity | Price Each | Subtotal |\n|------|----------|------------|----------|\n| Tops Item 00 | 2 | $19.13 | $38.26 |\n| Outerwear Item 12 | 1 | $30.30 | $30.30 |\n\n**Cart total: $68.56**\n\nIs there anything else you'd like to add or adjust?",
+          "cost_usd": 0.009014,
+          "latency_ms": 7666.3,
+          "error": null
+        },
+        {
+          "prompt": "Actually, change the Tops Item 00 to 5.",
+          "tool_calls": [
+            {
+              "tool": "update_cart_item",
+              "input": {
+                "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                "quantity": 5
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "update_cart_item",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 5
+                  },
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "quantity": 1
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 125.95
+              }
+            }
+          ],
+          "text": "Updated! Here's your current cart:\n\n| Item | Quantity | Price Each | Subtotal |\n|------|----------|------------|----------|\n| Tops Item 00 | 5 | $19.13 | $95.65 |\n| Outerwear Item 12 | 1 | $30.30 | $30.30 |\n\n**Cart total: $125.95**\n\nNote that Tops Item 00 comes in sizes S and XS \u2014 let me know if you'd like anything else changed!",
+          "cost_usd": 0.007386,
+          "latency_ms": 3709.0,
+          "error": null
+        },
+        {
+          "prompt": "Remove the Outerwear Item 12 from my cart.",
+          "tool_calls": [
+            {
+              "tool": "remove_from_cart",
+              "input": {
+                "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "remove_from_cart",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 5
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 95.65
+              }
+            }
+          ],
+          "text": "Removed! Your cart now contains:\n\n| Item | Quantity | Price Each | Subtotal |\n|------|----------|------------|----------|\n| Tops Item 00 | 5 | $19.13 | $95.65 |\n\n**Cart total: $95.65**\n\nAnything else you'd like to do?",
+          "cost_usd": 0.006026,
+          "latency_ms": 3055.4,
+          "error": null
+        },
+        {
+          "prompt": "What's in my cart right now?",
+          "tool_calls": [
+            {
+              "tool": "get_cart",
+              "input": {}
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "get_cart",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 5
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 95.65
+              }
+            }
+          ],
+          "text": "Here's what's currently in your cart:\n\n| Item | Quantity | Price Each | Subtotal |\n|------|----------|------------|----------|\n| Tops Item 00 | 5 | $19.13 | $95.65 |\n\n**Cart total: $95.65**\n\nWould you like to add anything else, adjust quantities, or proceed with anything?",
+          "cost_usd": 0.003487,
+          "latency_ms": 3227.1,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.025913,
+      "latency_ms": 17657.8,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 3,
+      "rep": 2,
+      "passed": true,
+      "reason": "lab_cart_items matches expected state exactly: [{'product_id': '817c156d-39f8-56f3-94fd-446740ac9438', 'title': 'Tops Item 00', 'price': 19.13, 'quantity': 5}]",
+      "turns": [
+        {
+          "prompt": "Add 2 of the Tops Item 00 and 1 of the Outerwear Item 12 to my cart.",
+          "tool_calls": [
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "Tops Item 00"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "Outerwear Item 12"
+              }
+            },
+            {
+              "tool": "add_to_cart",
+              "input": {
+                "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                "quantity": 2
+              }
+            },
+            {
+              "tool": "add_to_cart",
+              "input": {
+                "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                "quantity": 1
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 94,
+                    "short_description": "A tops piece from the demo catalog, item 00.",
+                    "sizes": [
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-00-0.jpg"
+                  },
+                  {
+                    "product_id": "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+                    "title": "Bottoms Item 01",
+                    "price": 51.83,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 48,
+                    "short_description": "A bottoms piece from the demo catalog, item 01.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-01-0.jpg"
+                  },
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "bdce946c-a5f0-57d2-8cd2-758e62dc7a1b",
+                    "title": "Accessories Item 03",
+                    "price": 112.43,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 80,
+                    "short_description": "A accessories piece from the demo catalog, item 03.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-03-0.jpg"
+                  },
+                  {
+                    "product_id": "c8881f28-cfc8-5437-b645-1d710689ba39",
+                    "title": "Footwear Item 04",
+                    "price": 30.46,
+                    "currency": "USD",
+                    "category": "Footwear",
+                    "in_stock": true,
+                    "stock_quantity": 17,
+                    "short_description": "A footwear piece from the demo catalog, item 04.",
+                    "sizes": [
+                      "39",
+                      "41",
+                      "43"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/footwear-item-04-0.jpg"
+                  },
+                  {
+                    "product_id": "b9c359a0-c8e4-5409-8af4-1699b60dd29c",
+                    "title": "Tops Item 05",
+                    "price": 114.33,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 38,
+                    "short_description": "A tops piece from the demo catalog, item 05.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-05-0.jpg"
+                  },
+                  {
+                    "product_id": "c80ac139-ebea-5f08-bb15-adb71fc26d1b",
+                    "title": "Bottoms Item 06",
+                    "price": 133.14,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 81,
+                    "short_description": "A bottoms piece from the demo catalog, item 06.",
+                    "sizes": [
+                      "L",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-06-0.jpg"
+                  },
+                  {
+                    "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb",
+                    "title": "Outerwear Item 07",
+                    "price": 84.22,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 93,
+                    "short_description": "A outerwear piece from the demo catalog, item 07.",
+                    "sizes": [
+                      "S",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-07-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 56,
+                    "short_description": "A outerwear piece from the demo catalog, item 12.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-12-0.jpg"
+                  },
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 94,
+                    "short_description": "A tops piece from the demo catalog, item 00.",
+                    "sizes": [
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-00-0.jpg"
+                  },
+                  {
+                    "product_id": "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+                    "title": "Bottoms Item 01",
+                    "price": 51.83,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 48,
+                    "short_description": "A bottoms piece from the demo catalog, item 01.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-01-0.jpg"
+                  },
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "bdce946c-a5f0-57d2-8cd2-758e62dc7a1b",
+                    "title": "Accessories Item 03",
+                    "price": 112.43,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 80,
+                    "short_description": "A accessories piece from the demo catalog, item 03.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-03-0.jpg"
+                  },
+                  {
+                    "product_id": "c8881f28-cfc8-5437-b645-1d710689ba39",
+                    "title": "Footwear Item 04",
+                    "price": 30.46,
+                    "currency": "USD",
+                    "category": "Footwear",
+                    "in_stock": true,
+                    "stock_quantity": 17,
+                    "short_description": "A footwear piece from the demo catalog, item 04.",
+                    "sizes": [
+                      "39",
+                      "41",
+                      "43"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/footwear-item-04-0.jpg"
+                  },
+                  {
+                    "product_id": "b9c359a0-c8e4-5409-8af4-1699b60dd29c",
+                    "title": "Tops Item 05",
+                    "price": 114.33,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 38,
+                    "short_description": "A tops piece from the demo catalog, item 05.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-05-0.jpg"
+                  },
+                  {
+                    "product_id": "c80ac139-ebea-5f08-bb15-adb71fc26d1b",
+                    "title": "Bottoms Item 06",
+                    "price": 133.14,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 81,
+                    "short_description": "A bottoms piece from the demo catalog, item 06.",
+                    "sizes": [
+                      "L",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-06-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "add_to_cart",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 2
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 38.26
+              }
+            },
+            {
+              "tool": "add_to_cart",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 2
+                  },
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "quantity": 1
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 68.56
+              }
+            }
+          ],
+          "text": "I'll look up those items in the catalog first.Found both items \u2014 adding them now.Done! Both items are in your cart:\n\n| Item | Price | Qty |\n|------|-------|-----|\n| Tops Item 00 | $19.13 | 2 |\n| Outerwear Item 12 | $30.30 | 1 |\n\n**Cart subtotal: $68.56**\n\nA couple of quick notes:\n- **Tops Item 00** comes in sizes **S and XS**, and **Outerwear Item 12** comes in **L, M, and XL** \u2014 let me know if you need help with sizing.\n- Anything else you'd like to add, or would you like to check out?",
+          "cost_usd": 0.009458,
+          "latency_ms": 6759.3,
+          "error": null
+        },
+        {
+          "prompt": "Actually, change the Tops Item 00 to 5.",
+          "tool_calls": [
+            {
+              "tool": "update_cart_item",
+              "input": {
+                "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                "quantity": 5
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "update_cart_item",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 5
+                  },
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "quantity": 1
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 125.95
+              }
+            }
+          ],
+          "text": "Updated! Your cart now looks like this:\n\n| Item | Price | Qty | Total |\n|------|-------|-----|-------|\n| Tops Item 00 | $19.13 | 5 | $95.65 |\n| Outerwear Item 12 | $30.30 | 1 | $30.30 |\n\n**New cart subtotal: $125.95**\n\nAnything else you'd like to adjust or add?",
+          "cost_usd": 0.007424,
+          "latency_ms": 4149.6,
+          "error": null
+        },
+        {
+          "prompt": "Remove the Outerwear Item 12 from my cart.",
+          "tool_calls": [
+            {
+              "tool": "remove_from_cart",
+              "input": {
+                "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "remove_from_cart",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 5
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 95.65
+              }
+            }
+          ],
+          "text": "Removed! Your cart now contains just:\n\n| Item | Price | Qty | Total |\n|------|-------|-----|-------|\n| Tops Item 00 | $19.13 | 5 | $95.65 |\n\n**Cart subtotal: $95.65**\n\nIs there anything else you'd like to add or adjust?",
+          "cost_usd": 0.003796,
+          "latency_ms": 3893.5,
+          "error": null
+        },
+        {
+          "prompt": "What's in my cart right now?",
+          "tool_calls": [
+            {
+              "tool": "get_cart",
+              "input": {}
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "get_cart",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 5
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 95.65
+              }
+            }
+          ],
+          "text": "Here's your current cart:\n\n| Item | Price | Qty | Total |\n|------|-------|-----|-------|\n| Tops Item 00 | $19.13 | 5 | $95.65 |\n\n**Cart subtotal: $95.65**\n\nAnything else you'd like to do \u2014 add items, adjust quantities, or check out?",
+          "cost_usd": 0.002828,
+          "latency_ms": 3863.7,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.023506,
+      "latency_ms": 18666.1,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 3,
+      "rep": 3,
+      "passed": true,
+      "reason": "lab_cart_items matches expected state exactly: [{'product_id': '817c156d-39f8-56f3-94fd-446740ac9438', 'title': 'Tops Item 00', 'price': 19.13, 'quantity': 5}]",
+      "turns": [
+        {
+          "prompt": "Add 2 of the Tops Item 00 and 1 of the Outerwear Item 12 to my cart.",
+          "tool_calls": [
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "Tops Item 00"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "Outerwear Item 12"
+              }
+            },
+            {
+              "tool": "add_to_cart",
+              "input": {
+                "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                "quantity": 2
+              }
+            },
+            {
+              "tool": "add_to_cart",
+              "input": {
+                "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                "quantity": 1
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 94,
+                    "short_description": "A tops piece from the demo catalog, item 00.",
+                    "sizes": [
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-00-0.jpg"
+                  },
+                  {
+                    "product_id": "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+                    "title": "Bottoms Item 01",
+                    "price": 51.83,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 48,
+                    "short_description": "A bottoms piece from the demo catalog, item 01.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-01-0.jpg"
+                  },
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "bdce946c-a5f0-57d2-8cd2-758e62dc7a1b",
+                    "title": "Accessories Item 03",
+                    "price": 112.43,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 80,
+                    "short_description": "A accessories piece from the demo catalog, item 03.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-03-0.jpg"
+                  },
+                  {
+                    "product_id": "c8881f28-cfc8-5437-b645-1d710689ba39",
+                    "title": "Footwear Item 04",
+                    "price": 30.46,
+                    "currency": "USD",
+                    "category": "Footwear",
+                    "in_stock": true,
+                    "stock_quantity": 17,
+                    "short_description": "A footwear piece from the demo catalog, item 04.",
+                    "sizes": [
+                      "39",
+                      "41",
+                      "43"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/footwear-item-04-0.jpg"
+                  },
+                  {
+                    "product_id": "b9c359a0-c8e4-5409-8af4-1699b60dd29c",
+                    "title": "Tops Item 05",
+                    "price": 114.33,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 38,
+                    "short_description": "A tops piece from the demo catalog, item 05.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-05-0.jpg"
+                  },
+                  {
+                    "product_id": "c80ac139-ebea-5f08-bb15-adb71fc26d1b",
+                    "title": "Bottoms Item 06",
+                    "price": 133.14,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 81,
+                    "short_description": "A bottoms piece from the demo catalog, item 06.",
+                    "sizes": [
+                      "L",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-06-0.jpg"
+                  },
+                  {
+                    "product_id": "fa3c1115-23e6-589f-8dc8-015fc89ecffb",
+                    "title": "Outerwear Item 07",
+                    "price": 84.22,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 93,
+                    "short_description": "A outerwear piece from the demo catalog, item 07.",
+                    "sizes": [
+                      "S",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-07-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": [
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 56,
+                    "short_description": "A outerwear piece from the demo catalog, item 12.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-12-0.jpg"
+                  },
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 94,
+                    "short_description": "A tops piece from the demo catalog, item 00.",
+                    "sizes": [
+                      "S",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-00-0.jpg"
+                  },
+                  {
+                    "product_id": "a0b2abf0-4a20-5174-8c84-e2a813195a9b",
+                    "title": "Bottoms Item 01",
+                    "price": 51.83,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 48,
+                    "short_description": "A bottoms piece from the demo catalog, item 01.",
+                    "sizes": [
+                      "L",
+                      "M",
+                      "XS"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-01-0.jpg"
+                  },
+                  {
+                    "product_id": "5c61c9fb-9893-59b9-83b6-752b9ed5837f",
+                    "title": "Outerwear Item 02",
+                    "price": 126.66,
+                    "currency": "USD",
+                    "category": "Outerwear",
+                    "in_stock": true,
+                    "stock_quantity": 4,
+                    "short_description": "A outerwear piece from the demo catalog, item 02.",
+                    "sizes": [
+                      "M",
+                      "XL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/outerwear-item-02-0.jpg"
+                  },
+                  {
+                    "product_id": "bdce946c-a5f0-57d2-8cd2-758e62dc7a1b",
+                    "title": "Accessories Item 03",
+                    "price": 112.43,
+                    "currency": "USD",
+                    "category": "Accessories",
+                    "in_stock": true,
+                    "stock_quantity": 80,
+                    "short_description": "A accessories piece from the demo catalog, item 03.",
+                    "sizes": [
+                      "One Size"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/accessories-item-03-0.jpg"
+                  },
+                  {
+                    "product_id": "c8881f28-cfc8-5437-b645-1d710689ba39",
+                    "title": "Footwear Item 04",
+                    "price": 30.46,
+                    "currency": "USD",
+                    "category": "Footwear",
+                    "in_stock": true,
+                    "stock_quantity": 17,
+                    "short_description": "A footwear piece from the demo catalog, item 04.",
+                    "sizes": [
+                      "39",
+                      "41",
+                      "43"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/footwear-item-04-0.jpg"
+                  },
+                  {
+                    "product_id": "b9c359a0-c8e4-5409-8af4-1699b60dd29c",
+                    "title": "Tops Item 05",
+                    "price": 114.33,
+                    "currency": "USD",
+                    "category": "Tops",
+                    "in_stock": true,
+                    "stock_quantity": 38,
+                    "short_description": "A tops piece from the demo catalog, item 05.",
+                    "sizes": [
+                      "M",
+                      "S",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/tops-item-05-0.jpg"
+                  },
+                  {
+                    "product_id": "c80ac139-ebea-5f08-bb15-adb71fc26d1b",
+                    "title": "Bottoms Item 06",
+                    "price": 133.14,
+                    "currency": "USD",
+                    "category": "Bottoms",
+                    "in_stock": true,
+                    "stock_quantity": 81,
+                    "short_description": "A bottoms piece from the demo catalog, item 06.",
+                    "sizes": [
+                      "L",
+                      "S",
+                      "XL",
+                      "XXL"
+                    ],
+                    "image_url": "https://demo.public.blob.vercel-storage.com/bottoms-item-06-0.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "tool": "add_to_cart",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 2
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 38.26
+              }
+            },
+            {
+              "tool": "add_to_cart",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 2
+                  },
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "quantity": 1
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 68.56
+              }
+            }
+          ],
+          "text": "Both items are in stock. Adding them to your cart now.Both items have been added to your cart:\n\n| Item | Quantity | Price | Total |\n|------|----------|-------|-------|\n| Tops Item 00 (S/XS) | 2 | $19.13 | $38.26 |\n| Outerwear Item 12 (L/M/XL) | 1 | $30.30 | $30.30 |\n\n**Cart subtotal: $68.56**\n\nIs there anything else you'd like to add, or would you like me to check on shipping or return policies before you check out?",
+          "cost_usd": 0.009274,
+          "latency_ms": 6875.0,
+          "error": null
+        },
+        {
+          "prompt": "Actually, change the Tops Item 00 to 5.",
+          "tool_calls": [
+            {
+              "tool": "update_cart_item",
+              "input": {
+                "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                "quantity": 5
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "update_cart_item",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 5
+                  },
+                  {
+                    "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5",
+                    "title": "Outerwear Item 12",
+                    "price": 30.3,
+                    "quantity": 1
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 125.95
+              }
+            }
+          ],
+          "text": "Updated! Your cart now contains:\n\n| Item | Quantity | Price | Total |\n|------|----------|-------|-------|\n| Tops Item 00 | 5 | $19.13 | $95.65 |\n| Outerwear Item 12 | 1 | $30.30 | $30.30 |\n\n**Cart subtotal: $125.95**\n\nAnything else you'd like to adjust?",
+          "cost_usd": 0.0067,
+          "latency_ms": 2742.8,
+          "error": null
+        },
+        {
+          "prompt": "Remove the Outerwear Item 12 from my cart.",
+          "tool_calls": [
+            {
+              "tool": "remove_from_cart",
+              "input": {
+                "product_id": "a74d62be-6b2c-5da5-9696-6e2f1811cef5"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "remove_from_cart",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 5
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 95.65
+              }
+            }
+          ],
+          "text": "Done! Outerwear Item 12 has been removed. Your cart now contains:\n\n| Item | Quantity | Price | Total |\n|------|----------|-------|-------|\n| Tops Item 00 | 5 | $19.13 | $95.65 |\n\n**Cart subtotal: $95.65**\n\nAnything else I can help you with?",
+          "cost_usd": 0.003314,
+          "latency_ms": 3706.3,
+          "error": null
+        },
+        {
+          "prompt": "What's in my cart right now?",
+          "tool_calls": [
+            {
+              "tool": "get_cart",
+              "input": {}
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "get_cart",
+              "output": {
+                "items": [
+                  {
+                    "product_id": "817c156d-39f8-56f3-94fd-446740ac9438",
+                    "title": "Tops Item 00",
+                    "price": 19.13,
+                    "quantity": 5
+                  }
+                ],
+                "currency": "USD",
+                "subtotal": 95.65
+              }
+            }
+          ],
+          "text": "Here's your current cart:\n\n| Item | Quantity | Price | Total |\n|------|----------|-------|-------|\n| Tops Item 00 | 5 | $19.13 | $95.65 |\n\n**Cart subtotal: $95.65**\n\nWould you like to add anything else, or is there anything else I can help with?",
+          "cost_usd": 0.003371,
+          "latency_ms": 2765.2,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.022659,
+      "latency_ms": 16089.3,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 4,
+      "rep": 1,
+      "passed": true,
+      "reason": "order id and total both appear in the answer",
+      "turns": [
+        {
+          "prompt": "What's the status of my order 69161463-d6c3-5e0c-aef4-1a4521245a47?",
+          "tool_calls": [
+            {
+              "tool": "get_order",
+              "input": {
+                "order_id": "69161463-d6c3-5e0c-aef4-1a4521245a47"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "get_order",
+              "output": {
+                "order_id": "69161463-d6c3-5e0c-aef4-1a4521245a47",
+                "status": "processing",
+                "created_at": "2026-06-11T00:00:00Z",
+                "items": [
+                  {
+                    "product_id": "1b99c23c-ca0b-544b-ab92-7d930a37f4bb",
+                    "title": "Footwear Item 19",
+                    "quantity": 2,
+                    "price": 124.11
+                  }
+                ],
+                "total_amount": 248.22,
+                "currency": "USD"
+              }
+            }
+          ],
+          "text": "Here's the status of your order:\n\n- **Order ID:** 69161463-d6c3-5e0c-aef4-1a4521245a47\n- **Status:** Processing\n- **Placed:** June 11, 2026\n- **Items:** Footwear Item 19 \u00d7 2\n- **Total:** $248.22 USD\n\nIt's still being processed. Let me know if you'd like help with anything else!",
+          "cost_usd": 0.001823,
+          "latency_ms": 3152.8,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.001823,
+      "latency_ms": 3152.8,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 4,
+      "rep": 2,
+      "passed": true,
+      "reason": "order id and total both appear in the answer",
+      "turns": [
+        {
+          "prompt": "What's the status of my order 69161463-d6c3-5e0c-aef4-1a4521245a47?",
+          "tool_calls": [
+            {
+              "tool": "get_order",
+              "input": {
+                "order_id": "69161463-d6c3-5e0c-aef4-1a4521245a47"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "get_order",
+              "output": {
+                "order_id": "69161463-d6c3-5e0c-aef4-1a4521245a47",
+                "status": "processing",
+                "created_at": "2026-06-11T00:00:00Z",
+                "items": [
+                  {
+                    "product_id": "1b99c23c-ca0b-544b-ab92-7d930a37f4bb",
+                    "title": "Footwear Item 19",
+                    "quantity": 2,
+                    "price": 124.11
+                  }
+                ],
+                "total_amount": 248.22,
+                "currency": "USD"
+              }
+            }
+          ],
+          "text": "Here's your order status:\n\n**Order 69161463-d6c3-5e0c-aef4-1a4521245a47**\n- **Status:** Processing\n- **Placed:** June 11, 2026\n- **Items:**\n  - Footwear Item 19 \u00d7 2 \u2014 $248.22 total\n\nIt's currently being processed and hasn't shipped yet. Is there anything else I can help you with?",
+          "cost_usd": 0.0026,
+          "latency_ms": 3100.5,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.0026,
+      "latency_ms": 3100.5,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 4,
+      "rep": 3,
+      "passed": true,
+      "reason": "order id and total both appear in the answer",
+      "turns": [
+        {
+          "prompt": "What's the status of my order 69161463-d6c3-5e0c-aef4-1a4521245a47?",
+          "tool_calls": [
+            {
+              "tool": "get_order",
+              "input": {
+                "order_id": "69161463-d6c3-5e0c-aef4-1a4521245a47"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "get_order",
+              "output": {
+                "order_id": "69161463-d6c3-5e0c-aef4-1a4521245a47",
+                "status": "processing",
+                "created_at": "2026-06-11T00:00:00Z",
+                "items": [
+                  {
+                    "product_id": "1b99c23c-ca0b-544b-ab92-7d930a37f4bb",
+                    "title": "Footwear Item 19",
+                    "quantity": 2,
+                    "price": 124.11
+                  }
+                ],
+                "total_amount": 248.22,
+                "currency": "USD"
+              }
+            }
+          ],
+          "text": "Here's the status of your order **69161463-d6c3-5e0c-aef4-1a4521245a47**:\n\n- **Status:** Processing\n- **Placed on:** June 11, 2026\n- **Items:**\n  - Footwear Item 19 \u00d7 2 \u2014 $124.11 each\n- **Total:** $248.22 USD\n\nYour order is currently being prepared for shipment. Is there anything else you'd like to know \u2014 for example, details about shipping timelines or the item itself?",
+          "cost_usd": 0.00171,
+          "latency_ms": 3969.4,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.00171,
+      "latency_ms": 3969.4,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 5,
+      "rep": 1,
+      "passed": true,
+      "reason": "the 30-day return window appears in the answer",
+      "turns": [
+        {
+          "prompt": "How many days do I have to return something if I change my mind?",
+          "tool_calls": [
+            {
+              "tool": "search_policies",
+              "input": {
+                "query": "return policy change of mind days"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_policies",
+              "output": {
+                "results": [
+                  {
+                    "policy_id": "pol-exchanges",
+                    "title": "Exchanges",
+                    "content": "Size and color exchanges are free within the same 30-day return window. Request an exchange instead of a return and we ship the replacement as soon as the original item scans in at our warehouse."
+                  },
+                  {
+                    "policy_id": "pol-returns",
+                    "title": "Returns and refunds",
+                    "content": "Items may be returned within 30 days of delivery for a full refund to the original payment method, provided the item is unworn, unwashed, and has its original tags attached. Footwear must be returned with the original box. Refunds post within 5-7 business days of the returned item reaching our warehouse. Sale items marked 'final sale' cannot be returned."
+                  },
+                  {
+                    "policy_id": "pol-warranty",
+                    "title": "Product warranty",
+                    "content": "Garments carry a 90-day warranty against manufacturing defects (seam failure, faulty zippers, or hardware). Normal wear, accidental damage, and improper care are not covered. Contact support with your order number and photos of the defect."
+                  },
+                  {
+                    "policy_id": "pol-price-match",
+                    "title": "Price adjustments",
+                    "content": "If an item you purchased drops in price on our own store within 7 days of your order, we refund the difference on request. We do not match other retailers' prices."
+                  }
+                ]
+              }
+            }
+          ],
+          "text": "You have **30 days from delivery** to return an item for a full refund, provided it's:\n\n- Unworn and unwashed, with original tags attached\n- Footwear returned in the original box\n\nA few things to note:\n- Refunds post within **5\u20137 business days** after the item reaches the warehouse, back to your original payment method\n- Items marked **\"final sale\"** can't be returned\n- Size/color **exchanges** are free within the same 30-day window\n\nAnything else I can help with?",
+          "cost_usd": 0.001589,
+          "latency_ms": 1711.7,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.001589,
+      "latency_ms": 1711.7,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 5,
+      "rep": 2,
+      "passed": true,
+      "reason": "the 30-day return window appears in the answer",
+      "turns": [
+        {
+          "prompt": "How many days do I have to return something if I change my mind?",
+          "tool_calls": [
+            {
+              "tool": "search_policies",
+              "input": {
+                "query": "return policy change of mind returns how many days"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_policies",
+              "output": {
+                "results": [
+                  {
+                    "policy_id": "pol-exchanges",
+                    "title": "Exchanges",
+                    "content": "Size and color exchanges are free within the same 30-day return window. Request an exchange instead of a return and we ship the replacement as soon as the original item scans in at our warehouse."
+                  },
+                  {
+                    "policy_id": "pol-returns",
+                    "title": "Returns and refunds",
+                    "content": "Items may be returned within 30 days of delivery for a full refund to the original payment method, provided the item is unworn, unwashed, and has its original tags attached. Footwear must be returned with the original box. Refunds post within 5-7 business days of the returned item reaching our warehouse. Sale items marked 'final sale' cannot be returned."
+                  },
+                  {
+                    "policy_id": "pol-warranty",
+                    "title": "Product warranty",
+                    "content": "Garments carry a 90-day warranty against manufacturing defects (seam failure, faulty zippers, or hardware). Normal wear, accidental damage, and improper care are not covered. Contact support with your order number and photos of the defect."
+                  },
+                  {
+                    "policy_id": "pol-price-match",
+                    "title": "Price adjustments",
+                    "content": "If an item you purchased drops in price on our own store within 7 days of your order, we refund the difference on request. We do not match other retailers' prices."
+                  }
+                ]
+              }
+            }
+          ],
+          "text": "You have **30 days from the date of delivery** to return an item for a full refund to your original payment method.\n\nA few conditions to keep in mind:\n- The item must be **unworn, unwashed, and have its original tags attached**\n- **Footwear** must be returned in its original box\n- Items marked **\"final sale\"** cannot be returned\n- Once your return reaches the warehouse, refunds typically post within **5\u20137 business days**\n\nAlso worth knowing: size and color **exchanges are free** within that same 30-day window, and if something has a manufacturing defect, it's covered by a 90-day warranty instead. Let me know if you need anything else!",
+          "cost_usd": 0.003409,
+          "latency_ms": 6991.8,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.003409,
+      "latency_ms": 6991.8,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 5,
+      "rep": 3,
+      "passed": true,
+      "reason": "the 30-day return window appears in the answer",
+      "turns": [
+        {
+          "prompt": "How many days do I have to return something if I change my mind?",
+          "tool_calls": [
+            {
+              "tool": "search_policies",
+              "input": {
+                "query": "return policy days change of mind"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_policies",
+              "output": {
+                "results": [
+                  {
+                    "policy_id": "pol-exchanges",
+                    "title": "Exchanges",
+                    "content": "Size and color exchanges are free within the same 30-day return window. Request an exchange instead of a return and we ship the replacement as soon as the original item scans in at our warehouse."
+                  },
+                  {
+                    "policy_id": "pol-returns",
+                    "title": "Returns and refunds",
+                    "content": "Items may be returned within 30 days of delivery for a full refund to the original payment method, provided the item is unworn, unwashed, and has its original tags attached. Footwear must be returned with the original box. Refunds post within 5-7 business days of the returned item reaching our warehouse. Sale items marked 'final sale' cannot be returned."
+                  },
+                  {
+                    "policy_id": "pol-warranty",
+                    "title": "Product warranty",
+                    "content": "Garments carry a 90-day warranty against manufacturing defects (seam failure, faulty zippers, or hardware). Normal wear, accidental damage, and improper care are not covered. Contact support with your order number and photos of the defect."
+                  },
+                  {
+                    "policy_id": "pol-price-match",
+                    "title": "Price adjustments",
+                    "content": "If an item you purchased drops in price on our own store within 7 days of your order, we refund the difference on request. We do not match other retailers' prices."
+                  }
+                ]
+              }
+            }
+          ],
+          "text": "You have **30 days from the date of delivery** to return an item for a full refund to your original payment method. A few conditions to keep in mind:\n\n- The item must be **unworn, unwashed, and have its original tags attached**\n- **Footwear** must be returned in its original box\n- Refunds post within **5\u20137 business days** after the item reaches the warehouse\n- Items marked **\"final sale\"** cannot be returned\n\nIf you'd rather swap for a different size or color, exchanges are also free within that same 30-day window, and the replacement ships as soon as the original scans in at the warehouse.",
+          "cost_usd": 0.00209,
+          "latency_ms": 4327.3,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.00209,
+      "latency_ms": 4327.3,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 6,
+      "rep": 1,
+      "passed": true,
+      "reason": "search returned 0 results and no product_id was fabricated",
+      "turns": [
+        {
+          "prompt": "Do you have any neon pink cowboy boots?",
+          "tool_calls": [
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "neon pink cowboy boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "pink cowboy boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "neon boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "cowboy boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "pink boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "boots"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            }
+          ],
+          "text": "No luck on that exact combo \u2014 let me try a few variations to see what's close.Still nothing \u2014 let me broaden the search further.Let me check whether we carry any boots at all.I searched several ways \u2014 \"neon pink cowboy boots,\" \"pink cowboy boots,\" \"neon boots,\" \"cowboy boots,\" \"pink boots,\" and even just \"boots\" \u2014 but the catalog has no matches at all, so unfortunately it doesn't look like we carry boots of any kind right now.\n\nIf you'd like, I can search for something else \u2014 maybe other footwear styles, or other pink items we might have. Just let me know!",
+          "cost_usd": 0.005088,
+          "latency_ms": 7141.8,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.005088,
+      "latency_ms": 7141.8,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 6,
+      "rep": 2,
+      "passed": true,
+      "reason": "search returned 0 results and no product_id was fabricated",
+      "turns": [
+        {
+          "prompt": "Do you have any neon pink cowboy boots?",
+          "tool_calls": [
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "neon pink cowboy boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "cowboy boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "pink boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "pink"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "shoes"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "neon"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            }
+          ],
+          "text": "No luck on that exact phrase \u2014 let me broaden the search a bit to see what's close.Unfortunately, I have to be straight with you: I searched the catalog for **neon pink cowboy boots**, and then broadened out to \"cowboy boots,\" \"pink,\" \"boots,\" \"shoes,\" and even just \"neon\" \u2014 and nothing came up. It looks like we don't currently carry cowboy boots or any footwear in that style, so I don't want to waste your time pointing you at something that isn't really what you're after.\n\nA couple of ways I can still help:\n\n1. **Tell me what else you're shopping for** \u2014 I can search the catalog for anything else you might need.\n2. **Keep it in mind for later** \u2014 if you'd like, let me know what other keywords or styles would work (e.g., western wear, accessories, a different color), and I can check for related items.\n\nWant me to try a different search?",
+          "cost_usd": 0.004415,
+          "latency_ms": 11559.0,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.004415,
+      "latency_ms": 11559.0,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 6,
+      "rep": 3,
+      "passed": true,
+      "reason": "search returned 0 results and no product_id was fabricated",
+      "turns": [
+        {
+          "prompt": "Do you have any neon pink cowboy boots?",
+          "tool_calls": [
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "neon pink cowboy boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "cowboy boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "query": "neon pink boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "boots"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "pink"
+              }
+            },
+            {
+              "tool": "search_products",
+              "input": {
+                "limit": 20,
+                "query": "shoes"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            },
+            {
+              "tool": "search_products",
+              "output": {
+                "results": []
+              }
+            }
+          ],
+          "text": "Let me search the catalog for those!No luck on the exact phrase \u2014 let me try a couple of broader searches.Still nothing. Let me widen the net a bit more.I'm sorry \u2014 I searched for neon pink cowboy boots, cowboy boots, pink boots, and footwear in general, and it looks like our store doesn't currently carry any boots or shoes at all, so I can't find you a pair.\n\nIs there something else I can help you look for? If you tell me what you're shopping for (clothing, accessories, home goods, etc.) or what vibe you're going for, I'd be happy to search the catalog for alternatives.",
+          "cost_usd": 0.004612,
+          "latency_ms": 8686.0,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.004612,
+      "latency_ms": 8686.0,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 7,
+      "rep": 1,
+      "passed": true,
+      "reason": "exactly 2 distinct log_meal writes: ['chicken', 'teriyaki']",
+      "turns": [
+        {
+          "prompt": "Log chicken as lunch and teriyaki as dinner.",
+          "tool_calls": [
+            {
+              "tool": "log_meal",
+              "input": {
+                "macros": {
+                  "calories": 187,
+                  "carbs_g": 0,
+                  "fat_g": 4,
+                  "protein_g": 35
+                },
+                "name": "chicken"
+              }
+            },
+            {
+              "tool": "log_meal",
+              "input": {
+                "macros": {
+                  "calories": 450,
+                  "carbs_g": 45,
+                  "fat_g": 12,
+                  "protein_g": 35
+                },
+                "name": "teriyaki"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "log_meal",
+              "output": {
+                "status": "approved",
+                "logged": true,
+                "name": "chicken"
+              }
+            },
+            {
+              "tool": "log_meal",
+              "output": {
+                "status": "approved",
+                "logged": true,
+                "name": "teriyaki"
+              }
+            }
+          ],
+          "text": "I'll log both meals for you now.Both meals are logged! Here's a summary:\n\n**Lunch \u2014 Chicken** (grilled chicken breast, 100g)\n- 187 calories | 35g protein | 4g fat | 0g carbs\n\n**Dinner \u2014 Teriyaki** (chicken teriyaki with rice)\n- 450 calories | 35g protein | 12g fat | 45g carbs\n\n**Daily total: 637 calories | 70g protein | 16g fat | 45g carbs**\n\nNote that these are standard estimates \u2014 if you know the portion sizes or sides you had, let me know and I can give you more accurate numbers. Anything else you'd like to track or shop for?",
+          "cost_usd": 0.004403,
+          "latency_ms": 8326.9,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.004403,
+      "latency_ms": 8326.9,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 7,
+      "rep": 2,
+      "passed": true,
+      "reason": "exactly 2 distinct log_meal writes: ['chicken', 'teriyaki']",
+      "turns": [
+        {
+          "prompt": "Log chicken as lunch and teriyaki as dinner.",
+          "tool_calls": [
+            {
+              "tool": "log_meal",
+              "input": {
+                "macros": {
+                  "calories": 400,
+                  "carbs_g": 10,
+                  "fat_g": 20,
+                  "protein_g": 35
+                },
+                "name": "chicken"
+              }
+            },
+            {
+              "tool": "log_meal",
+              "input": {
+                "macros": {
+                  "calories": 600,
+                  "carbs_g": 70,
+                  "fat_g": 18,
+                  "protein_g": 35
+                },
+                "name": "teriyaki"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "log_meal",
+              "output": {
+                "status": "approved",
+                "logged": true,
+                "name": "chicken"
+              }
+            },
+            {
+              "tool": "log_meal",
+              "output": {
+                "status": "approved",
+                "logged": true,
+                "name": "teriyaki"
+              }
+            }
+          ],
+          "text": "I'll log both meals for you with standard macro estimates.Both meals have been logged:\n\n- **Lunch \u2014 Chicken:** ~400 calories, 35g protein, 10g carbs, 20g fat\n- **Dinner \u2014 Teriyaki:** ~600 calories, 35g protein, 70g carbs, 18g fat\n\nThat's about 1,000 calories and 70g of protein combined for the day. Let me know if you'd like to adjust any estimates or log anything else!",
+          "cost_usd": 0.004951,
+          "latency_ms": 5993.7,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.004951,
+      "latency_ms": 5993.7,
+      "error": null
+    },
+    {
+      "model_key": "glm-5.3",
+      "provider": "explabs",
+      "scenario_id": 7,
+      "rep": 3,
+      "passed": true,
+      "reason": "exactly 2 distinct log_meal writes: ['chicken', 'teriyaki']",
+      "turns": [
+        {
+          "prompt": "Log chicken as lunch and teriyaki as dinner.",
+          "tool_calls": [
+            {
+              "tool": "log_meal",
+              "input": {
+                "macros": {
+                  "calories": 280,
+                  "carbs_g": 0,
+                  "fat_g": 6,
+                  "protein_g": 53
+                },
+                "name": "chicken"
+              }
+            },
+            {
+              "tool": "log_meal",
+              "input": {
+                "macros": {
+                  "calories": 450,
+                  "carbs_g": 45,
+                  "fat_g": 12,
+                  "protein_g": 35
+                },
+                "name": "teriyaki"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "log_meal",
+              "output": {
+                "status": "approved",
+                "logged": true,
+                "name": "chicken"
+              }
+            },
+            {
+              "tool": "log_meal",
+              "output": {
+                "status": "approved",
+                "logged": true,
+                "name": "teriyaki"
+              }
+            }
+          ],
+          "text": "Both meals are logged:\n\n- **Lunch \u2013 chicken**: ~280 kcal, 53g protein, 0g carbs, 6g fat\n- **Dinner \u2013 teriyaki**: ~450 kcal, 35g protein, 45g carbs, 12g fat\n\n**Day total so far**: ~730 kcal, 88g protein, 45g carbs, 18g fat. Anything else you'd like to track?",
+          "cost_usd": 0.004216,
+          "latency_ms": 8169.8,
+          "error": null
+        }
+      ],
+      "cost_usd": 0.004216,
+      "latency_ms": 8169.8,
+      "error": null
+    }
+  ],
+  "decision": {
+    "cheapest_model": "glm-5.3",
+    "cells": [
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00049592,
+        "latency_ms": 984.4,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.0009535,
+        "latency_ms": 1458.2,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.000878025,
+        "latency_ms": 2273.1,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.0009008,
+        "latency_ms": 3021.1,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.0004964,
+        "latency_ms": 4868.9,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00023465,
+        "latency_ms": 979.6,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.0007792,
+        "latency_ms": 1476.0,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.0013542,
+        "latency_ms": 4177.2,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.00095658,
+        "latency_ms": 3165.4,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.0011266,
+        "latency_ms": 6867.7,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.00145775,
+        "latency_ms": 2157.1,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00034382,
+        "latency_ms": 1038.7,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "expense"
+        },
+        "error": null,
+        "cost_usd": 0.00024987,
+        "latency_ms": 1058.1,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "expense"
+        },
+        "error": null,
+        "cost_usd": 0.00044776,
+        "latency_ms": 4526.5,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "expense"
+        },
+        "error": null,
+        "cost_usd": 0.00020355,
+        "latency_ms": 913.9,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "income"
+        },
+        "error": null,
+        "cost_usd": 0.00095516,
+        "latency_ms": 3587.4,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "income"
+        },
+        "error": null,
+        "cost_usd": 0.00023346,
+        "latency_ms": 1073.2,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.00098325,
+        "latency_ms": 1494.9,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.000783,
+        "latency_ms": 1419.8,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "income"
+        },
+        "error": null,
+        "cost_usd": 0.00024464,
+        "latency_ms": 604.2,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.000471025,
+        "latency_ms": 1345.4,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.0013875,
+        "latency_ms": 2846.6,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.000852475,
+        "latency_ms": 1824.1,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.0008636,
+        "latency_ms": 1971.6,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.000637325,
+        "latency_ms": 1694.4,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "expense"
+        },
+        "error": null,
+        "cost_usd": 0.00026808,
+        "latency_ms": 670.9,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.000685225,
+        "latency_ms": 1885.6,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.0006676,
+        "latency_ms": 1586.4,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00023346,
+        "latency_ms": 1033.3,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.000369325,
+        "latency_ms": 1516.2,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00044036,
+        "latency_ms": 2067.0,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.0007204,
+        "latency_ms": 1928.3,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.00048605,
+        "latency_ms": 1687.1,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.0005338,
+        "latency_ms": 1451.6,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "expense"
+        },
+        "error": null,
+        "cost_usd": 0.00055336,
+        "latency_ms": 2555.9,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "expense"
+        },
+        "error": null,
+        "cost_usd": 0.00026307,
+        "latency_ms": 734.7,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00028139,
+        "latency_ms": 848.3,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00049856,
+        "latency_ms": 1942.5,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00023507,
+        "latency_ms": 823.1,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00027306,
+        "latency_ms": 1068.8,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00021354,
+        "latency_ms": 658.0,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00017394,
+        "latency_ms": 836.5,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.000928575,
+        "latency_ms": 1878.3,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.00076705,
+        "latency_ms": 1582.1,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "expense"
+        },
+        "error": null,
+        "cost_usd": 0.00023227,
+        "latency_ms": 934.5,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.000556075,
+        "latency_ms": 1458.6,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.0007466,
+        "latency_ms": 2021.5,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.00053185,
+        "latency_ms": 1488.1,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.000467475,
+        "latency_ms": 1397.0,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "expense"
+        },
+        "error": null,
+        "cost_usd": 0.00046396,
+        "latency_ms": 2379.5,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.000535725,
+        "latency_ms": 1948.1,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "error": null,
+        "cost_usd": 0.0020194,
+        "latency_ms": 5228.1,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "income"
+        },
+        "error": null,
+        "cost_usd": 0.00035179,
+        "latency_ms": 737.4,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "is_transfer": false,
+          "kind": "income"
+        },
+        "error": null,
+        "cost_usd": 0.00106616,
+        "latency_ms": 4375.7,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00024702,
+        "latency_ms": 716.0,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.0001787,
+        "latency_ms": 984.1,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.0007436,
+        "latency_ms": 1507.7,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00026866,
+        "latency_ms": 685.0,
+        "model_key": "glm-5.3",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "is_transfer": true,
+          "kind": "transfer"
+        },
+        "error": null,
+        "cost_usd": 0.00021354,
+        "latency_ms": 817.2,
+        "model_key": "glm-5.3",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "error": null,
+        "cost_usd": 0.000539825,
+        "latency_ms": 1443.7,
+        "model_key": "glm-5.3",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      }
+    ],
+    "summary": [
+      {
+        "model_key": "glm-5.3",
+        "cells": 60,
+        "kind_accuracy": 1.0,
+        "is_transfer_accuracy": 1.0,
+        "per_rep_agreement": 1.0,
+        "mean_latency_ms": 1861.7,
+        "p95_latency_ms": 4526.5,
+        "cost_usd": 0.036045,
+        "errors_sample": []
+      }
+    ]
+  },
+  "vision": [],
+  "total_cost_usd": 0.227196
+}

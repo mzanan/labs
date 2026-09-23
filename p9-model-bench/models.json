@@ -1,0 +1,170 @@
+{
+  "note": "Verified 2026-09-22 22:50-23:10 ICT per spec-p9-model-bench.md. explabs base https://api.experientiallabs.ai (Anthropic-compatible /v1/messages, plus /v1/systemone for jev). openrouter base https://openrouter.ai/api/v1 (OpenAI-compatible chat completions).",
+  "models": [
+    {
+      "key": "mimo-2.6-flash",
+      "provider": "openrouter",
+      "id": "xiaomi/mimo-v2.6-flash",
+      "enabled": true,
+      "supports_tools": true,
+      "supports_vision": true,
+      "kind": "chat"
+    },
+    {
+      "key": "deepseek-4.1-flash",
+      "provider": "explabs",
+      "id": "deepseek-v4.1-flash",
+      "enabled": true,
+      "supports_tools": true,
+      "supports_vision": true,
+      "kind": "chat",
+      "fallback": {
+        "provider": "openrouter",
+        "id": "deepseek/deepseek-v4.1-flash"
+      }
+    },
+    {
+      "key": "qwen3.8-27b",
+      "provider": "explabs",
+      "id": "qwen3.8-27b",
+      "enabled": true,
+      "supports_tools": true,
+      "supports_vision": true,
+      "kind": "chat"
+    },
+    {
+      "key": "qwen3.8-27b-free",
+      "provider": "openrouter",
+      "id": "qwen/qwen3.8-27b:free",
+      "enabled": true,
+      "supports_tools": true,
+      "supports_vision": false,
+      "kind": "chat",
+      "daily_cap": 200,
+      "stop_at": 150
+    },
+    {
+      "key": "glm-5.3",
+      "provider": "explabs",
+      "id": "glm-5.3",
+      "enabled": true,
+      "supports_tools": true,
+      "supports_vision": false,
+      "kind": "chat",
+      "fallback": {
+        "provider": "openrouter",
+        "id": "z-ai/glm-5.3"
+      }
+    },
+    {
+      "key": "glm-5.3-flash",
+      "provider": "explabs",
+      "id": "glm-5.3-flash",
+      "enabled": true,
+      "supports_tools": true,
+      "supports_vision": false,
+      "kind": "chat",
+      "note": "empty content with stop_reason=max_tokens at max_tokens=20 on a trivial Phase 0 prompt (2026-09-22 23:25 ICT amendment), likely emits reasoning tokens first; give it a larger max_tokens budget."
+    },
+    {
+      "key": "kimi-k3",
+      "provider": "explabs",
+      "id": "kimi-k3",
+      "enabled": true,
+      "supports_tools": true,
+      "supports_vision": false,
+      "kind": "chat"
+    },
+    {
+      "key": "jev",
+      "provider": "explabs",
+      "id": "jev-latest",
+      "enabled": true,
+      "supports_tools": false,
+      "supports_vision": false,
+      "kind": "systemone",
+      "free": true,
+      "reps_override": 5
+    },
+    {
+      "key": "gpt-5.6-luna",
+      "provider": "explabs",
+      "id": "gpt-5.6-luna",
+      "enabled": true,
+      "supports_tools": true,
+      "supports_vision": false,
+      "kind": "chat",
+      "free": true,
+      "note": "returns usage.cost 0.0 on the explabs gateway, confirmed live 2026-09-22 23:35 ICT, added by that amendment."
+    },
+    {
+      "key": "nemotron-3-ultra-550b-a55b",
+      "provider": "explabs",
+      "id": "nemotron-3-ultra-550b-a55b",
+      "enabled": true,
+      "supports_tools": true,
+      "supports_vision": false,
+      "kind": "chat",
+      "free": true,
+      "note": "returns usage.cost 0.0 on the explabs gateway, confirmed live 2026-09-22 23:35 ICT, added by that amendment."
+    },
+    {
+      "key": "grok-4.7",
+      "provider": "explabs",
+      "id": "grok-4.7",
+      "enabled": true,
+      "supports_tools": true,
+      "supports_vision": false,
+      "kind": "chat",
+      "free": true,
+      "note": "returns usage.cost 0.0 on the explabs gateway, confirmed live 2026-09-22 23:35 ICT, added by that amendment."
+    },
+    {
+      "key": "mimo-2.6-pro",
+      "provider": "openrouter",
+      "id": "xiaomi/mimo-v2.6-pro",
+      "enabled": false,
+      "supports_tools": true,
+      "supports_vision": true,
+      "kind": "chat"
+    },
+    {
+      "key": "grok-4.5",
+      "provider": "explabs",
+      "id": "grok-4.5",
+      "enabled": false,
+      "supports_tools": true,
+      "supports_vision": false,
+      "kind": "chat"
+    },
+    {
+      "key": "mimo-v2.5",
+      "provider": "explabs",
+      "id": "mimo-v2.5",
+      "enabled": false,
+      "supports_tools": true,
+      "supports_vision": false,
+      "kind": "chat"
+    },
+    {
+      "key": "laya",
+      "provider": "laya",
+      "id": "convai/laya-modernbert",
+      "enabled": false,
+      "supports_tools": false,
+      "supports_vision": false,
+      "kind": "classifier"
+    }
+  ],
+  "timeout_s": 60,
+  "retry": {
+    "max": 3,
+    "backoff_s": [
+      5,
+      15,
+      45
+    ]
+  },
+  "cost_ceiling_usd": 3.0,
+  "hard_timeout_s": 180
+}

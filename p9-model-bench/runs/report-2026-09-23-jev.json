@@ -1,0 +1,21 @@
+{
+  "phase0": [
+    {
+      "model_key": "jev",
+      "provider": "explabs",
+      "model_id": "jev-latest",
+      "passed": false,
+      "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://api.experientiallabs.ai/v1/systemone'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+      "cost_usd": 0.0,
+      "raw": null
+    }
+  ],
+  "tool_call": [],
+  "decision": {
+    "cheapest_model": null,
+    "cells": [],
+    "summary": []
+  },
+  "vision": [],
+  "total_cost_usd": 0.0
+}

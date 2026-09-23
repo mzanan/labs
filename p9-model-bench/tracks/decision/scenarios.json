@@ -1,0 +1,26 @@
+{
+  "note": "20 synthetic transactions, money-tracker style (see personal-brain 01-Projects/02-money-tracker), no real data from Matias's DB. gold.kind in {income, expense, transfer}, gold.is_transfer is a separate boolean because a transfer can still look like an expense line on the source account. state is the text the app would build: the user's owned account list, then the one transaction line.",
+  "owned_accounts": ["Wise USD", "Digimi VND Wallet", "Cash VND", "Chase Checking", "Ally Savings", "Amex Card"],
+  "scenarios": [
+    {"id": 1, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Wise USD -450.00 \"Wise transfer to Digimi wallet\"", "gold": {"kind": "transfer", "is_transfer": true}},
+    {"id": 2, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Digimi VND Wallet +10450000 \"Received from Wise\"", "gold": {"kind": "transfer", "is_transfer": true}},
+    {"id": 3, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Chase Checking -200.00 \"ATM withdrawal\"", "gold": {"kind": "transfer", "is_transfer": true}},
+    {"id": 4, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Cash VND +200.00 (equivalent) \"ATM cash withdrawal\"", "gold": {"kind": "transfer", "is_transfer": true}},
+    {"id": 5, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Wise USD -3.20 \"Wise transfer fee\"", "gold": {"kind": "expense", "is_transfer": false}},
+    {"id": 6, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Chase Checking +42.99 \"Refund - Amazon return\"", "gold": {"kind": "income", "is_transfer": false}},
+    {"id": 7, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Chase Checking +3200.00 \"Payroll - Acme Corp\"", "gold": {"kind": "income", "is_transfer": false}},
+    {"id": 8, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Digimi VND Wallet -500000 \"Chuyen tien cho Minh (P2P, friend)\"", "gold": {"kind": "expense", "is_transfer": false}},
+    {"id": 9, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Amex Card -85.40 \"Grab*Restaurant Hanoi, VND 2,050,000 charged as USD 85.40\"", "gold": {"kind": "expense", "is_transfer": false}},
+    {"id": 10, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Ally Savings -1000.00 \"Transfer to Chase Checking\"", "gold": {"kind": "transfer", "is_transfer": true}},
+    {"id": 11, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Chase Checking +1000.00 \"Transfer from Ally Savings\"", "gold": {"kind": "transfer", "is_transfer": true}},
+    {"id": 12, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Cash VND -350000 \"Cafe with friends\"", "gold": {"kind": "expense", "is_transfer": false}},
+    {"id": 13, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Amex Card -1200.00 \"Payment to Amex - autopay from Chase Checking\"", "gold": {"kind": "transfer", "is_transfer": true}},
+    {"id": 14, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Chase Checking -1200.00 \"Amex autopay\"", "gold": {"kind": "transfer", "is_transfer": true}},
+    {"id": 15, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Digimi VND Wallet -120000 \"Grab ride\"", "gold": {"kind": "expense", "is_transfer": false}},
+    {"id": 16, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Wise USD +500.00 \"Freelance invoice paid - client XYZ\"", "gold": {"kind": "income", "is_transfer": false}},
+    {"id": 17, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Chase Checking -60.00 \"Overdraft fee\"", "gold": {"kind": "expense", "is_transfer": false}},
+    {"id": 18, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Digimi VND Wallet +500000 \"Minh tra lai tien (friend paid back)\"", "gold": {"kind": "income", "is_transfer": false}},
+    {"id": 19, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Wise USD -1000.00 \"Wise to Chase Checking, own account\"", "gold": {"kind": "transfer", "is_transfer": true}},
+    {"id": 20, "state": "Accounts: Wise USD, Digimi VND Wallet, Cash VND, Chase Checking, Ally Savings, Amex Card.\nTransaction: Chase Checking +1000.00 \"Incoming from Wise USD\"", "gold": {"kind": "transfer", "is_transfer": true}}
+  ]
+}
