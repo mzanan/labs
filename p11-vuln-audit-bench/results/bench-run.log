@@ -1,0 +1,7 @@
+{"model":"explabs:deepseek-v4.1-flash","reps":3,"errors":0,"meanRecall":0.875,"meanPrecision":1,"meanFindings":7,"foundInEveryRep":["V1","V2","V3","V4","V5","V7","V8"],"neverFound":["V6"],"meanSeconds":39.533}
+{"model":"explabs:glm-5.3","reps":3,"errors":1,"meanRecall":0.875,"meanPrecision":1,"meanFindings":7,"foundInEveryRep":["V1","V2","V3","V4","V5","V7","V8"],"neverFound":["V6"],"meanSeconds":213.15}
+{"model":"explabs:kimi-k3","reps":3,"errors":2,"meanRecall":0.875,"meanPrecision":1,"meanFindings":7,"foundInEveryRep":["V1","V2","V3","V4","V5","V7","V8"],"neverFound":["V6"],"meanSeconds":261.2}
+{"model":"explabs:gpt-5.6-luna","reps":3,"errors":0,"meanRecall":0.583,"meanPrecision":1,"meanFindings":4.667,"foundInEveryRep":["V1","V2","V3","V4"],"neverFound":["V6","V7"],"meanSeconds":19.7}
+{"model":"explabs:nemotron-3-ultra-550b-a55b","reps":3,"errors":0,"meanRecall":0.458,"meanPrecision":1,"meanFindings":4,"foundInEveryRep":["V1","V3"],"neverFound":["V2","V4","V5"],"meanSeconds":18.9}
+{"model":"explabs:mimo-v2.5-pro","reps":3,"errors":0,"meanRecall":0.75,"meanPrecision":1,"meanFindings":6,"foundInEveryRep":["V2","V3","V7","V8"],"neverFound":["V6"],"meanSeconds":80.233}
+wrote /Users/zanan/Documents/projects/personal/labs/p11-vuln-audit-bench/results/bench-2026-09-23.json
