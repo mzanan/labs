@@ -74,22 +74,26 @@ synthetic money-tracker transactions x 3 reps. Tool call: p7's 6 scenarios plus 
 | `glm-5.3` | PASS | 1.0 | 1.0 | 1862 | 19/21 | s1: 2 | 0.227196 |
 | `gpt-5.6-luna` | PASS | 1.0 | 1.0 | 1508 | 18/21 | s1: 3 | 0.0 |
 | `grok-4.7` | PASS | 1.0 | 1.0 | 3680 | 18/21 | s1: 3 | 0.377656 |
+| `jev-openrouter` | PASS | 1.0 | 1.0 | 586 | not run | none | 0.006847 |
 | `jev` | BLOCKED: HTTPStatusError: Client error '403 Forbidden' for url 'https://api.experientiall | None | None | None | not run | none | 0.0 |
 | `kimi-k3` | PASS | 0.867 | 0.867 | 6037 | 18/21 | s1: 3 | 0.563022 |
 | `mimo-2.6-flash` | PASS | 0.983 | 0.983 | 2854 | 18/21 | s1: 1, s6: 2 | 0.013781 |
 | `nemotron-3-ultra-550b-a55b` | PASS | 0.933 | 0.967 | 1185 | 18/21 | s1: 3 | 0.0 |
 | `qwen3.8-27b` | PASS | 1.0 | 1.0 | 6617 | 17/21 | s1: 3, s6: 1 | 0.06157 |
 
-Total cost: USD 1.322454
+Total cost: USD 1.329301
 - Scenario 1 ("anything in black under $80") is an initiative test: nothing in the catalog is
   black, 10 products are under $80. A model passes only if it offers those after the empty
   search. Most models answer honestly that nothing matches and stop.
 - Scenario 6 failures are fabrication: a zero-hit search followed by an invented product.
 - Scenario 7 (`approval_gate`, the fit-coach duplicate approval card) passed 3/3 on every model.
-- `jev` was reachable and free on 2026-09-22 (verified by hand, 0.61 s, cost 0) and returned
-  `403 model_not_granted` on 2026-09-23, also missing from `/v1/models`. The gateway page shows
-  64.5 percent uptime for Jev, so this may be an outage surfacing as a permission error rather
-  than a revoked key. Re-run `--models jev --tracks decision` when it is back.
+- `jev` on Experiential Labs returned `403 model_not_granted` on 2026-09-23 (both `jev-latest`
+  and `jev-latest:free`), although the platform lists both routes as active and the key's usage page counts 4 Jev requests;
+  the platform reports 64.5 percent uptime for Jev against 99 percent on OpenRouter. Retry later. The measured row is
+  `jev-openrouter`: OpenRouter serves it as `typesafe/jev-1.13` under the Decisions category (not in
+  `/api/v1/models`), via `POST /api/v1/systemone`. All three variants (choice, score, noul) scored
+  100 percent on kind and transfer, 100 percent agreement over 5 reps, 0.57-0.59 s mean, USD 0.0068
+  for 300 calls, billed at USD 0.042/M input tokens (not free on OpenRouter).
 - `grok-4.7` returned cost 0.0 on a one-call probe on 2026-09-22 but was billed during the run.
 - `qwen3.8-27b-free` (OpenRouter `:free`) is not a quality result: decision scored 28 percent because most calls hit upstream `429` rate limits, counted as wrong. Run stopped before tool call. The paid `qwen3.8-27b` row is the real measure of the model.
 
@@ -112,7 +116,7 @@ images land in `fixtures/vision/` matching the ids in `tracks/vision/scenarios.j
 - `qwen3.8-27b`: 100 percent decision but the slowest (6.6 s) and lowest tool call (17/21).
 - `grok-4.7`: same result as the cheap models at 8x DeepSeek's cost. No reason to use it.
 - `kimi-k3`: worst decision accuracy (87 percent, 65 percent agreement between reps) and the most expensive (USD 0.56). Not for this kind of work.
-- `jev`: not measured, access revoked between the two runs.
+- `jev` (OpenRouter): best decision engine measured. 100 percent in every variant, 0.6 s, about USD 0.00002 per call, 2x faster than the fastest LLM. Use it for classification and gating, not for chat.
 
 ## Not measured
 

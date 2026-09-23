@@ -87,6 +87,16 @@
       "reps_override": 5
     },
     {
+      "key": "jev-openrouter",
+      "provider": "openrouter",
+      "id": "typesafe/jev-1.13",
+      "enabled": true,
+      "supports_tools": false,
+      "supports_vision": false,
+      "kind": "systemone",
+      "reps_override": 5
+    },
+    {
       "key": "gpt-5.6-luna",
       "provider": "explabs",
       "id": "gpt-5.6-luna",

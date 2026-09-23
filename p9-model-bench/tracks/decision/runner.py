@@ -154,8 +154,8 @@ def _parse_jev(variant: str, answers: dict[str, Any]) -> dict[str, Any] | None:
 async def _run_jev(providers: Providers, model_cfg: dict, scenario: dict) -> dict[str, Any]:
     variant = model_cfg.get("systemone_variant", "choice")
     started = time.monotonic()
-    result: CallResult = await providers.explabs_systemone(
-        model_cfg["key"], model_cfg["id"], state=scenario["state"], questions=_questions_for(variant),
+    result: CallResult = await providers.systemone(
+        model_cfg["provider"], model_cfg["key"], model_cfg["id"], state=scenario["state"], questions=_questions_for(variant),
     )
     latency_ms = round((time.monotonic() - started) * 1000, 1)
     answer = None

@@ -236,6 +236,49 @@ class Providers:
             raw_answer=data,
         )
 
+    async def openrouter_systemone(
+        self, model_key: str, model_id: str, state: str, questions: dict[str, Any]
+    ) -> CallResult:
+        key = os.environ.get("OPENROUTER_API_KEY")
+        if not key:
+            return CallResult(False, model_key, "openrouter", model_id, error="OPENROUTER_API_KEY not set")
+        started = time.monotonic()
+        payload = {"model": model_id, "state": state, "questions": questions}
+
+        async def _call() -> httpx2.Response:
+            async with httpx2.AsyncClient(base_url=OPENROUTER_BASE_URL, timeout=self.timeout_s) as client:
+                response = await client.post(
+                    "/systemone",
+                    json=payload,
+                    headers={"Authorization": f"Bearer {key}", "content-type": "application/json"},
+                )
+                response.raise_for_status()
+                return response
+
+        try:
+            resp = await self._with_retry(_call, model_key)
+        except Exception as exc:  # noqa: BLE001
+            return CallResult(
+                False, model_key, "openrouter", model_id,
+                error=f"{type(exc).__name__}: {exc}",
+                latency_ms=round((time.monotonic() - started) * 1000, 1),
+            )
+        data = resp.json()
+        return CallResult(
+            True, model_key, "openrouter", model_id,
+            stop_reason="end_turn",
+            cost_usd=float(((data.get("usage") or {}).get("cost")) or 0.0),
+            latency_ms=round((time.monotonic() - started) * 1000, 1),
+            raw_answer=data,
+        )
+
+    async def systemone(
+        self, provider: str, model_key: str, model_id: str, state: str, questions: dict[str, Any]
+    ) -> CallResult:
+        if provider == "openrouter":
+            return await self.openrouter_systemone(model_key, model_id, state, questions)
+        return await self.explabs_systemone(model_key, model_id, state, questions)
+
     async def openrouter_chat(
         self,
         model_key: str,

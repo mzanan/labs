@@ -1,0 +1,7556 @@
+{
+  "phase0": [
+    {
+      "model_key": "jev-openrouter",
+      "provider": "openrouter",
+      "model_id": "typesafe/jev-1.13",
+      "passed": true,
+      "error": null,
+      "cost_usd": 1.428e-05,
+      "raw": null
+    }
+  ],
+  "tool_call": [],
+  "decision": {
+    "cheapest_model": null,
+    "cells": [
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.93,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0874e-05,
+        "latency_ms": 644.2,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.92,
+          "kind_probabilities": {
+            "transfer": 1,
+            "expense": 0,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0874e-05,
+        "latency_ms": 567.9,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.92,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0874e-05,
+        "latency_ms": 525.1,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.93,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0874e-05,
+        "latency_ms": 552.5,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.92,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0874e-05,
+        "latency_ms": 561.1,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.89,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0.98,
+            "income": 0.02
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 844.8,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.89,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0.96,
+            "income": 0.04
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 596.6,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.89,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0.97,
+            "income": 0.03
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 555.9,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.9,
+          "kind_probabilities": {
+            "transfer": 0.96,
+            "income": 0.04,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 542.9,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.9,
+          "kind_probabilities": {
+            "income": 0.03,
+            "transfer": 0.97,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 641.3,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.85,
+          "kind_probabilities": {
+            "expense": 0.02,
+            "income": 0,
+            "transfer": 0.98
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0706e-05,
+        "latency_ms": 757.1,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.85,
+          "kind_probabilities": {
+            "transfer": 0.97,
+            "expense": 0.03,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0706e-05,
+        "latency_ms": 596.3,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.84,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.97,
+            "expense": 0.03
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0706e-05,
+        "latency_ms": 545.2,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.82,
+          "kind_probabilities": {
+            "transfer": 0.98,
+            "income": 0,
+            "expense": 0.02
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0706e-05,
+        "latency_ms": 573.0,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.82,
+          "kind_probabilities": {
+            "expense": 0.03,
+            "transfer": 0.97,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0706e-05,
+        "latency_ms": 606.3,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.87,
+          "kind_probabilities": {
+            "transfer": 1,
+            "income": 0,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1e-05,
+        "latency_ms": 602.2,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.84,
+          "kind_probabilities": {
+            "transfer": 1,
+            "expense": 0,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1e-05,
+        "latency_ms": 597.8,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.87,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1e-05,
+        "latency_ms": 533.3,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.86,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1e-05,
+        "latency_ms": 528.1,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.86,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1e-05,
+        "latency_ms": 610.3,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.03,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0,
+            "expense": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0664e-05,
+        "latency_ms": 650.5,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.04,
+          "kind_probabilities": {
+            "transfer": 0,
+            "expense": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0664e-05,
+        "latency_ms": 1397.1,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.04,
+          "kind_probabilities": {
+            "expense": 1,
+            "income": 0,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0664e-05,
+        "latency_ms": 598.1,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.04,
+          "kind_probabilities": {
+            "expense": 1,
+            "transfer": 0,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0664e-05,
+        "latency_ms": 557.4,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.04,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 1,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0664e-05,
+        "latency_ms": 514.2,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.01,
+          "kind_probabilities": {
+            "income": 0.99,
+            "expense": 0.01,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.079e-05,
+        "latency_ms": 475.4,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.01,
+          "kind_probabilities": {
+            "expense": 0.01,
+            "transfer": 0,
+            "income": 0.99
+          }
+        },
+        "error": null,
+        "cost_usd": 2.079e-05,
+        "latency_ms": 516.3,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.01,
+          "kind_probabilities": {
+            "income": 0.99,
+            "transfer": 0,
+            "expense": 0.01
+          }
+        },
+        "error": null,
+        "cost_usd": 2.079e-05,
+        "latency_ms": 540.6,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.01,
+          "kind_probabilities": {
+            "expense": 0.01,
+            "transfer": 0,
+            "income": 0.99
+          }
+        },
+        "error": null,
+        "cost_usd": 2.079e-05,
+        "latency_ms": 617.1,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.01,
+          "kind_probabilities": {
+            "income": 0.99,
+            "transfer": 0,
+            "expense": 0.01
+          }
+        },
+        "error": null,
+        "cost_usd": 2.079e-05,
+        "latency_ms": 540.1,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.02,
+          "kind_probabilities": {
+            "income": 1,
+            "expense": 0,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0916e-05,
+        "latency_ms": 555.4,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.02,
+          "kind_probabilities": {
+            "income": 1,
+            "transfer": 0,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0916e-05,
+        "latency_ms": 608.6,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.02,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0,
+            "income": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0916e-05,
+        "latency_ms": 553.6,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.02,
+          "kind_probabilities": {
+            "transfer": 0,
+            "income": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0916e-05,
+        "latency_ms": 532.8,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.02,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0,
+            "income": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0916e-05,
+        "latency_ms": 614.3,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.03,
+          "kind_probabilities": {
+            "expense": 0.99,
+            "transfer": 0.01,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.121e-05,
+        "latency_ms": 544.3,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.03,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 1,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.121e-05,
+        "latency_ms": 561.7,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.03,
+          "kind_probabilities": {
+            "expense": 1,
+            "transfer": 0,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.121e-05,
+        "latency_ms": 642.1,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.03,
+          "kind_probabilities": {
+            "transfer": 0.01,
+            "expense": 0.99,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.121e-05,
+        "latency_ms": 505.8,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.03,
+          "kind_probabilities": {
+            "expense": 1,
+            "transfer": 0,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.121e-05,
+        "latency_ms": 578.1,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.02,
+          "kind_probabilities": {
+            "transfer": 0.01,
+            "expense": 0.99,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.184e-05,
+        "latency_ms": 482.3,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.02,
+          "kind_probabilities": {
+            "transfer": 0,
+            "income": 0,
+            "expense": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.184e-05,
+        "latency_ms": 473.4,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.03,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0.99,
+            "transfer": 0.01
+          }
+        },
+        "error": null,
+        "cost_usd": 2.184e-05,
+        "latency_ms": 521.1,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.03,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.01,
+            "expense": 0.99
+          }
+        },
+        "error": null,
+        "cost_usd": 2.184e-05,
+        "latency_ms": 544.4,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.03,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0,
+            "expense": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.184e-05,
+        "latency_ms": 613.9,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "transfer": 1,
+            "income": 0,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 504.8,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "transfer": 1,
+            "expense": 0,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 526.7,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "transfer": 1,
+            "income": 0,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 552.7,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "transfer": 1,
+            "income": 0,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 553.7,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 528.7,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 539.6,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 649.6,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 497.9,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.97,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 624.4,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 519.7,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.06,
+          "kind_probabilities": {
+            "transfer": 0.02,
+            "income": 0,
+            "expense": 0.98
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 530.4,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.07,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.02,
+            "expense": 0.98
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 621.7,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.08,
+          "kind_probabilities": {
+            "transfer": 0.03,
+            "expense": 0.97,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 529.8,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.08,
+          "kind_probabilities": {
+            "expense": 0.98,
+            "transfer": 0.02,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 987.1,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.07,
+          "kind_probabilities": {
+            "expense": 0.98,
+            "transfer": 0.02,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 790.4,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.94,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.99,
+            "expense": 0.01
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1126e-05,
+        "latency_ms": 524.7,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.93,
+          "kind_probabilities": {
+            "expense": 0.02,
+            "income": 0,
+            "transfer": 0.98
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1126e-05,
+        "latency_ms": 561.4,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.94,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.98,
+            "expense": 0.02
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1126e-05,
+        "latency_ms": 542.4,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.94,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1126e-05,
+        "latency_ms": 1087.5,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.94,
+          "kind_probabilities": {
+            "expense": 0.01,
+            "income": 0,
+            "transfer": 0.99
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1126e-05,
+        "latency_ms": 496.6,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.85,
+          "kind_probabilities": {
+            "expense": 0.07,
+            "transfer": 0.93,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 475.4,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.87,
+          "kind_probabilities": {
+            "expense": 0.05,
+            "transfer": 0.95,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 492.7,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.86,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0.04,
+            "transfer": 0.96
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 567.7,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.86,
+          "kind_probabilities": {
+            "transfer": 0.95,
+            "income": 0,
+            "expense": 0.05
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 509.6,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.86,
+          "kind_probabilities": {
+            "expense": 0.06,
+            "income": 0,
+            "transfer": 0.94
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 543.6,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.06,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.01,
+            "expense": 0.99
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 541.5,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.09,
+          "kind_probabilities": {
+            "expense": 0.98,
+            "transfer": 0.02,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 746.4,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.08,
+          "kind_probabilities": {
+            "transfer": 0.02,
+            "expense": 0.98,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 523.0,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.07,
+          "kind_probabilities": {
+            "expense": 0.99,
+            "income": 0,
+            "transfer": 0.01
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 772.0,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.07,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.02,
+            "expense": 0.98
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 671.5,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.04,
+          "kind_probabilities": {
+            "transfer": 0,
+            "income": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 496.0,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.03,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0,
+            "income": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 519.8,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.04,
+          "kind_probabilities": {
+            "income": 1,
+            "transfer": 0,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 559.1,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.03,
+          "kind_probabilities": {
+            "transfer": 0,
+            "expense": 0,
+            "income": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 545.3,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.04,
+          "kind_probabilities": {
+            "income": 1,
+            "transfer": 0,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 599.5,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.01,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0,
+            "expense": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0748e-05,
+        "latency_ms": 471.7,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.01,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 1,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0748e-05,
+        "latency_ms": 552.4,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.01,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0,
+            "expense": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0748e-05,
+        "latency_ms": 615.7,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.01,
+          "kind_probabilities": {
+            "transfer": 0,
+            "expense": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0748e-05,
+        "latency_ms": 680.6,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.01,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0,
+            "expense": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0748e-05,
+        "latency_ms": 567.9,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.16,
+          "kind_probabilities": {
+            "income": 0.97,
+            "transfer": 0.03,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1126e-05,
+        "latency_ms": 510.9,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.15,
+          "kind_probabilities": {
+            "income": 0.96,
+            "expense": 0,
+            "transfer": 0.04
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1126e-05,
+        "latency_ms": 487.5,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.18,
+          "kind_probabilities": {
+            "income": 0.96,
+            "expense": 0,
+            "transfer": 0.04
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1126e-05,
+        "latency_ms": 568.8,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.16,
+          "kind_probabilities": {
+            "income": 0.96,
+            "expense": 0,
+            "transfer": 0.04
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1126e-05,
+        "latency_ms": 545.0,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.15,
+          "kind_probabilities": {
+            "income": 0.97,
+            "expense": 0,
+            "transfer": 0.03
+          }
+        },
+        "error": null,
+        "cost_usd": 2.1126e-05,
+        "latency_ms": 501.5,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "transfer": 1,
+            "expense": 0,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 671.8,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 538.7,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 603.0,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 600.0,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.98,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0958e-05,
+        "latency_ms": 501.5,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.89,
+          "kind_probabilities": {
+            "transfer": 0.95,
+            "expense": 0,
+            "income": 0.05
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 620.1,
+        "model_key": "jev-openrouter",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.9,
+          "kind_probabilities": {
+            "transfer": 0.95,
+            "income": 0.05,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 503.7,
+        "model_key": "jev-openrouter",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.89,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0.05,
+            "transfer": 0.95
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 600.1,
+        "model_key": "jev-openrouter",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.89,
+          "kind_probabilities": {
+            "transfer": 0.95,
+            "income": 0.05,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 505.0,
+        "model_key": "jev-openrouter",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.89,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0.95,
+            "income": 0.05
+          }
+        },
+        "error": null,
+        "cost_usd": 2.0832e-05,
+        "latency_ms": 543.7,
+        "model_key": "jev-openrouter",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.93,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2722e-05,
+        "latency_ms": 563.6,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.93,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2722e-05,
+        "latency_ms": 624.0,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.92,
+          "kind_probabilities": {
+            "transfer": 1,
+            "income": 0,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2722e-05,
+        "latency_ms": 614.7,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.92,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2722e-05,
+        "latency_ms": 642.0,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.92,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2722e-05,
+        "latency_ms": 448.5,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.93,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0.98,
+            "income": 0.02
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 571.0,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.87,
+          "kind_probabilities": {
+            "transfer": 0.95,
+            "expense": 0,
+            "income": 0.05
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 537.3,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.91,
+          "kind_probabilities": {
+            "transfer": 0.98,
+            "income": 0.02,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 563.8,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.92,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0.97,
+            "income": 0.03
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 533.3,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.84,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0.04,
+            "transfer": 0.96
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 601.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.89,
+          "kind_probabilities": {
+            "transfer": 0.96,
+            "income": 0,
+            "expense": 0.04
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2554e-05,
+        "latency_ms": 549.2,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.89,
+          "kind_probabilities": {
+            "transfer": 0.97,
+            "income": 0,
+            "expense": 0.03
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2554e-05,
+        "latency_ms": 646.2,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.88,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0.02,
+            "transfer": 0.98
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2554e-05,
+        "latency_ms": 497.3,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.9,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.98,
+            "expense": 0.02
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2554e-05,
+        "latency_ms": 569.0,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.88,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0.04,
+            "transfer": 0.96
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2554e-05,
+        "latency_ms": 616.8,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.87,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2848e-05,
+        "latency_ms": 489.0,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.89,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2848e-05,
+        "latency_ms": 537.4,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.89,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.99,
+            "expense": 0.01
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2848e-05,
+        "latency_ms": 523.1,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.9,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2848e-05,
+        "latency_ms": 633.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.89,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2848e-05,
+        "latency_ms": 563.5,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "expense": 1,
+            "income": 0,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2512e-05,
+        "latency_ms": 500.8,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0,
+            "expense": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2512e-05,
+        "latency_ms": 562.0,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0,
+            "expense": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2512e-05,
+        "latency_ms": 687.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "transfer": 0,
+            "expense": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2512e-05,
+        "latency_ms": 560.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "transfer": 0,
+            "income": 0,
+            "expense": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2512e-05,
+        "latency_ms": 704.8,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "expense": 0.01,
+            "income": 0.99,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2638e-05,
+        "latency_ms": 565.0,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "income": 0.98,
+            "expense": 0.02,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2638e-05,
+        "latency_ms": 549.4,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "income": 0.99,
+            "expense": 0.01,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2638e-05,
+        "latency_ms": 572.7,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "income": 0.98,
+            "expense": 0.02,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2638e-05,
+        "latency_ms": 616.3,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "expense": 0.01,
+            "income": 0.99,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2638e-05,
+        "latency_ms": 497.6,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "income": 1,
+            "transfer": 0,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2764e-05,
+        "latency_ms": 752.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "income": 1,
+            "transfer": 0,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2764e-05,
+        "latency_ms": 531.0,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "transfer": 0,
+            "expense": 0,
+            "income": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2764e-05,
+        "latency_ms": 597.2,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 1,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2764e-05,
+        "latency_ms": 608.5,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0,
+            "income": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2764e-05,
+        "latency_ms": 632.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.01,
+            "expense": 0.99
+          }
+        },
+        "error": null,
+        "cost_usd": 2.3058e-05,
+        "latency_ms": 537.4,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "expense": 0.99,
+            "transfer": 0.01,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.3058e-05,
+        "latency_ms": 544.1,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "transfer": 0.01,
+            "income": 0,
+            "expense": 0.99
+          }
+        },
+        "error": null,
+        "cost_usd": 2.3058e-05,
+        "latency_ms": 598.3,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "expense": 0.99,
+            "income": 0,
+            "transfer": 0.01
+          }
+        },
+        "error": null,
+        "cost_usd": 2.3058e-05,
+        "latency_ms": 578.2,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "expense": 0.99,
+            "transfer": 0.01,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.3058e-05,
+        "latency_ms": 578.8,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.02,
+          "kind_probabilities": {
+            "expense": 0.99,
+            "income": 0,
+            "transfer": 0.01
+          }
+        },
+        "error": null,
+        "cost_usd": 2.3688e-05,
+        "latency_ms": 524.2,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.02,
+          "kind_probabilities": {
+            "expense": 1,
+            "transfer": 0,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.3688e-05,
+        "latency_ms": 564.2,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.02,
+          "kind_probabilities": {
+            "transfer": 0.01,
+            "expense": 0.99,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.3688e-05,
+        "latency_ms": 567.6,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.02,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 1,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.3688e-05,
+        "latency_ms": 522.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.03,
+          "kind_probabilities": {
+            "expense": 1,
+            "income": 0,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.3688e-05,
+        "latency_ms": 489.1,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 598.7,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 487.4,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 581.5,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 581.4,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 548.7,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 552.2,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 617.4,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 515.5,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 634.1,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 666.1,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.04,
+          "kind_probabilities": {
+            "expense": 0.99,
+            "transfer": 0.01,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 648.7,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.05,
+          "kind_probabilities": {
+            "expense": 0.98,
+            "transfer": 0.02,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 521.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.06,
+          "kind_probabilities": {
+            "expense": 0.98,
+            "income": 0,
+            "transfer": 0.02
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 605.0,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.07,
+          "kind_probabilities": {
+            "transfer": 0.02,
+            "income": 0,
+            "expense": 0.98
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 794.3,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.04,
+          "kind_probabilities": {
+            "transfer": 0.02,
+            "income": 0,
+            "expense": 0.98
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 581.6,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.98,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.99,
+            "expense": 0.01
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2974e-05,
+        "latency_ms": 576.8,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.98,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 0.01,
+            "transfer": 0.99
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2974e-05,
+        "latency_ms": 613.7,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.97,
+          "kind_probabilities": {
+            "expense": 0.01,
+            "transfer": 0.99,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2974e-05,
+        "latency_ms": 559.0,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.97,
+          "kind_probabilities": {
+            "expense": 0.02,
+            "transfer": 0.98,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2974e-05,
+        "latency_ms": 609.0,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.97,
+          "kind_probabilities": {
+            "transfer": 0.99,
+            "income": 0,
+            "expense": 0.01
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2974e-05,
+        "latency_ms": 450.6,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.86,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.96,
+            "expense": 0.04
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 601.4,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.79,
+          "kind_probabilities": {
+            "transfer": 0.95,
+            "income": 0,
+            "expense": 0.05
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 551.1,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.83,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.94,
+            "expense": 0.06
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 613.6,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.83,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.95,
+            "expense": 0.05
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 534.4,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.81,
+          "kind_probabilities": {
+            "expense": 0.05,
+            "transfer": 0.95,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 589.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.03,
+          "kind_probabilities": {
+            "expense": 0.99,
+            "transfer": 0.01,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 522.7,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.04,
+          "kind_probabilities": {
+            "expense": 0.98,
+            "transfer": 0.02,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 553.3,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.04,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 0.02,
+            "expense": 0.98
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 534.2,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.04,
+          "kind_probabilities": {
+            "expense": 0.98,
+            "transfer": 0.02,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 529.5,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.04,
+          "kind_probabilities": {
+            "transfer": 0.02,
+            "income": 0,
+            "expense": 0.98
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 549.5,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.02,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0,
+            "income": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 539.6,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.02,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 1,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 514.8,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.02,
+          "kind_probabilities": {
+            "transfer": 0,
+            "income": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 495.4,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.02,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0,
+            "income": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 555.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.02,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 1,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 516.6,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "transfer": 0,
+            "expense": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2596e-05,
+        "latency_ms": 586.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "expense": 1,
+            "income": 0,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2596e-05,
+        "latency_ms": 580.5,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "income": 0,
+            "expense": 1,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2596e-05,
+        "latency_ms": 566.8,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "expense": 1,
+            "income": 0,
+            "transfer": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2596e-05,
+        "latency_ms": 574.6,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.0,
+          "kind_probabilities": {
+            "transfer": 0,
+            "income": 0,
+            "expense": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2596e-05,
+        "latency_ms": 490.3,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.07,
+          "kind_probabilities": {
+            "transfer": 0.04,
+            "expense": 0,
+            "income": 0.96
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2974e-05,
+        "latency_ms": 541.7,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.08,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0.95,
+            "transfer": 0.05
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2974e-05,
+        "latency_ms": 504.4,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.07,
+          "kind_probabilities": {
+            "income": 0.96,
+            "transfer": 0.04,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2974e-05,
+        "latency_ms": 543.6,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.09,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0.03,
+            "income": 0.97
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2974e-05,
+        "latency_ms": 490.0,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.09,
+          "kind_probabilities": {
+            "transfer": 0.06,
+            "expense": 0,
+            "income": 0.94
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2974e-05,
+        "latency_ms": 606.6,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "income": 0,
+            "transfer": 1,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 529.2,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 545.7,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 472.2,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0,
+            "transfer": 1
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 570.2,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 2.0,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 1,
+            "income": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.2806e-05,
+        "latency_ms": 547.6,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.87,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0.05,
+            "transfer": 0.95
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 525.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.88,
+          "kind_probabilities": {
+            "income": 0.05,
+            "transfer": 0.95,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 512.3,
+        "model_key": "jev-openrouter-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.89,
+          "kind_probabilities": {
+            "expense": 0,
+            "transfer": 0.95,
+            "income": 0.05
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 557.7,
+        "model_key": "jev-openrouter-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.86,
+          "kind_probabilities": {
+            "transfer": 0.95,
+            "income": 0.05,
+            "expense": 0
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 625.9,
+        "model_key": "jev-openrouter-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.9,
+          "kind_probabilities": {
+            "expense": 0,
+            "income": 0.04,
+            "transfer": 0.96
+          }
+        },
+        "error": null,
+        "cost_usd": 2.268e-05,
+        "latency_ms": 529.1,
+        "model_key": "jev-openrouter-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.02,
+            "expense": 0.12,
+            "transfer": 0.93
+          },
+          "is_transfer_p": 0.92
+        },
+        "error": null,
+        "cost_usd": 2.4528e-05,
+        "latency_ms": 510.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.03,
+            "expense": 0.28,
+            "transfer": 0.89
+          },
+          "is_transfer_p": 0.91
+        },
+        "error": null,
+        "cost_usd": 2.4528e-05,
+        "latency_ms": 704.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.03,
+            "expense": 0.13,
+            "transfer": 0.93
+          },
+          "is_transfer_p": 0.94
+        },
+        "error": null,
+        "cost_usd": 2.4528e-05,
+        "latency_ms": 556.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.02,
+            "expense": 0.14,
+            "transfer": 0.92
+          },
+          "is_transfer_p": 0.91
+        },
+        "error": null,
+        "cost_usd": 2.4528e-05,
+        "latency_ms": 643.2,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.03,
+            "expense": 0.12,
+            "transfer": 0.93
+          },
+          "is_transfer_p": 0.93
+        },
+        "error": null,
+        "cost_usd": 2.4528e-05,
+        "latency_ms": 588.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.29,
+            "expense": 0.06,
+            "transfer": 0.89
+          },
+          "is_transfer_p": 0.9
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 530.2,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.32,
+            "expense": 0.04,
+            "transfer": 0.88
+          },
+          "is_transfer_p": 0.91
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 520.8,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.32,
+            "expense": 0.05,
+            "transfer": 0.89
+          },
+          "is_transfer_p": 0.9
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 529.8,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.33,
+            "expense": 0.04,
+            "transfer": 0.9
+          },
+          "is_transfer_p": 0.92
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 541.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.33,
+            "expense": 0.07,
+            "transfer": 0.87
+          },
+          "is_transfer_p": 0.89
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 478.4,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.04,
+            "expense": 0.1,
+            "transfer": 0.88
+          },
+          "is_transfer_p": 0.81
+        },
+        "error": null,
+        "cost_usd": 2.436e-05,
+        "latency_ms": 595.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.05,
+            "expense": 0.1,
+            "transfer": 0.89
+          },
+          "is_transfer_p": 0.84
+        },
+        "error": null,
+        "cost_usd": 2.436e-05,
+        "latency_ms": 616.5,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.06,
+            "expense": 0.1,
+            "transfer": 0.88
+          },
+          "is_transfer_p": 0.83
+        },
+        "error": null,
+        "cost_usd": 2.436e-05,
+        "latency_ms": 556.2,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.05,
+            "expense": 0.11,
+            "transfer": 0.89
+          },
+          "is_transfer_p": 0.84
+        },
+        "error": null,
+        "cost_usd": 2.436e-05,
+        "latency_ms": 523.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.04,
+            "expense": 0.09,
+            "transfer": 0.89
+          },
+          "is_transfer_p": 0.83
+        },
+        "error": null,
+        "cost_usd": 2.436e-05,
+        "latency_ms": 604.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.11,
+            "expense": 0.26,
+            "transfer": 0.83
+          },
+          "is_transfer_p": 0.86
+        },
+        "error": null,
+        "cost_usd": 2.4654e-05,
+        "latency_ms": 557.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.18,
+            "expense": 0.22,
+            "transfer": 0.86
+          },
+          "is_transfer_p": 0.87
+        },
+        "error": null,
+        "cost_usd": 2.4654e-05,
+        "latency_ms": 483.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.11,
+            "expense": 0.18,
+            "transfer": 0.86
+          },
+          "is_transfer_p": 0.84
+        },
+        "error": null,
+        "cost_usd": 2.4654e-05,
+        "latency_ms": 494.2,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.13,
+            "expense": 0.2,
+            "transfer": 0.83
+          },
+          "is_transfer_p": 0.84
+        },
+        "error": null,
+        "cost_usd": 2.4654e-05,
+        "latency_ms": 563.8,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.13,
+            "expense": 0.16,
+            "transfer": 0.86
+          },
+          "is_transfer_p": 0.86
+        },
+        "error": null,
+        "cost_usd": 2.4654e-05,
+        "latency_ms": 579.5,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.51,
+            "transfer": 0.04
+          },
+          "is_transfer_p": 0.04
+        },
+        "error": null,
+        "cost_usd": 2.4318e-05,
+        "latency_ms": 535.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.48,
+            "transfer": 0.04
+          },
+          "is_transfer_p": 0.04
+        },
+        "error": null,
+        "cost_usd": 2.4318e-05,
+        "latency_ms": 640.9,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.53,
+            "transfer": 0.04
+          },
+          "is_transfer_p": 0.03
+        },
+        "error": null,
+        "cost_usd": 2.4318e-05,
+        "latency_ms": 598.3,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.52,
+            "transfer": 0.04
+          },
+          "is_transfer_p": 0.04
+        },
+        "error": null,
+        "cost_usd": 2.4318e-05,
+        "latency_ms": 567.5,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.53,
+            "transfer": 0.03
+          },
+          "is_transfer_p": 0.04
+        },
+        "error": null,
+        "cost_usd": 2.4318e-05,
+        "latency_ms": 527.2,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.56,
+            "expense": 0.05,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.01
+        },
+        "error": null,
+        "cost_usd": 2.4444e-05,
+        "latency_ms": 514.5,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.53,
+            "expense": 0.04,
+            "transfer": 0.02
+          },
+          "is_transfer_p": 0.01
+        },
+        "error": null,
+        "cost_usd": 2.4444e-05,
+        "latency_ms": 642.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.6,
+            "expense": 0.04,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.01
+        },
+        "error": null,
+        "cost_usd": 2.4444e-05,
+        "latency_ms": 535.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.58,
+            "expense": 0.05,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.01
+        },
+        "error": null,
+        "cost_usd": 2.4444e-05,
+        "latency_ms": 608.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.61,
+            "expense": 0.04,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.01
+        },
+        "error": null,
+        "cost_usd": 2.4444e-05,
+        "latency_ms": 530.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.7,
+            "expense": 0.01,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.01
+        },
+        "error": null,
+        "cost_usd": 2.457e-05,
+        "latency_ms": 572.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.58,
+            "expense": 0.01,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.02
+        },
+        "error": null,
+        "cost_usd": 2.457e-05,
+        "latency_ms": 637.9,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.51,
+            "expense": 0.01,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.02
+        },
+        "error": null,
+        "cost_usd": 2.457e-05,
+        "latency_ms": 511.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.59,
+            "expense": 0.01,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.02
+        },
+        "error": null,
+        "cost_usd": 2.457e-05,
+        "latency_ms": 487.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.54,
+            "expense": 0.01,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.02
+        },
+        "error": null,
+        "cost_usd": 2.457e-05,
+        "latency_ms": 599.5,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.06,
+            "transfer": 0.04
+          },
+          "is_transfer_p": 0.03
+        },
+        "error": null,
+        "cost_usd": 2.4864e-05,
+        "latency_ms": 550.7,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.05,
+            "transfer": 0.04
+          },
+          "is_transfer_p": 0.03
+        },
+        "error": null,
+        "cost_usd": 2.4864e-05,
+        "latency_ms": 536.2,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.06,
+            "transfer": 0.04
+          },
+          "is_transfer_p": 0.03
+        },
+        "error": null,
+        "cost_usd": 2.4864e-05,
+        "latency_ms": 513.3,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.05,
+            "transfer": 0.03
+          },
+          "is_transfer_p": 0.03
+        },
+        "error": null,
+        "cost_usd": 2.4864e-05,
+        "latency_ms": 617.8,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.06,
+            "transfer": 0.03
+          },
+          "is_transfer_p": 0.03
+        },
+        "error": null,
+        "cost_usd": 2.4864e-05,
+        "latency_ms": 553.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.76,
+            "transfer": 0.02
+          },
+          "is_transfer_p": 0.03
+        },
+        "error": null,
+        "cost_usd": 2.5494e-05,
+        "latency_ms": 572.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.78,
+            "transfer": 0.02
+          },
+          "is_transfer_p": 0.03
+        },
+        "error": null,
+        "cost_usd": 2.5494e-05,
+        "latency_ms": 573.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.8,
+            "transfer": 0.02
+          },
+          "is_transfer_p": 0.02
+        },
+        "error": null,
+        "cost_usd": 2.5494e-05,
+        "latency_ms": 598.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.66,
+            "transfer": 0.03
+          },
+          "is_transfer_p": 0.03
+        },
+        "error": null,
+        "cost_usd": 2.5494e-05,
+        "latency_ms": 570.4,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.77,
+            "transfer": 0.03
+          },
+          "is_transfer_p": 0.02
+        },
+        "error": null,
+        "cost_usd": 2.5494e-05,
+        "latency_ms": 646.7,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.03,
+            "expense": 0.05,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 470.4,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.03,
+            "expense": 0.05,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 704.5,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.03,
+            "expense": 0.04,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 646.7,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.03,
+            "expense": 0.05,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 729.8,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.03,
+            "expense": 0.05,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 664.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.07,
+            "expense": 0.03,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.97
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 530.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.07,
+            "expense": 0.04,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 596.9,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.07,
+            "expense": 0.03,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 606.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.05,
+            "expense": 0.03,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 665.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.06,
+            "expense": 0.03,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 539.9,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.84,
+            "transfer": 0.08
+          },
+          "is_transfer_p": 0.06
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 586.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.81,
+            "transfer": 0.08
+          },
+          "is_transfer_p": 0.07
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 649.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.82,
+            "transfer": 0.09
+          },
+          "is_transfer_p": 0.07
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 532.9,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.83,
+            "transfer": 0.08
+          },
+          "is_transfer_p": 0.06
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 1701.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.77,
+            "transfer": 0.07
+          },
+          "is_transfer_p": 0.06
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 617.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.02,
+            "expense": 0.07,
+            "transfer": 0.94
+          },
+          "is_transfer_p": 0.93
+        },
+        "error": null,
+        "cost_usd": 2.478e-05,
+        "latency_ms": 559.5,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.11,
+            "transfer": 0.95
+          },
+          "is_transfer_p": 0.93
+        },
+        "error": null,
+        "cost_usd": 2.478e-05,
+        "latency_ms": 605.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.02,
+            "expense": 0.07,
+            "transfer": 0.94
+          },
+          "is_transfer_p": 0.93
+        },
+        "error": null,
+        "cost_usd": 2.478e-05,
+        "latency_ms": 525.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.08,
+            "transfer": 0.94
+          },
+          "is_transfer_p": 0.94
+        },
+        "error": null,
+        "cost_usd": 2.478e-05,
+        "latency_ms": 558.3,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.09,
+            "transfer": 0.94
+          },
+          "is_transfer_p": 0.93
+        },
+        "error": null,
+        "cost_usd": 2.478e-05,
+        "latency_ms": 584.5,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.03,
+            "expense": 0.19,
+            "transfer": 0.88
+          },
+          "is_transfer_p": 0.83
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 560.3,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.02,
+            "expense": 0.33,
+            "transfer": 0.87
+          },
+          "is_transfer_p": 0.88
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 499.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.05,
+            "expense": 0.2,
+            "transfer": 0.89
+          },
+          "is_transfer_p": 0.85
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 550.5,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.02,
+            "expense": 0.15,
+            "transfer": 0.88
+          },
+          "is_transfer_p": 0.85
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 578.7,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.03,
+            "expense": 0.17,
+            "transfer": 0.88
+          },
+          "is_transfer_p": 0.86
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 496.2,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.02,
+            "expense": 0.66,
+            "transfer": 0.07
+          },
+          "is_transfer_p": 0.08
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 650.9,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.72,
+            "transfer": 0.07
+          },
+          "is_transfer_p": 0.08
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 487.9,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.02,
+            "expense": 0.76,
+            "transfer": 0.06
+          },
+          "is_transfer_p": 0.07
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 526.3,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.64,
+            "transfer": 0.07
+          },
+          "is_transfer_p": 0.08
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 563.3,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.73,
+            "transfer": 0.08
+          },
+          "is_transfer_p": 0.06
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 527.3,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.55,
+            "expense": 0.01,
+            "transfer": 0.05
+          },
+          "is_transfer_p": 0.04
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 488.4,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.48,
+            "expense": 0.01,
+            "transfer": 0.04
+          },
+          "is_transfer_p": 0.03
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 970.4,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.62,
+            "expense": 0.02,
+            "transfer": 0.04
+          },
+          "is_transfer_p": 0.04
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 679.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.57,
+            "expense": 0.01,
+            "transfer": 0.04
+          },
+          "is_transfer_p": 0.04
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 542.8,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.59,
+            "expense": 0.01,
+            "transfer": 0.05
+          },
+          "is_transfer_p": 0.04
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 631.7,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.93,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.01
+        },
+        "error": null,
+        "cost_usd": 2.4402e-05,
+        "latency_ms": 518.9,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.93,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.01
+        },
+        "error": null,
+        "cost_usd": 2.4402e-05,
+        "latency_ms": 608.4,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.93,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.01
+        },
+        "error": null,
+        "cost_usd": 2.4402e-05,
+        "latency_ms": 536.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.94,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.01
+        },
+        "error": null,
+        "cost_usd": 2.4402e-05,
+        "latency_ms": 559.3,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.01,
+            "expense": 0.93,
+            "transfer": 0.01
+          },
+          "is_transfer_p": 0.01
+        },
+        "error": null,
+        "cost_usd": 2.4402e-05,
+        "latency_ms": 577.5,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.45,
+            "expense": 0.05,
+            "transfer": 0.28
+          },
+          "is_transfer_p": 0.17
+        },
+        "error": null,
+        "cost_usd": 2.478e-05,
+        "latency_ms": 512.7,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.44,
+            "expense": 0.04,
+            "transfer": 0.24
+          },
+          "is_transfer_p": 0.17
+        },
+        "error": null,
+        "cost_usd": 2.478e-05,
+        "latency_ms": 617.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.44,
+            "expense": 0.04,
+            "transfer": 0.23
+          },
+          "is_transfer_p": 0.18
+        },
+        "error": null,
+        "cost_usd": 2.478e-05,
+        "latency_ms": 516.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.45,
+            "expense": 0.05,
+            "transfer": 0.23
+          },
+          "is_transfer_p": 0.13
+        },
+        "error": null,
+        "cost_usd": 2.478e-05,
+        "latency_ms": 590.2,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.42,
+            "expense": 0.05,
+            "transfer": 0.26
+          },
+          "is_transfer_p": 0.16
+        },
+        "error": null,
+        "cost_usd": 2.478e-05,
+        "latency_ms": 491.7,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.03,
+            "expense": 0.04,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 602.0,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.02,
+            "expense": 0.04,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 493.5,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.03,
+            "expense": 0.05,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 643.7,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.02,
+            "expense": 0.04,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 503.3,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.02,
+            "expense": 0.05,
+            "transfer": 0.98
+          },
+          "is_transfer_p": 0.98
+        },
+        "error": null,
+        "cost_usd": 2.4612e-05,
+        "latency_ms": 584.6,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.36,
+            "expense": 0.03,
+            "transfer": 0.88
+          },
+          "is_transfer_p": 0.89
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 486.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.25,
+            "expense": 0.04,
+            "transfer": 0.88
+          },
+          "is_transfer_p": 0.89
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 582.1,
+        "model_key": "jev-openrouter-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.39,
+            "expense": 0.05,
+            "transfer": 0.89
+          },
+          "is_transfer_p": 0.9
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 685.4,
+        "model_key": "jev-openrouter-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.3,
+            "expense": 0.03,
+            "transfer": 0.89
+          },
+          "is_transfer_p": 0.88
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 685.7,
+        "model_key": "jev-openrouter-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.28,
+            "expense": 0.04,
+            "transfer": 0.85
+          },
+          "is_transfer_p": 0.88
+        },
+        "error": null,
+        "cost_usd": 2.4486e-05,
+        "latency_ms": 533.9,
+        "model_key": "jev-openrouter-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      }
+    ],
+    "summary": [
+      {
+        "model_key": "jev-openrouter",
+        "cells": 100,
+        "kind_accuracy": 1.0,
+        "is_transfer_accuracy": 1.0,
+        "per_rep_agreement": 1.0,
+        "mean_latency_ms": 586.4,
+        "p95_latency_ms": 772.0,
+        "cost_usd": 0.002094,
+        "errors_sample": []
+      },
+      {
+        "model_key": "jev-openrouter-score",
+        "cells": 100,
+        "kind_accuracy": 1.0,
+        "is_transfer_accuracy": 1.0,
+        "per_rep_agreement": 1.0,
+        "mean_latency_ms": 566.2,
+        "p95_latency_ms": 648.7,
+        "cost_usd": 0.002279,
+        "errors_sample": []
+      },
+      {
+        "model_key": "jev-openrouter-noul",
+        "cells": 100,
+        "kind_accuracy": 1.0,
+        "is_transfer_accuracy": 1.0,
+        "per_rep_agreement": 1.0,
+        "mean_latency_ms": 585.7,
+        "p95_latency_ms": 685.7,
+        "cost_usd": 0.00246,
+        "errors_sample": []
+      }
+    ]
+  },
+  "vision": [],
+  "total_cost_usd": 0.006847
+}

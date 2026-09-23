@@ -74,6 +74,18 @@
       "cost_usd": 0.377656
     },
     {
+      "model": "jev-openrouter",
+      "gate": "PASS",
+      "decision_cells": 100,
+      "decision_kind_acc": 1.0,
+      "decision_transfer_acc": 1.0,
+      "decision_mean_ms": 586,
+      "tool_call_passed": 0,
+      "tool_call_cells": 0,
+      "tool_call_failed_scenarios": {},
+      "cost_usd": 0.006847
+    },
+    {
       "model": "jev",
       "gate": "BLOCKED: HTTPStatusError: Client error '403 Forbidden' for url 'https://api.experientiall",
       "decision_cells": 0,
@@ -144,5 +156,5 @@
       "cost_usd": 0.06157
     }
   ],
-  "total_cost_usd": 1.322454
+  "total_cost_usd": 1.329301
 }

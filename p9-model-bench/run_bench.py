@@ -50,8 +50,8 @@ async def phase0_gate(providers: Providers, model_cfg: dict, phase0_max_tokens: 
         return entry
 
     if kind == "systemone":
-        result = await providers.explabs_systemone(
-            key, model_id, state="Accounts: Checking.\nTransaction: Checking -5.00 \"Coffee\"",
+        result = await providers.systemone(
+            model_cfg["provider"], key, model_id, state="Accounts: Checking.\nTransaction: Checking -5.00 \"Coffee\"",
             questions={"kind": {"type": "choice", "instructions": "income, expense, or transfer?",
                                  "criteria": {"income": "money received", "expense": "money paid out", "transfer": "movement between own accounts"}}},
         )
