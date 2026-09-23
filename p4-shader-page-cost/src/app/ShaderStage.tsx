@@ -4,11 +4,12 @@ import { useState } from "react";
 
 import { useShaderStage, type StageShader } from "./useShaderStage.ts";
 
+const DEFAULT_SHADER_ID = "fbm";
 const DPR_CAPS = [1, 1.5, 2, 3];
 const FRAME_BUDGET_MS = 16.67;
 
 export function ShaderStage({ shaders }: { shaders: readonly StageShader[] }) {
-  const [shaderId, setShaderId] = useState(shaders[shaders.length - 1].id);
+  const [shaderId, setShaderId] = useState(DEFAULT_SHADER_ID);
   const [dprCap, setDprCap] = useState(2);
   const shader = shaders.find((s) => s.id === shaderId) ?? shaders[0];
   const { canvasRef, state } = useShaderStage(shader, dprCap);
@@ -93,7 +94,7 @@ export function ShaderStage({ shaders }: { shaders: readonly StageShader[] }) {
       </section>
 
       <div className="hero">
-        <h1>Shader background, priced</h1>
+        <h1>Shader background, measured</h1>
         <p>{shader.note}</p>
       </div>
     </main>
