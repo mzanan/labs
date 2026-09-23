@@ -6,6 +6,7 @@ import { z } from "zod";
 
 import { grade, type Finding, type Planted } from "./grade.js";
 import { chatModel, parseModelRef } from "./models.js";
+import { summarize } from "./summary.js";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const FIXTURE = join(ROOT, "fixture");
@@ -111,22 +112,7 @@ async function main() {
         return { rep: i + 1, ...run, grade: grade(planted, run.findings) };
       }),
     );
-    const ok = reps.filter((r) => r.ok);
-    const recall = ok.map((r) => r.grade.recall);
-    const precision = ok.map((r) => r.grade.precision);
-    const mean = (xs: number[]) => (xs.length ? Math.round((xs.reduce((a, b) => a + b, 0) / xs.length) * 1000) / 1000 : null);
-    const everFound = new Set(ok.flatMap((r) => r.grade.found));
-    const summary = {
-      model: ref,
-      reps: reps.length,
-      errors: reps.length - ok.length,
-      meanRecall: mean(recall),
-      meanPrecision: mean(precision),
-      meanFindings: mean(ok.map((r) => r.findings.length)),
-      foundInEveryRep: planted.map((p) => p.id).filter((id) => ok.length && ok.every((r) => r.grade.found.includes(id))),
-      neverFound: planted.map((p) => p.id).filter((id) => !everFound.has(id)),
-      meanSeconds: mean(ok.map((r) => r.seconds)),
-    };
+    const summary = summarize(ref, planted, reps);
     console.log(JSON.stringify(summary));
     runs.push({ summary, reps });
     writeFileSync(OUT, JSON.stringify({ date: new Date().toISOString(), planted, runs }, null, 2));

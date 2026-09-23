@@ -19,8 +19,11 @@ repo and counting what each model finds and what it invents?
   findings (file, line, category, severity, title, evidence). System prompt: report only
   exploitable vulnerabilities with a concrete attacker, input and impact.
 - `src/grade.ts` counts a finding as a hit when its file matches a plant and its line falls inside
-  that plant's enclosing function. Everything else is an unmatched finding (a false positive, or a
-  real pre-existing issue to triage).
+  that plant's match ranges (the vulnerable function, plus the import line for V7). A second
+  finding on an already-hit plant is a duplicate. Anything else is unmatched: a false positive, or
+  a real pre-existing issue to triage by hand.
+- `src/regrade.ts` re-grades stored findings against the current manifest without calling any
+  model.
 
 | Plant | Category | Where | What |
 |---|---|---|---|
@@ -39,39 +42,55 @@ python3 build_fixture.py
 EXPLABS_API_KEY=... REPS=3 npm run bench
 ```
 
-## Results, 3 reps per model
+## Results, 3 reps per model (regraded 2026-09-24)
 
-| Model | Recall, all 8 | Recall, 7 exploitable | False positives | Found every rep | Never found | Mean time | Timeouts (600 s) |
-|---|---|---|---|---|---|---|---|
-| `deepseek-v4.1-flash` | 88 percent | 100 percent | 0 | V1-V5, V7, V8 | V6 | 40 s | 0 of 3 |
-| `glm-5.3` | 88 percent | 100 percent | 0 | V1-V5, V7, V8 | V6 | 213 s | 1 of 3 |
-| `kimi-k3` | 88 percent | 100 percent | 0 | V1-V5, V7, V8 | V6 | 261 s | 2 of 3 |
-| `mimo-v2.5-pro` | 75 percent | 86 percent | 0 | V2, V3, V7, V8 | V6 | 80 s | 0 of 3 |
-| `gpt-5.6-luna` | 58 percent | 67 percent | 0 | V1-V4 | V6, V7 | 20 s | 0 of 3 |
-| `nemotron-3-ultra-550b-a55b` | 46 percent | 52 percent | 0 | V1, V3 | V2, V4, V5, V6 | 19 s | 0 of 3 |
+`results/bench-2026-09-23.json` holds the raw runs, `results/bench-2026-09-23.regraded.json` the
+grades below. The first grading used match ranges that ran into the next function and dropped
+same-region findings silently; a Fable review caught it, and the regrade fixed both.
 
-- **No model reported a single false positive** across 15 completed audits, and none reported a
-  real issue in the unplanted fit-coach code either.
-- **V6 is a weak plant, not a model miss.** The key belongs to the signed-in user and goes back to
-  that same user's browser; with no second vulnerability there is no concrete attacker, and the
-  prompt asks for exactly that. Every model agreed. The second recall column excludes it.
-- **Kimi K3 and GLM 5.3 match DeepSeek but are 5-6x slower and time out**: Kimi's 100 percent rests
-  on one completed run, GLM's on two.
+| Model | Recall, 8 plants | Plants found (completed runs) | Unmatched findings | Mean time, completed runs | Timeouts (600 s) |
+|---|---|---|---|---|---|
+| `deepseek-v4.1-flash` | 88 percent | V1-V5, V7, V8 in 3 of 3 | 0 | 40 s | 0 of 3 |
+| `glm-5.3` | 88 percent | V1-V5, V7, V8 in 2 of 2 | 0 | 213 s | 1 of 3 |
+| `kimi-k3` | 88 percent | V1-V5, V7, V8 in 1 of 1 | 0 | 261 s | 2 of 3 |
+| `mimo-v2.5-pro` | 71 percent | V2, V3, V8 every run, others 2 of 3 | 1 | 80 s | 0 of 3 |
+| `gpt-5.6-luna` | 58 percent | V1-V4 every run, V5 and V8 once, never V7 | 0 | 20 s | 0 of 3 |
+| `nemotron-3-ultra-550b-a55b` | 46 percent | V1, V3 every run, V6 and V7 2 of 3, V8 once | 1 | 19 s | 0 of 3 |
+
+- **Both unmatched findings are false positives.** Nemotron flagged `deleteSubscriptionByEndpoint`,
+  which is only called with endpoints from the user's own subscription list. MiMo flagged a
+  `javascript:` link, which react-markdown's default URL transform strips even with rehype-raw.
+- **Nobody found anything real in the unplanted fit-coach code.** With 0 or 1 false positive per
+  model across 15 completed audits, precision on real bugs is still unknown.
+- **V6 was found only by Nemotron** (2 of 3), which chained it to the XSS. The system prompt asks
+  for a concrete attacker, which may push models to omit a plant that needs a second bug.
+- **Kimi K3 and GLM 5.3 match DeepSeek on recall but rest on 1 and 2 completed runs.** The 3 reps
+  run concurrently, so their timeouts may be gateway queueing as much as model speed.
 - V3's plant leaves `and` imported but unused in `pushSubscriptions.ts`, a hint any linter flags and
   that may have made V3 easier; the fixture is excluded from the labs lint for that reason.
 - DeepSeek V4.1 Flash spends most of its output on hidden reasoning: at 8,000 output tokens it
   returned an empty result; 32,000 is the setting used.
 
+### How exploitable each plant is
+
+- **V2, V5**: direct. A forged OAuth callback, a crafted settings payload (it can overwrite other
+  profile columns; not the primary key, which the update cannot change).
+- **V1, V8**: only while an env var is missing (`CRON_SECRET`, the Whoop credentials).
+- **V3, V4**: need the victim's identifier (a push endpoint, a random meal id).
+- **V7**: needs attacker-controlled text in a coach reply, for example prompt injection.
+- **V6**: needs a second bug to reach another user's browser; V7 supplies one in this fixture.
+
 ## Verdict
 
-**Yes, with DeepSeek V4.1 Flash.** Every exploitable plant found in every run, zero false
-positives, 40 s for 11 files, the cheapest paid model of the set. Luna (free) finds the obvious
-access-control bugs but misses the XSS and the subtler ones, so it is not a substitute. The result
-is a floor for what the models can do: one pass, whole files in the prompt, no tools.
+**Yes, with DeepSeek V4.1 Flash.** Seven of eight plants in every run, zero false positives, 40 s
+for 11 files, and the lowest list price per token of the six on OpenRouter. GLM 5.3 and Kimi K3 may
+match it but did not finish reliably. Luna (free) finds the plain access-control bugs and misses the
+XSS. This is a floor: one pass, whole files in the prompt, no tools.
 
 ## Not measured
 
 - Cost per audit (the Anthropic-compatible gateway response did not carry it through the AI SDK).
 - A larger codebase than fits in one prompt, or an agent that reads files on its own.
-- Real, unplanted vulnerabilities: none were reported, so precision on real bugs is unknown.
+- Real, unplanted vulnerabilities: none were found, so precision on real bugs is unknown.
+- A sequential rerun to separate model speed from gateway queueing.
 - Models only on OpenRouter (MiMo V2.6), which had no credit on the run date.

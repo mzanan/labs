@@ -21,8 +21,12 @@
       "file": "src/app/api/cron/maintenance/route.ts",
       "line_start": 16,
       "line_end": 16,
-      "match_start": 13,
-      "match_end": 20,
+      "match_ranges": [
+        [
+          13,
+          20
+        ]
+      ],
       "summary": "Cron endpoint is open to anyone when CRON_SECRET is unset."
     },
     {
@@ -31,8 +35,12 @@
       "file": "src/app/api/whoop/callback/route.ts",
       "line_start": 21,
       "line_end": 21,
-      "match_start": 14,
-      "match_end": 26,
+      "match_ranges": [
+        [
+          14,
+          26
+        ]
+      ],
       "summary": "OAuth state check is skipped when the state cookie is missing, so a forged callback links an attacker's Whoop account."
     },
     {
@@ -41,8 +49,12 @@
       "file": "src/lib/data/pushSubscriptions.ts",
       "line_start": 46,
       "line_end": 47,
-      "match_start": 39,
-      "match_end": 50,
+      "match_ranges": [
+        [
+          39,
+          48
+        ]
+      ],
       "summary": "deleteSubscription ignores userId, so any signed-in user can delete another user's push subscription by endpoint."
     },
     {
@@ -51,8 +63,12 @@
       "file": "src/lib/actions/meals.ts",
       "line_start": 172,
       "line_end": 172,
-      "match_start": 165,
-      "match_end": 176,
+      "match_ranges": [
+        [
+          165,
+          176
+        ]
+      ],
       "summary": "repeatMeal reads the source meal by id only, so a user can copy any other user's meal into their own log."
     },
     {
@@ -61,9 +77,13 @@
       "file": "src/lib/actions/profile.ts",
       "line_start": 109,
       "line_end": 109,
-      "match_start": 100,
-      "match_end": 121,
-      "summary": "settingsSchema passes unknown keys through and the result is spread into the update, so a client can overwrite any profiles column, user_id included."
+      "match_ranges": [
+        [
+          100,
+          121
+        ]
+      ],
+      "summary": "settingsSchema passes unknown keys through and the result is spread into the update, so a client can overwrite other profiles columns such as targets, coach rules or the AI provider."
     },
     {
       "id": "V6",
@@ -71,8 +91,12 @@
       "file": "src/lib/actions/aiSettings.ts",
       "line_start": 203,
       "line_end": 211,
-      "match_start": 203,
-      "match_end": 213,
+      "match_ranges": [
+        [
+          203,
+          211
+        ]
+      ],
       "summary": "A server action returns the decrypted provider API key to the browser."
     },
     {
@@ -81,8 +105,16 @@
       "file": "src/components/ui/Markdown.tsx",
       "line_start": 53,
       "line_end": 53,
-      "match_start": 2,
-      "match_end": 57,
+      "match_ranges": [
+        [
+          2,
+          2
+        ],
+        [
+          42,
+          57
+        ]
+      ],
       "summary": "Coach replies are model output rendered with rehype-raw, so HTML in a reply (or injected into one) executes in the page."
     },
     {
@@ -91,8 +123,12 @@
       "file": "src/app/api/whoop/connect/route.ts",
       "line_start": 12,
       "line_end": 13,
-      "match_start": 8,
-      "match_end": 16,
+      "match_ranges": [
+        [
+          8,
+          16
+        ]
+      ],
       "summary": "The next query parameter is used as a redirect target, and an absolute URL sends the user to any external site."
     }
   ]

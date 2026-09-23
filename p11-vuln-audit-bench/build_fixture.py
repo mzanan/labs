@@ -32,7 +32,7 @@ FILES = [
 PLANTS = [
     {
         "id": "V1",
-        "region": ('export async function GET(req: Request)', '  const facts = await expireStaleFacts();'),
+        "regions": [('export async function GET(req: Request)', '  const facts = await expireStaleFacts();', 0)],
         "category": "authentication",
         "file": "src/app/api/cron/maintenance/route.ts",
         "find": "if (!cronSecret || auth !== `Bearer ${cronSecret}`) {",
@@ -42,7 +42,7 @@ PLANTS = [
     },
     {
         "id": "V2",
-        "region": ('export async function GET(request: NextRequest)', '    await connectWhoop(user.id, code);'),
+        "regions": [('export async function GET(request: NextRequest)', '    await connectWhoop(user.id, code);', 0)],
         "category": "csrf",
         "file": "src/app/api/whoop/callback/route.ts",
         "find": "if (!code || !state || !expected || state !== expected) {",
@@ -52,7 +52,7 @@ PLANTS = [
     },
     {
         "id": "V3",
-        "region": ('export async function deleteSubscription(', 'export async function deleteSubscriptionByEndpoint('),
+        "regions": [('export async function deleteSubscription(', 'export async function deleteSubscriptionByEndpoint(', -2)],
         "category": "authorization",
         "file": "src/lib/data/pushSubscriptions.ts",
         "find": "      and(\n        eq(push_subscriptions.endpoint, endpoint),\n        eq(push_subscriptions.user_id, userId),\n      ),\n    );\n}\n\nexport async function deleteSubscriptionByEndpoint(",
@@ -62,7 +62,7 @@ PLANTS = [
     },
     {
         "id": "V4",
-        "region": ('export async function repeatMeal(', '  const id = newId();'),
+        "regions": [('export async function repeatMeal(', '  const id = newId();', 0)],
         "category": "authorization",
         "file": "src/lib/actions/meals.ts",
         "find": "    .from(meals)\n    .where(and(eq(meals.id, mealId), eq(meals.user_id, user.id)))\n    .limit(1);\n  if (!source[0]) throw new Error(\"Meal not found\");",
@@ -72,17 +72,17 @@ PLANTS = [
     },
     {
         "id": "V5",
-        "region": ('const settingsSchema = z.object({', '  revalidatePath("/settings/profile");'),
+        "regions": [('const settingsSchema = z.object({', '  revalidatePath("/settings/profile");', 0)],
         "category": "mass-assignment",
         "file": "src/lib/actions/profile.ts",
         "find": "  day_cutoff_hour: z.number().int().min(0).max(12),\n});",
         "replace": "  day_cutoff_hour: z.number().int().min(0).max(12),\n}).passthrough();",
         "anchor": "}).passthrough();",
-        "summary": "settingsSchema passes unknown keys through and the result is spread into the update, so a client can overwrite any profiles column, user_id included.",
+        "summary": "settingsSchema passes unknown keys through and the result is spread into the update, so a client can overwrite other profiles columns such as targets, coach rules or the AI provider.",
     },
     {
         "id": "V6",
-        "region": ('export async function storedAiKeyAction(', 'export async function removeAiSettingsAction('),
+        "regions": [('export async function storedAiKeyAction(', 'export async function removeAiSettingsAction(', -2)],
         "category": "secret-exposure",
         "file": "src/lib/actions/aiSettings.ts",
         "find": "export async function removeAiSettingsAction(",
@@ -93,7 +93,7 @@ PLANTS = [
     },
     {
         "id": "V7",
-        "region": ('import rehypeRaw from "rehype-raw";', '      </ReactMarkdown>'),
+        "regions": [('import rehypeRaw from "rehype-raw";', 'import rehypeRaw from "rehype-raw";', 0), ('export function Markdown(', '      </ReactMarkdown>', 0)],
         "category": "xss",
         "file": "src/components/ui/Markdown.tsx",
         "find": "      <ReactMarkdown remarkPlugins={[remarkGfm]} components={COMPONENTS}>",
@@ -106,7 +106,7 @@ PLANTS = [
     },
     {
         "id": "V8",
-        "region": ('export async function GET(request: Request)', '  const state = randomUUID();'),
+        "regions": [('export async function GET(request: Request)', '  const state = randomUUID();', 0)],
         "category": "open-redirect",
         "file": "src/app/api/whoop/connect/route.ts",
         "find": "  if (!hasWhoopEnv()) {\n    return NextResponse.redirect(new URL(\"/settings?whoop=env\", request.url));\n  }",
@@ -153,16 +153,17 @@ def build(repo: Path, ref: str) -> dict:
         text = (FIXTURE / plant["file"]).read_text()
         start = line_of(text, plant["anchor"])
         span = plant.get("span", plant["anchor"].count("\n") + 1)
-        region_start = line_of(text, plant["region"][0])
-        region_end = line_of(text, plant["region"][1])
+        ranges = [
+            [line_of(text, start), line_of(text, end) + offset]
+            for start, end, offset in plant["regions"]
+        ]
         manifest.append({
             "id": plant["id"],
             "category": plant["category"],
             "file": plant["file"],
             "line_start": start,
             "line_end": start + span - 1,
-            "match_start": region_start,
-            "match_end": region_end,
+            "match_ranges": ranges,
             "summary": plant["summary"],
         })
     result = {"source_repo": "fit-coach", "source_ref": ref, "files": FILES, "planted": manifest}
@@ -177,7 +178,7 @@ def main() -> None:
     args = parser.parse_args()
     result = build(Path(args.repo), args.ref)
     for p in result["planted"]:
-        print(f"{p['id']} {p['category']:16} {p['file']}:{p['line_start']}-{p['line_end']} region {p['match_start']}-{p['match_end']}")
+        print(f"{p['id']} {p['category']:16} {p['file']}:{p['line_start']}-{p['line_end']} match {p['match_ranges']}")
 
 
 if __name__ == "__main__":
