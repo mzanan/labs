@@ -1,0 +1,49 @@
+{
+  "model": "deepseek-4.1-flash",
+  "model_id": "deepseek-v4.1-flash",
+  "provider": "explabs",
+  "date": "2026-09-23",
+  "worktree": "/private/tmp/claude-501/-Users-zanan-Documents-projects-personal-personal-brain/a0865b0f-9e02-4a3b-bc15-fd7a7289bb3b/scratchpad/coding-wt/wt-deepseek-4.1-flash",
+  "agent": {
+    "ok": true,
+    "seconds": 312.9,
+    "num_turns": 28,
+    "stop_reason": "success",
+    "input_tokens": 223272,
+    "cache_read_tokens": 327040,
+    "output_tokens": 15398,
+    "final_message": "All three checks pass: `tsc --noEmit` clean, `eslint src/lib` clean, `vitest run` 97/97 (11 files).\n\n**Changed:** added `src/lib/catalogName.ts` exporting a pure `sizeFamilyKey(name)` that normalizes via `normalizeSearch`, strips whole-word size tokens (numbers with `g/gr/grs/gram/grams/kg/ml/l/oz`, including slash-joined lists like `100G/200G` and `140 g/210 g`) wherever they appear, collapses whitespace and trims dangling punctuation, returning `null` when no size token is present or nothing survives; switched `sizeVariantsOf` in `src/lib/catalogMeal.ts` and the `hitFamilies` check in `src/lib/ai/coachCatalogSearch.ts` to it (null key = never a family member) and deleted `sizeVariantKey`.\n**Tests:** new `src/lib/__tests__/catalogName.test.ts` (13 cases) covering prefix/suffix/middle positions, slash lists, `7up`/`V8`/`2 eggs` negatives, all-units/decimals/case, punctuation cleanup and the reported grouping failures.",
+    "raw_tail": null
+  },
+  "grade": {
+    "hidden_passed": 11,
+    "hidden_total": 11,
+    "checks": {
+      "module_exists": true,
+      "module_pure": true,
+      "own_tests_exist": true,
+      "old_fn_removed": true,
+      "catalog_meal_uses_new": true,
+      "catalog_search_uses_new": true,
+      "tsc": true,
+      "eslint": true,
+      "vitest_full": true
+    },
+    "checks_passed": 9,
+    "checks_total": 9,
+    "comment_hits": [],
+    "changed_files": [
+      "src/lib/ai/coachCatalogSearch.ts",
+      "src/lib/catalogMeal.ts",
+      "src/lib/__tests__/catalogName.test.ts",
+      "src/lib/catalogName.ts"
+    ],
+    "diff_stat": " src/lib/ai/coachCatalogSearch.ts |  8 ++++++--\n src/lib/catalogMeal.ts           | 15 +++++----------\n 2 files changed, 11 insertions(+), 12 deletions(-)\n",
+    "logs": {
+      "hidden": "\n RUN  v4.1.11 /private/tmp/claude-501/-Users-zanan-Documents-projects-personal-personal-brain/a0865b0f-9e02-4a3b-bc15-fd7a7289bb3b/scratchpad/coding-wt/wt-deepseek-4.1-flash\n\n\n Test Files  1 passed (1)\n      Tests  11 passed (11)\n   Start at  23:28:06\n   Duration  111ms (transform 19ms, setup 0ms, import 27ms, tests 5ms, environment 0ms)\n\n(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:\n  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `\"type\": \"module\"` in the closest package.json\nSet `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.\n",
+      "tsc": "",
+      "eslint": "",
+      "vitest": "\n RUN  v4.1.11 /private/tmp/claude-501/-Users-zanan-Documents-projects-personal-personal-brain/a0865b0f-9e02-4a3b-bc15-fd7a7289bb3b/scratchpad/coding-wt/wt-deepseek-4.1-flash\n\n\n Test Files  11 passed (11)\n      Tests  97 passed (97)\n   Start at  23:28:11\n   Duration  882ms (transform 418ms, setup 0ms, import 2.43s, tests 41ms, environment 1ms)\n\n(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:\n  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `\"type\": \"module\"` in the closest package.json\nSet `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.\n"
+    }
+  }
+}

@@ -106,6 +106,33 @@ Total cost: USD 1.329301
 - `grok-4.7` returned cost 0.0 on a one-call probe on 2026-09-22 but was billed during the run.
 - `qwen3.8-27b-free` (OpenRouter `:free`) is not a quality result: decision scored 28 percent because most calls hit upstream `429` rate limits, counted as wrong. Run stopped before tool call. The paid `qwen3.8-27b` row is the real measure of the model.
 
+## Track 2: coding fix, 2026-09-23
+
+Task (`tracks/coding/task.md`): make fit-coach's catalog size families independent of where the
+size is written in the name (new pure `sizeFamilyKey` in `src/lib/catalogName.ts`, both callers
+switched, old function removed, own unit tests). Each model ran as a headless Claude Code agent
+pointed at its gateway, in a detached worktree of fit-coach at `ebe3235`, with an isolated config
+dir and a 60-turn cap. Graded after the agent stopped: 11 hidden vitest cases
+(`tracks/coding/hidden.test.ts`) plus 9 checks (module exists and is pure, own tests exist, old
+function removed, both callers use the new one, tsc, eslint, full vitest). A reference solution
+written by the orchestrator scored 11/11 and 9/9 before any model ran.
+
+| Model | Hidden tests | Checks | Comment lines | Turns | Minutes | Files changed |
+|---|---|---|---|---|---|---|
+| `glm-5.3` | 11/11 | 9/9 | 0 | 19 | 4.5 | 4 |
+| `deepseek-4.1-flash` | 11/11 | 9/9 | 0 | 28 | 5.2 | 4 |
+| `kimi-k3` | 11/11 | 9/9 | 0 | 22 | 8.6 | 4 |
+| `gpt-5.6-luna` | 11/11 | 9/9 | 0 | 61 | 10.7 | 4 |
+| `mimo-2.6-flash` | 11/11 | 9/9 | 0 | 38 | 24.6 | 4 |
+
+- Every model that finished solved it completely, so this task separates on speed and turn count,
+  not correctness. It is not hard enough to rank the top models against each other.
+- `gpt-5.6-luna` needed 61 turns and hit the cap on its last one.
+- `qwen3.8-27b` is not measured: both attempts died after 4 turns on a Cloudflare 5xx from the
+  Experiential Labs gateway, with no file changed. Dropped by Matias.
+- Token cost per model is not reported: headless Claude Code prices the run with Anthropic rates,
+  not the gateway's. The gateway usage page is the source for real spend.
+
 ## Track 4: vision
 
 NOT RUN. `fixtures/vision/` is empty; Matias has not supplied the 3 receipt images. The runner
@@ -116,7 +143,7 @@ images land in `fixtures/vision/` matching the ids in `tracks/vision/scenarios.j
 
 ## Verdict
 
-- `deepseek-4.1-flash`: best overall. 100 percent decision, 19/21 tool call, fastest paid model, USD 0.047. Default pick for agents.
+- `deepseek-4.1-flash`: best overall, also 11/11 on the coding fix in 5 minutes. 100 percent decision, 19/21 tool call, fastest paid model, USD 0.047. Default pick for agents.
 - `gpt-5.6-luna`: same accuracy as DeepSeek at zero cost, but never took the initiative in scenario 1 (0/3). Best free option while it stays free.
 - `glm-5.3`: 19/21 and 100 percent decision, but 5x DeepSeek's cost for the same result.
 - `glm-5.3-flash`: 100 percent decision, 18/21, cheap. A valid second option.
@@ -130,7 +157,6 @@ images land in `fixtures/vision/` matching the ids in `tracks/vision/scenarios.j
 
 ## Not measured
 
-- Track 2 (coding fix): out of phase 1 by spec, needs per-model worktrees of fit-coach and a
-  coding-agent runtime the orchestrator specs separately.
+- Track 2 on a harder task: the current one does not separate the top five.
 - Track 4 (vision): fixtures missing.
 - Laya fine-tuned on money-tracker labels.

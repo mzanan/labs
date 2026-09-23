@@ -1,0 +1,8 @@
+{
+  "repo": "/Users/zanan/Documents/projects/personal/fit-coach",
+  "base_ref": "ebe3235",
+  "max_turns": 60,
+  "agent_timeout_s": 1800,
+  "allowed_tools": ["Read", "Edit", "Write", "Glob", "Grep", "Bash(npx tsc:*)", "Bash(npx eslint:*)", "Bash(npx vitest:*)", "Bash(git diff:*)", "Bash(git status:*)", "Bash(ls:*)"],
+  "agent_suffix": "Work autonomously until the task is done and all three checks pass. Do not ask questions; there is no one to answer. Finish with a two-line summary of what you changed."
+}
