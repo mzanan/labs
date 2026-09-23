@@ -77,6 +77,9 @@ synthetic money-tracker transactions x 3 reps. Tool call: p7's 6 scenarios plus 
 | `jev-openrouter` | PASS | 1.0 | 1.0 | 586 | not run | none | 0.006847 |
 | `jev` | BLOCKED: HTTPStatusError: Client error '403 Forbidden' for url 'https://api.experientiall | None | None | None | not run | none | 0.0 |
 | `kimi-k3` | PASS | 0.867 | 0.867 | 6037 | 18/21 | s1: 3 | 0.563022 |
+| `laya-multilingual` | PASS | 0.55 | 0.5 | 40 | not run | none | 0.0 |
+| `laya-typed-decisions` | PASS | 0.65 | 0.55 | 90 | not run | none | 0.0 |
+| `laya` | PASS | 0.45 | 0.65 | 96 | not run | none | 0.0 |
 | `mimo-2.6-flash` | PASS | 0.983 | 0.983 | 2854 | 18/21 | s1: 1, s6: 2 | 0.013781 |
 | `nemotron-3-ultra-550b-a55b` | PASS | 0.933 | 0.967 | 1185 | 18/21 | s1: 3 | 0.0 |
 | `qwen3.8-27b` | PASS | 1.0 | 1.0 | 6617 | 17/21 | s1: 3, s6: 1 | 0.06157 |
@@ -94,6 +97,12 @@ Total cost: USD 1.329301
   `/api/v1/models`), via `POST /api/v1/systemone`. All three variants (choice, score, noul) scored
   100 percent on kind and transfer, 100 percent agreement over 5 reps, 0.57-0.59 s mean, USD 0.0068
   for 300 calls, billed at USD 0.042/M input tokens (not free on OpenRouter).
+- Laya runs locally (`pip install laya`, pulls PyTorch, about 950 MB venv plus 2.2 GB of weights, 30 s first load on
+  Apple Silicon) with the same state plus typed questions shape as Jev. Best variant per checkpoint
+  on this set: `laya` 45 percent kind / 75 percent transfer, `laya-multilingual` 55 / 50,
+  `laya-typed-decisions` 65 / 70. Perfectly deterministic and 40-160 ms, but near chance on a
+  3-way kind, as its own model card predicts for an untuned checkpoint (0.362 on the vendor's
+  benchmark before fine-tuning).
 - `grok-4.7` returned cost 0.0 on a one-call probe on 2026-09-22 but was billed during the run.
 - `qwen3.8-27b-free` (OpenRouter `:free`) is not a quality result: decision scored 28 percent because most calls hit upstream `429` rate limits, counted as wrong. Run stopped before tool call. The paid `qwen3.8-27b` row is the real measure of the model.
 
@@ -116,6 +125,7 @@ images land in `fixtures/vision/` matching the ids in `tracks/vision/scenarios.j
 - `qwen3.8-27b`: 100 percent decision but the slowest (6.6 s) and lowest tool call (17/21).
 - `grok-4.7`: same result as the cheap models at 8x DeepSeek's cost. No reason to use it.
 - `kimi-k3`: worst decision accuracy (87 percent, 65 percent agreement between reps) and the most expensive (USD 0.56). Not for this kind of work.
+- `laya`: not usable off the shelf for this domain, 35-65 percent. Dropped 2026-09-23: `laya` removed from `requirements.txt`, PyTorch and the cached weights deleted, rows disabled in `models.json`; `pip install laya` to re-measure. Only worth it after fine-tuning on labelled transactions (the vendor notebook runs on Kaggle's free 2xT4).
 - `jev` (OpenRouter): best decision engine measured. 100 percent in every variant, 0.6 s, about USD 0.00002 per call, 2x faster than the fastest LLM. Use it for classification and gating, not for chat.
 
 ## Not measured
@@ -123,5 +133,4 @@ images land in `fixtures/vision/` matching the ids in `tracks/vision/scenarios.j
 - Track 2 (coding fix): out of phase 1 by spec, needs per-model worktrees of fit-coach and a
   coding-agent runtime the orchestrator specs separately.
 - Track 4 (vision): fixtures missing.
-- Laya (Convai, HF, ModernBERT-based classifier): stub only, not wired, no torch/transformers
-  installed in this phase.
+- Laya fine-tuned on money-tracker labels.

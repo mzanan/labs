@@ -1,0 +1,7556 @@
+{
+  "phase0": [
+    {
+      "model_key": "laya",
+      "provider": "laya",
+      "model_id": "convaiinnovations/laya",
+      "passed": true,
+      "error": null,
+      "cost_usd": 0.0,
+      "raw": null
+    }
+  ],
+  "tool_call": [],
+  "decision": {
+    "cheapest_model": null,
+    "cells": [
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.5108,
+          "kind_probabilities": {
+            "income": 0.108,
+            "expense": 0.1251,
+            "transfer": 0.7669
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 422.7,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.5108,
+          "kind_probabilities": {
+            "income": 0.108,
+            "expense": 0.1251,
+            "transfer": 0.7669
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 105.1,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.5108,
+          "kind_probabilities": {
+            "income": 0.108,
+            "expense": 0.1251,
+            "transfer": 0.7669
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 86.7,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.5108,
+          "kind_probabilities": {
+            "income": 0.108,
+            "expense": 0.1251,
+            "transfer": 0.7669
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 86.7,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.5108,
+          "kind_probabilities": {
+            "income": 0.108,
+            "expense": 0.1251,
+            "transfer": 0.7669
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.1,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "is_transfer_p": 0.568,
+          "kind_probabilities": {
+            "income": 0.7876,
+            "expense": 0.0399,
+            "transfer": 0.1725
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.6,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "is_transfer_p": 0.568,
+          "kind_probabilities": {
+            "income": 0.7876,
+            "expense": 0.0399,
+            "transfer": 0.1725
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.7,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "is_transfer_p": 0.568,
+          "kind_probabilities": {
+            "income": 0.7876,
+            "expense": 0.0399,
+            "transfer": 0.1725
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.0,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "is_transfer_p": 0.568,
+          "kind_probabilities": {
+            "income": 0.7876,
+            "expense": 0.0399,
+            "transfer": 0.1725
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.3,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "is_transfer_p": 0.568,
+          "kind_probabilities": {
+            "income": 0.7876,
+            "expense": 0.0399,
+            "transfer": 0.1725
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 92.2,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.6977,
+          "kind_probabilities": {
+            "income": 0.174,
+            "expense": 0.1283,
+            "transfer": 0.6977
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 99.6,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.6977,
+          "kind_probabilities": {
+            "income": 0.174,
+            "expense": 0.1283,
+            "transfer": 0.6977
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.0,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.6977,
+          "kind_probabilities": {
+            "income": 0.174,
+            "expense": 0.1283,
+            "transfer": 0.6977
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.5,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.6977,
+          "kind_probabilities": {
+            "income": 0.174,
+            "expense": 0.1283,
+            "transfer": 0.6977
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.3,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.6977,
+          "kind_probabilities": {
+            "income": 0.174,
+            "expense": 0.1283,
+            "transfer": 0.6977
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.7,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1408,
+          "kind_probabilities": {
+            "income": 0.1814,
+            "expense": 0.1857,
+            "transfer": 0.6329
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 98.4,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1408,
+          "kind_probabilities": {
+            "income": 0.1814,
+            "expense": 0.1857,
+            "transfer": 0.6329
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.9,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1408,
+          "kind_probabilities": {
+            "income": 0.1814,
+            "expense": 0.1857,
+            "transfer": 0.6329
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.6,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1408,
+          "kind_probabilities": {
+            "income": 0.1814,
+            "expense": 0.1857,
+            "transfer": 0.6329
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.7,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1408,
+          "kind_probabilities": {
+            "income": 0.1814,
+            "expense": 0.1857,
+            "transfer": 0.6329
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.8,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1579,
+          "kind_probabilities": {
+            "income": 0.0405,
+            "expense": 0.4667,
+            "transfer": 0.4928
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.4,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1579,
+          "kind_probabilities": {
+            "income": 0.0405,
+            "expense": 0.4667,
+            "transfer": 0.4928
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.6,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1579,
+          "kind_probabilities": {
+            "income": 0.0405,
+            "expense": 0.4667,
+            "transfer": 0.4928
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.3,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1579,
+          "kind_probabilities": {
+            "income": 0.0405,
+            "expense": 0.4667,
+            "transfer": 0.4928
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.8,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1579,
+          "kind_probabilities": {
+            "income": 0.0405,
+            "expense": 0.4667,
+            "transfer": 0.4928
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.0,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1694,
+          "kind_probabilities": {
+            "income": 0.3122,
+            "expense": 0.2341,
+            "transfer": 0.4538
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 95.7,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1694,
+          "kind_probabilities": {
+            "income": 0.3122,
+            "expense": 0.2341,
+            "transfer": 0.4538
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.2,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1694,
+          "kind_probabilities": {
+            "income": 0.3122,
+            "expense": 0.2341,
+            "transfer": 0.4538
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.0,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1694,
+          "kind_probabilities": {
+            "income": 0.3122,
+            "expense": 0.2341,
+            "transfer": 0.4538
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.5,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1694,
+          "kind_probabilities": {
+            "income": 0.3122,
+            "expense": 0.2341,
+            "transfer": 0.4538
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.6,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7595,
+          "kind_probabilities": {
+            "income": 0.4078,
+            "expense": 0.1513,
+            "transfer": 0.4409
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.5,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7595,
+          "kind_probabilities": {
+            "income": 0.4078,
+            "expense": 0.1513,
+            "transfer": 0.4409
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.7,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7595,
+          "kind_probabilities": {
+            "income": 0.4078,
+            "expense": 0.1513,
+            "transfer": 0.4409
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.7,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7595,
+          "kind_probabilities": {
+            "income": 0.4078,
+            "expense": 0.1513,
+            "transfer": 0.4409
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.4,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7595,
+          "kind_probabilities": {
+            "income": 0.4078,
+            "expense": 0.1513,
+            "transfer": 0.4409
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.7,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.6849,
+          "kind_probabilities": {
+            "income": 0.1709,
+            "expense": 0.1866,
+            "transfer": 0.6426
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 156.4,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.6849,
+          "kind_probabilities": {
+            "income": 0.1709,
+            "expense": 0.1866,
+            "transfer": 0.6426
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.4,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.6849,
+          "kind_probabilities": {
+            "income": 0.1709,
+            "expense": 0.1866,
+            "transfer": 0.6426
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.3,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.6849,
+          "kind_probabilities": {
+            "income": 0.1709,
+            "expense": 0.1866,
+            "transfer": 0.6426
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 92.7,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.6849,
+          "kind_probabilities": {
+            "income": 0.1709,
+            "expense": 0.1866,
+            "transfer": 0.6426
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 93.9,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.1381,
+          "kind_probabilities": {
+            "income": 0.2879,
+            "expense": 0.4826,
+            "transfer": 0.2295
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 102.5,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.1381,
+          "kind_probabilities": {
+            "income": 0.2879,
+            "expense": 0.4826,
+            "transfer": 0.2295
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.9,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.1381,
+          "kind_probabilities": {
+            "income": 0.2879,
+            "expense": 0.4826,
+            "transfer": 0.2295
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.8,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.1381,
+          "kind_probabilities": {
+            "income": 0.2879,
+            "expense": 0.4826,
+            "transfer": 0.2295
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 92.0,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.1381,
+          "kind_probabilities": {
+            "income": 0.2879,
+            "expense": 0.4826,
+            "transfer": 0.2295
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 92.5,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.3575,
+          "kind_probabilities": {
+            "income": 0.0728,
+            "expense": 0.0795,
+            "transfer": 0.8477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.7,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.3575,
+          "kind_probabilities": {
+            "income": 0.0728,
+            "expense": 0.0795,
+            "transfer": 0.8477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.8,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.3575,
+          "kind_probabilities": {
+            "income": 0.0728,
+            "expense": 0.0795,
+            "transfer": 0.8477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.3,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.3575,
+          "kind_probabilities": {
+            "income": 0.0728,
+            "expense": 0.0795,
+            "transfer": 0.8477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.7,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.3575,
+          "kind_probabilities": {
+            "income": 0.0728,
+            "expense": 0.0795,
+            "transfer": 0.8477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.3,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7299,
+          "kind_probabilities": {
+            "income": 0.1471,
+            "expense": 0.1345,
+            "transfer": 0.7184
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.6,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7299,
+          "kind_probabilities": {
+            "income": 0.1471,
+            "expense": 0.1345,
+            "transfer": 0.7184
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.5,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7299,
+          "kind_probabilities": {
+            "income": 0.1471,
+            "expense": 0.1345,
+            "transfer": 0.7184
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.0,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7299,
+          "kind_probabilities": {
+            "income": 0.1471,
+            "expense": 0.1345,
+            "transfer": 0.7184
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.3,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7299,
+          "kind_probabilities": {
+            "income": 0.1471,
+            "expense": 0.1345,
+            "transfer": 0.7184
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.5,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.5881,
+          "kind_probabilities": {
+            "income": 0.2001,
+            "expense": 0.1634,
+            "transfer": 0.6364
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.3,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.5881,
+          "kind_probabilities": {
+            "income": 0.2001,
+            "expense": 0.1634,
+            "transfer": 0.6364
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.9,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.5881,
+          "kind_probabilities": {
+            "income": 0.2001,
+            "expense": 0.1634,
+            "transfer": 0.6364
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.1,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.5881,
+          "kind_probabilities": {
+            "income": 0.2001,
+            "expense": 0.1634,
+            "transfer": 0.6364
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.7,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.5881,
+          "kind_probabilities": {
+            "income": 0.2001,
+            "expense": 0.1634,
+            "transfer": 0.6364
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.5,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.1961,
+          "kind_probabilities": {
+            "income": 0.4238,
+            "expense": 0.3653,
+            "transfer": 0.2109
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 185.4,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.1961,
+          "kind_probabilities": {
+            "income": 0.4238,
+            "expense": 0.3653,
+            "transfer": 0.2109
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.6,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.1961,
+          "kind_probabilities": {
+            "income": 0.4238,
+            "expense": 0.3653,
+            "transfer": 0.2109
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.1,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.1961,
+          "kind_probabilities": {
+            "income": 0.4238,
+            "expense": 0.3653,
+            "transfer": 0.2109
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.1,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "is_transfer_p": 0.1961,
+          "kind_probabilities": {
+            "income": 0.4238,
+            "expense": 0.3653,
+            "transfer": 0.2109
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.4,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.3684,
+          "kind_probabilities": {
+            "income": 0.2146,
+            "expense": 0.3091,
+            "transfer": 0.4763
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.0,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.3684,
+          "kind_probabilities": {
+            "income": 0.2146,
+            "expense": 0.3091,
+            "transfer": 0.4763
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.4,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.3684,
+          "kind_probabilities": {
+            "income": 0.2146,
+            "expense": 0.3091,
+            "transfer": 0.4763
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.6,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.3684,
+          "kind_probabilities": {
+            "income": 0.2146,
+            "expense": 0.3091,
+            "transfer": 0.4763
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 86.8,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.3684,
+          "kind_probabilities": {
+            "income": 0.2146,
+            "expense": 0.3091,
+            "transfer": 0.4763
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 86.7,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.4709,
+          "kind_probabilities": {
+            "income": 0.2006,
+            "expense": 0.0464,
+            "transfer": 0.753
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 86.7,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.4709,
+          "kind_probabilities": {
+            "income": 0.2006,
+            "expense": 0.0464,
+            "transfer": 0.753
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.8,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.4709,
+          "kind_probabilities": {
+            "income": 0.2006,
+            "expense": 0.0464,
+            "transfer": 0.753
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.9,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.4709,
+          "kind_probabilities": {
+            "income": 0.2006,
+            "expense": 0.0464,
+            "transfer": 0.753
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.3,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.4709,
+          "kind_probabilities": {
+            "income": 0.2006,
+            "expense": 0.0464,
+            "transfer": 0.753
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.7,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.2045,
+          "kind_probabilities": {
+            "income": 0.3816,
+            "expense": 0.2006,
+            "transfer": 0.4178
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 141.7,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.2045,
+          "kind_probabilities": {
+            "income": 0.3816,
+            "expense": 0.2006,
+            "transfer": 0.4178
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.9,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.2045,
+          "kind_probabilities": {
+            "income": 0.3816,
+            "expense": 0.2006,
+            "transfer": 0.4178
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.0,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.2045,
+          "kind_probabilities": {
+            "income": 0.3816,
+            "expense": 0.2006,
+            "transfer": 0.4178
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.2,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.2045,
+          "kind_probabilities": {
+            "income": 0.3816,
+            "expense": 0.2006,
+            "transfer": 0.4178
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.4,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.0395,
+          "kind_probabilities": {
+            "income": 0.0448,
+            "expense": 0.8715,
+            "transfer": 0.0837
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.4,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.0395,
+          "kind_probabilities": {
+            "income": 0.0448,
+            "expense": 0.8715,
+            "transfer": 0.0837
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.9,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.0395,
+          "kind_probabilities": {
+            "income": 0.0448,
+            "expense": 0.8715,
+            "transfer": 0.0837
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.9,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.0395,
+          "kind_probabilities": {
+            "income": 0.0448,
+            "expense": 0.8715,
+            "transfer": 0.0837
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.1,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "is_transfer_p": 0.0395,
+          "kind_probabilities": {
+            "income": 0.0448,
+            "expense": 0.8715,
+            "transfer": 0.0837
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.0,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1764,
+          "kind_probabilities": {
+            "income": 0.4539,
+            "expense": 0.082,
+            "transfer": 0.4641
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 98.3,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1764,
+          "kind_probabilities": {
+            "income": 0.4539,
+            "expense": 0.082,
+            "transfer": 0.4641
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.3,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1764,
+          "kind_probabilities": {
+            "income": 0.4539,
+            "expense": 0.082,
+            "transfer": 0.4641
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 94.1,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1764,
+          "kind_probabilities": {
+            "income": 0.4539,
+            "expense": 0.082,
+            "transfer": 0.4641
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.5,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "is_transfer_p": 0.1764,
+          "kind_probabilities": {
+            "income": 0.4539,
+            "expense": 0.082,
+            "transfer": 0.4641
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.5,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7973,
+          "kind_probabilities": {
+            "income": 0.085,
+            "expense": 0.1673,
+            "transfer": 0.7477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.8,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7973,
+          "kind_probabilities": {
+            "income": 0.085,
+            "expense": 0.1673,
+            "transfer": 0.7477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.2,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7973,
+          "kind_probabilities": {
+            "income": 0.085,
+            "expense": 0.1673,
+            "transfer": 0.7477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.8,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7973,
+          "kind_probabilities": {
+            "income": 0.085,
+            "expense": 0.1673,
+            "transfer": 0.7477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.6,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "is_transfer_p": 0.7973,
+          "kind_probabilities": {
+            "income": 0.085,
+            "expense": 0.1673,
+            "transfer": 0.7477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.7,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "is_transfer_p": 0.6145,
+          "kind_probabilities": {
+            "income": 0.6039,
+            "expense": 0.0884,
+            "transfer": 0.3078
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.3,
+        "model_key": "laya",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "is_transfer_p": 0.6145,
+          "kind_probabilities": {
+            "income": 0.6039,
+            "expense": 0.0884,
+            "transfer": 0.3078
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.6,
+        "model_key": "laya",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "is_transfer_p": 0.6145,
+          "kind_probabilities": {
+            "income": 0.6039,
+            "expense": 0.0884,
+            "transfer": 0.3078
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.9,
+        "model_key": "laya",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "is_transfer_p": 0.6145,
+          "kind_probabilities": {
+            "income": 0.6039,
+            "expense": 0.0884,
+            "transfer": 0.3078
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.4,
+        "model_key": "laya",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "is_transfer_p": 0.6145,
+          "kind_probabilities": {
+            "income": 0.6039,
+            "expense": 0.0884,
+            "transfer": 0.3078
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.0,
+        "model_key": "laya",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.9062,
+          "kind_probabilities": {
+            "income": 0.108,
+            "expense": 0.1251,
+            "transfer": 0.7669
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.8,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.9062,
+          "kind_probabilities": {
+            "income": 0.108,
+            "expense": 0.1251,
+            "transfer": 0.7669
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.2,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.9062,
+          "kind_probabilities": {
+            "income": 0.108,
+            "expense": 0.1251,
+            "transfer": 0.7669
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.7,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.9062,
+          "kind_probabilities": {
+            "income": 0.108,
+            "expense": 0.1251,
+            "transfer": 0.7669
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 96.8,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.9062,
+          "kind_probabilities": {
+            "income": 0.108,
+            "expense": 0.1251,
+            "transfer": 0.7669
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 96.0,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "transfer_score": 1.0885,
+          "kind_probabilities": {
+            "income": 0.7876,
+            "expense": 0.0399,
+            "transfer": 0.1725
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.9,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "transfer_score": 1.0885,
+          "kind_probabilities": {
+            "income": 0.7876,
+            "expense": 0.0399,
+            "transfer": 0.1725
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.5,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "transfer_score": 1.0885,
+          "kind_probabilities": {
+            "income": 0.7876,
+            "expense": 0.0399,
+            "transfer": 0.1725
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 95.5,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "transfer_score": 1.0885,
+          "kind_probabilities": {
+            "income": 0.7876,
+            "expense": 0.0399,
+            "transfer": 0.1725
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 95.8,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "transfer_score": 1.0885,
+          "kind_probabilities": {
+            "income": 0.7876,
+            "expense": 0.0399,
+            "transfer": 0.1725
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 94.1,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7899,
+          "kind_probabilities": {
+            "income": 0.174,
+            "expense": 0.1283,
+            "transfer": 0.6977
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 100.1,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7899,
+          "kind_probabilities": {
+            "income": 0.174,
+            "expense": 0.1283,
+            "transfer": 0.6977
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.2,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7899,
+          "kind_probabilities": {
+            "income": 0.174,
+            "expense": 0.1283,
+            "transfer": 0.6977
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.9,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7899,
+          "kind_probabilities": {
+            "income": 0.174,
+            "expense": 0.1283,
+            "transfer": 0.6977
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.7,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7899,
+          "kind_probabilities": {
+            "income": 0.174,
+            "expense": 0.1283,
+            "transfer": 0.6977
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.4,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.1293,
+          "kind_probabilities": {
+            "income": 0.1814,
+            "expense": 0.1857,
+            "transfer": 0.6329
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.0,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.1293,
+          "kind_probabilities": {
+            "income": 0.1814,
+            "expense": 0.1857,
+            "transfer": 0.6329
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.6,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.1293,
+          "kind_probabilities": {
+            "income": 0.1814,
+            "expense": 0.1857,
+            "transfer": 0.6329
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.7,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.1293,
+          "kind_probabilities": {
+            "income": 0.1814,
+            "expense": 0.1857,
+            "transfer": 0.6329
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.9,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.1293,
+          "kind_probabilities": {
+            "income": 0.1814,
+            "expense": 0.1857,
+            "transfer": 0.6329
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.0,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0698,
+          "kind_probabilities": {
+            "income": 0.0405,
+            "expense": 0.4667,
+            "transfer": 0.4928
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.0,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0698,
+          "kind_probabilities": {
+            "income": 0.0405,
+            "expense": 0.4667,
+            "transfer": 0.4928
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.9,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0698,
+          "kind_probabilities": {
+            "income": 0.0405,
+            "expense": 0.4667,
+            "transfer": 0.4928
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.9,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0698,
+          "kind_probabilities": {
+            "income": 0.0405,
+            "expense": 0.4667,
+            "transfer": 0.4928
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.8,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0698,
+          "kind_probabilities": {
+            "income": 0.0405,
+            "expense": 0.4667,
+            "transfer": 0.4928
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.1,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.4112,
+          "kind_probabilities": {
+            "income": 0.3122,
+            "expense": 0.2341,
+            "transfer": 0.4538
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.0,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.4112,
+          "kind_probabilities": {
+            "income": 0.3122,
+            "expense": 0.2341,
+            "transfer": 0.4538
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 92.0,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.4112,
+          "kind_probabilities": {
+            "income": 0.3122,
+            "expense": 0.2341,
+            "transfer": 0.4538
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.9,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.4112,
+          "kind_probabilities": {
+            "income": 0.3122,
+            "expense": 0.2341,
+            "transfer": 0.4538
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.9,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.4112,
+          "kind_probabilities": {
+            "income": 0.3122,
+            "expense": 0.2341,
+            "transfer": 0.4538
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.6,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.8489,
+          "kind_probabilities": {
+            "income": 0.4078,
+            "expense": 0.1513,
+            "transfer": 0.4409
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.2,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.8489,
+          "kind_probabilities": {
+            "income": 0.4078,
+            "expense": 0.1513,
+            "transfer": 0.4409
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 92.1,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.8489,
+          "kind_probabilities": {
+            "income": 0.4078,
+            "expense": 0.1513,
+            "transfer": 0.4409
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.5,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.8489,
+          "kind_probabilities": {
+            "income": 0.4078,
+            "expense": 0.1513,
+            "transfer": 0.4409
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.3,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.8489,
+          "kind_probabilities": {
+            "income": 0.4078,
+            "expense": 0.1513,
+            "transfer": 0.4409
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.1,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7673,
+          "kind_probabilities": {
+            "income": 0.1709,
+            "expense": 0.1866,
+            "transfer": 0.6426
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 105.7,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7673,
+          "kind_probabilities": {
+            "income": 0.1709,
+            "expense": 0.1866,
+            "transfer": 0.6426
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 94.0,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7673,
+          "kind_probabilities": {
+            "income": 0.1709,
+            "expense": 0.1866,
+            "transfer": 0.6426
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 94.8,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7673,
+          "kind_probabilities": {
+            "income": 0.1709,
+            "expense": 0.1866,
+            "transfer": 0.6426
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 95.6,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7673,
+          "kind_probabilities": {
+            "income": 0.1709,
+            "expense": 0.1866,
+            "transfer": 0.6426
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 94.5,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.2825,
+          "kind_probabilities": {
+            "income": 0.2879,
+            "expense": 0.4826,
+            "transfer": 0.2295
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 101.0,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.2825,
+          "kind_probabilities": {
+            "income": 0.2879,
+            "expense": 0.4826,
+            "transfer": 0.2295
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 93.5,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.2825,
+          "kind_probabilities": {
+            "income": 0.2879,
+            "expense": 0.4826,
+            "transfer": 0.2295
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 94.6,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.2825,
+          "kind_probabilities": {
+            "income": 0.2879,
+            "expense": 0.4826,
+            "transfer": 0.2295
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 94.0,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.2825,
+          "kind_probabilities": {
+            "income": 0.2879,
+            "expense": 0.4826,
+            "transfer": 0.2295
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 95.3,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.3268,
+          "kind_probabilities": {
+            "income": 0.0728,
+            "expense": 0.0795,
+            "transfer": 0.8477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.2,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.3268,
+          "kind_probabilities": {
+            "income": 0.0728,
+            "expense": 0.0795,
+            "transfer": 0.8477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.7,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.3268,
+          "kind_probabilities": {
+            "income": 0.0728,
+            "expense": 0.0795,
+            "transfer": 0.8477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.7,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.3268,
+          "kind_probabilities": {
+            "income": 0.0728,
+            "expense": 0.0795,
+            "transfer": 0.8477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.1,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.3268,
+          "kind_probabilities": {
+            "income": 0.0728,
+            "expense": 0.0795,
+            "transfer": 0.8477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.5,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.1713,
+          "kind_probabilities": {
+            "income": 0.1471,
+            "expense": 0.1345,
+            "transfer": 0.7184
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 92.1,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.1713,
+          "kind_probabilities": {
+            "income": 0.1471,
+            "expense": 0.1345,
+            "transfer": 0.7184
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.5,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.1713,
+          "kind_probabilities": {
+            "income": 0.1471,
+            "expense": 0.1345,
+            "transfer": 0.7184
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.0,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.1713,
+          "kind_probabilities": {
+            "income": 0.1471,
+            "expense": 0.1345,
+            "transfer": 0.7184
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.3,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.1713,
+          "kind_probabilities": {
+            "income": 0.1471,
+            "expense": 0.1345,
+            "transfer": 0.7184
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.1,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0758,
+          "kind_probabilities": {
+            "income": 0.2001,
+            "expense": 0.1634,
+            "transfer": 0.6364
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.0,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0758,
+          "kind_probabilities": {
+            "income": 0.2001,
+            "expense": 0.1634,
+            "transfer": 0.6364
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.6,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0758,
+          "kind_probabilities": {
+            "income": 0.2001,
+            "expense": 0.1634,
+            "transfer": 0.6364
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.7,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0758,
+          "kind_probabilities": {
+            "income": 0.2001,
+            "expense": 0.1634,
+            "transfer": 0.6364
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.4,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0758,
+          "kind_probabilities": {
+            "income": 0.2001,
+            "expense": 0.1634,
+            "transfer": 0.6364
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.7,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.5525,
+          "kind_probabilities": {
+            "income": 0.4238,
+            "expense": 0.3653,
+            "transfer": 0.2109
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 93.3,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.5525,
+          "kind_probabilities": {
+            "income": 0.4238,
+            "expense": 0.3653,
+            "transfer": 0.2109
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.9,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.5525,
+          "kind_probabilities": {
+            "income": 0.4238,
+            "expense": 0.3653,
+            "transfer": 0.2109
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 93.8,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.5525,
+          "kind_probabilities": {
+            "income": 0.4238,
+            "expense": 0.3653,
+            "transfer": 0.2109
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 95.2,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "transfer_score": 0.5525,
+          "kind_probabilities": {
+            "income": 0.4238,
+            "expense": 0.3653,
+            "transfer": 0.2109
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 93.2,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0473,
+          "kind_probabilities": {
+            "income": 0.2146,
+            "expense": 0.3091,
+            "transfer": 0.4763
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.2,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0473,
+          "kind_probabilities": {
+            "income": 0.2146,
+            "expense": 0.3091,
+            "transfer": 0.4763
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.3,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0473,
+          "kind_probabilities": {
+            "income": 0.2146,
+            "expense": 0.3091,
+            "transfer": 0.4763
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.6,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0473,
+          "kind_probabilities": {
+            "income": 0.2146,
+            "expense": 0.3091,
+            "transfer": 0.4763
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.0,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.0473,
+          "kind_probabilities": {
+            "income": 0.2146,
+            "expense": 0.3091,
+            "transfer": 0.4763
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.4,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.9086,
+          "kind_probabilities": {
+            "income": 0.2006,
+            "expense": 0.0464,
+            "transfer": 0.753
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 92.1,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.9086,
+          "kind_probabilities": {
+            "income": 0.2006,
+            "expense": 0.0464,
+            "transfer": 0.753
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.4,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.9086,
+          "kind_probabilities": {
+            "income": 0.2006,
+            "expense": 0.0464,
+            "transfer": 0.753
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.9,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.9086,
+          "kind_probabilities": {
+            "income": 0.2006,
+            "expense": 0.0464,
+            "transfer": 0.753
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.6,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.9086,
+          "kind_probabilities": {
+            "income": 0.2006,
+            "expense": 0.0464,
+            "transfer": 0.753
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 92.2,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7504,
+          "kind_probabilities": {
+            "income": 0.3816,
+            "expense": 0.2006,
+            "transfer": 0.4178
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 100.0,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7504,
+          "kind_probabilities": {
+            "income": 0.3816,
+            "expense": 0.2006,
+            "transfer": 0.4178
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 93.1,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7504,
+          "kind_probabilities": {
+            "income": 0.3816,
+            "expense": 0.2006,
+            "transfer": 0.4178
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 92.0,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7504,
+          "kind_probabilities": {
+            "income": 0.3816,
+            "expense": 0.2006,
+            "transfer": 0.4178
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 93.0,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.7504,
+          "kind_probabilities": {
+            "income": 0.3816,
+            "expense": 0.2006,
+            "transfer": 0.4178
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 94.3,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.7359,
+          "kind_probabilities": {
+            "income": 0.0448,
+            "expense": 0.8715,
+            "transfer": 0.0837
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 91.4,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.7359,
+          "kind_probabilities": {
+            "income": 0.0448,
+            "expense": 0.8715,
+            "transfer": 0.0837
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 89.0,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.7359,
+          "kind_probabilities": {
+            "income": 0.0448,
+            "expense": 0.8715,
+            "transfer": 0.0837
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.4,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.7359,
+          "kind_probabilities": {
+            "income": 0.0448,
+            "expense": 0.8715,
+            "transfer": 0.0837
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.6,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "transfer_score": 0.7359,
+          "kind_probabilities": {
+            "income": 0.0448,
+            "expense": 0.8715,
+            "transfer": 0.0837
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 90.4,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.6512,
+          "kind_probabilities": {
+            "income": 0.4539,
+            "expense": 0.082,
+            "transfer": 0.4641
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 102.6,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.6512,
+          "kind_probabilities": {
+            "income": 0.4539,
+            "expense": 0.082,
+            "transfer": 0.4641
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 96.1,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.6512,
+          "kind_probabilities": {
+            "income": 0.4539,
+            "expense": 0.082,
+            "transfer": 0.4641
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 98.6,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.6512,
+          "kind_probabilities": {
+            "income": 0.4539,
+            "expense": 0.082,
+            "transfer": 0.4641
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 97.1,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "transfer_score": 0.6512,
+          "kind_probabilities": {
+            "income": 0.4539,
+            "expense": 0.082,
+            "transfer": 0.4641
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 97.0,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.4593,
+          "kind_probabilities": {
+            "income": 0.085,
+            "expense": 0.1673,
+            "transfer": 0.7477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 97.2,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.4593,
+          "kind_probabilities": {
+            "income": 0.085,
+            "expense": 0.1673,
+            "transfer": 0.7477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 97.7,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.4593,
+          "kind_probabilities": {
+            "income": 0.085,
+            "expense": 0.1673,
+            "transfer": 0.7477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 97.3,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.4593,
+          "kind_probabilities": {
+            "income": 0.085,
+            "expense": 0.1673,
+            "transfer": 0.7477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 97.2,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "transfer_score": 1.4593,
+          "kind_probabilities": {
+            "income": 0.085,
+            "expense": 0.1673,
+            "transfer": 0.7477
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 96.9,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "transfer_score": 1.1055,
+          "kind_probabilities": {
+            "income": 0.6039,
+            "expense": 0.0884,
+            "transfer": 0.3078
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 95.6,
+        "model_key": "laya-score",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "transfer_score": 1.1055,
+          "kind_probabilities": {
+            "income": 0.6039,
+            "expense": 0.0884,
+            "transfer": 0.3078
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.6,
+        "model_key": "laya-score",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "transfer_score": 1.1055,
+          "kind_probabilities": {
+            "income": 0.6039,
+            "expense": 0.0884,
+            "transfer": 0.3078
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 87.5,
+        "model_key": "laya-score",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "transfer_score": 1.1055,
+          "kind_probabilities": {
+            "income": 0.6039,
+            "expense": 0.0884,
+            "transfer": 0.3078
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 88.4,
+        "model_key": "laya-score",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": true,
+          "transfer_score": 1.1055,
+          "kind_probabilities": {
+            "income": 0.6039,
+            "expense": 0.0884,
+            "transfer": 0.3078
+          }
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 93.1,
+        "model_key": "laya-score",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.1737,
+            "expense": 0.1519,
+            "transfer": 0.5524
+          },
+          "is_transfer_p": 0.5108
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 327.5,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.1737,
+            "expense": 0.1519,
+            "transfer": 0.5524
+          },
+          "is_transfer_p": 0.5108
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 189.4,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.1737,
+            "expense": 0.1519,
+            "transfer": 0.5524
+          },
+          "is_transfer_p": 0.5108
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 154.6,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.1737,
+            "expense": 0.1519,
+            "transfer": 0.5524
+          },
+          "is_transfer_p": 0.5108
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 159.0,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.1737,
+            "expense": 0.1519,
+            "transfer": 0.5524
+          },
+          "is_transfer_p": 0.5108
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 149.6,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.7066,
+            "expense": 0.7989,
+            "transfer": 0.6685
+          },
+          "is_transfer_p": 0.568
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 152.6,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.7066,
+            "expense": 0.7989,
+            "transfer": 0.6685
+          },
+          "is_transfer_p": 0.568
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 156.9,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.7066,
+            "expense": 0.7989,
+            "transfer": 0.6685
+          },
+          "is_transfer_p": 0.568
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 156.8,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.7066,
+            "expense": 0.7989,
+            "transfer": 0.6685
+          },
+          "is_transfer_p": 0.568
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 154.8,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.7066,
+            "expense": 0.7989,
+            "transfer": 0.6685
+          },
+          "is_transfer_p": 0.568
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 157.4,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.7412,
+            "expense": 0.8241,
+            "transfer": 0.8115
+          },
+          "is_transfer_p": 0.6977
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 163.8,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.7412,
+            "expense": 0.8241,
+            "transfer": 0.8115
+          },
+          "is_transfer_p": 0.6977
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 153.3,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.7412,
+            "expense": 0.8241,
+            "transfer": 0.8115
+          },
+          "is_transfer_p": 0.6977
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 149.3,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.7412,
+            "expense": 0.8241,
+            "transfer": 0.8115
+          },
+          "is_transfer_p": 0.6977
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 152.0,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 3,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.7412,
+            "expense": 0.8241,
+            "transfer": 0.8115
+          },
+          "is_transfer_p": 0.6977
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 152.9,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5698,
+            "expense": 0.6625,
+            "transfer": 0.1631
+          },
+          "is_transfer_p": 0.1408
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 166.3,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5698,
+            "expense": 0.6625,
+            "transfer": 0.1631
+          },
+          "is_transfer_p": 0.1408
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 154.0,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5698,
+            "expense": 0.6625,
+            "transfer": 0.1631
+          },
+          "is_transfer_p": 0.1408
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 158.9,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5698,
+            "expense": 0.6625,
+            "transfer": 0.1631
+          },
+          "is_transfer_p": 0.1408
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 159.0,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 4,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5698,
+            "expense": 0.6625,
+            "transfer": 0.1631
+          },
+          "is_transfer_p": 0.1408
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 157.4,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.1104,
+            "expense": 0.2526,
+            "transfer": 0.2353
+          },
+          "is_transfer_p": 0.1579
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 150.8,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.1104,
+            "expense": 0.2526,
+            "transfer": 0.2353
+          },
+          "is_transfer_p": 0.1579
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 151.9,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.1104,
+            "expense": 0.2526,
+            "transfer": 0.2353
+          },
+          "is_transfer_p": 0.1579
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 148.9,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.1104,
+            "expense": 0.2526,
+            "transfer": 0.2353
+          },
+          "is_transfer_p": 0.1579
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 150.0,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 5,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.1104,
+            "expense": 0.2526,
+            "transfer": 0.2353
+          },
+          "is_transfer_p": 0.1579
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 152.6,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5463,
+            "expense": 0.7269,
+            "transfer": 0.4013
+          },
+          "is_transfer_p": 0.1694
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 163.5,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5463,
+            "expense": 0.7269,
+            "transfer": 0.4013
+          },
+          "is_transfer_p": 0.1694
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 154.8,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5463,
+            "expense": 0.7269,
+            "transfer": 0.4013
+          },
+          "is_transfer_p": 0.1694
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 153.8,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5463,
+            "expense": 0.7269,
+            "transfer": 0.4013
+          },
+          "is_transfer_p": 0.1694
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 151.8,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 6,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5463,
+            "expense": 0.7269,
+            "transfer": 0.4013
+          },
+          "is_transfer_p": 0.1694
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 152.4,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.6053,
+            "expense": 0.6819,
+            "transfer": 0.7033
+          },
+          "is_transfer_p": 0.7595
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 158.7,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.6053,
+            "expense": 0.6819,
+            "transfer": 0.7033
+          },
+          "is_transfer_p": 0.7595
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 157.1,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.6053,
+            "expense": 0.6819,
+            "transfer": 0.7033
+          },
+          "is_transfer_p": 0.7595
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 159.2,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.6053,
+            "expense": 0.6819,
+            "transfer": 0.7033
+          },
+          "is_transfer_p": 0.7595
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 159.5,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 7,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.6053,
+            "expense": 0.6819,
+            "transfer": 0.7033
+          },
+          "is_transfer_p": 0.7595
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 156.8,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.3424,
+            "expense": 0.488,
+            "transfer": 0.6323
+          },
+          "is_transfer_p": 0.6849
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 169.3,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.3424,
+            "expense": 0.488,
+            "transfer": 0.6323
+          },
+          "is_transfer_p": 0.6849
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 164.3,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.3424,
+            "expense": 0.488,
+            "transfer": 0.6323
+          },
+          "is_transfer_p": 0.6849
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 163.6,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.3424,
+            "expense": 0.488,
+            "transfer": 0.6323
+          },
+          "is_transfer_p": 0.6849
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 167.1,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 8,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.3424,
+            "expense": 0.488,
+            "transfer": 0.6323
+          },
+          "is_transfer_p": 0.6849
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 165.5,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.3284,
+            "expense": 0.3093,
+            "transfer": 0.2472
+          },
+          "is_transfer_p": 0.1381
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 186.2,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.3284,
+            "expense": 0.3093,
+            "transfer": 0.2472
+          },
+          "is_transfer_p": 0.1381
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 166.0,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.3284,
+            "expense": 0.3093,
+            "transfer": 0.2472
+          },
+          "is_transfer_p": 0.1381
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 168.0,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.3284,
+            "expense": 0.3093,
+            "transfer": 0.2472
+          },
+          "is_transfer_p": 0.1381
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 167.3,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 9,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.3284,
+            "expense": 0.3093,
+            "transfer": 0.2472
+          },
+          "is_transfer_p": 0.1381
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 168.1,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.2065,
+            "expense": 0.1874,
+            "transfer": 0.6178
+          },
+          "is_transfer_p": 0.3575
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 154.5,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.2065,
+            "expense": 0.1874,
+            "transfer": 0.6178
+          },
+          "is_transfer_p": 0.3575
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 153.8,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.2065,
+            "expense": 0.1874,
+            "transfer": 0.6178
+          },
+          "is_transfer_p": 0.3575
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 152.3,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.2065,
+            "expense": 0.1874,
+            "transfer": 0.6178
+          },
+          "is_transfer_p": 0.3575
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 155.3,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 10,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.2065,
+            "expense": 0.1874,
+            "transfer": 0.6178
+          },
+          "is_transfer_p": 0.3575
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 152.6,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.367,
+            "expense": 0.6417,
+            "transfer": 0.7717
+          },
+          "is_transfer_p": 0.7299
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 157.9,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.367,
+            "expense": 0.6417,
+            "transfer": 0.7717
+          },
+          "is_transfer_p": 0.7299
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 157.3,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.367,
+            "expense": 0.6417,
+            "transfer": 0.7717
+          },
+          "is_transfer_p": 0.7299
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 155.7,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.367,
+            "expense": 0.6417,
+            "transfer": 0.7717
+          },
+          "is_transfer_p": 0.7299
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 154.1,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 11,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.367,
+            "expense": 0.6417,
+            "transfer": 0.7717
+          },
+          "is_transfer_p": 0.7299
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 152.9,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.2492,
+            "expense": 0.3378,
+            "transfer": 0.5645
+          },
+          "is_transfer_p": 0.5881
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 151.1,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.2492,
+            "expense": 0.3378,
+            "transfer": 0.5645
+          },
+          "is_transfer_p": 0.5881
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 157.3,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.2492,
+            "expense": 0.3378,
+            "transfer": 0.5645
+          },
+          "is_transfer_p": 0.5881
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 152.9,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.2492,
+            "expense": 0.3378,
+            "transfer": 0.5645
+          },
+          "is_transfer_p": 0.5881
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 153.0,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 12,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.2492,
+            "expense": 0.3378,
+            "transfer": 0.5645
+          },
+          "is_transfer_p": 0.5881
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 152.5,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.4362,
+            "expense": 0.5709,
+            "transfer": 0.3538
+          },
+          "is_transfer_p": 0.1961
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 168.2,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.4362,
+            "expense": 0.5709,
+            "transfer": 0.3538
+          },
+          "is_transfer_p": 0.1961
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 160.4,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.4362,
+            "expense": 0.5709,
+            "transfer": 0.3538
+          },
+          "is_transfer_p": 0.1961
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 162.4,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.4362,
+            "expense": 0.5709,
+            "transfer": 0.3538
+          },
+          "is_transfer_p": 0.1961
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 163.5,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 13,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.4362,
+            "expense": 0.5709,
+            "transfer": 0.3538
+          },
+          "is_transfer_p": 0.1961
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 160.8,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5504,
+            "expense": 0.6713,
+            "transfer": 0.4968
+          },
+          "is_transfer_p": 0.3684
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 154.0,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5504,
+            "expense": 0.6713,
+            "transfer": 0.4968
+          },
+          "is_transfer_p": 0.3684
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 155.6,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5504,
+            "expense": 0.6713,
+            "transfer": 0.4968
+          },
+          "is_transfer_p": 0.3684
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 152.3,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5504,
+            "expense": 0.6713,
+            "transfer": 0.4968
+          },
+          "is_transfer_p": 0.3684
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 154.6,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 14,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5504,
+            "expense": 0.6713,
+            "transfer": 0.4968
+          },
+          "is_transfer_p": 0.3684
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 154.3,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": false
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5618,
+            "expense": 0.6045,
+            "transfer": 0.6218
+          },
+          "is_transfer_p": 0.4709
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 154.8,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5618,
+            "expense": 0.6045,
+            "transfer": 0.6218
+          },
+          "is_transfer_p": 0.4709
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 157.5,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5618,
+            "expense": 0.6045,
+            "transfer": 0.6218
+          },
+          "is_transfer_p": 0.4709
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 156.6,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5618,
+            "expense": 0.6045,
+            "transfer": 0.6218
+          },
+          "is_transfer_p": 0.4709
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 152.1,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 15,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.5618,
+            "expense": 0.6045,
+            "transfer": 0.6218
+          },
+          "is_transfer_p": 0.4709
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 155.1,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.4044,
+            "expense": 0.4338,
+            "transfer": 0.2097
+          },
+          "is_transfer_p": 0.2045
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 166.8,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.4044,
+            "expense": 0.4338,
+            "transfer": 0.2097
+          },
+          "is_transfer_p": 0.2045
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 158.9,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.4044,
+            "expense": 0.4338,
+            "transfer": 0.2097
+          },
+          "is_transfer_p": 0.2045
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 158.1,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.4044,
+            "expense": 0.4338,
+            "transfer": 0.2097
+          },
+          "is_transfer_p": 0.2045
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 158.7,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 16,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.4044,
+            "expense": 0.4338,
+            "transfer": 0.2097
+          },
+          "is_transfer_p": 0.2045
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 155.4,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.084,
+            "expense": 0.2147,
+            "transfer": 0.06
+          },
+          "is_transfer_p": 0.0395
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 151.2,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.084,
+            "expense": 0.2147,
+            "transfer": 0.06
+          },
+          "is_transfer_p": 0.0395
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 153.3,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.084,
+            "expense": 0.2147,
+            "transfer": 0.06
+          },
+          "is_transfer_p": 0.0395
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 153.3,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.084,
+            "expense": 0.2147,
+            "transfer": 0.06
+          },
+          "is_transfer_p": 0.0395
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 153.1,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 17,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.084,
+            "expense": 0.2147,
+            "transfer": 0.06
+          },
+          "is_transfer_p": 0.0395
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 154.1,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "expense",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.2833,
+            "expense": 0.2575,
+            "transfer": 0.1867
+          },
+          "is_transfer_p": 0.1764
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 169.7,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.2833,
+            "expense": 0.2575,
+            "transfer": 0.1867
+          },
+          "is_transfer_p": 0.1764
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 162.5,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.2833,
+            "expense": 0.2575,
+            "transfer": 0.1867
+          },
+          "is_transfer_p": 0.1764
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 159.8,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.2833,
+            "expense": 0.2575,
+            "transfer": 0.1867
+          },
+          "is_transfer_p": 0.1764
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 162.0,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 18,
+        "ok": true,
+        "answer": {
+          "kind": "income",
+          "is_transfer": false,
+          "raw_scores": {
+            "income": 0.2833,
+            "expense": 0.2575,
+            "transfer": 0.1867
+          },
+          "is_transfer_p": 0.1764
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 159.3,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "income",
+          "is_transfer": false
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.8004,
+            "expense": 0.8574,
+            "transfer": 0.8577
+          },
+          "is_transfer_p": 0.7973
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 159.0,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.8004,
+            "expense": 0.8574,
+            "transfer": 0.8577
+          },
+          "is_transfer_p": 0.7973
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 157.5,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.8004,
+            "expense": 0.8574,
+            "transfer": 0.8577
+          },
+          "is_transfer_p": 0.7973
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 156.5,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.8004,
+            "expense": 0.8574,
+            "transfer": 0.8577
+          },
+          "is_transfer_p": 0.7973
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 157.7,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 19,
+        "ok": true,
+        "answer": {
+          "kind": "transfer",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.8004,
+            "expense": 0.8574,
+            "transfer": 0.8577
+          },
+          "is_transfer_p": 0.7973
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 156.7,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": true,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.5255,
+            "expense": 0.5876,
+            "transfer": 0.5333
+          },
+          "is_transfer_p": 0.6145
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 155.5,
+        "model_key": "laya-noul",
+        "rep": 1,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.5255,
+            "expense": 0.5876,
+            "transfer": 0.5333
+          },
+          "is_transfer_p": 0.6145
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 156.2,
+        "model_key": "laya-noul",
+        "rep": 2,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.5255,
+            "expense": 0.5876,
+            "transfer": 0.5333
+          },
+          "is_transfer_p": 0.6145
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 156.3,
+        "model_key": "laya-noul",
+        "rep": 3,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.5255,
+            "expense": 0.5876,
+            "transfer": 0.5333
+          },
+          "is_transfer_p": 0.6145
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 154.8,
+        "model_key": "laya-noul",
+        "rep": 4,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      },
+      {
+        "scenario_id": 20,
+        "ok": true,
+        "answer": {
+          "kind": "expense",
+          "is_transfer": true,
+          "raw_scores": {
+            "income": 0.5255,
+            "expense": 0.5876,
+            "transfer": 0.5333
+          },
+          "is_transfer_p": 0.6145
+        },
+        "error": null,
+        "cost_usd": 0.0,
+        "latency_ms": 155.6,
+        "model_key": "laya-noul",
+        "rep": 5,
+        "gold": {
+          "kind": "transfer",
+          "is_transfer": true
+        },
+        "kind_correct": false,
+        "is_transfer_correct": true
+      }
+    ],
+    "summary": [
+      {
+        "model_key": "laya",
+        "cells": 100,
+        "kind_accuracy": 0.45,
+        "is_transfer_accuracy": 0.65,
+        "per_rep_agreement": 1.0,
+        "mean_latency_ms": 95.6,
+        "p95_latency_ms": 102.5,
+        "cost_usd": 0.0,
+        "errors_sample": []
+      },
+      {
+        "model_key": "laya-score",
+        "cells": 100,
+        "kind_accuracy": 0.45,
+        "is_transfer_accuracy": 0.75,
+        "per_rep_agreement": 1.0,
+        "mean_latency_ms": 92.5,
+        "p95_latency_ms": 98.6,
+        "cost_usd": 0.0,
+        "errors_sample": []
+      },
+      {
+        "model_key": "laya-noul",
+        "cells": 100,
+        "kind_accuracy": 0.35,
+        "is_transfer_accuracy": 0.65,
+        "per_rep_agreement": 1.0,
+        "mean_latency_ms": 159.5,
+        "p95_latency_ms": 168.2,
+        "cost_usd": 0.0,
+        "errors_sample": []
+      }
+    ]
+  },
+  "vision": [],
+  "total_cost_usd": 0.0
+}

@@ -159,11 +159,35 @@
     {
       "key": "laya",
       "provider": "laya",
-      "id": "convai/laya-modernbert",
+      "id": "convaiinnovations/laya",
       "enabled": false,
       "supports_tools": false,
       "supports_vision": false,
-      "kind": "classifier"
+      "kind": "systemone",
+      "reps_override": 5,
+      "free": true
+    },
+    {
+      "key": "laya-multilingual",
+      "provider": "laya",
+      "id": "convaiinnovations/laya-multilingual",
+      "enabled": false,
+      "supports_tools": false,
+      "supports_vision": false,
+      "kind": "systemone",
+      "reps_override": 5,
+      "free": true
+    },
+    {
+      "key": "laya-typed-decisions",
+      "provider": "laya",
+      "id": "convaiinnovations/laya-typed-decisions",
+      "enabled": false,
+      "supports_tools": false,
+      "supports_vision": false,
+      "kind": "systemone",
+      "reps_override": 5,
+      "free": true
     }
   ],
   "timeout_s": 60,

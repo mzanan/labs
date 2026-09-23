@@ -2,7 +2,7 @@
 --out report-<date>.json
 
 Phase 0 gates every enabled model first (one trivial forced tool call for a chat model, one
-systemone call for jev, an immediate NOT IMPLEMENTED for laya), then runs the requested tracks
+systemone call for jev, a local predict call for laya), then runs the requested tracks
 only against the models that passed. Track 3 (decision) additionally restricts itself to jev plus
 the single cheapest chat model that passed Phase 0, per the spec's phase-1 budget scoping. Stops
 and reports as soon as cumulative cost crosses cost_ceiling_usd from models.json.
@@ -45,9 +45,6 @@ async def phase0_gate(providers: Providers, model_cfg: dict, phase0_max_tokens: 
     key, provider, model_id, kind = model_cfg["key"], model_cfg["provider"], model_cfg["id"], model_cfg.get("kind", "chat")
     entry = {"model_key": key, "provider": provider, "model_id": model_id, "passed": False, "error": None}
 
-    if provider == "laya":
-        entry["error"] = f"NotImplemented: laya is a local classifier stub ({model_id}), not wired in phase 1"
-        return entry
 
     if kind == "systemone":
         result = await providers.systemone(

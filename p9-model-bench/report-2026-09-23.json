@@ -112,6 +112,42 @@
       "cost_usd": 0.563022
     },
     {
+      "model": "laya-multilingual",
+      "gate": "PASS",
+      "decision_cells": 100,
+      "decision_kind_acc": 0.55,
+      "decision_transfer_acc": 0.5,
+      "decision_mean_ms": 40,
+      "tool_call_passed": 0,
+      "tool_call_cells": 0,
+      "tool_call_failed_scenarios": {},
+      "cost_usd": 0.0
+    },
+    {
+      "model": "laya-typed-decisions",
+      "gate": "PASS",
+      "decision_cells": 100,
+      "decision_kind_acc": 0.65,
+      "decision_transfer_acc": 0.55,
+      "decision_mean_ms": 90,
+      "tool_call_passed": 0,
+      "tool_call_cells": 0,
+      "tool_call_failed_scenarios": {},
+      "cost_usd": 0.0
+    },
+    {
+      "model": "laya",
+      "gate": "PASS",
+      "decision_cells": 100,
+      "decision_kind_acc": 0.45,
+      "decision_transfer_acc": 0.65,
+      "decision_mean_ms": 96,
+      "tool_call_passed": 0,
+      "tool_call_cells": 0,
+      "tool_call_failed_scenarios": {},
+      "cost_usd": 0.0
+    },
+    {
       "model": "mimo-2.6-flash",
       "gate": "PASS",
       "decision_cells": 60,

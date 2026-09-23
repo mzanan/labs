@@ -272,9 +272,39 @@ class Providers:
             raw_answer=data,
         )
 
+    async def laya_systemone(
+        self, model_key: str, model_id: str, state: str, questions: dict[str, Any]
+    ) -> CallResult:
+        started = time.monotonic()
+        try:
+            if not hasattr(self, "_laya_agents"):
+                self._laya_agents: dict[str, Any] = {}
+            if model_id not in self._laya_agents:
+                os.environ.setdefault("USE_TF", "0")
+                import laya
+                self._laya_agents[model_id] = await asyncio.to_thread(laya.load, model_id)
+            agent = self._laya_agents[model_id]
+            started = time.monotonic()
+            data = await asyncio.to_thread(agent.predict, state, questions)
+        except Exception as exc:  # noqa: BLE001
+            return CallResult(
+                False, model_key, "laya", model_id,
+                error=f"{type(exc).__name__}: {exc}",
+                latency_ms=round((time.monotonic() - started) * 1000, 1),
+            )
+        return CallResult(
+            True, model_key, "laya", model_id,
+            stop_reason="end_turn",
+            cost_usd=0.0,
+            latency_ms=round((time.monotonic() - started) * 1000, 1),
+            raw_answer=data,
+        )
+
     async def systemone(
         self, provider: str, model_key: str, model_id: str, state: str, questions: dict[str, Any]
     ) -> CallResult:
+        if provider == "laya":
+            return await self.laya_systemone(model_key, model_id, state, questions)
         if provider == "openrouter":
             return await self.openrouter_systemone(model_key, model_id, state, questions)
         return await self.explabs_systemone(model_key, model_id, state, questions)
