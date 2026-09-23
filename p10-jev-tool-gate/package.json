@@ -1,0 +1,21 @@
+{
+  "name": "p10-jev-tool-gate",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bench": "tsx src/bench/runBench.ts",
+    "e2e": "tsx src/e2e/runE2e.ts",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.61",
+    "@openrouter/ai-sdk-provider": "^3.0.0",
+    "ai": "^7",
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "tsx": "^4",
+    "typescript": "^5"
+  }
+}
