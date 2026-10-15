@@ -1,0 +1,11 @@
+{
+  "name": "p13-coach-eval",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "link": "ln -sfn \"${FIT_COACH_DIR:-../../fit-coach}/node_modules\" node_modules",
+    "eval": "tsx src/run.ts",
+    "eval:probe": "tsx src/probe.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
