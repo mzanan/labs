@@ -52,4 +52,4 @@ Do not add a dev server, a build step or a test runner. A lab prints its measure
 
 ## What does not apply here
 
-`personal/CLAUDE.md` governs product repos. Its structural rules (`components/ui`, feature folders, server-first, design tokens) are irrelevant to a lab. What still applies: the output style "Matias" rules, English docs, and push only via `/ship-pr` after an explicit OK.
+`personal/CLAUDE.md` governs product repos. Its structural rules (`components/ui`, feature folders, server-first, design tokens) are irrelevant to a lab. What still applies: the output style "Matias" rules, English docs, and Matias runs every push himself.
