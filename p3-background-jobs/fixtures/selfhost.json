@@ -1,0 +1,264 @@
+{
+  "appId": "p3-selfhost",
+  "inngestTag": "v1.45.1",
+  "inngestPort": 8288,
+  "workerPort": 3288,
+  "servePath": "/api/inngest",
+  "stepLogPath": ".selfhost/steps.ndjson",
+  "pollIntervalMs": 1000,
+  "readyTimeoutMs": 90000,
+  "events": {
+    "requested": "tour/guide.requested",
+    "replied": "tour/guide.replied"
+  },
+  "stacks": {
+    "memory": [
+      "docker-compose.selfhost.yml"
+    ],
+    "redis": [
+      "docker-compose.selfhost.yml",
+      "docker-compose.selfhost.redis.yml"
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "reply-matched",
+      "requests": [
+        {
+          "key": "a",
+          "guide": "guide-1",
+          "timeout": "2m"
+        }
+      ],
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 3000
+        },
+        {
+          "type": "reply",
+          "key": "a",
+          "answer": "yes"
+        }
+      ],
+      "expect": {
+        "a": {
+          "status": "confirmed",
+          "notifyCount": 1
+        }
+      },
+      "deadlineMs": 60000
+    },
+    {
+      "id": "timeout-escalates",
+      "requests": [
+        {
+          "key": "a",
+          "guide": "guide-1",
+          "timeout": "10s"
+        }
+      ],
+      "actions": [],
+      "expect": {
+        "a": {
+          "status": "escalated",
+          "notifyCount": 1
+        }
+      },
+      "deadlineMs": 60000
+    },
+    {
+      "id": "match-isolation",
+      "requests": [
+        {
+          "key": "a",
+          "guide": "guide-1",
+          "timeout": "20s"
+        },
+        {
+          "key": "b",
+          "guide": "guide-2",
+          "timeout": "20s"
+        }
+      ],
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 3000
+        },
+        {
+          "type": "reply",
+          "key": "b",
+          "answer": "yes"
+        }
+      ],
+      "expect": {
+        "a": {
+          "status": "escalated",
+          "notifyCount": 1
+        },
+        "b": {
+          "status": "confirmed",
+          "notifyCount": 1
+        }
+      },
+      "deadlineMs": 60000
+    },
+    {
+      "id": "duplicate-event-id",
+      "requests": [
+        {
+          "key": "a",
+          "guide": "guide-1",
+          "timeout": "2m",
+          "sendTimes": 2
+        }
+      ],
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 3000
+        },
+        {
+          "type": "reply",
+          "key": "a",
+          "answer": "no"
+        }
+      ],
+      "expect": {
+        "a": {
+          "status": "declined",
+          "notifyCount": 1,
+          "runCount": 1
+        }
+      },
+      "deadlineMs": 60000
+    },
+    {
+      "id": "worker-down-at-reply",
+      "requests": [
+        {
+          "key": "a",
+          "guide": "guide-1",
+          "timeout": "5m"
+        }
+      ],
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 3000
+        },
+        {
+          "type": "stopWorker"
+        },
+        {
+          "type": "reply",
+          "key": "a",
+          "answer": "yes"
+        },
+        {
+          "type": "wait",
+          "ms": 15000
+        },
+        {
+          "type": "startWorker"
+        }
+      ],
+      "expect": {
+        "a": {
+          "status": "confirmed",
+          "notifyCount": 1
+        }
+      },
+      "deadlineMs": 300000
+    },
+    {
+      "id": "server-restart-then-reply",
+      "requests": [
+        {
+          "key": "a",
+          "guide": "guide-1",
+          "timeout": "5m"
+        }
+      ],
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 3000
+        },
+        {
+          "type": "restartServer"
+        },
+        {
+          "type": "reply",
+          "key": "a",
+          "answer": "yes"
+        }
+      ],
+      "expect": {
+        "a": {
+          "status": "confirmed",
+          "notifyCount": 1
+        }
+      },
+      "deadlineMs": 120000
+    },
+    {
+      "id": "server-restart-then-timeout",
+      "requests": [
+        {
+          "key": "a",
+          "guide": "guide-1",
+          "timeout": "45s"
+        }
+      ],
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 3000
+        },
+        {
+          "type": "restartServer"
+        }
+      ],
+      "expect": {
+        "a": {
+          "status": "escalated",
+          "notifyCount": 1
+        }
+      },
+      "deadlineMs": 150000
+    },
+    {
+      "id": "server-kill-then-reply",
+      "requests": [
+        {
+          "key": "a",
+          "guide": "guide-1",
+          "timeout": "5m"
+        }
+      ],
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 3000
+        },
+        {
+          "type": "killServer"
+        },
+        {
+          "type": "reply",
+          "key": "a",
+          "answer": "yes"
+        }
+      ],
+      "expect": {
+        "a": {
+          "status": "confirmed",
+          "notifyCount": 1
+        }
+      },
+      "deadlineMs": 120000
+    }
+  ]
+}

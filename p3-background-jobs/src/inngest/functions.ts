@@ -1,8 +1,7 @@
 import { inngest } from './client';
 
 export const maintenanceCron = inngest.createFunction(
-  { id: 'maintenance-cron' },
-  { cron: '0 1 * * *' },
+  { id: 'maintenance-cron', triggers: [{ cron: '0 1 * * *' }] },
   async ({ step }) => {
     return step.run('log-run', async () => {
       const ranAt = new Date().toISOString();

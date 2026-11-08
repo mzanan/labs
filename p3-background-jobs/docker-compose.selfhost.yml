@@ -1,0 +1,35 @@
+services:
+  inngest:
+    image: inngest/inngest:${SELFHOST_INNGEST_TAG}
+    command: >
+      inngest start
+      --sdk-url http://host.docker.internal:${SELFHOST_WORKER_PORT}/api/inngest
+      --poll-interval 10
+    ports:
+      - "${SELFHOST_INNGEST_PORT}:8288"
+    environment:
+      - INNGEST_EVENT_KEY=${INNGEST_EVENT_KEY}
+      - INNGEST_SIGNING_KEY=${INNGEST_SIGNING_KEY}
+      - INNGEST_POSTGRES_URI=postgres://inngest:${SELFHOST_PG_PASSWORD}@postgres:5432/inngest?sslmode=disable
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:17
+    environment:
+      - POSTGRES_DB=inngest
+      - POSTGRES_USER=inngest
+      - POSTGRES_PASSWORD=${SELFHOST_PG_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U inngest -d inngest"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  postgres_data:

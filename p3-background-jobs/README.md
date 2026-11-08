@@ -122,8 +122,54 @@ Fix tested: fit-coach's matcher with `.well-known/workflow/` added to the negati
 
 **Corrections 2026-09-08 11:21 ICT (Fable review):** renamed the runner table's `chunks` column to `meals` (it was `extraction.meals.length`, not a chunk count) and added a sentence pointing chunk counts to the `[extract-step]` logs; reworded the `workflow-cancel` row and the verdict sentence to say only that `Run.status` reached `cancelled`, not that in-flight execution was confirmed stopped; renamed "Two real SDK bugs" to "Two spec assumptions corrected by the SDK" (a paraphrase error and a documented `ai@7` API rule, neither is a bug); added the round-1 Vercel project recreation and a landing-time note on `retryAfter` needing to be at least 60s against a per-minute rate limit. No measured numbers changed.
 
+## Round 3 (2026-09-25 15:58 ICT): self-hosted Inngest for a durable wait on a third party's reply
+
+**Question:** for business-agents' first real tenant (TwentyTour: ask a tour guide on WhatsApp, wait for the reply, escalate on timeout), does self-hosted Inngest on a single box with Postgres keep a paused `step.waitForEvent` alive across worker and server restarts, match each reply to the right request, dedupe repeated triggers, and never repeat the side effect (the message to the guide)? Rounds 1 and 2 were about Vercel; this round mirrors the planned production shape (one VPS, Docker via Coolify).
+
+**Versions:** `inngest/inngest:v1.45.1` (Docker), `postgres:17`, `redis:7-alpine` (AOF on), SDK `inngest` 4.21.0 (upgraded from 3.54.2; round-1 `maintenanceCron` moved to the v4 `triggers` option, behavior unchanged), Node 22.22.2, Docker via OrbStack on macOS.
+
+**How to run:**
+
+```
+npm install
+# .env: INNGEST_EVENT_KEY and INNGEST_SIGNING_KEY (hex, openssl rand -hex 32), SELFHOST_PG_PASSWORD
+npm run selfhost -- all                 # or: memory | redis, optional scenario id as 2nd arg
+```
+
+Pieces (reusable): `src/selfhost/functions.ts` (notify, wait with `match: "data.requestId"`, record outcome), `worker.ts` (plain `node:http` + `inngest/node` serve, signature verification on, `INNGEST_DEV=0`), `stack.ts` (compose up/restart/SIGKILL), `runs.ts` (REST run lookup), `run.ts` (scenario runner). Scenarios, timeouts and stacks live in `fixtures/selfhost.json`. Two stacks: `memory` (Postgres only, Inngest's default in-process Redis with periodic snapshots) and `redis` (adds external Redis via `docker-compose.selfhost.redis.yml`). Each step appends to `.selfhost/steps.ndjson`, the source of truth for side-effect counts and outcomes.
+
+### Results
+
+| stack | scenario | run status | outcome | notify count | runs | ms | result |
+|---|---|---|---|---|---|---|---|
+| memory | reply-matched | Completed | confirmed | 1 | 1 | 6134 | PASS |
+| memory | timeout-escalates (10s) | Completed | escalated | 1 | 1 | 14190 | PASS |
+| memory | match-isolation a / b | Completed | escalated / confirmed | 1 / 1 | 1 / 1 | 21330 | PASS |
+| memory | duplicate-event-id (same id sent twice) | Completed | declined | 1 | 1 | 6095 | PASS |
+| memory | worker-down-at-reply (worker killed, reply sent, worker back after 15s) | Completed | confirmed | 1 | 1 | 28236 | PASS |
+| memory | server-restart-then-reply | Running | none | 1 | 1 | 120527 | **FAIL** |
+| memory | server-restart-then-timeout (45s) | Running | none | 1 | 1 | 150643 | **FAIL** |
+| memory | server-kill-then-reply (SIGKILL) | Running | none | 1 | 1 | 120591 | **FAIL** |
+| redis | same 9 checks | Completed | as expected | 1 each | 1 each | 6067 to 46094 | **9/9 PASS** |
+
+### Findings
+
+- **The default in-memory state store loses paused waits on restart.** With Postgres only, a graceful `docker compose restart` or a SIGKILL of the Inngest container during a `waitForEvent` leaves the run `Running` forever: the reply is ignored and the timeout never fires. Postgres keeps history, not the pause. With external Redis (AOF on) all three restart cases resume correctly (reply resumed in ~5s after restart; timeout still fired at 45s).
+- **No duplicate side effects in any scenario.** The notify step ran exactly once per request, including worker death and server restart/kill.
+- **`match` isolates concurrent requests**: a reply for request B never resumed A.
+- **Event `id` dedupes triggers**: the same event sent twice produced one run.
+- **Worker down is recovered by retries**: the executor logged `Unable to reach SDK URL` and retried until the worker came back.
+- **REST gotcha:** `GET /v1/events/{id}/runs` returned `status: "Completed"` with `ended_at: null` for a run that was still waiting; `GET /v1/runs/{runId}` returned the correct `Running`. Use the per-run endpoint (or your own outcome record) for status.
+- **Idle footprint:** Inngest 111MB, Postgres 38MB, Redis 16MB RAM.
+
+### Verdict, round 3
+
+**Self-hosted Inngest is fit for the guide-reply wait, on one condition: run it with external Redis (persistent, AOF on), never the default in-process store.** With that, pauses, timeouts, per-request matching, trigger dedupe and exactly-once side effects all held across worker death and server restart or SIGKILL. Not measured: waits of hours or days, Redis itself being lost (its volume is now state that must be backed up), multi-node.
+
 ## Verdict
 
 **Plain Vercel Cron (candidate 1). Final.** Both candidates 1 and 2 deployed and fired on the first try, on the Hobby plan, with `vercel crons run` closing the "would need to wait 24h" gap this README originally flagged. Candidate 2 (Workflow DevKit) adds the `workflow` + `@workflow/next` packages, a `next.config.ts` wrapper, and an extra internal round-trip per run, in exchange for step-level auto-retry and durability across deploys, neither of which this maintenance job's single-step, sub-second logic needs. Ship fit-coach's P3 (stale-fact cleanup, memory re-grounding, weekly summary) as a plain `vercel.json` cron hitting a route handler, same pattern already used in `hangout-next` and `portfolio`. Workflow DevKit is the documented upgrade path if a maintenance job ever needs multi-step retry or to span longer than one function invocation; revisit only if that need appears. Inngest untested by decision, not by failure, see above.
 
 **Verdict, round 2 (2026-09-08 11:10 ICT):** unrelated to this candidate, does not reopen it. See "Round 2" above: Workflow DevKit is worth adopting for `/api/import/extract` specifically, not for this daily cron.
+
+**Verdict, round 3 (2026-09-25 15:58 ICT):** unrelated to this candidate. See "Round 3" above: self-hosted Inngest holds a durable wait for business-agents only with external persistent Redis; the default in-memory store loses paused runs on restart.
