@@ -33,3 +33,40 @@ Reports: `results/2026-10-14/20261014T050225.md` (final, all reps) and `results/
 - Cost per message: gpt-6-luna $0.0005, glm-5.3-flash $0.0024, deepseek-v4.1-flash $0.0027, claude-haiku-5.5 $0.0042, gemini-3.7-flash $0.016. p50 latency 11-24 s (mimo 51 s, qwen 34 s).
 
 Re-run this lab after any coach architecture change before re-picking the model.
+
+## 2026-11-08: live eval against the running app
+
+### Question
+
+Do the model swap and the new correction tools make the coach right on Matias's own phrases, judged by the meals rows the real app writes?
+
+### How it runs
+
+`src/live/` talks to the running coach instead of importing it: it POSTs each phrase to `/api/coach` on a local fit-coach dev server with a signed dev session for `EVAL_USER_ID`, approves any card, diffs the `meals` rows of today and yesterday, then reverts seeds and every change.
+
+- `.env` (gitignored): `DEV_DATABASE_URL`, `BETTER_AUTH_SECRET` (both from fit-coach `.env.local`), `EVAL_USER_ID`, `EVAL_BASE_URL`. `PROD_DATABASE_URL` only for the sync step.
+- `npm run live:sync-dev` copies that user's own prod rows into dev: prod is read in a read-only transaction, only that user's dev rows are replaced, and it refuses when both URLs share a host.
+- fit-coach `npm run dev` on port 3040, then `node --env-file=.env node_modules/.bin/tsx src/live/run.ts [--model <xpl id>] [--only M1,C2]`. `--model` switches the user's Experiential Labs model in dev first. Raw output lands in `results/raw/live/`; dated copies in `results/2026-11-08/`.
+- Phrases and seeds: `live-cases.json`. M cases are meal logging taken from his own days; C and G cases are corrections, deletions and non-writes.
+
+### What was measured
+
+Model comparison on the meal phrases M1-M8, fit-coach `33634fc`, one run each, correct writes out of 7 (M7 excluded as an invalid case):
+
+| Model (xpl) | Correct | Notes |
+|---|---|---|
+| claude-haiku-5.5 | 7/7 | fastest (~18 s per message), ~0.004 USD per message |
+| deepseek-v4.1-flash-1017 | 7/7 | ~32 s per message |
+| glm-5.3-flash | 6/7 | one provider error |
+| deepseek-v4.1-flash | 5/7 | |
+| gemini-3.8-flash | 5/7 | dropped the sauce, asked the milk type |
+| claude-sonnet-5.5 | best judgment | caught a breakfast already logged that day, ~18x the cost |
+| deepseek-v4-flash (prod until this day) | 2/7 | asked instead of logging, said "guardado" with no write |
+
+Corrections after fit-coach PR #128 (`update_meal`, `delete_meal`), claude-haiku-5.5: deleting yesterday's tequila, 2 beers instead of 3, the guacamole dinner, the chicken burger lunch, deleting the cheeseburger, and a calories question that must change nothing were right over 3 reps; with two identical bananas it asks which. Before the gate policy mentioned corrections, Jev denied every delete.
+
+Still seen failing: receipts in English, unrequested reminders in most replies, a duplicate breakfast logged without a warning, "200 g de pollo a la plancha" sometimes asks the meal instead of logging, one run claimed a sauce was logged with no row written.
+
+### Verdict
+
+**The coach moves to claude-haiku-5.5.** On these phrases most failures of the old setup were the model, not the code; J3 corrections, 0% in October, now work in the app. The 35-scenario harness above has not been re-run since the correction tools shipped: re-run it before the next model or architecture decision.
