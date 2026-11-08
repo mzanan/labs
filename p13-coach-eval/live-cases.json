@@ -1,0 +1,31 @@
+{
+  "timezoneOffsetHours": 7,
+  "dayCutoffHour": 4,
+  "seeds": {
+    "peanutButter": { "category": "snack", "name": "Mantequilla de maní Golden Farm (2 cdas, 34 g)", "protein_g": 7.6, "fat_g": 17.4, "carbs_g": 5.8, "catalog_item_id": "efd4b4bc-5e88-4525-97c2-f6e5b7ef687d" },
+    "banana": { "category": "snack", "name": "Banana", "protein_g": 1, "fat_g": 0, "carbs_g": 27, "catalog_item_id": "87a77f10-60ae-40ee-b432-6dc9e8b3ca5c" },
+    "chickenAvo": { "category": "lunch", "name": "Chicken Avo Salad + arroz aparte", "protein_g": 50, "fat_g": 26, "carbs_g": 70, "catalog_item_id": "40c47c68-f3f9-452c-8fa6-ed5d2389951b" }
+  },
+  "cases": [
+    { "id": "M1", "q": "desayuno fijo", "expect": "log_meal with the Desayuno fijo catalog item" },
+    { "id": "M2", "q": "desayuno fijo pero con poca avena, 3 cucharadas", "expect": "Desayuno fijo with ~25 g oats, lower macros" },
+    { "id": "M3", "q": "almuerzo mesala jazmín con batata, sin guacamole", "expect": "log_meal Mesala jazmín + 200g batata (sin guacamole)" },
+    { "id": "M4", "q": "cena ND opción D con medio frasquito de salsa black pepper", "expect": "ND opción D from catalog plus an estimated sauce" },
+    { "id": "M5", "q": "almuerzo cheeseburger con papas en The Pasta House", "expect": "log_meal 09 Cheese Burger + papas fritas" },
+    { "id": "M6", "q": "3 cervezas y un shot de tequila", "expect": "estimated rows with alcohol_g ~39 and ~13" },
+    { "id": "M7", "q": "el chicken avo era con 150 g de pollo", "expect": "edits the existing Chicken Avo, no new row", "seeds": [{ "seed": "chickenAvo", "day": "today" }] },
+    { "id": "M8", "q": "medio vaso de leche", "expect": "a new skim milk row (the most-logged milk)" },
+    { "id": "M9", "q": "almorcé batata", "expect": "asks how much, writes nothing" },
+    { "id": "M10", "q": "comí 150 g de batata", "expect": "writes sweet potato with 150 g in the name" },
+    { "id": "M11", "q": "comí 200 g de pollo a la plancha", "expect": "writes 200 g chicken, not a dish containing it" },
+    { "id": "C1", "q": "hoy comí una sola cucharada de mantequilla de maní, no dos", "expect": "fixes or asks which peanut butter, never a new row", "seeds": [{ "seed": "peanutButter", "day": "today" }] },
+    { "id": "C2", "q": "borrá el shot de tequila de ayer", "expect": "deletes only yesterday's tequila" },
+    { "id": "C3", "q": "borrá la banana de hoy", "expect": "asks which of the two bananas, deletes nothing", "seeds": [{ "seed": "banana", "day": "today" }, { "seed": "banana", "day": "today" }] },
+    { "id": "C4", "q": "ayer cené Mesala con guacamole, no sin guacamole", "expect": "updates yesterday's dinner, no new row" },
+    { "id": "C5", "q": "las cervezas de ayer fueron 2, no 3", "expect": "updates yesterday's beers to 2" },
+    { "id": "C7", "q": "cuántas calorías tenía el shot de tequila de ayer?", "expect": "answers, changes nothing" },
+    { "id": "C8", "q": "ayer no comí cheeseburger", "expect": "deletes only yesterday's cheeseburger" },
+    { "id": "G2", "q": "el almuerzo de ayer fue chicken burger, no cheeseburger", "expect": "updates yesterday's lunch, no new row" },
+    { "id": "G3", "q": "tomo creatina siempre a la mañana", "expect": "update_rule, no meal rows" }
+  ]
+}
