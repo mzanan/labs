@@ -1,0 +1,14 @@
+{
+  "provider_prefs": {"data_collection": "deny", "zdr": true, "require_parameters": true, "allow_fallbacks": true},
+  "models": [
+    {"key": "deepseek-v4.1-flash", "id": "deepseek/deepseek-v4.1-flash"},
+    {"key": "gpt-6-luna", "id": "openai/gpt-6-luna", "temperature": null},
+    {"key": "glm-5.3-flash", "id": "z-ai/glm-5.3-flash"},
+    {"key": "glm-5.3", "id": "z-ai/glm-5.3"},
+    {"key": "mimo-v2.6-flash", "id": "xiaomi/mimo-v2.6-flash"},
+    {"key": "qwen3.8-27b", "id": "qwen/qwen3.8-27b"},
+    {"key": "nemotron-3.5-lightning", "id": "nvidia/nemotron-3.5-lightning"},
+    {"key": "command-a-plus", "id": "cohere/command-a-plus", "force_tool": false},
+    {"key": "mistral-small-2603", "id": "mistralai/mistral-small-2603"}
+  ]
+}

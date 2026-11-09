@@ -1,0 +1,1 @@
+{"key": "command-a", "id": "command-a", "failed_calls": 69, "cost_usd": 0.030685, "mean_latency_ms": 1666, "providers": ["experiential_cloud"], "intent": "0/45", "language": "0/45", "extract": "0/24", "draft": "18/18"}

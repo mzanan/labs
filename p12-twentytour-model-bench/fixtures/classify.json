@@ -1,0 +1,17 @@
+[
+  {"id": "c01", "channel": "email", "text": "Hello, we are a group of 14 colleagues visiting Luxembourg on October 16th and would love a private tour in English in the afternoon. Could you send us an offer? Best, Laura", "gold": {"intent": "private_request", "language": "en"}},
+  {"id": "c02", "channel": "whatsapp", "text": "Hallo! Wir sind 6 Personen und möchten am Samstag, 10. Oktober eine private Führung auf Deutsch in Düsseldorf machen. Geht das um 15 Uhr? Was kostet das?", "gold": {"intent": "private_request", "language": "de"}},
+  {"id": "c03", "channel": "email", "text": "Bonjour, j'ai réservé une visite privée pour le 8 octobre à Luxembourg (réf. BR-88213). Serait-il possible de la décaler à 14h au lieu de 10h ? Merci, Claire", "gold": {"intent": "change_request", "language": "fr"}},
+  {"id": "c04", "channel": "whatsapp", "text": "Hi, I booked the free tour in Bergen for tomorrow through GetYourGuide but I can't find the confirmation email. Can you send it again? Booking under Tom Becker", "gold": {"intent": "resend_confirmation", "language": "en"}},
+  {"id": "c05", "channel": "whatsapp", "text": "hola! estamos en la plaza pero no vemos a nadie con paraguas, el tour de las 11 en Luxemburgo es acá? llegamos 5 min tarde perdón", "gold": {"intent": "late_or_lost", "language": "es"}},
+  {"id": "c06", "channel": "email", "text": "Hei, kan jeg ta med hunden min på gratisturen i Bergen? Hun er rolig og liten. Mvh Ingrid", "gold": {"intent": "question", "language": "no"}},
+  {"id": "c07", "channel": "email", "text": "Dear team, unfortunately my mother is ill and we have to cancel our private tour in Aachen on October 12 (booking GYG7XK21P). Please confirm the cancellation and the refund.", "gold": {"intent": "cancellation", "language": "en"}},
+  {"id": "c08", "channel": "email", "text": "Grow your tour business with our SEO package! 50% discount this week only. Reply YES to get started.", "gold": {"intent": "other", "language": "en"}},
+  {"id": "c09", "channel": "whatsapp", "text": "Guten Morgen, wo genau ist der Treffpunkt für die kostenlose Tour in Düsseldorf heute um 14 Uhr?", "gold": {"intent": "question", "language": "de"}},
+  {"id": "c10", "channel": "email", "text": "Hoi, wij zijn met 25 studenten in Maastricht op 22 oktober. Kunnen jullie een rondleiding in het Engels voor ons organiseren, 's ochtends? Groet, Pieter", "gold": {"intent": "private_request", "language": "nl"}},
+  {"id": "c11", "channel": "whatsapp", "text": "we are running late!! stuck in traffic, 10 minutes away from the fish market, please wait for us, 3 people, name Singh", "gold": {"intent": "late_or_lost", "language": "en"}},
+  {"id": "c12", "channel": "email", "text": "Hello, for our private tour in Oslo on Oct 9 we will now be 8 people instead of 5. Is that still fine? Order 4471-XZ. Thanks, Mark", "gold": {"intent": "change_request", "language": "en"}},
+  {"id": "c13", "channel": "email", "text": "Buenas, reservé por Civitatis el free tour de Luxemburgo del domingo y no me llegó ningún correo de confirmación. ¿Me lo podéis reenviar? Reserva a nombre de Marta Gil.", "gold": {"intent": "resend_confirmation", "language": "es"}},
+  {"id": "c14", "channel": "whatsapp", "text": "Is the Luxembourg tour ok for someone in a wheelchair?", "gold": {"intent": "question", "language": "en"}},
+  {"id": "c15", "channel": "email", "text": "Thank you so much for the wonderful tour yesterday, Anna was fantastic! We will recommend you to all our friends.", "gold": {"intent": "other", "language": "en"}}
+]

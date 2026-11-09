@@ -1,0 +1,1 @@
+{"key": "minimax-m3", "id": "minimax-m3", "failed_calls": 0, "cost_usd": 0.019661, "mean_latency_ms": 2082, "providers": ["fireworks"], "intent": "45/45", "language": "45/45", "extract": "23/24", "draft": "18/18"}

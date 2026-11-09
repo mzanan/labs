@@ -1,0 +1,1779 @@
+{
+  "provider_prefs": {},
+  "reps": 3,
+  "models": {
+    "nemotron-3.5-lightning": {
+      "summary": {
+        "key": "nemotron-3.5-lightning",
+        "id": "nemotron-3.5-lightning",
+        "failed_calls": 0,
+        "cost_usd": 0.006622,
+        "mean_latency_ms": 1610,
+        "providers": [
+          "fireworks"
+        ],
+        "intent": "45/45",
+        "language": "45/45",
+        "extract": "18/24",
+        "draft": "18/18"
+      },
+      "cells": {
+        "classify": [
+          {
+            "scenario": "c01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.527e-05,
+            "latency_ms": 1349.9,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 98,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.527e-05,
+            "latency_ms": 743.1,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 98,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.527e-05,
+            "latency_ms": 817.9,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 98,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.97e-05,
+            "latency_ms": 788.0,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 120,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.97e-05,
+            "latency_ms": 795.1,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 120,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.97e-05,
+            "latency_ms": 834.8,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 120,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.518e-05,
+            "latency_ms": 854.2,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 97,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.518e-05,
+            "latency_ms": 720.6,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 97,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.518e-05,
+            "latency_ms": 743.5,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 97,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.881e-05,
+            "latency_ms": 728.4,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 116,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.881e-05,
+            "latency_ms": 988.8,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 116,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.881e-05,
+            "latency_ms": 713.0,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 116,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 5.567e-05,
+            "latency_ms": 1073.1,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 250,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.807e-05,
+            "latency_ms": 1592.4,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 312,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.807e-05,
+            "latency_ms": 1255.7,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 312,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.634e-05,
+            "latency_ms": 741.9,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 154,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.594e-05,
+            "latency_ms": 2378.5,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 152,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.594e-05,
+            "latency_ms": 843.0,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 152,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.389e-05,
+            "latency_ms": 898.4,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 91,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.389e-05,
+            "latency_ms": 734.9,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 91,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.389e-05,
+            "latency_ms": 701.1,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 91,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.871e-05,
+            "latency_ms": 910.2,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 166,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.871e-05,
+            "latency_ms": 867.0,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 166,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.871e-05,
+            "latency_ms": 943.5,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 166,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.012e-05,
+            "latency_ms": 714.9,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 123,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.012e-05,
+            "latency_ms": 784.9,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 123,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.012e-05,
+            "latency_ms": 693.1,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 123,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.932e-05,
+            "latency_ms": 783.8,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 118,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.932e-05,
+            "latency_ms": 823.5,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 118,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.932e-05,
+            "latency_ms": 793.2,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 118,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.057e-05,
+            "latency_ms": 705.5,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 125,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.057e-05,
+            "latency_ms": 736.4,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 125,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.997e-05,
+            "latency_ms": 869.9,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 122,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.867e-05,
+            "latency_ms": 738.2,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 115,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.867e-05,
+            "latency_ms": 734.7,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 115,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.867e-05,
+            "latency_ms": 848.3,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 115,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.031e-05,
+            "latency_ms": 1210.3,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 123,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.031e-05,
+            "latency_ms": 820.8,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 123,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.031e-05,
+            "latency_ms": 827.3,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 123,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.778e-05,
+            "latency_ms": 882.6,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 112,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.778e-05,
+            "latency_ms": 1545.4,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 112,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.778e-05,
+            "latency_ms": 2885.3,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 112,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.309e-05,
+            "latency_ms": 876.7,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 88,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.309e-05,
+            "latency_ms": 732.1,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 88,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 2.309e-05,
+            "latency_ms": 752.8,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 88,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          }
+        ],
+        "extract": [
+          {
+            "scenario": "e01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 9.838e-05,
+            "latency_ms": 1654.4,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 462,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": "14:00",
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00011298,
+            "latency_ms": 1753.3,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 535,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": "14:00",
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.118e-05,
+            "latency_ms": 1473.0,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 376,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": "14:00",
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.58e-05,
+            "latency_ms": 3584.6,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 299,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 5.96e-05,
+            "latency_ms": 1190.9,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 268,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 5.96e-05,
+            "latency_ms": 1152.8,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 268,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.768e-05,
+            "latency_ms": 1361.1,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 408,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 9.188e-05,
+            "latency_ms": 1491.2,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 429,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.768e-05,
+            "latency_ms": 8523.5,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 408,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00010269,
+            "latency_ms": 1740.2,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 484,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-03",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.629e-05,
+            "latency_ms": 1542.1,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 402,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-03",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00010269,
+            "latency_ms": 1729.8,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 484,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-03",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00012327,
+            "latency_ms": 3122.9,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 587,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00015607,
+            "latency_ms": 2083.9,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 751,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00012327,
+            "latency_ms": 2314.7,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 587,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00013064,
+            "latency_ms": 2050.3,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 623,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00013064,
+            "latency_ms": 2977.7,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 623,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00011244,
+            "latency_ms": 1668.8,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 532,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e07",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00010871,
+            "latency_ms": 1627.8,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 514,
+            "answer": {
+              "city": "Stuttgart",
+              "date": "None",
+              "time": "18:00",
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e07",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00010871,
+            "latency_ms": 1473.1,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 514,
+            "answer": {
+              "city": "Stuttgart",
+              "date": "None",
+              "time": "18:00",
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e07",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00010871,
+            "latency_ms": 1279.9,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 514,
+            "answer": {
+              "city": "Stuttgart",
+              "date": "None",
+              "time": "18:00",
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e08",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.911e-05,
+            "latency_ms": 1836.8,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 316,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e08",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.911e-05,
+            "latency_ms": 1045.8,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 316,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e08",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.911e-05,
+            "latency_ms": 1175.4,
+            "provider": "fireworks",
+            "finish_reason": "tool_calls",
+            "output_tokens": 316,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          }
+        ],
+        "draft": [
+          {
+            "scenario": "d01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 7.97e-05,
+            "latency_ms": 1187.5,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 380,
+            "reply": "Guten Morgen! Der Treffpunkt für die kostenlose Tour in Düsseldorf ist um 14:00 Uhr am Burgplatz, direkt neben dem Schlossturm.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.09e-05,
+            "latency_ms": 2192.2,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 386,
+            "reply": "Guten Morgen! Der Treffpunkt für die kostenlose Tour in Düsseldorf ist um 14:00 Uhr am Burgplatz, direkt neben dem Schlossturm.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.09e-05,
+            "latency_ms": 1295.4,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 386,
+            "reply": "Guten Morgen! Der Treffpunkt für die kostenlose Tour in Düsseldorf ist um 14:00 Uhr am Burgplatz, direkt neben dem Schlossturm.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00012653,
+            "latency_ms": 2036.2,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 614,
+            "reply": "Hei Ingrid!  \nIfølge TwentyTour er hunde velkomne på alle utendørs turer, så du kan ta med din lille og rolige hund på gratisturen i Bergen. God tur!",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00014033,
+            "latency_ms": 2877.8,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 683,
+            "reply": "Hei Ingrid!  \nIfølge TwentyTour er hunde velkomne på alle utendørs turer, så du kan ta med din lille og rolige hund på gratisturen i Bergen. God tur!",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00014033,
+            "latency_ms": 4539.1,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 683,
+            "reply": "Hei Ingrid!  \nIfølge TwentyTour er hunde velkomne på alle utendørs turer, så du kan ta med din lille og rolige hund på gratisturen i Bergen. God tur!",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00011996,
+            "latency_ms": 2569.3,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 582,
+            "reply": "Based on the available information, the TwentyTour in Luxembourg is not wheelchair accessible in the old town because the tours involve stairs.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00011996,
+            "latency_ms": 1673.9,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 582,
+            "reply": "Based on the available information, the TwentyTour in Luxembourg is not wheelchair accessible in the old town because the tours involve stairs.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00011996,
+            "latency_ms": 1670.9,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 582,
+            "reply": "Based on the available information, the TwentyTour in Luxembourg is not wheelchair accessible in the old town because the tours involve stairs.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00017428,
+            "latency_ms": 3063.7,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 852,
+            "reply": "Hallo! Vielen Dank für Ihre Anfrage.\n\nPrivate Führungen sind in Düsseldorf und in mehreren Sprachen verfügbar. Der Preis hängt von der Gruppengröße, der Sprache und dem Datum ab und wird Ihnen von unserem Team individuell quoted.\n\nOb genau um 15:00 Uhr am Samstag, 10. Oktober ein deutschsprachiger Termin verfügbar ist, kann ich aus den vorliegenden Fakten nicht bestätigen. Ich leite Ihre Anfrage an das Team weiter, und wir melden uns schnellstmöglich mit einem Angebot und der Verfügbarkeitsprüfung.\n\nLiebe Grüße",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00026308,
+            "latency_ms": 5494.7,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 1296,
+            "reply": "Hallo! Vielen Dank für Ihre Anfrage. Private Führungen sind in Düsseldorf in mehreren Sprachen, einschließlich Deutsch, verfügbar. Die Kosten hängen von der Gruppengröße, der Sprache und dem Datum ab und werden von unserem Team individuell kalkuliert. Da die vorliegenden Informationen keinen festgelegten Termin um 15:00 Uhr für den 10. Oktober enthalten, prüfe ich dies gerne weiter und melde mich zeitnah mit einem Angebot zurück.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00026308,
+            "latency_ms": 3665.2,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 1296,
+            "reply": "Hallo! Vielen Dank für Ihre Anfrage. Private Führungen sind in Düsseldorf in mehreren Sprachen, einschließlich Deutsch, verfügbar. Die Kosten hängen von der Gruppengröße, der Sprache und dem Datum ab und werden von unserem Team individuell kalkuliert. Da die vorliegenden Informationen keinen festgelegten Termin um 15:00 Uhr für den 10. Oktober enthalten, prüfe ich dies gerne weiter und melde mich zeitnah mit einem Angebot zurück.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00024406,
+            "latency_ms": 2926.1,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 1202,
+            "reply": "Hola!  \n\nEl free tour de Luxemburgo es gratuito y funciona con un sistema de propinas: al final de la visita, los participantes pagan lo que consideren que valió la experiencia (en efectivo o con tarjeta). No hay un precio fijo.  \n\nLa duración es de aproximadamente 2 horas.  \n\nEl punto de encuentro es la Place d'Armes, frente al edificio Cercle Cité, a las 11:00 todos los días.  \n\nLas reservas se realizan a través de GetYourGuide, Viator, Civitatis o GuruWalk.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00024406,
+            "latency_ms": 2542.3,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 1202,
+            "reply": "Hola!  \n\nEl free tour de Luxemburgo es gratuito y funciona con un sistema de propinas: al final de la visita, los participantes pagan lo que consideren que valió la experiencia (en efectivo o con tarjeta). No hay un precio fijo.  \n\nLa duración es de aproximadamente 2 horas.  \n\nEl punto de encuentro es la Place d'Armes, frente al edificio Cercle Cité, a las 11:00 todos los días.  \n\nLas reservas se realizan a través de GetYourGuide, Viator, Civitatis o GuruWalk.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00019386,
+            "latency_ms": 2351.0,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 951,
+            "reply": "Hola!  \n\nEl free tour de Luxemburgo no tiene un precio fijo; es una visita basada en propinas, por lo que al final los participantes pagan lo que consideren que valió la experiencia (en efectivo o con tarjeta).  \n\nLa duración es de aproximadamente 2 horas.  \n\nEl punto de encuentro es la Place d'Armes, frente al edificio Cercle Cité, a las 11:00 todos los días.  \n\nLas reservas se realizan a través de plataformas como GetYourGuide, Viator, Civitatis o GuruWalk.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00015142,
+            "latency_ms": 2121.4,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 739,
+            "reply": "Bonjour. Malheureusement, Vienne n'est pas parmi les villes où TwentyTour propose ses visites guidées. Je transmets votre demande à l'équipe, qui vérifiera et vous répondra.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00015142,
+            "latency_ms": 2441.3,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 739,
+            "reply": "Bonjour. Malheureusement, Vienne n'est pas parmi les villes où TwentyTour propose ses visites guidées. Je transmets votre demande à l'équipe, qui vérifiera et vous répondra.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00016862,
+            "latency_ms": 2770.3,
+            "provider": "fireworks",
+            "finish_reason": "stop",
+            "output_tokens": 825,
+            "reply": "Bonjour! Notre équipe vérifiera si TwentyTour propose des visites à Vienne et vous répondra sous peu.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          }
+        ]
+      }
+    }
+  }
+}

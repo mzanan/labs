@@ -1,0 +1,1 @@
+{"key": "gpt-6-luna", "id": "gpt-6-luna", "failed_calls": 0, "cost_usd": 0.00436, "mean_latency_ms": 2976, "providers": ["openai"], "intent": "45/45", "language": "45/45", "extract": "24/24", "draft": "18/18"}

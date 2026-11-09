@@ -1,0 +1,1 @@
+{"key": "qwen3.8-27b", "id": "qwen3.8-27b", "failed_calls": 0, "cost_usd": 0.053389, "mean_latency_ms": 6648, "providers": ["experiential_cloud"], "intent": "45/45", "language": "45/45", "extract": "0/24", "draft": "18/18"}

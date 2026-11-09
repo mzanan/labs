@@ -1,0 +1,1 @@
+{"key": "mistral-small-2603", "id": "mistral-small-2603", "failed_calls": 0, "cost_usd": 0.006231, "mean_latency_ms": 1163, "providers": ["mistral"], "intent": "43/45", "language": "45/45", "extract": "18/24", "draft": "12/18"}

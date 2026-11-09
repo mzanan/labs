@@ -1,0 +1,1 @@
+{"key": "glm-5.3", "id": "glm-5.3", "failed_calls": 0, "cost_usd": 0.094508, "mean_latency_ms": 3452, "providers": ["azure_openai", "fireworks", "wafer"], "intent": "45/45", "language": "45/45", "extract": "21/24", "draft": "17/18"}

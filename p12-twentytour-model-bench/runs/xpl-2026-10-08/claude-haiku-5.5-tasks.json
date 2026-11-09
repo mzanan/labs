@@ -1,0 +1,1779 @@
+{
+  "provider_prefs": {},
+  "reps": 3,
+  "models": {
+    "claude-haiku-5.5": {
+      "summary": {
+        "key": "claude-haiku-5.5",
+        "id": "claude-haiku-5.5",
+        "failed_calls": 0,
+        "cost_usd": 0.0,
+        "mean_latency_ms": 1479,
+        "providers": [
+          "anthropic"
+        ],
+        "intent": "45/45",
+        "language": "45/45",
+        "extract": "21/24",
+        "draft": "18/18"
+      },
+      "cells": {
+        "classify": [
+          {
+            "scenario": "c01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 4266.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 56,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1621.5,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 56,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1088.9,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 56,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1113.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 56,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1119.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 56,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1105.8,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 56,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1054.4,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 57,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1102.7,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 57,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1103.8,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 57,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1245.4,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 60,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1300.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 60,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1305.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 60,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1225.6,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 59,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1356.7,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 59,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1198.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 59,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 3981.1,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1037.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1026.4,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1117.5,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 57,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1219.9,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 57,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1051.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 57,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1075.2,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1124.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1035.4,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1238.4,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1209.8,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1078.7,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1064.6,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 57,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 984.2,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 57,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1068.6,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 57,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1354.6,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 59,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1954.8,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 59,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1491.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 59,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1000.8,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 56,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1011.7,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 56,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1384.2,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 56,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1215.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 60,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1243.5,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 60,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1406.0,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 60,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1322.9,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1390.8,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1320.6,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 999.5,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1027.1,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1098.4,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          }
+        ],
+        "extract": [
+          {
+            "scenario": "e01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1160.4,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 127,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": null,
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1138.0,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 127,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": null,
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1301.7,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 127,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": null,
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1137.5,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 130,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1136.9,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 130,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1436.4,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 130,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1567.7,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 128,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1524.8,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 128,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 2175.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 128,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1165.5,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 130,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-10",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": false,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1130.1,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 130,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-10",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": false,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1147.0,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 130,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-10",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": false,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1144.3,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 129,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1195.6,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 129,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1147.6,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 129,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1353.6,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 131,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1340.8,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 131,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1501.9,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 131,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e07",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1130.7,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 122,
+            "answer": {
+              "city": "Stuttgart",
+              "date": null,
+              "time": null,
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e07",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1126.0,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 122,
+            "answer": {
+              "city": "Stuttgart",
+              "date": null,
+              "time": null,
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e07",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1180.4,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 122,
+            "answer": {
+              "city": "Stuttgart",
+              "date": null,
+              "time": null,
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e08",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1459.9,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 129,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e08",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1577.5,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 129,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e08",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1614.5,
+            "provider": "anthropic",
+            "finish_reason": "tool_calls",
+            "output_tokens": 129,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          }
+        ],
+        "draft": [
+          {
+            "scenario": "d01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1491.6,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 104,
+            "reply": "Guten Morgen,\n\nder Treffpunkt für die kostenlose Tour in Düsseldorf ist der Burgplatz, direkt neben dem Schlossturm. Die Tour beginnt täglich um 14 Uhr.\n\nViele Grüße\nIhr TwentyTour-Team",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1429.2,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 106,
+            "reply": "Guten Morgen,\n\nder Treffpunkt für die kostenlose Tour in Düsseldorf ist der Burgplatz, direkt neben dem Schlossturm. Die Tour beginnt täglich um 14:00 Uhr.\n\nViele Grüße\nIhr TwentyTour-Team",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1426.1,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 104,
+            "reply": "Guten Morgen! Der Treffpunkt für die kostenlose Tour in Düsseldorf ist der Burgplatz, direkt neben dem Schlossturm. Die Tour beginnt täglich um 14 Uhr.\n\nViele Grüße\nIhr TwentyTour-Team",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 3209.4,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 451,
+            "reply": "Hei Ingrid,\n\nJa, hunder er velkomne på alle utendørs turer, så du kan gjerne ta med hunden din på gratisturen i Bergen. Turen starter kl. 10:00 hver dag ved Fisketorget, på hjørnet av Torgallmenningen. Den varer omtrent 2 timer og går på engelsk. Gratisturer er basert på frivillig driks, så du betaler det du mener turen var verdt, kontant eller med kort.\n\nDu kan bestille via GetYourGuide, Viator, Civitatis eller GuruWalk. Hvis du trenger å endre eller avbestille, gjør du det på plattformen du booket på. Avbestilling er gratis inntil 24 timer før start.\n\nMvh\nTwentyTour",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 2731.2,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 310,
+            "reply": "Hei Ingrid,\n\nJa, hunder er velkomne på alle utendørs turer, så du kan gjerne ta med hunden din på gratistur i Bergen. Det er en rolig og liten hund, så det bør gå fint.\n\nMøtepunktet er Fisketorget (Fisketorget), ved hjørnet av Torgallmenningen, kl. 10:00 hver dag. Turen varer ca. 2 timer og går på engelsk. Gratisturer er basert på frivillig tips, så gjestene betaler det de synes turen var verdt til slutt, med kontant eller kort.\n\nDu kan booke via GetYourGuide, Viator, Civitatis eller GuruWalk. Avbestilling er gratis opp til 24 timer før start, og endringer og avbestillinger gjøres på bookingplattformen du brukte.\n\nMed vennlig hilsen\nTwentyTour-teamet",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1738.8,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 193,
+            "reply": "Hei Ingrid,\n\nJa, hunder er velkomne på alle utendørs turer, så du kan gjerne ta med hunden din på gratistur i Bergen. Møtested er Fisketorget (Fisketorget), hjørnet ved Torgallmenningen, kl. 10:00 hver dag. Turen varer ca. 2 timer og går på engelsk. Gratisturer er basert på frivillig betaling (tips) til slutten av turen.\n\nVi ønsker dere en hyggelig tur!\n\nMvh\nTwentyTour-teamet",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 2048.9,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 239,
+            "reply": "Thank you for your question. Unfortunately, our Luxembourg tours are not wheelchair accessible in the old town because of the stairs, so the free tour would not be suitable for a wheelchair user.\n\nIf you'd like, we can check whether a private tour could be arranged for your needs. Our team will get back to you with details.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1506.4,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 103,
+            "reply": "Thank you for your question. Unfortunately, the Luxembourg tour is not wheelchair accessible in the old town because of stairs, so we would not recommend the free tour for a wheelchair user.\n\nIf you would like to discuss other options, such as a private tour, our team can look into what might work for you and get back to you with details.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1676.4,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 132,
+            "reply": "Thank you for your message. Unfortunately, our Luxembourg tour is not wheelchair accessible, as the old town includes stairs. We're sorry we can't offer that tour for your needs.\n\nIf you'd like, our team can check whether a private tour in Luxembourg could be arranged for you, and whether any adjustments are possible. They will get back to you with the details.\n\nBest regards,\nTwentyTour",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1916.3,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 240,
+            "reply": "Hallo! Vielen Dank für Ihre Anfrage.\n\nPrivate Führungen sind in Düsseldorf möglich, auch auf Deutsch. Ob die Führung am Samstag, 10. Oktober um 15 Uhr für Ihre Gruppe von 6 Personen frei ist, kann ich leider nicht selbst bestätigen. Der Preis richtet sich nach Gruppengröße, Sprache und Datum und wird vom Team individuell angeboten. Das Team prüft die Verfügbarkeit und den Preis für Sie und meldet sich so bald wie möglich bei Ihnen zurück.\n\nViele Grüße\nIhr TwentyTour-Team",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 2505.2,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 345,
+            "reply": "Hallo! Vielen Dank für Ihre Anfrage.\n\nPrivate Führungen auf Deutsch in Düsseldorf sind möglich. Der Preis hängt von Gruppengröße, Sprache und Datum ab, deshalb kann ich Ihnen hier keinen Betrag nennen. Unser Team erstellt Ihnen gern ein individuelles Angebot für 6 Personen am Samstag, 10. Oktober.\n\nOb die Führung um 15 Uhr stattfinden kann, prüft das Team gerade für Sie und meldet sich bei Ihnen zurück.\n\nViele Grüße\nIhr TwentyTour-Team",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 2383.6,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 344,
+            "reply": "Hallo! Vielen Dank für Ihre Anfrage.\n\nPrivate Führungen sind in Düsseldorf möglich, auch auf Deutsch. Ob der Termin am Samstag, 10. Oktober um 15 Uhr für Ihre Gruppe von 6 Personen frei ist, kann ich Ihnen leider nicht bestätigen. Das Team prüft die Verfügbarkeit und meldet sich bei Ihnen.\n\nDen Preis für eine private Führung legt das Team individuell fest, abhängig von Gruppengröße, Sprache und Datum. Auch dafür erhalten Sie in Kürze ein Angebot.\n\nFalls Sie es noch etwas genauer wissen möchten: Bitte teilen Sie uns gern mit, ob Sie eine bestimmte Dauer wünschen oder besondere Interessen haben, damit wir Ihnen das passende Angebot erstellen können.\n\nViele Grüße\nIhr TwentyTour-Team",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1752.6,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 160,
+            "reply": "¡Hola! El free tour de Luxemburgo es gratuito, pero funciona con propinas: al final del recorrido, cada persona paga lo que considere que valió la pena, en efectivo o con tarjeta. Dura unas 2 horas y se hace en inglés.\n\nEl punto de encuentro es la Place d'Armes, frente al edificio Cercle Cité, todos los días a las 11:00.\n\nSi necesitas algo más, con gusto te ayudamos.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1494.1,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 160,
+            "reply": "¡Hola! El free tour de Luxemburgo es gratuito, pero funciona con propinas: al final del recorrido puedes pagar lo que consideres que valió la pena, en efectivo o con tarjeta. Dura unas 2 horas y se hace en inglés.\n\nEl punto de encuentro es la Place d'Armes, frente al edificio Cercle Cité, todos los días a las 11:00.\n\nSi necesitas algo más, con gusto te ayudamos.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1641.0,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 205,
+            "reply": "¡Hola! El free tour de Luxemburgo es gratuito, pero funciona con propinas: al final del recorrido cada participante paga lo que considere que valió la pena, en efectivo o con tarjeta. La duración aproximada es de 2 horas, y se hace en inglés.\n\nEl punto de encuentro es la Place d'Armes, frente al edificio Cercle Cité, todos los días a las 11:00. Si necesitas reservar, puedes hacerlo a través de GetYourGuide, Viator, Civitatis o GuruWalk.\n\n¿Te puedo ayudar con algo más?",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1729.4,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 219,
+            "reply": "Bonjour,\n\nMerci pour votre message. Nous n'organisons pas de visites guidées à Vienne. Nos visites sont proposées à Luxembourg, Aix-la-Chapelle (Aachen), Düsseldorf, Stuttgart, Bergen, Oslo, Innsbruck et Maastricht.\n\nSi vous souhaitez une visite privée dans l'une de ces villes, notre équipe peut vous établir un devis sur demande. N'hésitez pas à nous indiquer la ville, la date, la taille du groupe et la langue souhaitée.\n\nBien cordialement,\nL'équipe TwentyTour",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 1795.1,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 213,
+            "reply": "Bonjour,\n\nMerci pour votre message. Nous ne proposons pas de visites guidées à Vienne. Nos visites sont organisées à Luxembourg, Aix-la-Chapelle (Aachen), Düsseldorf, Stuttgart, Bergen, Oslo, Innsbruck et Maastricht.\n\nSi vous visitez l'une de ces villes, n'hésitez pas à nous le faire savoir, nous serons ravis de vous renseigner sur nos visites gratuites (à votre appréciation) ou sur nos visites privées.\n\nBien cordialement,\nL'équipe TwentyTour",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0,
+            "latency_ms": 4683.0,
+            "provider": "anthropic",
+            "finish_reason": "stop",
+            "output_tokens": 215,
+            "reply": "Bonjour, merci pour votre message. Nous ne proposons pas de visites guidées à Vienne. Nos visites sont organisées à Luxembourg, Aix-la-Chapelle (Aachen), Düsseldorf, Stuttgart, Bergen, Oslo, Innsbruck et Maastricht.\n\nSi vous souhaitez visiter une de ces villes, n'hésitez pas à nous le faire savoir. Nous serons ravis de vous renseigner sur nos visites gratuites (à votre appréciation) ou sur nos visites privées.\n\nBien cordialement,\nL'équipe TwentyTour",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"key": "nemotron-3.5-lightning", "id": "nemotron-3.5-lightning", "failed_calls": 0, "cost_usd": 0.006622, "mean_latency_ms": 1610, "providers": ["fireworks"], "intent": "45/45", "language": "45/45", "extract": "18/24", "draft": "18/18"}

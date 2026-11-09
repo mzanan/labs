@@ -1,0 +1,1779 @@
+{
+  "provider_prefs": {},
+  "reps": 3,
+  "models": {
+    "mistral-small-2603": {
+      "summary": {
+        "key": "mistral-small-2603",
+        "id": "mistral-small-2603",
+        "failed_calls": 0,
+        "cost_usd": 0.006231,
+        "mean_latency_ms": 1163,
+        "providers": [
+          "mistral"
+        ],
+        "intent": "43/45",
+        "language": "45/45",
+        "extract": "18/24",
+        "draft": "12/18"
+      },
+      "cells": {
+        "classify": [
+          {
+            "scenario": "c01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.51e-05,
+            "latency_ms": 1542.6,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.51e-05,
+            "latency_ms": 1675.0,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.51e-05,
+            "latency_ms": 853.4,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.555e-05,
+            "latency_ms": 953.2,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.555e-05,
+            "latency_ms": 948.8,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.555e-05,
+            "latency_ms": 1038.5,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.675e-05,
+            "latency_ms": 885.6,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.675e-05,
+            "latency_ms": 1197.8,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.675e-05,
+            "latency_ms": 997.9,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.54e-05,
+            "latency_ms": 1378.1,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.54e-05,
+            "latency_ms": 907.0,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.54e-05,
+            "latency_ms": 878.5,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.63e-05,
+            "latency_ms": 934.9,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.63e-05,
+            "latency_ms": 854.0,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.63e-05,
+            "latency_ms": 858.6,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.255e-05,
+            "latency_ms": 959.3,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.255e-05,
+            "latency_ms": 1048.6,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.255e-05,
+            "latency_ms": 948.4,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.6e-05,
+            "latency_ms": 964.4,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 20,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.6e-05,
+            "latency_ms": 926.5,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 20,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.6e-05,
+            "latency_ms": 1193.9,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 20,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.21e-05,
+            "latency_ms": 1018.9,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.21e-05,
+            "latency_ms": 1166.1,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.21e-05,
+            "latency_ms": 958.3,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.405e-05,
+            "latency_ms": 865.8,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "de"
+            },
+            "intent_ok": false,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.225e-05,
+            "latency_ms": 897.5,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.405e-05,
+            "latency_ms": 881.3,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "de"
+            },
+            "intent_ok": false,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.585e-05,
+            "latency_ms": 857.0,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.585e-05,
+            "latency_ms": 906.9,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.585e-05,
+            "latency_ms": 1074.5,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.48e-05,
+            "latency_ms": 896.2,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.48e-05,
+            "latency_ms": 1166.1,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.48e-05,
+            "latency_ms": 837.8,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.51e-05,
+            "latency_ms": 837.2,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.51e-05,
+            "latency_ms": 1006.6,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.51e-05,
+            "latency_ms": 1008.3,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 19,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.69e-05,
+            "latency_ms": 825.6,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.69e-05,
+            "latency_ms": 808.8,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.69e-05,
+            "latency_ms": 875.1,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 21,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.015e-05,
+            "latency_ms": 952.4,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.015e-05,
+            "latency_ms": 949.9,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.015e-05,
+            "latency_ms": 1267.7,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.18e-05,
+            "latency_ms": 825.9,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.18e-05,
+            "latency_ms": 969.8,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.18e-05,
+            "latency_ms": 865.4,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 18,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          }
+        ],
+        "extract": [
+          {
+            "scenario": "e01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.28e-05,
+            "latency_ms": 1183.1,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 51,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": "afternoon",
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.28e-05,
+            "latency_ms": 1335.1,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 51,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": "afternoon",
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.28e-05,
+            "latency_ms": 1060.4,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 51,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": "afternoon",
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.37e-05,
+            "latency_ms": 1486.5,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 52,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.37e-05,
+            "latency_ms": 2050.2,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 52,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.37e-05,
+            "latency_ms": 997.1,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 52,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.49e-05,
+            "latency_ms": 1110.1,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 52,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.49e-05,
+            "latency_ms": 1140.4,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 52,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.49e-05,
+            "latency_ms": 1013.9,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 52,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.145e-05,
+            "latency_ms": 6856.1,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 51,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-03",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.145e-05,
+            "latency_ms": 1331.5,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 51,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-03",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.145e-05,
+            "latency_ms": 1158.3,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 51,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-03",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.235e-05,
+            "latency_ms": 1080.2,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 53,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.235e-05,
+            "latency_ms": 1188.8,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 53,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.235e-05,
+            "latency_ms": 968.7,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 53,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.55e-05,
+            "latency_ms": 986.8,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.55e-05,
+            "latency_ms": 1036.5,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.55e-05,
+            "latency_ms": 985.0,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 54,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e07",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.295e-05,
+            "latency_ms": 1023.2,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 53,
+            "answer": {
+              "city": "Stuttgart",
+              "date": "2026-10-31",
+              "time": "18:00",
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": false,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e07",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.295e-05,
+            "latency_ms": 1005.1,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 53,
+            "answer": {
+              "city": "Stuttgart",
+              "date": "2026-10-31",
+              "time": "18:00",
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": false,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e07",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.295e-05,
+            "latency_ms": 1065.4,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 53,
+            "answer": {
+              "city": "Stuttgart",
+              "date": "2026-10-31",
+              "time": "18:00",
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": false,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e08",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.235e-05,
+            "latency_ms": 1086.6,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 52,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e08",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.235e-05,
+            "latency_ms": 961.3,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 52,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e08",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.235e-05,
+            "latency_ms": 1032.0,
+            "provider": "mistral",
+            "finish_reason": "tool_calls",
+            "output_tokens": 52,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          }
+        ],
+        "draft": [
+          {
+            "scenario": "d01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 7.785e-05,
+            "latency_ms": 1080.9,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 38,
+            "reply": "Guten Morgen!\nDer Treffpunkt für die kostenlose Tour in Düsseldorf ist heute um 14:00 Uhr am Burgplatz, direkt neben dem Schlossturm.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 7.545e-05,
+            "latency_ms": 2018.5,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 34,
+            "reply": "Guten Morgen!\nDer Treffpunkt für die kostenlose Tour in Düsseldorf heute um 14 Uhr ist Burgplatz, direkt neben dem Schlossturm.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 7.785e-05,
+            "latency_ms": 1167.7,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 38,
+            "reply": "Guten Morgen!\nDer Treffpunkt für die kostenlose Tour in Düsseldorf ist heute um 14:00 Uhr am Burgplatz, direkt neben dem Schlossturm.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.13e-05,
+            "latency_ms": 1485.9,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 43,
+            "reply": "Hei Ingrid! Ja, du kan ta med hunden din på gratisturen i Bergen. Vi setter pris på at du varsler oss på forhånd hvis mulig. Ha en fin tur!",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.97e-05,
+            "latency_ms": 1470.5,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 57,
+            "reply": "Hei Ingrid! Ja, du kan ta med hunden din på gratisturen i Bergen. Hun er velkommen. Møt opp på Fisketorget ved Torgallmenningen klokken 10:00. Ha en fin tur!",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.07e-05,
+            "latency_ms": 2228.7,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 42,
+            "reply": "Hei Ingrid! Ja, du kan ta med hunden din på gratisturen i Bergen. Vi setter pris på at hun er rolig og liten. Velkommen på tur! 🐾",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.435e-05,
+            "latency_ms": 885.5,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 19,
+            "reply": "The team will check and get back to you regarding the wheelchair accessibility of the Luxembourg tour.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": false,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "d03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.435e-05,
+            "latency_ms": 1080.2,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 19,
+            "reply": "The team will check and get back to you regarding the wheelchair accessibility of the Luxembourg tour.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": false,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "d03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.435e-05,
+            "latency_ms": 1170.5,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 19,
+            "reply": "The team will check and get back to you regarding the wheelchair accessibility of the Luxembourg tour.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": false,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "d04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.295e-05,
+            "latency_ms": 1200.4,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 42,
+            "reply": "Unser Team wird Ihre Anfrage prüfen und sich bei Ihnen melden, um ein Angebot für eine private Führung in Düsseldorf auf Deutsch zu unterbreiten. Vielen Dank für Ihre Geduld!",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 7.515e-05,
+            "latency_ms": 1020.2,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 29,
+            "reply": "Unser Team wird Ihre Anfrage prüfen und sich bei Ihnen mit einem Angebot melden. Vielen Dank für Ihre Geduld!",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 7.515e-05,
+            "latency_ms": 1126.2,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 29,
+            "reply": "Unser Team wird Ihre Anfrage prüfen und sich bei Ihnen mit einem Angebot melden. Vielen Dank für Ihre Geduld!",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 7.425e-05,
+            "latency_ms": 1375.5,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 33,
+            "reply": "Hola, el free tour de Luxemburgo es tip-based (pagas lo que consideres justo al final). La duración es de aproximadamente 2 horas.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.145e-05,
+            "latency_ms": 1126.3,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 45,
+            "reply": "Hola, el free tour de Luxemburgo es tip-based (pagas lo que consideres justo al final). La duración es de aproximadamente 2 horas. Si tienes más dudas, nuestro equipo te ayudará.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.145e-05,
+            "latency_ms": 1239.7,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 45,
+            "reply": "Hola, el free tour de Luxemburgo es tip-based (pagas lo que consideres justo al final). La duración es de aproximadamente 2 horas. Si tienes más dudas, nuestro equipo te ayudará.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.105e-05,
+            "latency_ms": 1726.4,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 12,
+            "reply": "Notre équipe vérifiera et reviendra vers vous.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": false,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "d06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.105e-05,
+            "latency_ms": 1024.1,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 12,
+            "reply": "Notre équipe vérifiera et reviendra vers vous.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": false,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "d06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.105e-05,
+            "latency_ms": 943.1,
+            "provider": "mistral",
+            "finish_reason": "stop",
+            "output_tokens": 12,
+            "reply": "Notre équipe vérifiera et reviendra vers vous.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": false,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": false
+          }
+        ]
+      }
+    }
+  }
+}

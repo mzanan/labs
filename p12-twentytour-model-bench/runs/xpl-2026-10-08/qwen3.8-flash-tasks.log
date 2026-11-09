@@ -1,0 +1,1 @@
+{"key": "qwen3.8-flash", "id": "qwen3.8-flash", "failed_calls": 69, "cost_usd": 0.003497, "mean_latency_ms": 2638, "providers": ["experiential_cloud"], "intent": "0/45", "language": "0/45", "extract": "0/24", "draft": "18/18"}

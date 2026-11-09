@@ -1,0 +1,1779 @@
+{
+  "provider_prefs": {},
+  "reps": 3,
+  "models": {
+    "gpt-6-luna": {
+      "summary": {
+        "key": "gpt-6-luna",
+        "id": "gpt-6-luna",
+        "failed_calls": 0,
+        "cost_usd": 0.00436,
+        "mean_latency_ms": 2976,
+        "providers": [
+          "openai"
+        ],
+        "intent": "45/45",
+        "language": "45/45",
+        "extract": "24/24",
+        "draft": "18/18"
+      },
+      "cells": {
+        "classify": [
+          {
+            "scenario": "c01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.25e-05,
+            "latency_ms": 3972.4,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.25e-05,
+            "latency_ms": 2540.1,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.25e-05,
+            "latency_ms": 1298.4,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.23e-05,
+            "latency_ms": 1687.9,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.23e-05,
+            "latency_ms": 1537.6,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.23e-05,
+            "latency_ms": 2805.7,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.32e-05,
+            "latency_ms": 1546.3,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.32e-05,
+            "latency_ms": 1420.0,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.32e-05,
+            "latency_ms": 1792.3,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.24e-05,
+            "latency_ms": 1513.5,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 25,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.24e-05,
+            "latency_ms": 1538.0,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 25,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.24e-05,
+            "latency_ms": 1440.2,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 25,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.31e-05,
+            "latency_ms": 1975.5,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 26,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.31e-05,
+            "latency_ms": 2564.9,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 26,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.31e-05,
+            "latency_ms": 1559.2,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 26,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.07e-05,
+            "latency_ms": 1500.2,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.07e-05,
+            "latency_ms": 1432.9,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.07e-05,
+            "latency_ms": 1625.5,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.26e-05,
+            "latency_ms": 1741.3,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.26e-05,
+            "latency_ms": 1719.6,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.26e-05,
+            "latency_ms": 1602.5,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.04e-05,
+            "latency_ms": 1600.5,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.04e-05,
+            "latency_ms": 1710.9,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.04e-05,
+            "latency_ms": 2000.9,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.03e-05,
+            "latency_ms": 1948.5,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.03e-05,
+            "latency_ms": 2037.9,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.03e-05,
+            "latency_ms": 2277.6,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.24e-05,
+            "latency_ms": 2611.3,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.24e-05,
+            "latency_ms": 1542.6,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.24e-05,
+            "latency_ms": 1468.2,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.25e-05,
+            "latency_ms": 1333.2,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 26,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.25e-05,
+            "latency_ms": 1518.9,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 26,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.25e-05,
+            "latency_ms": 1388.0,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 26,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.25e-05,
+            "latency_ms": 1406.0,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.25e-05,
+            "latency_ms": 1490.1,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.25e-05,
+            "latency_ms": 1728.8,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 24,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.31e-05,
+            "latency_ms": 1677.3,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 25,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.31e-05,
+            "latency_ms": 1849.9,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 25,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.31e-05,
+            "latency_ms": 3561.6,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 25,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.92e-05,
+            "latency_ms": 1892.6,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.92e-05,
+            "latency_ms": 1484.9,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 3.92e-05,
+            "latency_ms": 2094.3,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.04e-05,
+            "latency_ms": 1588.8,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.04e-05,
+            "latency_ms": 1251.8,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.04e-05,
+            "latency_ms": 1679.1,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 23,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          }
+        ],
+        "extract": [
+          {
+            "scenario": "e01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.61e-05,
+            "latency_ms": 1604.7,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 43,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": null,
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.61e-05,
+            "latency_ms": 1550.6,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 43,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": null,
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.61e-05,
+            "latency_ms": 1487.3,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 43,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": null,
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.69e-05,
+            "latency_ms": 1659.2,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 45,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.69e-05,
+            "latency_ms": 3409.4,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 45,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.69e-05,
+            "latency_ms": 1750.7,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 45,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.69e-05,
+            "latency_ms": 1504.9,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 44,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.69e-05,
+            "latency_ms": 1527.3,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 44,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.69e-05,
+            "latency_ms": 1284.8,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 44,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.58e-05,
+            "latency_ms": 2090.9,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 44,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-03",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.58e-05,
+            "latency_ms": 2659.8,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 44,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-03",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.58e-05,
+            "latency_ms": 2759.7,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 44,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-03",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.59e-05,
+            "latency_ms": 2327.4,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 45,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.59e-05,
+            "latency_ms": 1964.4,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 45,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.59e-05,
+            "latency_ms": 1553.7,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 45,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.72e-05,
+            "latency_ms": 1459.0,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 45,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.72e-05,
+            "latency_ms": 3764.1,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 45,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.72e-05,
+            "latency_ms": 1526.7,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 45,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e07",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.25e-05,
+            "latency_ms": 1571.6,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 37,
+            "answer": {
+              "city": "Stuttgart",
+              "date": null,
+              "time": null,
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e07",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.25e-05,
+            "latency_ms": 1866.3,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 37,
+            "answer": {
+              "city": "Stuttgart",
+              "date": null,
+              "time": null,
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e07",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.25e-05,
+            "latency_ms": 1792.8,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 37,
+            "answer": {
+              "city": "Stuttgart",
+              "date": null,
+              "time": null,
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e08",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.61e-05,
+            "latency_ms": 1344.4,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 45,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e08",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.61e-05,
+            "latency_ms": 1325.0,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 45,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e08",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.61e-05,
+            "latency_ms": 1500.7,
+            "provider": "openai",
+            "finish_reason": "tool_calls",
+            "output_tokens": 45,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          }
+        ],
+        "draft": [
+          {
+            "scenario": "d01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.48e-05,
+            "latency_ms": 1913.3,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 60,
+            "reply": "Guten Morgen! Der Treffpunkt ist am Burgplatz, neben dem Schlossturm. Die kostenlose Tour beginnt täglich um 14:00 Uhr.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 5.13e-05,
+            "latency_ms": 1397.5,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 33,
+            "reply": "Guten Morgen! Der Treffpunkt ist am Burgplatz, neben dem Schlossturm. Die Tour beginnt um 14:00 Uhr.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 5.23e-05,
+            "latency_ms": 1350.1,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 35,
+            "reply": "Guten Morgen! Der Treffpunkt für die kostenlose Tour ist am Burgplatz, neben dem Schlossturm. Die Tour beginnt um 14 Uhr.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0001117,
+            "latency_ms": 2687.7,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 153,
+            "reply": "Hei Ingrid! Ja, hunder er velkomne på alle utendørsturer, så du kan ta henne med på gratisturen i Bergen. Vennlig hilsen TwentyTour-teamet",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.67e-05,
+            "latency_ms": 2727.3,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 63,
+            "reply": "Hei Ingrid! Ja, hunder er velkomne på gratisturen i Bergen. Velkommen begge to!",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 7.52e-05,
+            "latency_ms": 3008.4,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 80,
+            "reply": "Hei Ingrid! Ja, hunder er velkomne på alle utendørsturene våre, så du kan ta med hunden din på gratisturen i Bergen. Hilsen TwentyTour-teamet",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 5.87e-05,
+            "latency_ms": 3805.9,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 50,
+            "reply": "The Luxembourg tour is not wheelchair accessible in the old town, as it includes stairs.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 5.92e-05,
+            "latency_ms": 3701.6,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 51,
+            "reply": "Unfortunately, the Luxembourg old town tour is not wheelchair accessible because it includes stairs.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 4.37e-05,
+            "latency_ms": 1565.9,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 20,
+            "reply": "Unfortunately, the Luxembourg old town tour isn’t wheelchair accessible because it includes stairs.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 8.48e-05,
+            "latency_ms": 3032.0,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 97,
+            "reply": "Hallo! Private Führungen auf Deutsch sind in Düsseldorf möglich. Ob der Termin am Samstag, 10. Oktober, um 15 Uhr verfügbar ist und was die Führung für 6 Personen kostet, prüft unser Team gern und meldet sich bei euch zurück.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0001393,
+            "latency_ms": 3530.1,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 206,
+            "reply": "Hallo! Private Führungen in Düsseldorf auf Deutsch sind grundsätzlich möglich. Ob der 10. Oktober um 15 Uhr verfügbar ist und was die Führung für 6 Personen kostet, prüft unser Team gern und meldet sich bei euch.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0001493,
+            "latency_ms": 5056.4,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 226,
+            "reply": "Hallo! Private Führungen auf Deutsch sind in Düsseldorf möglich. Ob der 10. Oktober um 15 Uhr verfügbar ist und was die Führung für 6 Personen kostet, muss unser Team prüfen. Könnten Sie uns noch das Jahr nennen?",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 7.31e-05,
+            "latency_ms": 2652.2,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 78,
+            "reply": "¡Hola! El free tour de Luxemburgo funciona a base de propinas: al final pagas lo que consideres que valió el tour, en efectivo o con tarjeta. Dura aproximadamente 2 horas.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 7.21e-05,
+            "latency_ms": 2669.4,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 76,
+            "reply": "¡Hola! El free tour de Luxemburgo dura aproximadamente 2 horas. No tiene un precio fijo: al final puedes dejar la propina que consideres adecuada, en efectivo o con tarjeta.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 7.26e-05,
+            "latency_ms": 84889.7,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 77,
+            "reply": "¡Hola! El free tour de Luxemburgo dura aproximadamente 2 horas. No tiene un precio fijo: al final, pagas la propina que consideres adecuada, en efectivo o con tarjeta.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 7.17e-05,
+            "latency_ms": 2832.9,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 75,
+            "reply": "Bonjour, nous allons vérifier auprès de l’équipe si des visites guidées sont proposées à Vienne et nous reviendrons vers vous.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.62e-05,
+            "latency_ms": 2347.3,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 64,
+            "reply": "Bonjour ! Nous allons vérifier auprès de l’équipe si des visites sont proposées à Vienne et nous reviendrons vers vous.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 6.22e-05,
+            "latency_ms": 2533.5,
+            "provider": "openai",
+            "finish_reason": "stop",
+            "output_tokens": 56,
+            "reply": "Bonjour ! Nous allons vérifier si des visites guidées sont proposées à Vienne et nous reviendrons vers vous.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          }
+        ]
+      }
+    }
+  }
+}

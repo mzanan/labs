@@ -1,0 +1,1 @@
+{"key": "deepseek-v3.2", "id": "deepseek-v3.2", "failed_calls": 0, "cost_usd": 0.007287, "mean_latency_ms": 6102, "providers": ["experiential_cloud"], "intent": "45/45", "language": "45/45", "extract": "22/24", "draft": "18/18"}

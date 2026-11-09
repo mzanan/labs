@@ -1,0 +1,38 @@
+{
+  "provider_prefs": {},
+  "models": [
+    {
+      "key": "deepseek-v3.2",
+      "id": "deepseek-v3.2"
+    },
+    {
+      "key": "glm-5.3-flash",
+      "id": "glm-5.3-flash"
+    },
+    {
+      "key": "glm-5.3",
+      "id": "glm-5.3"
+    },
+    {
+      "key": "mimo-v2.6-flash",
+      "id": "mimo-v2.6-flash"
+    },
+    {
+      "key": "qwen3.8-27b",
+      "id": "qwen3.8-27b"
+    },
+    {
+      "key": "nemotron-3.5-lightning",
+      "id": "nemotron-3.5-lightning"
+    },
+    {
+      "key": "command-a",
+      "id": "command-a",
+      "force_tool": false
+    },
+    {
+      "key": "mistral-small-2603",
+      "id": "mistral-small-2603"
+    }
+  ]
+}

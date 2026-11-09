@@ -1,0 +1,10 @@
+[
+  {"id": "e01", "text": "Hello, we are a group of 14 colleagues visiting Luxembourg on October 16th and would love a private tour in English in the afternoon. Could you send us an offer? Best, Laura", "gold": {"city": "Luxembourg", "date": "2026-10-16", "time": null, "pax": 14, "language": "English"}},
+  {"id": "e02", "text": "Hallo! Wir sind 6 Personen und möchten am Samstag, 10. Oktober eine private Führung auf Deutsch in Düsseldorf machen. Geht das um 15 Uhr? Was kostet das?", "gold": {"city": "Düsseldorf", "date": "2026-10-10", "time": "15:00", "pax": 6, "language": "German"}},
+  {"id": "e03", "text": "Hoi, wij zijn met 25 studenten in Maastricht op 22 oktober. Kunnen jullie een rondleiding in het Engels voor ons organiseren, om 10 uur 's ochtends? Groet, Pieter", "gold": {"city": "Maastricht", "date": "2026-10-22", "time": "10:00", "pax": 25, "language": "English"}},
+  {"id": "e04", "text": "Hi! My wife and I plus our two kids would like a private tour of Bergen next Saturday around 11am. Spanish if possible, otherwise English.", "gold": {"city": "Bergen", "date": "2026-10-03", "time": "11:00", "pax": 4, "language": "Spanish"}},
+  {"id": "e05", "text": "Bonjour, nous sommes deux couples et souhaitons une visite privée en français à Luxembourg le samedi 17 octobre à 9h30.", "gold": {"city": "Luxembourg", "date": "2026-10-17", "time": "09:30", "pax": 4, "language": "French"}},
+  {"id": "e06", "text": "Hei! Vi er en skoleklasse på 30 elever og 2 lærere som kommer til Oslo fredag 9. oktober. Kan vi få en omvisning på norsk kl. 12?", "gold": {"city": "Oslo", "date": "2026-10-09", "time": "12:00", "pax": 32, "language": "Norwegian"}},
+  {"id": "e07", "text": "Hello, private tour for a bachelor party in Stuttgart, about 10 guys, sometime in the evening, date not fixed yet, probably end of October. English.", "gold": {"city": "Stuttgart", "date": null, "time": null, "pax": 10, "language": "English"}},
+  {"id": "e08", "text": "hola, queremos un tour privado en Innsbruck el 14/10 a las 16h en inglés, somos 3 adultos y un bebé", "gold": {"city": "Innsbruck", "date": "2026-10-14", "time": "16:00", "pax": 3, "language": "English"}}
+]

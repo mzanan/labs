@@ -1,0 +1,1779 @@
+{
+  "provider_prefs": {},
+  "reps": 3,
+  "models": {
+    "qwen3.8-27b": {
+      "summary": {
+        "key": "qwen3.8-27b",
+        "id": "qwen3.8-27b",
+        "failed_calls": 0,
+        "cost_usd": 0.053389,
+        "mean_latency_ms": 6648,
+        "providers": [
+          "experiential_cloud"
+        ],
+        "intent": "45/45",
+        "language": "45/45",
+        "extract": "0/24",
+        "draft": "18/18"
+      },
+      "cells": {
+        "classify": [
+          {
+            "scenario": "c01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00034752,
+            "latency_ms": 3782.3,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 116,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00027192,
+            "latency_ms": 3003.3,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 74,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00026472,
+            "latency_ms": 4334.5,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 70,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00027684,
+            "latency_ms": 2577.2,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 77,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00027864,
+            "latency_ms": 3295.3,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 78,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00030564,
+            "latency_ms": 3550.7,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 93,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00041472,
+            "latency_ms": 3939.2,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 152,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00037152,
+            "latency_ms": 4126.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 128,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00042012,
+            "latency_ms": 3570.3,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 155,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00030084,
+            "latency_ms": 3323.8,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 91,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00033144,
+            "latency_ms": 9438.2,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 108,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00025944,
+            "latency_ms": 2843.3,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 68,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.000354,
+            "latency_ms": 4576.4,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 120,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003558,
+            "latency_ms": 3014.7,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 121,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.000453,
+            "latency_ms": 4412.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 175,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003804,
+            "latency_ms": 9683.4,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 136,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003678,
+            "latency_ms": 3560.8,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 129,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.000411,
+            "latency_ms": 4708.0,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 153,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0002616,
+            "latency_ms": 2661.0,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 68,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0002472,
+            "latency_ms": 3185.6,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 60,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0002598,
+            "latency_ms": 2752.4,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 67,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00038844,
+            "latency_ms": 5200.6,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 141,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00031284,
+            "latency_ms": 3319.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 99,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00024984,
+            "latency_ms": 3067.8,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 64,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003936,
+            "latency_ms": 9162.5,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 144,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004872,
+            "latency_ms": 4871.7,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 196,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004152,
+            "latency_ms": 3960.8,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 156,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00041172,
+            "latency_ms": 4453.0,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 151,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00030012,
+            "latency_ms": 3184.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 89,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00038472,
+            "latency_ms": 2977.0,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 136,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00038628,
+            "latency_ms": 3492.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 139,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00038268,
+            "latency_ms": 4077.0,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 137,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00035028,
+            "latency_ms": 2897.5,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 119,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00034032,
+            "latency_ms": 3872.0,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 112,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00033312,
+            "latency_ms": 3702.5,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 108,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00031872,
+            "latency_ms": 3678.5,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 100,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00028524,
+            "latency_ms": 5279.2,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 81,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00037524,
+            "latency_ms": 3950.0,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 131,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00031044,
+            "latency_ms": 2960.2,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 95,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00025212,
+            "latency_ms": 2803.6,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 67,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00024852,
+            "latency_ms": 2399.0,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 65,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00035292,
+            "latency_ms": 3271.4,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 123,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003,
+            "latency_ms": 2671.7,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 92,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.000327,
+            "latency_ms": 3151.5,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 107,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.000354,
+            "latency_ms": 3567.1,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 122,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          }
+        ],
+        "extract": [
+          {
+            "scenario": "e01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00064344,
+            "latency_ms": 6081.4,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 280,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": null,
+              "pax": "14",
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00068844,
+            "latency_ms": 6105.2,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 305,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": null,
+              "pax": "14",
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00072804,
+            "latency_ms": 7750.5,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 327,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": null,
+              "pax": "14",
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00060696,
+            "latency_ms": 5101.8,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 260,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": "6",
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00053856,
+            "latency_ms": 4436.1,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 222,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": "6",
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00067536,
+            "latency_ms": 6004.5,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 298,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": "6",
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00071244,
+            "latency_ms": 6170.3,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 317,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": "25",
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00044244,
+            "latency_ms": 3969.8,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 167,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": "25",
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00052704,
+            "latency_ms": 4935.4,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 214,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": "25",
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00095268,
+            "latency_ms": 8230.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 453,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-03",
+              "time": "11:00",
+              "pax": "4",
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00427728,
+            "latency_ms": 42315.3,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 2300,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-03",
+              "time": "11:00",
+              "pax": "4",
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00611148,
+            "latency_ms": 59747.5,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 3319,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-03",
+              "time": "11:00",
+              "pax": "4",
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00094836,
+            "latency_ms": 11552.5,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 451,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": "4",
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00075936,
+            "latency_ms": 6337.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 346,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": "4",
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00104376,
+            "latency_ms": 8935.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 504,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": "4",
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.000837,
+            "latency_ms": 6761.5,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 387,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": "32",
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0007452,
+            "latency_ms": 6165.2,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 336,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": "32",
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0006606,
+            "latency_ms": 6708.2,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 289,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": "32",
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e07",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00057696,
+            "latency_ms": 5029.3,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 244,
+            "answer": {
+              "city": "Stuttgart",
+              "date": null,
+              "time": null,
+              "pax": "10",
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e07",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00092436,
+            "latency_ms": 7848.4,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 437,
+            "answer": {
+              "city": "Stuttgart",
+              "date": null,
+              "time": null,
+              "pax": "10",
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e07",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00066876,
+            "latency_ms": 6223.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 295,
+            "answer": {
+              "city": "Stuttgart",
+              "date": null,
+              "time": null,
+              "pax": "10",
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e08",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00058752,
+            "latency_ms": 6741.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 250,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": "3",
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e08",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00063252,
+            "latency_ms": 5640.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 275,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": "3",
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e08",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00063612,
+            "latency_ms": 7055.2,
+            "provider": "experiential_cloud",
+            "finish_reason": "tool_calls",
+            "output_tokens": 277,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": "3",
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": false,
+              "language": true
+            },
+            "all_ok": false
+          }
+        ],
+        "draft": [
+          {
+            "scenario": "d01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00040128,
+            "latency_ms": 4588.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 168,
+            "reply": "Guten Morgen! Der Treffpunkt für die kostenlose Tour in Düsseldorf ist um 14:00 Uhr auf dem Burgplatz, direkt neben dem Schlossturm.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d01",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00040308,
+            "latency_ms": 4835.1,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 169,
+            "reply": "Guten Morgen! Der Treffpunkt für die kostenlose Tour in Düsseldorf ist um 14:00 Uhr auf dem Burgplatz, neben dem Schlossturm.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d01",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00037428,
+            "latency_ms": 4562.6,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 153,
+            "reply": "Guten Morgen, der Treffpunkt ist auf dem Burgplatz, direkt neben dem Schlossturm, um 14:00 Uhr.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00111348,
+            "latency_ms": 13686.4,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 563,
+            "reply": "Hei Ingrid, ja – hunder er velkomne på alle utendørsturer, så du kan ta med hunden på den gratis turen i Bergen.\n\nMvh, TwentyTour-teamet",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00237708,
+            "latency_ms": 29745.8,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 1265,
+            "reply": "Hei Ingrid! Ja, hunder er velkomne på alle utendørsturer.",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00066168,
+            "latency_ms": 7747.2,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 312,
+            "reply": "Hei Ingrid,\n\nja, hunder er velkomne på alle utendørs turer. Gratisturen i Bergen møtes ved Fisketorget, hjørnet Torgallmenningen, kl. 10:00 hver dag.\n\nVennlig hilsen,\nTwentyTour",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.000339,
+            "latency_ms": 4307.6,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 135,
+            "reply": "The Luxembourg tour is not wheelchair accessible in the old town because of stairs.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.000465,
+            "latency_ms": 5474.2,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 205,
+            "reply": "Unfortunately, the Luxembourg tour is not wheelchair accessible because it takes place in the old town and includes stairs.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004686,
+            "latency_ms": 5678.5,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 207,
+            "reply": "Unfortunately, the Luxembourg tour is not wheelchair accessible because the old town has stairs.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00086052,
+            "latency_ms": 9363.0,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 421,
+            "reply": "Hallo! Danke für Ihre Anfrage. Private Führungen sind in Düsseldorf verfügbar; der Preis hängt von der Gruppengröße, der Sprache und dem Datum ab. Wir prüfen kurz die Verfügbarkeit und den Preis für 6 Personen am Samstag, 10. Oktober um 15 Uhr auf Deutsch und melden uns bei Ihnen.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00089472,
+            "latency_ms": 13723.7,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 440,
+            "reply": "Hallo! Eine private Deutsch-Führung in Düsseldorf ist grundsätzlich möglich. Ob der Samstag, 10. Oktober um 15 Uhr für 6 Personen verfügbar ist, prüft unser Team und meldet sich bei Ihnen. Der Preis hängt von Gruppengröße, Sprache und Datum ab und wird vom Team individuell angeboten.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.00061212,
+            "latency_ms": 8064.0,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 283,
+            "reply": "Hallo! Danke für eure Anfrage. Eine private Führung auf Deutsch in Düsseldorf ist grundsätzlich möglich. Ob es am Samstag, 10. Oktober um 15 Uhr klappt, prüfen wir noch und melden uns. Der Preis hängt von der Gruppengröße, der Sprache und dem Datum ab; wir senden euch ein Angebot.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0005058,
+            "latency_ms": 6807.2,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 227,
+            "reply": "Hola, el free tour de Luxemburgo no tiene precio fijo: es tip-based, es decir, al final de la visita pagas lo que creas que valió, en efectivo o con tarjeta. Dura aproximadamente 2 horas.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004284,
+            "latency_ms": 6030.1,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 184,
+            "reply": "Hola, el free tour de Luxemburgo no tiene un precio fijo: al final, cada persona paga la propina que considere que valió la visita, en efectivo o con tarjeta. Dura aproximadamente 2 horas.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004356,
+            "latency_ms": 6259.1,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 188,
+            "reply": "Hola, el free tour de Luxemburgo es gratuito y funciona con propina: al final, cada persona paga lo que considere que valió, en efectivo o con tarjeta. Dura aproximadamente 2 horas.",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0005148,
+            "latency_ms": 6784.0,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 232,
+            "reply": "Bonjour, notre équipe va vérifier si nous proposons des visites guidées à Vienne et reviendra vers vous rapidement.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 2,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0008856,
+            "latency_ms": 10350.9,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 438,
+            "reply": "Bonjour, nous organisons des visites à Luxembourg, Aachen, Düsseldorf, Stuttgart, Bergen, Oslo, Innsbruck et Maastricht. Notre équipe va vérifier si nous proposons aussi des visites à Vienne et reviendra vers vous.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 3,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0005292,
+            "latency_ms": 6228.4,
+            "provider": "experiential_cloud",
+            "finish_reason": "stop",
+            "output_tokens": 240,
+            "reply": "Bonjour, nos visites guidées sont actuellement disponibles à Luxembourg, Aix-la-Chapelle, Düsseldorf, Stuttgart, Bergen, Oslo, Innsbruck et Maastricht. Nous vérifions si une visite à Vienne est possible et nous revenons vers vous.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          }
+        ]
+      }
+    }
+  }
+}

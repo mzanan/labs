@@ -1,0 +1,1 @@
+{"key": "gemma-4-31b-it", "id": "gemma-4-31b-it", "failed_calls": 0, "cost_usd": 0.003766, "mean_latency_ms": 3829, "providers": ["experiential_cloud"], "intent": "45/45", "language": "45/45", "extract": "15/24", "draft": "18/18"}

@@ -1,0 +1,8 @@
+[
+  {"id": "d01", "text": "Guten Morgen, wo genau ist der Treffpunkt für die kostenlose Tour in Düsseldorf heute um 14 Uhr?", "language": "de", "must_include_any": [["Burgplatz"], ["Schlossturm"]], "must_not_match": ["€\\s?\\d", "\\d\\s?€", "EUR\\s?\\d"]},
+  {"id": "d02", "text": "Hei, kan jeg ta med hunden min på gratisturen i Bergen? Hun er rolig og liten. Mvh Ingrid", "language": "no", "must_include_any": [["hund"]], "must_not_match": ["€\\s?\\d", "\\d\\s?€", "kr\\s?\\d"]},
+  {"id": "d03", "text": "Is the Luxembourg tour ok for someone in a wheelchair?", "language": "en", "must_include_any": [["stair", "steps"]], "must_not_match": ["fully accessible", "wheelchair accessible throughout"]},
+  {"id": "d04", "text": "Hallo! Wir sind 6 Personen und möchten am Samstag, 10. Oktober eine private Führung auf Deutsch in Düsseldorf machen. Geht das um 15 Uhr? Was kostet das?", "language": "de", "must_include_any": [["Angebot", "Preis", "Team", "melden", "zurück"]], "must_not_match": ["€\\s?\\d", "\\d\\s?€", "EUR\\s?\\d", "\\d+\\s?Euro"]},
+  {"id": "d05", "text": "hola, cuánto cuesta el free tour de Luxemburgo? y cuánto dura?", "language": "es", "must_include_any": [["propina", "voluntad", "lo que"], ["2 horas", "dos horas"]], "must_not_match": ["€\\s?\\d", "\\d\\s?€", "EUR\\s?\\d", "\\d+\\s?euros?"]},
+  {"id": "d06", "text": "Bonjour, est-ce que vous faites aussi des visites guidées à Vienne ?", "language": "fr", "must_include_any": [["Vienne"]], "must_not_match": ["€\\s?\\d", "\\d\\s?€", "visite à Vienne est disponible", "nous proposons des visites à Vienne"]}
+]

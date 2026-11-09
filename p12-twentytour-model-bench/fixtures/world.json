@@ -1,0 +1,18 @@
+{
+  "today": "2026-09-30 (Wednesday)",
+  "tours": [
+    {"city": "Luxembourg", "kind": "free", "meeting_point": "Place d'Armes, in front of the Cercle Cité building", "start": "11:00", "duration": "about 2 hours", "language": "English"},
+    {"city": "Bergen", "kind": "free", "meeting_point": "the Fish Market (Fisketorget), at the Torgallmenningen corner", "start": "10:00", "duration": "about 2 hours", "language": "English"},
+    {"city": "Düsseldorf", "kind": "free", "meeting_point": "Burgplatz, next to the Schlossturm", "start": "14:00", "duration": "about 2 hours", "language": "English"}
+  ],
+  "private_cities": ["Luxembourg", "Aachen", "Düsseldorf", "Stuttgart", "Bergen", "Oslo", "Innsbruck", "Maastricht"],
+  "private_languages": ["English", "German", "French", "Spanish", "Norwegian", "Dutch"],
+  "bookings": [
+    {"reference": "BR-88213", "source": "viator", "kind": "private", "city": "Luxembourg", "date": "2026-10-08", "time": "10:00", "pax": 2, "customer_name": "Claire Martin", "customer_email": "claire.martin@example.fr", "status": "confirmed"},
+    {"reference": "TT-1042", "source": "direct", "kind": "private", "city": "Aachen", "date": "2026-10-12", "time": "15:00", "pax": 5, "customer_name": "Daniel Weber", "customer_email": "d.weber@example.de", "status": "confirmed"},
+    {"reference": "GYG7XK21P", "source": "getyourguide", "kind": "free", "city": "Bergen", "date": "2026-10-01", "time": "10:00", "pax": 2, "customer_name": "Tom Becker", "customer_email": "tom.becker@example.com", "status": "confirmed"},
+    {"reference": "GYG7XK99Q", "source": "getyourguide", "kind": "free", "city": "Bergen", "date": "2026-10-04", "time": "10:00", "pax": 3, "customer_name": "Tom Becker", "customer_email": "tbecker@example.org", "status": "confirmed"},
+    {"reference": "TT-1050", "source": "direct", "kind": "private", "city": "Oslo", "date": "2026-10-09", "time": "12:00", "pax": 5, "customer_name": "Mark Olsen", "customer_email": "mark.olsen@example.no", "status": "confirmed"},
+    {"reference": "CIV-55120", "source": "civitatis", "kind": "free", "city": "Luxembourg", "date": "2026-10-01", "time": "11:00", "pax": 4, "customer_name": "Marta Gil", "customer_email": "marta.gil@example.es", "status": "confirmed"}
+  ]
+}

@@ -1,0 +1,1 @@
+{"key": "deepseek-v4.1-flash", "id": "deepseek-v4.1-flash", "failed_calls": 0, "cost_usd": 0.025021, "mean_latency_ms": 3312, "providers": ["experiential_cloud"], "intent": "45/45", "language": "45/45", "extract": "24/24", "draft": "18/18"}

@@ -1,0 +1,1 @@
+{"key": "claude-haiku-5.5", "id": "claude-haiku-5.5", "failed_calls": 0, "cost_usd": 0.0, "mean_latency_ms": 1479, "providers": ["anthropic"], "intent": "45/45", "language": "45/45", "extract": "21/24", "draft": "18/18"}

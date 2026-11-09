@@ -1,0 +1,618 @@
+{
+  "provider_prefs": {
+    "data_collection": "deny",
+    "zdr": true,
+    "require_parameters": true,
+    "allow_fallbacks": true
+  },
+  "reps": 1,
+  "models": {
+    "command-a-plus": {
+      "summary": {
+        "key": "command-a-plus",
+        "id": "cohere/command-a-plus",
+        "failed_calls": 0,
+        "cost_usd": 0.011438,
+        "mean_latency_ms": 1222,
+        "providers": [
+          "Cohere"
+        ],
+        "intent": "15/15",
+        "language": "15/15",
+        "extract": "5/8",
+        "draft": "6/6"
+      },
+      "cells": {
+        "classify": [
+          {
+            "scenario": "c01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0002265,
+            "latency_ms": 954.7,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 97,
+            "answer": {
+              "intent": "private_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003474,
+            "latency_ms": 1101.5,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 178,
+            "answer": {
+              "intent": "private_request",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004266,
+            "latency_ms": 1240.3,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 229,
+            "answer": {
+              "intent": "change_request",
+              "language": "fr"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004272,
+            "latency_ms": 1331.2,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 232,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003594,
+            "latency_ms": 1195.5,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 186,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003321,
+            "latency_ms": 1084.2,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 170,
+            "answer": {
+              "intent": "question",
+              "language": "no"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c07",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0002805,
+            "latency_ms": 969.5,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 133,
+            "answer": {
+              "intent": "cancellation",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c08",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004572,
+            "latency_ms": 1414.5,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 254,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c09",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0002184,
+            "latency_ms": 884.5,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 95,
+            "answer": {
+              "intent": "question",
+              "language": "de"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c10",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004131,
+            "latency_ms": 1237.1,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 221,
+            "answer": {
+              "intent": "private_request",
+              "language": "nl"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c11",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.000315,
+            "latency_ms": 1089.7,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 158,
+            "answer": {
+              "intent": "late_or_lost",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c12",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003045,
+            "latency_ms": 1091.8,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 149,
+            "answer": {
+              "intent": "change_request",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c13",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003966,
+            "latency_ms": 1348.1,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 210,
+            "answer": {
+              "intent": "resend_confirmation",
+              "language": "es"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c14",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003696,
+            "latency_ms": 1120.2,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 198,
+            "answer": {
+              "intent": "question",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          },
+          {
+            "scenario": "c15",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004077,
+            "latency_ms": 1242.7,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 221,
+            "answer": {
+              "intent": "other",
+              "language": "en"
+            },
+            "intent_ok": true,
+            "language_ok": true
+          }
+        ],
+        "extract": [
+          {
+            "scenario": "e01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003432,
+            "latency_ms": 1126.3,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 178,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-16",
+              "time": "14:00",
+              "pax": 14,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004986,
+            "latency_ms": 1391.3,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 282,
+            "answer": {
+              "city": "Düsseldorf",
+              "date": "2026-10-10",
+              "time": "15:00",
+              "pax": 6,
+              "language": "German"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003465,
+            "latency_ms": 1077.8,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 179,
+            "answer": {
+              "city": "Maastricht",
+              "date": "2026-10-22",
+              "time": "10:00",
+              "pax": 25,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0007998,
+            "latency_ms": 2204.0,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 484,
+            "answer": {
+              "city": "Bergen",
+              "date": "2026-10-04",
+              "time": "11:00",
+              "pax": 4,
+              "language": "Spanish"
+            },
+            "fields": {
+              "city": true,
+              "date": false,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003471,
+            "latency_ms": 1072.1,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 183,
+            "answer": {
+              "city": "Luxembourg",
+              "date": "2026-10-17",
+              "time": "09:30",
+              "pax": 4,
+              "language": "French"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003087,
+            "latency_ms": 1045.0,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 155,
+            "answer": {
+              "city": "Oslo",
+              "date": "2026-10-09",
+              "time": "12:00",
+              "pax": 32,
+              "language": "Norwegian"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "e07",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004704,
+            "latency_ms": 1359.3,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 264,
+            "answer": {
+              "city": "Stuttgart",
+              "date": "2026-10-31",
+              "time": "19:00",
+              "pax": 10,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": false,
+              "time": false,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": false
+          },
+          {
+            "scenario": "e08",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003999,
+            "latency_ms": 1150.2,
+            "provider": "Cohere",
+            "finish_reason": "tool_calls",
+            "output_tokens": 218,
+            "answer": {
+              "city": "Innsbruck",
+              "date": "2026-10-14",
+              "time": "16:00",
+              "pax": 3,
+              "language": "English"
+            },
+            "fields": {
+              "city": true,
+              "date": true,
+              "time": true,
+              "pax": true,
+              "language": true
+            },
+            "all_ok": true
+          }
+        ],
+        "draft": [
+          {
+            "scenario": "d01",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0003633,
+            "latency_ms": 1087.0,
+            "provider": "Cohere",
+            "finish_reason": "stop",
+            "output_tokens": 175,
+            "reply": "Guten Morgen! Der Treffpunkt für die kostenlose Tour in Düsseldorf heute um 14 Uhr ist der Burgplatz, neben dem Schlossturm.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d02",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.000402,
+            "latency_ms": 1190.1,
+            "provider": "Cohere",
+            "finish_reason": "stop",
+            "output_tokens": 200,
+            "reply": "Hei Ingrid,\n\nJa, hunder er velkomne på alle utendørs turer, inkludert gratisturen i Bergen. Så du kan gjerne ta med den rolige, lille hunden din.\n\nHvis du har flere spørsmål, er det bare å si ifra.",
+            "detected_language": "no",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d03",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004125,
+            "latency_ms": 1263.3,
+            "provider": "Cohere",
+            "finish_reason": "stop",
+            "output_tokens": 210,
+            "reply": "The free Luxembourg tour is not wheelchair accessible in the old town because of stairs. If you need wheelchair accessibility, you could consider booking a private tour instead—the team can provide a quote based on your group size, language and date.",
+            "detected_language": "en",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d04",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0007038,
+            "latency_ms": 1934.8,
+            "provider": "Cohere",
+            "finish_reason": "stop",
+            "output_tokens": 399,
+            "reply": "Hallo! Vielen Dank für Ihre Anfrage. Private Führungen in Düsseldorf sind auf Deutsch verfügbar. Wir prüfen gerne die Verfügbarkeit für Samstag, 10. Oktober um 15 Uhr und senden Ihnen ein Angebot basierend auf Gruppengröße, Sprache und Datum zu. Das Team meldet sich in Kürze bei Ihnen.",
+            "detected_language": "de",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d05",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.0004212,
+            "latency_ms": 1222.5,
+            "provider": "Cohere",
+            "finish_reason": "stop",
+            "output_tokens": 215,
+            "reply": "Hola,\n\nEl free tour de Luxemburgo es **gratuito** y se paga solo una propina al final, según lo que consideres que vale la experiencia (en efectivo o con tarjeta).\n\nEl tour dura **aproximadamente 2 horas** y se realiza en inglés.\n\nSi deseas reservar, puedes hacerlo a través de GetYourGuide, Viator, Civitatis o GuruWalk. El punto de encuentro es en la Place d'Armes, frente al edificio Cercle Cité, a las 11:00 todos los días.\n\n¡Espero que disfrutes del tour!",
+            "detected_language": "es",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          },
+          {
+            "scenario": "d06",
+            "rep": 1,
+            "ok": true,
+            "error": null,
+            "cost_usd": 0.000339,
+            "latency_ms": 995.0,
+            "provider": "Cohere",
+            "finish_reason": "stop",
+            "output_tokens": 160,
+            "reply": "Bonjour, merci de votre intérêt. Nous allons vérifier si nous proposons des visites guidées à Vienne et vous reviendrons bientôt avec une réponse.",
+            "detected_language": "fr",
+            "checks": {
+              "language": true,
+              "facts": true,
+              "no_invention": true,
+              "not_empty": true
+            },
+            "all_ok": true
+          }
+        ]
+      }
+    }
+  }
+}
