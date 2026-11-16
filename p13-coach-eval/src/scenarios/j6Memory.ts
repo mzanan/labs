@@ -12,7 +12,7 @@ export const J6_SCENARIOS: Scenario[] = [
     job: "J6",
     lang: "es",
     title: "Allergy statement",
-    turns: [{ user: "te cuento que soy alérgico al maní", expect: MEMORY_ONLY }],
+    turns: [{ user: "te cuento que soy alérgico al maní", expect: { ...MEMORY_ONLY, memory: "write" } }],
   },
   {
     id: "J6-02-injury",
@@ -22,7 +22,7 @@ export const J6_SCENARIOS: Scenario[] = [
     turns: [
       {
         user: "me lesioné el hombro derecho, nada de press por encima de la cabeza por 3 semanas",
-        expect: MEMORY_ONLY,
+        expect: { ...MEMORY_ONLY, memory: "write" },
       },
     ],
   },
@@ -31,6 +31,6 @@ export const J6_SCENARIOS: Scenario[] = [
     job: "J6",
     lang: "es",
     title: "One-off preference",
-    turns: [{ user: "hoy no tengo ganas de comida india", expect: MEMORY_ONLY }],
+    turns: [{ user: "hoy no tengo ganas de comida india", expect: { ...MEMORY_ONLY, memory: "none" } }],
   },
 ];

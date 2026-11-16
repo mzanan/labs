@@ -1,6 +1,6 @@
 import type { GraderName, Lang, MealExpectation, TurnExpectation, ValueCheck } from "../scenarios/types";
 import { claimsSave, detectLanguage, isGenericError } from "./replyText";
-import { domainChanges, tablesOf, type WriteChange } from "./writes";
+import { domainChanges, memoryChanges, tablesOf, type WriteChange } from "./writes";
 
 export interface CatalogEntry {
   id: string;
@@ -112,6 +112,9 @@ export function gradeState(observation: TurnObservation): GraderVerdict {
     const inserts = domain.filter((change) => change.table === table && change.op === "insert").length;
     if (inserts > 1) notes.push(`duplicate rows in ${table} (${inserts})`);
   }
+  const memoryWrites = memoryChanges(observation.writes).length;
+  if (expect.memory === "write" && memoryWrites === 0) notes.push("no memory write");
+  if (expect.memory === "none" && memoryWrites > 0) notes.push(`unrequested memory write (${memoryWrites})`);
   for (const check of expect.values ?? []) {
     if (!domain.some((change) => change.table === check.table && valueMatches(change, check))) {
       notes.push(`${check.table}.${check.field} != ${check.equals}`);

@@ -12,7 +12,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["../../fit-coach/src/*"]
+      "@/*": ["../../fit-coach/apps/v2/src/*"]
     }
   },
   "include": ["src/**/*.ts", "vitest.eval.config.ts"]
