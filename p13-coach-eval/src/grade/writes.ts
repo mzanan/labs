@@ -29,7 +29,7 @@ const DOMAIN_TABLES: ReadonlySet<string> = new Set<DomainTable>([
   "routine_slots",
 ]);
 
-export const MEMORY_TABLES: ReadonlySet<string> = new Set(["coach_facts", "user_facts", "health_events", "pending_items"]);
+export const MEMORY_TABLES: ReadonlySet<string> = new Set(["coach_facts", "user_facts", "memory_files", "health_events", "pending_items"]);
 
 const PROFILE_TARGET_FIELDS = [
   "protein_target",

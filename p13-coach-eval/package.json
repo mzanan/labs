@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "link": "ln -sfn \"${FIT_COACH_DIR:-../../fit-coach}/node_modules\" node_modules",
+    "link": "ln -sfn \"${FIT_COACH_DIR:-../../fit-coach/apps/v2}/node_modules\" node_modules",
     "eval": "tsx src/run.ts",
     "eval:probe": "tsx src/probe.ts",
     "typecheck": "tsc --noEmit",

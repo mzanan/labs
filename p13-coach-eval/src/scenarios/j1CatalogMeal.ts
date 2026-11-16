@@ -130,4 +130,20 @@ export const J1_SCENARIOS: Scenario[] = [
       },
     ],
   },
+  {
+    id: "J1-11-next-turn-duplicate",
+    job: "J1",
+    lang: "es",
+    title: "A follow-up question does not log the previous meal again",
+    turns: [
+      {
+        user: "anotá Edamame en el almuerzo",
+        expect: { ...LOG, meals: [{ item: ITEM.edamame, portions: 1, category: "lunch" }] },
+      },
+      {
+        user: "cuánta proteína me falta hoy?",
+        expect: { gradeOnly: ["state", "error"], meals: [{ item: ITEM.edamame, portions: 1, category: "lunch" }] },
+      },
+    ],
+  },
 ];

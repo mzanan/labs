@@ -42,8 +42,11 @@ export interface ValueCheck {
   equals: number | string;
 }
 
+export type MemoryExpectation = "write" | "none";
+
 export interface TurnExpectation {
   meals?: MealExpectation[];
+  memory?: MemoryExpectation;
   required?: DomainTable[];
   allowed?: DomainTable[];
   values?: ValueCheck[];
